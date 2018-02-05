@@ -15,7 +15,7 @@ class Book {
     var publisher:String?
     var writer:String?
     var description:String?
-    var url:String?
+//    var url:String?
     
     init(title:String) {
         self.title = title
