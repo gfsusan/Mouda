@@ -19,6 +19,8 @@ class FeedTableViewController: UITableViewController {
     var book3 = Book(title:"신경 끄기의 기술")
     var feeds:[Feed] = []
     
+    let formatdate = DateFormatter()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,6 +37,8 @@ class FeedTableViewController: UITableViewController {
         feeds.append(feed1)
         feeds.append(feed2)
         feeds.append(feed3)
+        
+        formatdate.dateFormat = "yyyy년 MM월 dd일"
     }
 
     override func didReceiveMemoryWarning() {
@@ -68,7 +72,7 @@ class FeedTableViewController: UITableViewController {
         retCell.pageLabel.text = "\(feed.page)"
         retCell.lineLabel.text = feed.line
         retCell.thoughtLabel.text = feed.thought
-        retCell.dateLabel.text = "\(feed.time)"
+        retCell.dateLabel.text = "\(formatdate.string(from: feed.time))"
         retCell.userLabel.text = "\(feed.person.name)"
         
         return retCell

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6631164420281A5A00357A3A /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6631164320281A5A00357A3A /* Media.xcassets */; };
 		669990EA20242F2B00410F21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669990E920242F2B00410F21 /* AppDelegate.swift */; };
 		669990EC20242F2B00410F21 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669990EB20242F2B00410F21 /* ViewController.swift */; };
 		669990EF20242F2B00410F21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 669990ED20242F2B00410F21 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6631164320281A5A00357A3A /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		669990E620242F2B00410F21 /* moudaTab2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = moudaTab2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		669990E920242F2B00410F21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		669990EB20242F2B00410F21 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				669990E920242F2B00410F21 /* AppDelegate.swift */,
 				669990EB20242F2B00410F21 /* ViewController.swift */,
 				669990ED20242F2B00410F21 /* Main.storyboard */,
+				6631164320281A5A00357A3A /* Media.xcassets */,
 				669990F020242F2B00410F21 /* Assets.xcassets */,
 				669990F220242F2B00410F21 /* LaunchScreen.storyboard */,
 				669990F520242F2B00410F21 /* Info.plist */,
@@ -140,6 +143,7 @@
 			files = (
 				669990F420242F2B00410F21 /* LaunchScreen.storyboard in Resources */,
 				669990F120242F2B00410F21 /* Assets.xcassets in Resources */,
+				6631164420281A5A00357A3A /* Media.xcassets in Resources */,
 				669990EF20242F2B00410F21 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

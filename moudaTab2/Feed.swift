@@ -28,7 +28,6 @@ class Feed {
         self.page = page
 //        self.lock = lock
         self.time = Date()
-    
     }
     
 //    func likeByOther(person:Person) {
