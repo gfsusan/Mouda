@@ -15,7 +15,9 @@ class SecondTabBarTableViewCell: UITableViewCell {
     @IBOutlet weak var lineLabel: UILabel!
     @IBOutlet weak var thoughtLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var userLabel: UILabel!
+    @IBOutlet weak var userLabel: UIButton!
+    @IBAction func userButton(_ sender: Any) {
+    }
     @IBOutlet weak var bookmarkImage: UIImageView!
     
     override func awakeFromNib() {
