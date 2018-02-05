@@ -12,6 +12,11 @@
 		669990EF20242F2B00410F21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 669990ED20242F2B00410F21 /* Main.storyboard */; };
 		669990F120242F2B00410F21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 669990F020242F2B00410F21 /* Assets.xcassets */; };
 		669990F420242F2B00410F21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 669990F220242F2B00410F21 /* LaunchScreen.storyboard */; };
+		669990FC202437D200410F21 /* SecondTabBarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669990FB202437D200410F21 /* SecondTabBarTableViewCell.swift */; };
+		66999100202437F200410F21 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669990FD202437F100410F21 /* Feed.swift */; };
+		66999101202437F200410F21 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669990FE202437F200410F21 /* Person.swift */; };
+		66999102202437F200410F21 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669990FF202437F200410F21 /* Book.swift */; };
+		669991042024386900410F21 /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669991032024386900410F21 /* FeedTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,11 @@
 		669990F020242F2B00410F21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		669990F320242F2B00410F21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		669990F520242F2B00410F21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		669990FB202437D200410F21 /* SecondTabBarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTabBarTableViewCell.swift; sourceTree = "<group>"; };
+		669990FD202437F100410F21 /* Feed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
+		669990FE202437F200410F21 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		669990FF202437F200410F21 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		669991032024386900410F21 /* FeedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +70,11 @@
 				669990F020242F2B00410F21 /* Assets.xcassets */,
 				669990F220242F2B00410F21 /* LaunchScreen.storyboard */,
 				669990F520242F2B00410F21 /* Info.plist */,
+				669990FF202437F200410F21 /* Book.swift */,
+				669990FD202437F100410F21 /* Feed.swift */,
+				669990FE202437F200410F21 /* Person.swift */,
+				669991032024386900410F21 /* FeedTableViewController.swift */,
+				669990FB202437D200410F21 /* SecondTabBarTableViewCell.swift */,
 			);
 			path = moudaTab2;
 			sourceTree = "<group>";
@@ -136,7 +151,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66999101202437F200410F21 /* Person.swift in Sources */,
 				669990EC20242F2B00410F21 /* ViewController.swift in Sources */,
+				66999102202437F200410F21 /* Book.swift in Sources */,
+				669991042024386900410F21 /* FeedTableViewController.swift in Sources */,
+				66999100202437F200410F21 /* Feed.swift in Sources */,
+				669990FC202437D200410F21 /* SecondTabBarTableViewCell.swift in Sources */,
 				669990EA20242F2B00410F21 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
