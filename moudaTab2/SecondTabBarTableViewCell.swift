@@ -11,14 +11,11 @@ import UIKit
 class SecondTabBarTableViewCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var pageLabel: UILabel!
     @IBOutlet weak var lineLabel: UILabel!
-    @IBOutlet weak var thoughtLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var userLabel: UIButton!
-    @IBAction func userButton(_ sender: Any) {
-    }
-    @IBOutlet weak var bookmarkImage: UIImageView!
+//    @IBAction func userButton(_ sender: Any) {
+//    }
+//    @IBOutlet weak var bookmarkImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

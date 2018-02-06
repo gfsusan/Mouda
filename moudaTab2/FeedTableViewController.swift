@@ -69,12 +69,8 @@ class FeedTableViewController: UITableViewController {
         var feed = feeds[indexPath.row]
         
         retCell.titleLabel.text = "\(feed.book.title)"
-        retCell.pageLabel.text = "\(feed.page) page"
         retCell.lineLabel.text = feed.line
-        retCell.thoughtLabel.text = feed.thought
         retCell.dateLabel.text = "\(formatdate.string(from: feed.time))"
-        retCell.userLabel.setTitle("\(feed.person.name)", for: .normal)
-        retCell.userLabel.contentHorizontalAlignment = UIControlContentHorizontalAlignment.left
         
         
         return retCell
