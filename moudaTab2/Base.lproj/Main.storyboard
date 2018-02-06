@@ -18,11 +18,11 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Navigation Controller-->
+        <!--집-->
         <scene sceneID="TEE-Em-mcI">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DVG-za-uDk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="Feeds copy" id="mYo-2n-cRh"/>
+                    <tabBarItem key="tabBarItem" title="집" image="MyFeed copy" id="mYo-2n-cRh"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="36P-mR-mk1">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -41,31 +41,31 @@
         <scene sceneID="KE8-ws-tzS">
             <objects>
                 <tableViewController restorationIdentifier="reuseIdentifier" id="29z-43-9fN" customClass="FeedTableViewController" customModule="moudaTab2" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="reuseIdentifier" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="151" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hZe-RZ-Hpi">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="reuseIdentifier" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="131" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hZe-RZ-Hpi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" rowHeight="151" id="ph0-ag-8Yi" customClass="SecondTabBarTableViewCell" customModule="moudaTab2" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="151"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" rowHeight="131" id="ph0-ag-8Yi" customClass="SecondTabBarTableViewCell" customModule="moudaTab2" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="131"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ph0-ag-8Yi" id="0Fi-zp-Gy0">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="150.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="130.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y6y-Af-VXP">
-                                            <rect key="frame" x="0.0" y="31" width="375" height="120"/>
+                                            <rect key="frame" x="0.0" y="31" width="375" height="100"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zar-hr-FFf">
-                                                    <rect key="frame" x="8" y="8" width="359" height="104"/>
-                                                    <fontDescription key="fontDescription" name="NanumMyeongjoOTF" family="NanumMyeongjoOTF" pointSize="15"/>
+                                                    <rect key="frame" x="8" y="8" width="359" height="84"/>
+                                                    <fontDescription key="fontDescription" name="NanumMyeongjoOTF" family="NanumMyeongjoOTF" pointSize="14"/>
                                                     <color key="textColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" red="0.97636479139328003" green="0.97653168439865112" blue="0.97635418176651001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="120" id="9Kn-Ye-N2q"/>
+                                                <constraint firstAttribute="height" constant="100" id="9Kn-Ye-N2q"/>
                                                 <constraint firstItem="Zar-hr-FFf" firstAttribute="centerY" secondItem="y6y-Af-VXP" secondAttribute="centerY" id="Iar-PB-KzX"/>
                                                 <constraint firstItem="Zar-hr-FFf" firstAttribute="leading" secondItem="y6y-Af-VXP" secondAttribute="leadingMargin" id="Sur-yH-EDD"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Zar-hr-FFf" secondAttribute="trailing" id="Xvw-dm-AxF"/>
@@ -75,7 +75,7 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="gGh-Dg-lp3">
                                             <rect key="frame" x="8" y="16" width="359" height="30"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Book2" translatesAutoresizingMaskIntoConstraints="NO" id="QDT-P4-Ndg">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Book" translatesAutoresizingMaskIntoConstraints="NO" id="QDT-P4-Ndg">
                                                     <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="NkI-P9-afw"/>
@@ -84,12 +84,12 @@
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l2A-PC-UFO">
                                                     <rect key="frame" x="33" y="0.0" width="215.5" height="30"/>
-                                                    <fontDescription key="fontDescription" name="NanumMyeongjoOTF" family="NanumMyeongjoOTF" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="NanumMyeongjoOTF" family="NanumMyeongjoOTF" pointSize="16"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="yyyy년 MM월 dd일" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uaX-vf-KR6">
                                                     <rect key="frame" x="251.5" y="0.0" width="107.5" height="30"/>
-                                                    <fontDescription key="fontDescription" name="NanumMyeongjoOTF" family="NanumMyeongjoOTF" pointSize="12"/>
+                                                    <fontDescription key="fontDescription" name="NanumMyeongjoOTF" family="NanumMyeongjoOTF" pointSize="11"/>
                                                     <color key="textColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -288,11 +288,11 @@
             </objects>
             <point key="canvasLocation" x="-812" y="830"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--새 글-->
         <scene sceneID="v0N-b1-taz">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jvl-xV-egZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="New copy" id="hlf-qe-oor"/>
+                    <tabBarItem key="tabBarItem" title="새 글" image="New copy" id="hlf-qe-oor"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="flp-7G-Xtj">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -307,11 +307,11 @@
             </objects>
             <point key="canvasLocation" x="46" y="830"/>
         </scene>
-        <!--Item-->
+        <!--설정-->
         <scene sceneID="eeM-jK-5j1">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="urb-Y2-RPa" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Hra-52-fUH"/>
+                    <tabBarItem key="tabBarItem" title="설정" image="More copy" id="Hra-52-fUH"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5oW-yB-b2A">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -328,8 +328,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Book2" width="512" height="512"/>
-        <image name="Feeds copy" width="30" height="30"/>
+        <image name="Book" width="30" height="30"/>
+        <image name="More copy" width="30" height="30"/>
+        <image name="MyFeed copy" width="30" height="30"/>
         <image name="New copy" width="30" height="30"/>
     </resources>
 </document>
