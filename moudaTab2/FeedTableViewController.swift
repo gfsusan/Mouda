@@ -29,7 +29,7 @@ class FeedTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        
+        self.tableView.separatorColor = UIColor.clear
         let feed1 = Feed(person: person1, book: book1, page: 110, line: "이기심은 자기 삶을 원하는대로 사는 것이 아니다. 남들에게 자기가 원하는대로 살아달라고 요구하는 것이다.", time: Date())
         let feed2 = Feed(person: person2, book: book2, page: 128, line: "남들에게 '고마운 존재'이기보다 '필요한 존재'가 되어라. 상대가 당신에게 고마워하기보다는 기대하고 의지하게 만들어라.", time: Date())
         let feed3 = Feed(person: person3, book: book3, page: 96, line: "기대는 오랫동안 기억되지만 감사의 마음은 금방 사라지기 때문이다.", time: Date())
