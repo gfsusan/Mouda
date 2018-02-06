@@ -31,12 +31,14 @@ class FeedTableViewController: UITableViewController {
         navigationItem.titleView = imageView
         
         let bookmarkButton = UIButton(type: .system)
-        bookmarkButton.setImage(#imageLiteral(resourceName: "FavoriteFeed2").withRenderingMode(.alwaysOriginal), for: .normal)
+        bookmarkButton.setImage(#imageLiteral(resourceName: "FavoriteFeed30").withRenderingMode(.alwaysOriginal), for: .normal)
         bookmarkButton.frame = CGRect(x: 0, y: 0, width: 34, height:34)
         bookmarkButton.contentMode = .scaleAspectFit
-        navigationItem.rightBarButtonItems = [UIBarButtonItem(customView:bookmarkButton)]
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView:bookmarkButton)
         
-        
+        let blankButton = UIButton(type: .system)
+        blankButton.isEnabled = false
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: blankButton)
         
         
         self.tableView.separatorColor = UIColor.clear
