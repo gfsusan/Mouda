@@ -84,6 +84,11 @@ class FeedTableViewController: UITableViewController {
         retCell.lineLabel.text = feed.line
         retCell.dateLabel.text = "\(formatdate.string(from: feed.time))"
         
+        let style = NSMutableParagraphStyle()
+        style.lineSpacing = 5
+        style.alignment = .center
+        let attributes = [NSAttributedStringKey.paragraphStyle: style]
+        retCell.lineLabel.attributedText = NSAttributedString(string: feed.line, attributes: attributes)
         
         return retCell
     }

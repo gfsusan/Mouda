@@ -19,6 +19,11 @@
 		669991042024386900410F21 /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669991032024386900410F21 /* FeedTableViewController.swift */; };
 		66F902DE202961F40047C959 /* AddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F902DD202961F40047C959 /* AddVC.swift */; };
 		7AD0AF6B2029B3F3002E7F60 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AD0AF6A2029B3F3002E7F60 /* Media.xcassets */; };
+		7AD0AF702029C86A002E7F60 /* NanumMyeongjo.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7AD0AF6D2029C86A002E7F60 /* NanumMyeongjo.otf */; };
+		7AD0AF712029C86A002E7F60 /* NanumMyeongjoBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7AD0AF6E2029C86A002E7F60 /* NanumMyeongjoBold.otf */; };
+		7AD0AF722029C86A002E7F60 /* NanumMyeongjoExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7AD0AF6F2029C86A002E7F60 /* NanumMyeongjoExtraBold.otf */; };
+		7AD0AF742029C906002E7F60 /* NanumGothic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7AD0AF732029C906002E7F60 /* NanumGothic.otf */; };
+		7AD0AF762029C913002E7F60 /* NanumSquareOTFRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7AD0AF752029C913002E7F60 /* NanumSquareOTFRegular.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +41,11 @@
 		669991032024386900410F21 /* FeedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
 		66F902DD202961F40047C959 /* AddVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVC.swift; sourceTree = "<group>"; };
 		7AD0AF6A2029B3F3002E7F60 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		7AD0AF6D2029C86A002E7F60 /* NanumMyeongjo.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumMyeongjo.otf; sourceTree = "<group>"; };
+		7AD0AF6E2029C86A002E7F60 /* NanumMyeongjoBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumMyeongjoBold.otf; sourceTree = "<group>"; };
+		7AD0AF6F2029C86A002E7F60 /* NanumMyeongjoExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumMyeongjoExtraBold.otf; sourceTree = "<group>"; };
+		7AD0AF732029C906002E7F60 /* NanumGothic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothic.otf; sourceTree = "<group>"; };
+		7AD0AF752029C913002E7F60 /* NanumSquareOTFRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareOTFRegular.otf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +78,7 @@
 		669990E820242F2B00410F21 /* moudaTab2 */ = {
 			isa = PBXGroup;
 			children = (
+				7AD0AF6C2029C7D9002E7F60 /* Fonts */,
 				669990E920242F2B00410F21 /* AppDelegate.swift */,
 				669990EB20242F2B00410F21 /* ViewController.swift */,
 				669990ED20242F2B00410F21 /* Main.storyboard */,
@@ -83,6 +94,18 @@
 				66F902DD202961F40047C959 /* AddVC.swift */,
 			);
 			path = moudaTab2;
+			sourceTree = "<group>";
+		};
+		7AD0AF6C2029C7D9002E7F60 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				7AD0AF752029C913002E7F60 /* NanumSquareOTFRegular.otf */,
+				7AD0AF732029C906002E7F60 /* NanumGothic.otf */,
+				7AD0AF6D2029C86A002E7F60 /* NanumMyeongjo.otf */,
+				7AD0AF6E2029C86A002E7F60 /* NanumMyeongjoBold.otf */,
+				7AD0AF6F2029C86A002E7F60 /* NanumMyeongjoExtraBold.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,10 +167,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AD0AF762029C913002E7F60 /* NanumSquareOTFRegular.otf in Resources */,
 				669990F420242F2B00410F21 /* LaunchScreen.storyboard in Resources */,
 				669990F120242F2B00410F21 /* Assets.xcassets in Resources */,
 				7AD0AF6B2029B3F3002E7F60 /* Media.xcassets in Resources */,
+				7AD0AF742029C906002E7F60 /* NanumGothic.otf in Resources */,
+				7AD0AF702029C86A002E7F60 /* NanumMyeongjo.otf in Resources */,
+				7AD0AF712029C86A002E7F60 /* NanumMyeongjoBold.otf in Resources */,
 				669990EF20242F2B00410F21 /* Main.storyboard in Resources */,
+				7AD0AF722029C86A002E7F60 /* NanumMyeongjoExtraBold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
