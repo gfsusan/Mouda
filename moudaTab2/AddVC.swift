@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddVC: UIViewController, UITextViewDelegate {
+class AddVC: UIViewController, UITextViewDelegate, UITabBarControllerDelegate {
 
     @IBOutlet weak var lineTextView: UITextView!
     @IBOutlet weak var pageTextView: UITextField!
@@ -16,10 +16,13 @@ class AddVC: UIViewController, UITextViewDelegate {
     @IBAction func selectBookPressed(_ sender: Any) {
     
     }
+    @IBAction func doneButtonPressed(_ sender: Any) {
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         lineTextView.delegate = self
         thoughtTextView.delegate = self
         lineTextView.text = "간직하고 싶은 책 속의 한 문장을 작성해주세요."
@@ -34,7 +37,6 @@ class AddVC: UIViewController, UITextViewDelegate {
     
     
     // Placeholder text
-    
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.accessibilityIdentifier == "lineText" || textView.accessibilityIdentifier == "thoughtText" {
             if(textView.textColor == UIColor.lightGray) {

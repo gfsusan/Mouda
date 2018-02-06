@@ -252,7 +252,11 @@
                         <viewLayoutGuide key="safeArea" id="X9f-me-yGF"/>
                     </view>
                     <navigationItem key="navigationItem" id="gZd-2z-hTP">
-                        <barButtonItem key="rightBarButtonItem" title="완료" id="Fbm-mt-LWm"/>
+                        <barButtonItem key="rightBarButtonItem" title="완료" id="Fbm-mt-LWm">
+                            <connections>
+                                <action selector="doneButtonPressed:" destination="owa-qV-pht" id="xNd-NQ-KRw"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="lineTextView" destination="AVN-76-S6V" id="Y0I-Ni-L3B"/>
