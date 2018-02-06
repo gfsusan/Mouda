@@ -156,20 +156,10 @@
                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                             </textView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4N3-OE-FbM">
-                                                                <rect key="frame" x="105.5" y="190" width="132" height="44"/>
+                                                                <rect key="frame" x="133" y="190" width="77" height="44"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="P - " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xhz-g2-x4d">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="N7K-lT-xWJ"/>
-                                                                            <constraint firstAttribute="height" constant="44" id="fd2-qv-7D9"/>
-                                                                        </constraints>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                        <nil key="textColor"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="123" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nks-Dv-bQW">
-                                                                        <rect key="frame" x="44" y="0.0" width="88" height="44"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="38.5" height="44"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="44" id="dK2-PV-ZpA"/>
                                                                         </constraints>
@@ -177,9 +167,18 @@
                                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                                     </textField>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Page" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xhz-g2-x4d">
+                                                                        <rect key="frame" x="38.5" y="0.0" width="38.5" height="44"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="44" id="fd2-qv-7D9"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
                                                                 </subviews>
                                                                 <constraints>
-                                                                    <constraint firstItem="Nks-Dv-bQW" firstAttribute="width" secondItem="Xhz-g2-x4d" secondAttribute="width" multiplier="2:1" id="aMH-TW-Sox"/>
+                                                                    <constraint firstItem="Nks-Dv-bQW" firstAttribute="width" relation="greaterThanOrEqual" secondItem="Xhz-g2-x4d" secondAttribute="width" id="l6G-yf-k8E"/>
                                                                 </constraints>
                                                             </stackView>
                                                         </subviews>
@@ -213,6 +212,9 @@
                                                     <constraint firstAttribute="height" constant="60" id="6ch-Hr-nGw"/>
                                                 </constraints>
                                                 <state key="normal" title="책 선택"/>
+                                                <connections>
+                                                    <action selector="selectBookPressed:" destination="owa-qV-pht" eventType="touchUpInside" id="eYR-eo-XbF"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -249,11 +251,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="X9f-me-yGF"/>
                     </view>
-                    <navigationItem key="navigationItem" id="gZd-2z-hTP"/>
+                    <navigationItem key="navigationItem" id="gZd-2z-hTP">
+                        <barButtonItem key="rightBarButtonItem" title="완료" id="Fbm-mt-LWm"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="lineTextView" destination="AVN-76-S6V" id="Y0I-Ni-L3B"/>
+                        <outlet property="pageTextView" destination="Nks-Dv-bQW" id="VKd-Sp-53m"/>
+                        <outlet property="thoughtTextView" destination="hag-BS-CSl" id="zML-ST-bhw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jIW-sN-LaU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="817" y="829"/>
+            <point key="canvasLocation" x="816.79999999999995" y="828.93553223388312"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="EGA-PG-4Yl">
