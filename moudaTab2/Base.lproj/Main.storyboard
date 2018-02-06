@@ -22,7 +22,7 @@
         <scene sceneID="TEE-Em-mcI">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DVG-za-uDk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="집" image="MyFeed copy" id="mYo-2n-cRh"/>
+                    <tabBarItem key="tabBarItem" title="집" image="Home" id="mYo-2n-cRh"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="36P-mR-mk1">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -75,7 +75,7 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="gGh-Dg-lp3">
                                             <rect key="frame" x="8" y="16" width="359" height="30"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Book" translatesAutoresizingMaskIntoConstraints="NO" id="QDT-P4-Ndg">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Book2" translatesAutoresizingMaskIntoConstraints="NO" id="QDT-P4-Ndg">
                                                     <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="NkI-P9-afw"/>
@@ -292,7 +292,7 @@
         <scene sceneID="v0N-b1-taz">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jvl-xV-egZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="새 글" image="New copy" id="hlf-qe-oor"/>
+                    <tabBarItem key="tabBarItem" title="새 글" image="Add" id="hlf-qe-oor"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="flp-7G-Xtj">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -311,7 +311,7 @@
         <scene sceneID="eeM-jK-5j1">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="urb-Y2-RPa" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="설정" image="More copy" id="Hra-52-fUH"/>
+                    <tabBarItem key="tabBarItem" title="설정" image="More" id="Hra-52-fUH"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5oW-yB-b2A">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -328,9 +328,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Book" width="30" height="30"/>
-        <image name="More copy" width="30" height="30"/>
-        <image name="MyFeed copy" width="30" height="30"/>
-        <image name="New copy" width="30" height="30"/>
+        <image name="Add" width="25" height="25"/>
+        <image name="Book2" width="25" height="25"/>
+        <image name="Home" width="25" height="25"/>
+        <image name="More" width="25" height="25"/>
     </resources>
 </document>
