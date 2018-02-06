@@ -14,7 +14,7 @@
         <scene sceneID="TEE-Em-mcI">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DVG-za-uDk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="Icon-Small" id="mYo-2n-cRh"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="tabBarItem:mYo-2n-cRh:image" id="mYo-2n-cRh"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="36P-mR-mk1">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -229,7 +229,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r44-N9-fNV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1530" y="116"/>
+            <point key="canvasLocation" x="817" y="830"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Evu-PO-4TZ">
@@ -243,17 +243,51 @@
                     </tabBar>
                     <connections>
                         <segue destination="DVG-za-uDk" kind="relationship" relationship="viewControllers" id="ZTN-8g-sVb"/>
+                        <segue destination="jvl-xV-egZ" kind="relationship" relationship="viewControllers" id="aeU-8G-qcH"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dtQ-U3-9R4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-730" y="116"/>
+            <point key="canvasLocation" x="-812" y="830"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="v0N-b1-taz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jvl-xV-egZ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="hlf-qe-oor"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="flp-7G-Xtj">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fyy-LI-4ue" kind="relationship" relationship="rootViewController" id="Rp3-8O-76O"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IMW-dq-Mia" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="46" y="830"/>
         </scene>
     </scenes>
     <resources>
         <image name="Book2" width="512" height="512"/>
         <image name="FavoriteFeed2" width="512" height="512"/>
-        <image name="Icon-Small" width="29" height="29"/>
         <image name="Lock copy" width="512" height="512"/>
+        <image name="tabBarItem:mYo-2n-cRh:image" width="29" height="29">
+            <mutableData key="keyedArchiveRepresentation">
+YnBsaXN0MDDUAQIDBAUGOzxYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBMU
+GR4fJSYsLzU4VSRudWxs1QkKCwwNDg8QERJWTlNTaXplViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBz
+V05TQ29sb3KAAoAMEiTAAACAA4AKWHsyOSwgMjl90hUKFhhaTlMub2JqZWN0c6EXgASACdIVChoYohsc
+gAWABoAJEAXTIAohIiMkV05TLmJhc2VbTlMucmVsYXRpdmWAAIAIgAdfEHNmaWxlOi8vL0FwcGxpY2F0
+aW9ucy9YY29kZS5hcHAvQ29udGVudHMvUGx1Z0lucy9JREVJbnRlcmZhY2VCdWlsZGVyS2l0LmZyYW1l
+d29yay9SZXNvdXJjZXMvSUJNaXNzaW5nSW1hZ2VHbHlwaC50aWZm0icoKSpaJGNsYXNzbmFtZVgkY2xh
+c3Nlc1VOU1VSTKIpK1hOU09iamVjdNInKC0uV05TQXJyYXmiLSvTMDEKMjM0V05TV2hpdGVcTlNDb2xv
+clNwYWNlRDAgMAAQA4AL0icoNjdXTlNDb2xvcqI2K9InKDk6V05TSW1hZ2WiOStfEA9OU0tleWVkQXJj
+aGl2ZXLRPT5Ucm9vdIABAAgAEQAaACMALQAyADcARQBLAFYAXQBkAHEAeACAAIIAhACJAIsAjQCWAJsA
+pgCoAKoArACxALQAtgC4ALoAvADDAMsA1wDZANsA3QFTAVgBYwFsAXIBdQF+AYMBiwGOAZUBnQGqAa8B
+sQGzAbgBwAHDAcgB0AHTAeUB6AHtAAAAAAAAAgEAAAAAAAAAPwAAAAAAAAAAAAAAAAAAAe8
+</mutableData>
+        </image>
     </resources>
 </document>
