@@ -24,11 +24,21 @@ class FeedTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        // Navigation Bar Item
+        let imageView = UIImageView(image: #imageLiteral(resourceName: "Logo"))
+        imageView.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
+        imageView.contentMode = .scaleAspectFit
+        navigationItem.titleView = imageView
+        
+        let bookmarkButton = UIButton(type: .system)
+        bookmarkButton.setImage(#imageLiteral(resourceName: "FavoriteFeed2").withRenderingMode(.alwaysOriginal), for: .normal)
+        bookmarkButton.frame = CGRect(x: 0, y: 0, width: 34, height:34)
+        bookmarkButton.contentMode = .scaleAspectFit
+        navigationItem.rightBarButtonItems = [UIBarButtonItem(customView:bookmarkButton)]
+        
+        
+        
+        
         self.tableView.separatorColor = UIColor.clear
         let feed1 = Feed(person: person1, book: book1, page: 110, line: "이기심은 자기 삶을 원하는대로 사는 것이 아니다. 남들에게 자기가 원하는대로 살아달라고 요구하는 것이다.", time: Date())
         let feed2 = Feed(person: person2, book: book2, page: 128, line: "남들에게 '고마운 존재'이기보다 '필요한 존재'가 되어라. 상대가 당신에게 고마워하기보다는 기대하고 의지하게 만들어라.", time: Date())
