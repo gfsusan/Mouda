@@ -16,6 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // 네비게이션 바 색상
+        UINavigationBar.appearance().barTintColor = UIColor(displayP3Red: 82/255, green: 62/255, blue: 53/255, alpha: 1)
+        UINavigationBar.appearance().tintColor = UIColor.white
+        
+        // status bar 아이템 색상 변경
+        UIApplication.shared.statusBarStyle = .lightContent
+        
+        
         return true
     }
 
