@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6631164420281A5A00357A3A /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6631164320281A5A00357A3A /* Media.xcassets */; };
 		669990EA20242F2B00410F21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669990E920242F2B00410F21 /* AppDelegate.swift */; };
 		669990EC20242F2B00410F21 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669990EB20242F2B00410F21 /* ViewController.swift */; };
 		669990EF20242F2B00410F21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 669990ED20242F2B00410F21 /* Main.storyboard */; };
@@ -19,10 +18,10 @@
 		66999102202437F200410F21 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669990FF202437F200410F21 /* Book.swift */; };
 		669991042024386900410F21 /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669991032024386900410F21 /* FeedTableViewController.swift */; };
 		66F902DE202961F40047C959 /* AddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F902DD202961F40047C959 /* AddVC.swift */; };
+		7AD0AF6B2029B3F3002E7F60 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AD0AF6A2029B3F3002E7F60 /* Media.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6631164320281A5A00357A3A /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		669990E620242F2B00410F21 /* moudaTab2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = moudaTab2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		669990E920242F2B00410F21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		669990EB20242F2B00410F21 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +35,7 @@
 		669990FF202437F200410F21 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		669991032024386900410F21 /* FeedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
 		66F902DD202961F40047C959 /* AddVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVC.swift; sourceTree = "<group>"; };
+		7AD0AF6A2029B3F3002E7F60 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +71,7 @@
 				669990E920242F2B00410F21 /* AppDelegate.swift */,
 				669990EB20242F2B00410F21 /* ViewController.swift */,
 				669990ED20242F2B00410F21 /* Main.storyboard */,
-				6631164320281A5A00357A3A /* Media.xcassets */,
+				7AD0AF6A2029B3F3002E7F60 /* Media.xcassets */,
 				669990F020242F2B00410F21 /* Assets.xcassets */,
 				669990F220242F2B00410F21 /* LaunchScreen.storyboard */,
 				669990F520242F2B00410F21 /* Info.plist */,
@@ -146,7 +146,7 @@
 			files = (
 				669990F420242F2B00410F21 /* LaunchScreen.storyboard in Resources */,
 				669990F120242F2B00410F21 /* Assets.xcassets in Resources */,
-				6631164420281A5A00357A3A /* Media.xcassets in Resources */,
+				7AD0AF6B2029B3F3002E7F60 /* Media.xcassets in Resources */,
 				669990EF20242F2B00410F21 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
