@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -34,34 +35,39 @@
                                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="간직하고 싶은 책 속의 한 문장을 작성해주세요." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="AVN-76-S6V">
                                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="190"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <accessibility key="accessibilityConfiguration" identifier="lineText"/>
                                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                             </textView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4N3-OE-FbM">
-                                                                <rect key="frame" x="133" y="190" width="77" height="44"/>
+                                                                <rect key="frame" x="121.5" y="190" width="100" height="44"/>
                                                                 <subviews>
-                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="123" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nks-Dv-bQW">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="38.5" height="44"/>
+                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="123" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="sK2-aL-lrc">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="44"/>
+                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        <accessibility key="accessibilityConfiguration" identifier="pageText"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="height" constant="44" id="dK2-PV-ZpA"/>
+                                                                            <constraint firstAttribute="height" constant="44" id="Yqx-tP-KJx"/>
                                                                         </constraints>
-                                                                        <nil key="textColor"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                                                    </textField>
+                                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
+                                                                    </textView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Page" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xhz-g2-x4d">
-                                                                        <rect key="frame" x="38.5" y="0.0" width="38.5" height="44"/>
+                                                                        <rect key="frame" x="50" y="0.0" width="50" height="44"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="44" id="fd2-qv-7D9"/>
                                                                         </constraints>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <size key="shadowOffset" width="0.0" height="0.0"/>
                                                                     </label>
                                                                 </subviews>
                                                                 <constraints>
-                                                                    <constraint firstItem="Nks-Dv-bQW" firstAttribute="width" relation="greaterThanOrEqual" secondItem="Xhz-g2-x4d" secondAttribute="width" id="l6G-yf-k8E"/>
+                                                                    <constraint firstItem="sK2-aL-lrc" firstAttribute="width" secondItem="Xhz-g2-x4d" secondAttribute="width" id="FU3-Ue-qtj"/>
+                                                                    <constraint firstItem="sK2-aL-lrc" firstAttribute="width" secondItem="Xhz-g2-x4d" secondAttribute="height" multiplier="25:22" id="h1z-SW-rlK"/>
                                                                 </constraints>
                                                             </stackView>
                                                         </subviews>
@@ -82,6 +88,7 @@
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="기록한 문장에 대한 본인만의 생각이나 감정을 표현해주세요." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hag-BS-CSl">
                                                 <rect key="frame" x="8" y="334" width="359" height="80"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="thoughtText"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="80" id="Bkx-Ay-jrq"/>
                                                 </constraints>
@@ -143,7 +150,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="lineTextView" destination="AVN-76-S6V" id="Y0I-Ni-L3B"/>
-                        <outlet property="pageTextView" destination="Nks-Dv-bQW" id="VKd-Sp-53m"/>
+                        <outlet property="pageTextView" destination="sK2-aL-lrc" id="m8K-Gk-l6J"/>
                         <outlet property="thoughtTextView" destination="hag-BS-CSl" id="zML-ST-bhw"/>
                     </connections>
                 </viewController>
