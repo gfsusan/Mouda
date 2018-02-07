@@ -19,18 +19,12 @@ class AddVC: UIViewController, UITextViewDelegate, UITabBarControllerDelegate {
     
     }
     @IBAction func doneButtonPressed(_ sender: Any) {
-        dataCenter.feeds.append(Feed())
+        dataCenter.feeds.append(Feed(book: Book(), page: Int(pageTextView.text)!, line: lineTextView.text, thought: thoughtTextView.text))
         dataCenter.save()
-        
-        if let pageNum = Int(pageTextView.text) {
-            if let data = delegate {
-                data.feeds.append(Feed(book: Book(), page: pageNum, line: lineTextView.text, thought: thoughtTextView.text))
-            }
-        }
-        
-       
     }
     
+
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
