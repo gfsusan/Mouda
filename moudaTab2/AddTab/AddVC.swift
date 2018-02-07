@@ -9,6 +9,8 @@
 import UIKit
 
 class AddVC: UIViewController, UITextViewDelegate, UITabBarControllerDelegate {
+    
+    var delegate:DataCenter?
 
     @IBOutlet weak var lineTextView: UITextView!
     @IBOutlet weak var pageTextView: UITextField!
@@ -17,7 +19,13 @@ class AddVC: UIViewController, UITextViewDelegate, UITabBarControllerDelegate {
     
     }
     @IBAction func doneButtonPressed(_ sender: Any) {
+        dataCenter.feeds.append(Feed())
+        dataCenter.save()
         
+        if let data = delegate {
+            data.feeds.append(Feed(book: Book(), page: 213, line: lineTextView.text, thought: thoughtTextView.text))
+        }
+       
     }
     
     override func viewDidLoad() {
