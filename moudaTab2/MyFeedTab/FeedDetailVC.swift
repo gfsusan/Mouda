@@ -25,17 +25,22 @@ class FeedDetailVC: UIViewController {
         // Do any additional setup after loading the view.
         
         // attribute text style
-        let style = NSMutableParagraphStyle()
-        style.lineSpacing = 5
-        style.alignment = .center
-        let attributes = [NSAttributedStringKey.paragraphStyle: style]
+        let lineStyle = NSMutableParagraphStyle()
+        lineStyle.lineSpacing = 5
+        lineStyle.alignment = .justified
+        let lineAttributes = [NSAttributedStringKey.paragraphStyle: lineStyle]
+        
+        let thoughtStyle = NSMutableParagraphStyle()
+        thoughtStyle.lineSpacing = 5
+        thoughtStyle.alignment = .center
+        let thoughtAttributes = [NSAttributedStringKey.paragraphStyle: thoughtStyle]
         
         if let myFeed = feed {
             titleLabel.text = myFeed.book.title
             dateLabel.text = "\(formatDate.string(from: myFeed.date))"
-            lineLabel.attributedText = NSAttributedString(string: myFeed.line, attributes: attributes)
+            lineLabel.attributedText = NSAttributedString(string: myFeed.line, attributes: lineAttributes)
             pageLabel.text = "Page \(myFeed.page)"
-            thoughtLabel.attributedText = NSAttributedString(string: myFeed.thought, attributes: attributes)
+            thoughtLabel.attributedText = NSAttributedString(string: myFeed.thought, attributes: thoughtAttributes)
         }
     }
 

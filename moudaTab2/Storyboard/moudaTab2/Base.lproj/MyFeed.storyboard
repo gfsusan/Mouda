@@ -189,8 +189,8 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M3G-mS-H0Z">
                                                 <rect key="frame" x="0.0" y="46" width="375" height="112"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" semanticContentAttribute="spatial" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dZ7-X6-y58">
-                                                        <rect key="frame" x="8" y="16" width="359" height="80"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" semanticContentAttribute="spatial" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dZ7-X6-y58">
+                                                        <rect key="frame" x="16" y="16" width="343" height="80"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="FzK-Gz-P9r"/>
                                                         </constraints>
@@ -202,10 +202,10 @@
                                                 <color key="backgroundColor" red="0.97636479139328003" green="0.97653168439865112" blue="0.97635418176651001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstItem="dZ7-X6-y58" firstAttribute="top" secondItem="M3G-mS-H0Z" secondAttribute="top" constant="16" id="28W-jv-ElC"/>
-                                                    <constraint firstItem="dZ7-X6-y58" firstAttribute="leading" secondItem="M3G-mS-H0Z" secondAttribute="leading" constant="8" id="4ck-Ap-Zce"/>
+                                                    <constraint firstItem="dZ7-X6-y58" firstAttribute="leading" secondItem="M3G-mS-H0Z" secondAttribute="leading" constant="16" id="4ck-Ap-Zce"/>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" secondItem="dZ7-X6-y58" secondAttribute="height" constant="32" id="KEZ-rQ-DtK"/>
                                                     <constraint firstAttribute="bottom" secondItem="dZ7-X6-y58" secondAttribute="bottom" constant="16" id="fY5-rL-8ga"/>
-                                                    <constraint firstAttribute="trailing" secondItem="dZ7-X6-y58" secondAttribute="trailing" constant="8" id="wEV-T9-Kn5"/>
+                                                    <constraint firstAttribute="trailing" secondItem="dZ7-X6-y58" secondAttribute="trailing" constant="16" id="wEV-T9-Kn5"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Page #" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezr-qH-Jvr">
