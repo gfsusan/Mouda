@@ -23,12 +23,19 @@ class FeedDetailVC: UIViewController {
 
         formatDate.dateFormat = "yyyy년 MM월 dd일"
         // Do any additional setup after loading the view.
+        
+        // attribute text style
+        let style = NSMutableParagraphStyle()
+        style.lineSpacing = 5
+        style.alignment = .center
+        let attributes = [NSAttributedStringKey.paragraphStyle: style]
+        
         if let myFeed = feed {
             titleLabel.text = myFeed.book.title
             dateLabel.text = "\(formatDate.string(from: myFeed.date))"
-            lineLabel.text = myFeed.line
+            lineLabel.attributedText = NSAttributedString(string: myFeed.line, attributes: attributes)
             pageLabel.text = "Page \(myFeed.page)"
-            thoughtLabel.text = myFeed.thought
+            thoughtLabel.attributedText = NSAttributedString(string: myFeed.thought, attributes: attributes)
         }
     }
 

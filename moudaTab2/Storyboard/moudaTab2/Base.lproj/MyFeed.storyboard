@@ -177,44 +177,56 @@
                                                     <constraint firstItem="jEG-Do-roM" firstAttribute="width" secondItem="DkG-fq-ASi" secondAttribute="width" multiplier="3:10" id="SX5-Ir-2HK"/>
                                                 </constraints>
                                             </stackView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" semanticContentAttribute="spatial" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dZ7-X6-y58">
-                                                <rect key="frame" x="0.0" y="46" width="375" height="80"/>
-                                                <color key="backgroundColor" red="0.97636479139999999" green="0.97653168440000004" blue="0.9763541818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="CZi-oY-Wsv"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="NanumMyeongjoOTF" family="NanumMyeongjoOTF" pointSize="15"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N72-Ic-ceS">
-                                                <rect key="frame" x="0.0" y="157.5" width="375" height="60"/>
+                                                <rect key="frame" x="8" y="205.5" width="359" height="60"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="hKx-uQ-G3j"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="vM7-pM-fPl"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="NanumMyeongjoOTF" family="NanumMyeongjoOTF" pointSize="14"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M3G-mS-H0Z">
+                                                <rect key="frame" x="0.0" y="46" width="375" height="112"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" semanticContentAttribute="spatial" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dZ7-X6-y58">
+                                                        <rect key="frame" x="8" y="16" width="359" height="80"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="FzK-Gz-P9r"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="NanumMyeongjoOTF" family="NanumMyeongjoOTF" pointSize="15"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.97636479139328003" green="0.97653168439865112" blue="0.97635418176651001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="dZ7-X6-y58" firstAttribute="top" secondItem="M3G-mS-H0Z" secondAttribute="top" constant="16" id="28W-jv-ElC"/>
+                                                    <constraint firstItem="dZ7-X6-y58" firstAttribute="leading" secondItem="M3G-mS-H0Z" secondAttribute="leading" constant="8" id="4ck-Ap-Zce"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" secondItem="dZ7-X6-y58" secondAttribute="height" constant="32" id="KEZ-rQ-DtK"/>
+                                                    <constraint firstAttribute="bottom" secondItem="dZ7-X6-y58" secondAttribute="bottom" constant="16" id="fY5-rL-8ga"/>
+                                                    <constraint firstAttribute="trailing" secondItem="dZ7-X6-y58" secondAttribute="trailing" constant="8" id="wEV-T9-Kn5"/>
+                                                </constraints>
+                                            </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Page #" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezr-qH-Jvr">
-                                                <rect key="frame" x="166.5" y="134" width="41" height="15.5"/>
+                                                <rect key="frame" x="167" y="174" width="41" height="15.5"/>
                                                 <fontDescription key="fontDescription" name="NanumMyeongjoOTF" family="NanumMyeongjoOTF" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstItem="N72-Ic-ceS" firstAttribute="leading" secondItem="2v8-E0-WQs" secondAttribute="leading" constant="8" id="7b3-Dt-VkI"/>
                                             <constraint firstItem="DkG-fq-ASi" firstAttribute="leading" secondItem="2v8-E0-WQs" secondAttribute="leading" constant="8" id="8NM-P6-FiH"/>
-                                            <constraint firstItem="ezr-qH-Jvr" firstAttribute="centerX" secondItem="2v8-E0-WQs" secondAttribute="centerX" id="ChI-xh-c5z"/>
                                             <constraint firstAttribute="trailing" secondItem="DkG-fq-ASi" secondAttribute="trailing" constant="8" id="D7N-fN-Otj"/>
-                                            <constraint firstItem="N72-Ic-ceS" firstAttribute="top" secondItem="ezr-qH-Jvr" secondAttribute="bottom" constant="8" id="Hve-3s-Acc"/>
-                                            <constraint firstItem="ezr-qH-Jvr" firstAttribute="top" secondItem="dZ7-X6-y58" secondAttribute="bottom" constant="8" id="RmI-UR-h5P"/>
-                                            <constraint firstItem="dZ7-X6-y58" firstAttribute="leading" secondItem="2v8-E0-WQs" secondAttribute="leading" id="coG-za-f6s"/>
-                                            <constraint firstAttribute="trailing" secondItem="N72-Ic-ceS" secondAttribute="trailing" id="di7-qa-Zdi"/>
+                                            <constraint firstItem="N72-Ic-ceS" firstAttribute="top" secondItem="ezr-qH-Jvr" secondAttribute="bottom" constant="16" id="Jeu-BR-voC"/>
+                                            <constraint firstAttribute="trailing" secondItem="N72-Ic-ceS" secondAttribute="trailing" constant="8" id="aem-Sg-XqR"/>
+                                            <constraint firstItem="ezr-qH-Jvr" firstAttribute="centerX" secondItem="2v8-E0-WQs" secondAttribute="centerX" id="b8q-wy-hGs"/>
                                             <constraint firstItem="DkG-fq-ASi" firstAttribute="top" secondItem="2v8-E0-WQs" secondAttribute="top" constant="8" id="dqc-Mm-6Ff"/>
-                                            <constraint firstAttribute="trailing" secondItem="dZ7-X6-y58" secondAttribute="trailing" id="g6w-4S-fyo"/>
-                                            <constraint firstItem="N72-Ic-ceS" firstAttribute="leading" secondItem="2v8-E0-WQs" secondAttribute="leading" id="r9P-ZP-rVC"/>
-                                            <constraint firstItem="dZ7-X6-y58" firstAttribute="top" secondItem="DkG-fq-ASi" secondAttribute="bottom" constant="8" id="tCx-AQ-qwm"/>
+                                            <constraint firstItem="ezr-qH-Jvr" firstAttribute="top" secondItem="M3G-mS-H0Z" secondAttribute="bottom" constant="16" id="phS-1t-X3L"/>
+                                            <constraint firstAttribute="trailing" secondItem="M3G-mS-H0Z" secondAttribute="trailing" id="pxv-UU-Ki1"/>
+                                            <constraint firstItem="M3G-mS-H0Z" firstAttribute="top" secondItem="DkG-fq-ASi" secondAttribute="bottom" constant="8" id="r4t-cM-ga2"/>
+                                            <constraint firstItem="M3G-mS-H0Z" firstAttribute="leading" secondItem="2v8-E0-WQs" secondAttribute="leading" id="uiw-d1-kjf"/>
                                         </constraints>
                                     </view>
                                 </subviews>
