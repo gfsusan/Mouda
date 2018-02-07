@@ -9,11 +9,27 @@
 import UIKit
 
 class FeedDetailVC: UIViewController {
-
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var lineLabel: UILabel!
+    @IBOutlet weak var pageLabel: UILabel!
+    @IBOutlet weak var thoughtLabel: UILabel!
+    
+    var feed:Feed?
+    let formatDate = DateFormatter()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        formatDate.dateFormat = "yyyy년 MM월 dd일"
         // Do any additional setup after loading the view.
+        if let myFeed = feed {
+            titleLabel.text = myFeed.book.title
+            dateLabel.text = "\(formatDate.string(from: myFeed.date))"
+            lineLabel.text = myFeed.line
+            pageLabel.text = "Page \(myFeed.page)"
+            thoughtLabel.text = myFeed.thought
+        }
     }
 
     override func didReceiveMemoryWarning() {
