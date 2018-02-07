@@ -9,27 +9,33 @@
 import UIKit
 
 class AddVC: UIViewController, UITextViewDelegate, UITabBarControllerDelegate {
+    
+    var delegate:DataCenter?
 
     @IBOutlet weak var lineTextView: UITextView!
-    @IBOutlet weak var pageTextView: UITextField!
+    @IBOutlet weak var pageTextView: UITextView!
     @IBOutlet weak var thoughtTextView: UITextView!
     @IBAction func selectBookPressed(_ sender: Any) {
     
     }
     @IBAction func doneButtonPressed(_ sender: Any) {
-        
+        dataCenter.feeds.append(Feed(book: Book(), page: Int(pageTextView.text)!, line: lineTextView.text, thought: thoughtTextView.text))
+        dataCenter.save()
     }
     
+
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
         lineTextView.delegate = self
+        pageTextView.delegate = self
         thoughtTextView.delegate = self
         lineTextView.text = "간직하고 싶은 책 속의 한 문장을 작성해주세요."
+        pageTextView.text = "123"
         thoughtTextView.text = "기록한 문장에 대한 본인만의 생각이나 감정을 표현해주세요."
-        lineTextView.accessibilityIdentifier = "lineText"
-        thoughtTextView.accessibilityIdentifier = "thoughtText"
         lineTextView.textColor = UIColor.lightGray
+        pageTextView.textColor = UIColor.lightGray
         thoughtTextView.textColor = UIColor.lightGray
         // Do any additional setup after loading the view.
 
@@ -38,11 +44,9 @@ class AddVC: UIViewController, UITextViewDelegate, UITabBarControllerDelegate {
     
     // Placeholder text
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.accessibilityIdentifier == "lineText" || textView.accessibilityIdentifier == "thoughtText" {
-            if(textView.textColor == UIColor.lightGray) {
-                textView.text = nil
-                textView.textColor = UIColor.black
-            }
+        if(textView.textColor == UIColor.lightGray) {
+            textView.text = nil
+            textView.textColor = UIColor.black
         }
         textView.becomeFirstResponder()
     }
@@ -55,6 +59,8 @@ class AddVC: UIViewController, UITextViewDelegate, UITabBarControllerDelegate {
                 textView.text = "간직하고 싶은 책 속의 한 문장을 작성해주세요."
             } else if textView.accessibilityIdentifier == "thoughtText" {
                 textView.text = "기록한 문장에 대한 본인만의 생각이나 감정을 표현해주세요."
+            } else if textView.accessibilityIdentifier == "pageText" {
+                textView.text = "123"
             }
         }
         textView.resignFirstResponder()

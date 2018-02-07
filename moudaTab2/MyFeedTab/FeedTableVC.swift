@@ -11,7 +11,6 @@ import UIKit
 class FeedTableVC: UITableViewController {
     
     var feeds:[Feed] = dataCenter.feeds
-    
     let formatdate = DateFormatter()
     
     override func viewDidLoad() {
@@ -59,7 +58,7 @@ class FeedTableVC: UITableViewController {
         var feed = feeds[indexPath.row]
         
         retCell.titleLabel.text = "\(feed.book.title)"
-        retCell.lineLabel.text = feed.line
+//        retCell.lineLabel.text = feed.line
         retCell.dateLabel.text = "\(formatdate.string(from: feed.date))"
         
         let style = NSMutableParagraphStyle()
