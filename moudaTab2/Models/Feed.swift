@@ -9,37 +9,43 @@
 import Foundation
 import UIKit
 
-class Feed {
-    let person:Person
+class Feed: NSObject, NSCoding {
     let book:Book
-//    var image:UIImage?
     var line:String
-    var thought:String?
+    var thought:String
     var page:Int
-    var lock:Bool?
-    let time:Date
-//
-    init(person:Person, book:Book, page:Int, line:String, time:Date) {
-        self.person = person
+    let date:Date
+
+    init(book:Book, page:Int, line:String, thought:String) {
         self.book = book
-//        self.image = image
         self.line = line
-//        self.thought = thought
+        self.thought = thought
         self.page = page
-//        self.lock = lock
-        self.time = Date()
+        self.date = Date()
     }
     
-//    func likeByOther(person:Person) {
-//        // 좋아요 누른 [person]에 없으면 추가, 있으면 아무 것도 안함 .
-//    }
-//    
-//    func toggleLock () {
-//        self.lock = !self.lock
-//        if lock == true {
-//            print("locked")
-//        } else {
-//            print("unlocked")
-//        }
-//    }
+    override init() {
+        book = Book()
+        line = "DefaultLine"
+        thought = "DefaultThought"
+        page = 0
+        date = Date()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        self.book = aDecoder.decodeObject(forKey: "book") as! Book
+        self.line = aDecoder.decodeObject(forKey: "line") as! String
+        self.thought = aDecoder.decodeObject(forKey: "thought") as! String
+        self.page = aDecoder.decodeObject(forKey: "page") as! Int
+        self.date = aDecoder.decodeObject(forKey: "time")
+            as! Date
+    }
+    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(self.book, forKey: "book")
+        aCoder.encode(self.line, forKey: "line")
+        aCoder.encode(self.thought, forKey: "thought")
+        aCoder.encode(self.page, forKey: "page")
+        aCoder.encode(self.date, forKey: "date")
+    }
 }
