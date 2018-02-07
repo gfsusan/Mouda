@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FeedTableViewController: UITableViewController {
+class FeedTableVC: UITableViewController {
 
     var person1 = Person(name:"Sujin")
     var person2 = Person(name:"Taewook")
@@ -29,16 +29,6 @@ class FeedTableViewController: UITableViewController {
         imageView.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
         imageView.contentMode = .scaleAspectFit
         navigationItem.titleView = imageView
-        
-        let bookmarkButton = UIButton(type: .system)
-        bookmarkButton.setImage(#imageLiteral(resourceName: "FavoriteFeed30").withRenderingMode(.alwaysOriginal), for: .normal)
-        bookmarkButton.frame = CGRect(x: 0, y: 0, width: 34, height:34)
-        bookmarkButton.contentMode = .scaleAspectFit
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView:bookmarkButton)
-        
-        let blankButton = UIButton(type: .system)
-        blankButton.isEnabled = false
-        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: blankButton)
         
         
         self.tableView.separatorColor = UIColor.clear
@@ -72,7 +62,7 @@ class FeedTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as? SecondTabBarTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "myFeedCell", for: indexPath) as? MyFeedCell
         
         guard let retCell = cell else {
             return cell!

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondTabBarTableViewCell: UITableViewCell {
+class MyFeedCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var lineLabel: UILabel!

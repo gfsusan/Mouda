@@ -7,16 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		66728F0F202A97240061C168 /* BookmarkTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66728F0E202A97240061C168 /* BookmarkTableVC.swift */; };
+		66728F11202A99480061C168 /* AddBookmarkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66728F10202A99470061C168 /* AddBookmarkVC.swift */; };
+		66728F13202A9C480061C168 /* FeedDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66728F12202A9C480061C168 /* FeedDetailVC.swift */; };
+		66728F19202AAE800061C168 /* MyFeed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66728F17202AAE800061C168 /* MyFeed.storyboard */; };
+		66728F1B202AAEA20061C168 /* Add.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66728F1A202AAEA20061C168 /* Add.storyboard */; };
+		66728F20202AAF420061C168 /* Bookmark.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66728F1E202AAF420061C168 /* Bookmark.storyboard */; };
 		669990EA20242F2B00410F21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669990E920242F2B00410F21 /* AppDelegate.swift */; };
 		669990EC20242F2B00410F21 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669990EB20242F2B00410F21 /* ViewController.swift */; };
 		669990EF20242F2B00410F21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 669990ED20242F2B00410F21 /* Main.storyboard */; };
 		669990F120242F2B00410F21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 669990F020242F2B00410F21 /* Assets.xcassets */; };
 		669990F420242F2B00410F21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 669990F220242F2B00410F21 /* LaunchScreen.storyboard */; };
-		669990FC202437D200410F21 /* SecondTabBarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669990FB202437D200410F21 /* SecondTabBarTableViewCell.swift */; };
+		669990FC202437D200410F21 /* MyFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669990FB202437D200410F21 /* MyFeedCell.swift */; };
 		66999100202437F200410F21 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669990FD202437F100410F21 /* Feed.swift */; };
 		66999101202437F200410F21 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669990FE202437F200410F21 /* Person.swift */; };
 		66999102202437F200410F21 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669990FF202437F200410F21 /* Book.swift */; };
-		669991042024386900410F21 /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669991032024386900410F21 /* FeedTableViewController.swift */; };
+		669991042024386900410F21 /* FeedTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669991032024386900410F21 /* FeedTableVC.swift */; };
 		66F902DE202961F40047C959 /* AddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F902DD202961F40047C959 /* AddVC.swift */; };
 		7AD0AF6B2029B3F3002E7F60 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AD0AF6A2029B3F3002E7F60 /* Media.xcassets */; };
 		7AD0AF702029C86A002E7F60 /* NanumMyeongjo.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7AD0AF6D2029C86A002E7F60 /* NanumMyeongjo.otf */; };
@@ -27,6 +33,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		66728F0E202A97240061C168 /* BookmarkTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkTableVC.swift; sourceTree = "<group>"; };
+		66728F10202A99470061C168 /* AddBookmarkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookmarkVC.swift; sourceTree = "<group>"; };
+		66728F12202A9C480061C168 /* FeedDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailVC.swift; sourceTree = "<group>"; };
+		66728F18202AAE800061C168 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = moudaTab2/Base.lproj/MyFeed.storyboard; sourceTree = "<group>"; };
+		66728F1A202AAEA20061C168 /* Add.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Add.storyboard; sourceTree = "<group>"; };
+		66728F1F202AAF420061C168 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = moudaTab2/Storyboard/moudaTab2/Base.lproj/Bookmark.storyboard; sourceTree = "<group>"; };
 		669990E620242F2B00410F21 /* moudaTab2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = moudaTab2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		669990E920242F2B00410F21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		669990EB20242F2B00410F21 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -34,11 +46,11 @@
 		669990F020242F2B00410F21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		669990F320242F2B00410F21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		669990F520242F2B00410F21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		669990FB202437D200410F21 /* SecondTabBarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTabBarTableViewCell.swift; sourceTree = "<group>"; };
+		669990FB202437D200410F21 /* MyFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFeedCell.swift; sourceTree = "<group>"; };
 		669990FD202437F100410F21 /* Feed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		669990FE202437F200410F21 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		669990FF202437F200410F21 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
-		669991032024386900410F21 /* FeedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
+		669991032024386900410F21 /* FeedTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableVC.swift; sourceTree = "<group>"; };
 		66F902DD202961F40047C959 /* AddVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVC.swift; sourceTree = "<group>"; };
 		7AD0AF6A2029B3F3002E7F60 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		7AD0AF6D2029C86A002E7F60 /* NanumMyeongjo.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumMyeongjo.otf; sourceTree = "<group>"; };
@@ -59,6 +71,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		66728F14202A9DB50061C168 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				669990FF202437F200410F21 /* Book.swift */,
+				669990FD202437F100410F21 /* Feed.swift */,
+				669990FE202437F200410F21 /* Person.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		66728F15202A9E130061C168 /* MyFeedTab */ = {
+			isa = PBXGroup;
+			children = (
+				669991032024386900410F21 /* FeedTableVC.swift */,
+				669990FB202437D200410F21 /* MyFeedCell.swift */,
+				66728F12202A9C480061C168 /* FeedDetailVC.swift */,
+			);
+			path = MyFeedTab;
+			sourceTree = "<group>";
+		};
+		66728F16202A9E290061C168 /* AddTab */ = {
+			isa = PBXGroup;
+			children = (
+				66F902DD202961F40047C959 /* AddVC.swift */,
+			);
+			path = AddTab;
+			sourceTree = "<group>";
+		};
+		66728F1C202AAEAC0061C168 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				669990ED20242F2B00410F21 /* Main.storyboard */,
+				66728F17202AAE800061C168 /* MyFeed.storyboard */,
+				66728F1E202AAF420061C168 /* Bookmark.storyboard */,
+				66728F1A202AAEA20061C168 /* Add.storyboard */,
+				669990F220242F2B00410F21 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		66728F1D202AAEF60061C168 /* BookmarkPart */ = {
+			isa = PBXGroup;
+			children = (
+				66728F0E202A97240061C168 /* BookmarkTableVC.swift */,
+				66728F10202A99470061C168 /* AddBookmarkVC.swift */,
+			);
+			path = BookmarkPart;
+			sourceTree = "<group>";
+		};
 		669990DD20242F2B00410F21 = {
 			isa = PBXGroup;
 			children = (
@@ -78,20 +139,17 @@
 		669990E820242F2B00410F21 /* moudaTab2 */ = {
 			isa = PBXGroup;
 			children = (
+				66728F1C202AAEAC0061C168 /* Storyboard */,
+				66728F14202A9DB50061C168 /* Models */,
+				66728F15202A9E130061C168 /* MyFeedTab */,
+				66728F1D202AAEF60061C168 /* BookmarkPart */,
+				66728F16202A9E290061C168 /* AddTab */,
 				7AD0AF6C2029C7D9002E7F60 /* Fonts */,
 				669990E920242F2B00410F21 /* AppDelegate.swift */,
 				669990EB20242F2B00410F21 /* ViewController.swift */,
-				669990ED20242F2B00410F21 /* Main.storyboard */,
 				7AD0AF6A2029B3F3002E7F60 /* Media.xcassets */,
 				669990F020242F2B00410F21 /* Assets.xcassets */,
-				669990F220242F2B00410F21 /* LaunchScreen.storyboard */,
 				669990F520242F2B00410F21 /* Info.plist */,
-				669990FF202437F200410F21 /* Book.swift */,
-				669990FD202437F100410F21 /* Feed.swift */,
-				669990FE202437F200410F21 /* Person.swift */,
-				669991032024386900410F21 /* FeedTableViewController.swift */,
-				669990FB202437D200410F21 /* SecondTabBarTableViewCell.swift */,
-				66F902DD202961F40047C959 /* AddVC.swift */,
 			);
 			path = moudaTab2;
 			sourceTree = "<group>";
@@ -167,8 +225,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66728F19202AAE800061C168 /* MyFeed.storyboard in Resources */,
+				66728F1B202AAEA20061C168 /* Add.storyboard in Resources */,
 				7AD0AF762029C913002E7F60 /* NanumSquareOTFRegular.otf in Resources */,
 				669990F420242F2B00410F21 /* LaunchScreen.storyboard in Resources */,
+				66728F20202AAF420061C168 /* Bookmark.storyboard in Resources */,
 				669990F120242F2B00410F21 /* Assets.xcassets in Resources */,
 				7AD0AF6B2029B3F3002E7F60 /* Media.xcassets in Resources */,
 				7AD0AF742029C906002E7F60 /* NanumGothic.otf in Resources */,
@@ -190,9 +251,12 @@
 				66999101202437F200410F21 /* Person.swift in Sources */,
 				669990EC20242F2B00410F21 /* ViewController.swift in Sources */,
 				66999102202437F200410F21 /* Book.swift in Sources */,
-				669991042024386900410F21 /* FeedTableViewController.swift in Sources */,
+				669991042024386900410F21 /* FeedTableVC.swift in Sources */,
+				66728F13202A9C480061C168 /* FeedDetailVC.swift in Sources */,
 				66999100202437F200410F21 /* Feed.swift in Sources */,
-				669990FC202437D200410F21 /* SecondTabBarTableViewCell.swift in Sources */,
+				66728F0F202A97240061C168 /* BookmarkTableVC.swift in Sources */,
+				669990FC202437D200410F21 /* MyFeedCell.swift in Sources */,
+				66728F11202A99480061C168 /* AddBookmarkVC.swift in Sources */,
 				669990EA20242F2B00410F21 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -200,6 +264,22 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		66728F17202AAE800061C168 /* MyFeed.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				66728F18202AAE800061C168 /* Base */,
+			);
+			name = MyFeed.storyboard;
+			sourceTree = "<group>";
+		};
+		66728F1E202AAF420061C168 /* Bookmark.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				66728F1F202AAF420061C168 /* Base */,
+			);
+			name = Bookmark.storyboard;
+			sourceTree = "<group>";
+		};
 		669990ED20242F2B00410F21 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
