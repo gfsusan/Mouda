@@ -28,7 +28,7 @@ class Feed: NSObject, NSCoding {
         book = Book()
         line = "DefaultLine"
         thought = "DefaultThought"
-        page = 0
+        page = 1
         date = Date()
     }
     
@@ -36,9 +36,12 @@ class Feed: NSObject, NSCoding {
         self.book = aDecoder.decodeObject(forKey: "book") as! Book
         self.line = aDecoder.decodeObject(forKey: "line") as! String
         self.thought = aDecoder.decodeObject(forKey: "thought") as! String
-        self.page = aDecoder.decodeObject(forKey: "page") as! Int
-        self.date = aDecoder.decodeObject(forKey: "time")
-            as! Date
+        self.page = aDecoder.decodeInteger(forKey: "page")
+        if let tempDate = aDecoder.decodeObject(forKey: "time") as? Date {
+            self.date = tempDate
+        } else {
+            self.date = Date(timeIntervalSince1970: 0)
+        }
     }
     
     func encode(with aCoder: NSCoder) {

@@ -10,10 +10,7 @@ import UIKit
 
 class FeedTableVC: UITableViewController {
     
-    var book1 = Book()
-    var book2 = Book()
-    var book3 = Book()
-    var feeds:[Feed] = []
+    var feeds:[Feed] = dataCenter.feeds
     
     let formatdate = DateFormatter()
     
@@ -29,13 +26,7 @@ class FeedTableVC: UITableViewController {
         
         
         self.tableView.separatorColor = UIColor.clear
-        let feed1 = Feed()
-        let feed2 = Feed()
-        let feed3 = Feed()
-        
-        feeds.append(feed1)
-        feeds.append(feed2)
-        feeds.append(feed3)
+      
         
         formatdate.dateFormat = "yyyy년 MM월 dd일"
     }
