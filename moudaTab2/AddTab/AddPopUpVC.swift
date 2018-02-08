@@ -21,7 +21,7 @@ class AddPopUpVC: UIViewController, UITextViewDelegate, UITabBarControllerDelega
     
     }
     @IBAction func doneButtonPressed(_ sender: Any) {
-        dataCenter.feeds.append(Feed(book: Book(), page: Int(pageTextView.text)!, line: lineTextView.text, thought: thoughtTextView.text))
+        dataCenter.feeds.insert(Feed(book: Book(), page: Int(pageTextView.text)!, line: lineTextView.text, thought: thoughtTextView.text), at: 0)
         dataCenter.save()
         
 //        if let feedTableVC = feedDelegate {
