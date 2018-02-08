@@ -54,39 +54,75 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P2b-Dx-XrH">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P2b-Dx-XrH" customClass="AddBookmarkDesignable" customModule="moudaTab2" customModuleProvider="target">
                                 <rect key="frame" x="16" y="188" width="343" height="291"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I0K-1G-fCG">
-                                        <rect key="frame" x="0.0" y="8" width="343" height="67"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="gfT-rb-PbM">
+                                        <rect key="frame" x="73.5" y="231" width="196" height="44"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="87R-qU-mGS">
+                                                <rect key="frame" x="0.0" y="0.0" width="88" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="88" id="fh3-1k-qvB"/>
+                                                    <constraint firstAttribute="height" constant="44" id="m2A-v5-eKk"/>
+                                                </constraints>
+                                                <state key="normal" title="추가"/>
+                                                <connections>
+                                                    <action selector="saveBookmark:" destination="jGX-iR-WvA" eventType="touchUpInside" id="adp-ea-Ru1"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXL-eA-DzJ">
+                                                <rect key="frame" x="108" y="0.0" width="88" height="44"/>
+                                                <state key="normal" title="취소"/>
+                                                <connections>
+                                                    <action selector="saveBookmark:" destination="jGX-iR-WvA" eventType="touchUpInside" id="6lf-D4-PRF"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="67" id="JbR-xc-3Zh"/>
+                                            <constraint firstItem="gXL-eA-DzJ" firstAttribute="width" secondItem="87R-qU-mGS" secondAttribute="width" id="mLr-GN-hWQ"/>
+                                            <constraint firstItem="gXL-eA-DzJ" firstAttribute="height" secondItem="87R-qU-mGS" secondAttribute="height" id="vzq-yB-iIF"/>
+                                        </constraints>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="책갈피 추가" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3OU-8F-tH7">
+                                        <rect key="frame" x="0.0" y="29" width="343" height="52"/>
+                                        <color key="backgroundColor" red="0.32156862745098036" green="0.24313725490196078" blue="0.20784313725490194" alpha="0.79652718321917804" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="52" id="CQf-iq-h45"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I0K-1G-fCG">
+                                        <rect key="frame" x="0.0" y="81" width="343" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="yTb-mE-guA"/>
                                         </constraints>
                                         <state key="normal" title="책 선택"/>
                                         <connections>
                                             <segue destination="WgS-b4-IR8" kind="presentation" id="KTV-is-uZO"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="87R-qU-mGS">
-                                        <rect key="frame" x="149" y="253" width="45" height="30"/>
-                                        <state key="normal" title="추가"/>
-                                        <connections>
-                                            <action selector="saveBookmark:" destination="jGX-iR-WvA" eventType="touchUpInside" id="adp-ea-Ru1"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.97636479139328003" green="0.97653168439865112" blue="0.97635418176651001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="I0K-1G-fCG" firstAttribute="top" secondItem="P2b-Dx-XrH" secondAttribute="topMargin" id="UbK-d2-gBw"/>
-                                    <constraint firstItem="87R-qU-mGS" firstAttribute="leading" secondItem="P2b-Dx-XrH" secondAttribute="leading" constant="149" id="bij-ae-aMw"/>
-                                    <constraint firstAttribute="trailing" secondItem="87R-qU-mGS" secondAttribute="trailing" constant="149" id="kQV-Up-dQL"/>
-                                    <constraint firstItem="87R-qU-mGS" firstAttribute="bottom" secondItem="P2b-Dx-XrH" secondAttribute="bottomMargin" id="nr3-v3-UjB"/>
-                                    <constraint firstItem="87R-qU-mGS" firstAttribute="centerX" secondItem="I0K-1G-fCG" secondAttribute="centerX" id="p8q-bK-WWu"/>
-                                    <constraint firstItem="I0K-1G-fCG" firstAttribute="leading" secondItem="P2b-Dx-XrH" secondAttribute="leading" id="tHP-hR-5bB"/>
+                                    <constraint firstAttribute="trailing" secondItem="I0K-1G-fCG" secondAttribute="trailing" id="6QD-zL-C4s"/>
+                                    <constraint firstItem="gfT-rb-PbM" firstAttribute="centerX" secondItem="P2b-Dx-XrH" secondAttribute="centerX" id="K0c-4D-vWw"/>
+                                    <constraint firstItem="I0K-1G-fCG" firstAttribute="top" secondItem="3OU-8F-tH7" secondAttribute="bottom" id="VLF-w6-ThX"/>
+                                    <constraint firstItem="3OU-8F-tH7" firstAttribute="top" secondItem="P2b-Dx-XrH" secondAttribute="top" constant="29" id="ZYm-0P-Wqn"/>
+                                    <constraint firstItem="I0K-1G-fCG" firstAttribute="leading" secondItem="P2b-Dx-XrH" secondAttribute="leading" id="eG2-N2-Rvg"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="gfT-rb-PbM" secondAttribute="bottom" constant="8" id="qum-G1-lOw"/>
+                                    <constraint firstAttribute="trailing" secondItem="3OU-8F-tH7" secondAttribute="trailing" id="tWD-o4-xrC"/>
+                                    <constraint firstItem="3OU-8F-tH7" firstAttribute="leading" secondItem="P2b-Dx-XrH" secondAttribute="leading" id="wZG-rv-2UF"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="P2b-Dx-XrH" firstAttribute="centerX" secondItem="YJk-ft-IcR" secondAttribute="centerX" id="6oB-Ic-Qgq"/>
                             <constraint firstItem="P2b-Dx-XrH" firstAttribute="leading" secondItem="YJk-ft-IcR" secondAttribute="leadingMargin" id="AAb-vR-ah1"/>
