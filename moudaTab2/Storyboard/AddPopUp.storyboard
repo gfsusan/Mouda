@@ -29,7 +29,7 @@
             </objects>
             <point key="canvasLocation" x="-138" y="1067"/>
         </scene>
-        <!--Add-->
+        <!--Add Pop UpVC-->
         <scene sceneID="uvW-0j-myu">
             <objects>
                 <viewController id="TaP-ro-PRu" customClass="AddPopUpVC" customModule="moudaTab2" customModuleProvider="target" sceneMemberID="viewController">
@@ -121,6 +121,7 @@
                                                 <state key="normal" title="책 선택"/>
                                                 <connections>
                                                     <action selector="selectBookPressed:" destination="TaP-ro-PRu" eventType="touchUpInside" id="wPE-tl-zZJ"/>
+                                                    <segue destination="noe-E4-3gB" kind="show" id="hcy-s4-DzV"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -163,7 +164,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Wly-ku-dys"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Add" image="Add" id="17w-8R-Zlb"/>
                     <navigationItem key="navigationItem" id="9cc-uP-R9q">
                         <barButtonItem key="leftBarButtonItem" title="취소" id="qec-pG-zaI">
                             <connections>
@@ -192,8 +192,13 @@
             </objects>
             <point key="canvasLocation" x="670" y="1066"/>
         </scene>
+        <!--Search-->
+        <scene sceneID="Xwn-g9-g50">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Search" id="noe-E4-3gB" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bh6-Y8-Xgp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1345" y="982"/>
+        </scene>
     </scenes>
-    <resources>
-        <image name="Add" width="25" height="25"/>
-    </resources>
 </document>

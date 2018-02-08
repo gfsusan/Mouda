@@ -11,8 +11,7 @@ import UIKit
 class AddPopUpVC: UIViewController, UITextViewDelegate, UITabBarControllerDelegate {
     
     var delegate:DataCenter?
-    
-    var closeFlag = false
+    var addDelegate:AddVC?
 
     @IBOutlet weak var lineTextView: UITextView!
     @IBOutlet weak var pageTextView: UITextView!
@@ -24,6 +23,12 @@ class AddPopUpVC: UIViewController, UITextViewDelegate, UITabBarControllerDelega
         dataCenter.feeds.append(Feed(book: Book(), page: Int(pageTextView.text)!, line: lineTextView.text, thought: thoughtTextView.text))
         dataCenter.save()
         
+        print("done Button Pressed")
+        //delegate로 closeFlag값 true로 설정
+        if let addVC = addDelegate {
+            print("add view controller delegate 성공")
+            addVC.closeFlag = true
+        }
         dismiss(animated: true)
 //        let sb = UIStoryboard(name: "MyFeed", bundle: nil)
 //        let backToMyFeed = sb.instantiateInitialViewController()
@@ -41,8 +46,6 @@ class AddPopUpVC: UIViewController, UITextViewDelegate, UITabBarControllerDelega
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         
         self.lineTextView.delegate = self
         self.pageTextView.delegate = self
@@ -91,14 +94,16 @@ class AddPopUpVC: UIViewController, UITextViewDelegate, UITabBarControllerDelega
 
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-
-        let add = segue.destination as? AddVC
-        add?.closeFlag = true
-    }
+//    // In a storyboard-based application, you will often want to do a little preparation before navigation
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        // Get the new view controller using segue.destinationViewController.
+//        // Pass the selected object to the new view controller.
+//
+//
+//        print ("prepare for segue")
+//        let add = segue.destination as? AddVC
+//        add?.closeFlag = true
+//    }
  
 
 }

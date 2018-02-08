@@ -38,6 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // status bar 아이템 색상 변경
         UIApplication.shared.statusBarStyle = .lightContent
         
+        
     
         return true
     }
