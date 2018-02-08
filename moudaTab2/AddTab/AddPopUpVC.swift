@@ -12,6 +12,7 @@ class AddPopUpVC: UIViewController, UITextViewDelegate, UITabBarControllerDelega
     
     var delegate:DataCenter?
     var addDelegate:AddVC?
+    var feedDelegate:FeedTableVC?
 
     @IBOutlet weak var lineTextView: UITextView!
     @IBOutlet weak var pageTextView: UITextView!
@@ -22,6 +23,11 @@ class AddPopUpVC: UIViewController, UITextViewDelegate, UITabBarControllerDelega
     @IBAction func doneButtonPressed(_ sender: Any) {
         dataCenter.feeds.append(Feed(book: Book(), page: Int(pageTextView.text)!, line: lineTextView.text, thought: thoughtTextView.text))
         dataCenter.save()
+        
+//        if let feedTableVC = feedDelegate {
+//            print("reloadData")
+//            feedTableVC.tableView.reloadData()
+//        }
         
         // 저장 작업 외에는 Cancel과 똑같이 modal dismiss만 해주면 됨
         cancelAdd(sender)

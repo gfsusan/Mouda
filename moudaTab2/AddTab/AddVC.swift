@@ -31,9 +31,6 @@ class AddVC: UIViewController {
             //change tab bar
             closeFlag = false
             self.navigationController?.tabBarController?.selectedIndex = 0
-//            if (self.presentingViewController as? UITabBarController) != nil {
-//                tabBarController?.selectedIndex = 0
-//            }
 
         }
     }

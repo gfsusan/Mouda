@@ -126,7 +126,13 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="MyFeed" image="home" id="Iif-bQ-dRY"/>
                     <navigationItem key="navigationItem" id="toK-49-5gP">
+                        <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" image="Empty" id="0To-GQ-URE"/>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Cez-YW-gXF">
+                            <rect key="frame" x="164.5" y="7" width="46" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Button"/>
+                        </button>
                         <barButtonItem key="rightBarButtonItem" image="setting" id="jk6-Ng-rRq">
                             <connections>
                                 <segue destination="Cro-la-sNS" kind="show" id="euG-Bu-nv9"/>

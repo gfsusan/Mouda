@@ -15,7 +15,7 @@
         <!--Add-->
         <scene sceneID="pkl-1w-7a6">
             <objects>
-                <viewController id="8j4-aT-rqv" customClass="AddVC" customModule="moudaTab2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="overCurrentContext" id="8j4-aT-rqv" customClass="AddVC" customModule="moudaTab2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4JD-sJ-jz3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -46,7 +46,7 @@
         <!--Item-->
         <scene sceneID="wWI-so-2HI">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FAR-gO-tvF" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="overCurrentContext" id="FAR-gO-tvF" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="kLm-OK-6sw"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NIZ-5F-R6y">

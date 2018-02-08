@@ -10,11 +10,20 @@ import UIKit
 
 class FeedTableVC: UITableViewController {
     
-    var feeds:[Feed] = dataCenter.feeds
+    var feeds:[Feed] = []
+//    @IBOutlet weak var myFeedButton: UIButton!
     let formatdate = DateFormatter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        feeds += dataCenter.feeds
+        
+        // refresh
+        refreshData()
+//        myFeedButton.addTarget(self, action: Selector(("refresh:")), for: .touchUpInside)
+//        var refresher = UIRefreshControl()
+//        refresher.addTarget(self, action: Selector(("refresh:")), for: .valueChanged)
 
         print("FeedTableVC")
         // Navigation Bar Item
@@ -25,9 +34,20 @@ class FeedTableVC: UITableViewController {
         
         
         self.tableView.separatorColor = UIColor.clear
-      
+    
         
         formatdate.dateFormat = "yyyy년 MM월 dd일"
+    }
+    
+    func refreshData() {
+        refreshControl?.beginRefreshing()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        feeds = dataCenter.feeds
+        self.tableView.reloadData()
+        print("viewWillAppear")
     }
 
     override func didReceiveMemoryWarning() {
@@ -69,7 +89,6 @@ class FeedTableVC: UITableViewController {
         
         return retCell
     }
-    
 
     /*
     // Override to support conditional editing of the table view.
