@@ -127,13 +127,45 @@
                     <tabBarItem key="tabBarItem" title="MyFeed" image="home" id="Iif-bQ-dRY"/>
                     <navigationItem key="navigationItem" id="toK-49-5gP">
                         <barButtonItem key="leftBarButtonItem" image="Empty" id="0To-GQ-URE"/>
-                        <barButtonItem key="rightBarButtonItem" image="setting" id="jk6-Ng-rRq"/>
+                        <barButtonItem key="rightBarButtonItem" image="setting" id="jk6-Ng-rRq">
+                            <connections>
+                                <segue destination="Cro-la-sNS" kind="show" id="euG-Bu-nv9"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oc6-Xw-dge" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="816.79999999999995" y="115.59220389805098"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="Icr-Rh-xcO">
+            <objects>
+                <tableViewController id="Cro-la-sNS" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="qBc-p0-UM0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="QWv-KK-DY4">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QWv-KK-DY4" id="xlc-PB-ifa">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Cro-la-sNS" id="WYg-ld-gl2"/>
+                            <outlet property="delegate" destination="Cro-la-sNS" id="0D5-j9-hHQ"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fvY-FH-552" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1886" y="-97"/>
         </scene>
         <!--Feed DetailVC-->
         <scene sceneID="uhz-NU-SK4">
