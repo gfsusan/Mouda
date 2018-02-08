@@ -13,6 +13,9 @@ var fileName = "FeedData.brch"
 
 class DataCenter {
     var feeds: [Feed] = []
+    // search 위해서 걍 만들어놓은 dummy data
+    var books: [Book] = []
+    
     var filePath: String { get {
         let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .allDomainsMask, true).first!
         return documentDirectory + fileName
@@ -53,6 +56,10 @@ class DataCenter {
         defaultFeed.append(feed3)
         defaultFeed.append(feed4)
         
+        // dummy data
+         books.append(book1)
+        books.append(book2)
+        books.append(book3)
         return defaultFeed
     }
     
