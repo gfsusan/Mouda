@@ -10,18 +10,16 @@ import Foundation
 import UIKit
 
 class Book:NSObject, NSCoding {
-    var title:String
-    var coverImage:UIImage
-    var publisher:String
-    var writer:String
-    var bookDescription:String
+    var title:String?
+    var coverImage:UIImage?
+    var publisher:String?
+    var writer:String?
     
     override init () {
         title = "DefaultTitle"
         coverImage = #imageLiteral(resourceName: "tempBook1")
         publisher = "DefaultPublisher"
         writer = "DefaultWriter"
-        bookDescription = "DefaultDescription"
     }
     
     init(title:String, coverImage:UIImage, publisher:String, writer:String, bookDescription:String) {
@@ -29,15 +27,21 @@ class Book:NSObject, NSCoding {
         self.coverImage = coverImage
         self.publisher = publisher
         self.writer = writer
-        self.bookDescription = bookDescription
     }
     
     required init?(coder aDecoder: NSCoder) {
-        self.title = aDecoder.decodeObject(forKey: "title") as! String
-        self.coverImage = aDecoder.decodeObject(forKey: "coverImage") as! UIImage
-        self.publisher = aDecoder.decodeObject(forKey: "publisher") as! String
-        self.writer = aDecoder.decodeObject(forKey: "writer") as! String
-        self.bookDescription = aDecoder.decodeObject(forKey: "bookDescription") as! String
+        if let title = aDecoder.decodeObject(forKey: "title") as? String {
+            self.title = title
+        }
+        if let coverImage = aDecoder.decodeObject(forKey: "coverImage") as? UIImage {
+            self.coverImage = coverImage
+        }
+        if let publisher = aDecoder.decodeObject(forKey: "publisher") as? String {
+             self.publisher = publisher
+        }
+        if let writer = aDecoder.decodeObject(forKey: "writer") as? String {
+            self.writer = writer
+        }
     }
     
     func encode(with aCoder: NSCoder) {
@@ -45,7 +49,6 @@ class Book:NSObject, NSCoding {
         aCoder.encode(self.coverImage, forKey: "coverImage")
         aCoder.encode(self.publisher, forKey: "publisher")
         aCoder.encode(self.writer, forKey: "writer")
-        aCoder.encode(self.bookDescription, forKey: "bookDescription")
     }
 }
 

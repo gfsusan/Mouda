@@ -20,13 +20,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" id="Rgx-qC-qbh">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
+                            <scopeButtonTitles>
+                                <string>제목</string>
+                                <string>저자명</string>
+                            </scopeButtonTitles>
+                            <connections>
+                                <outlet property="delegate" destination="Jdo-i3-ULk" id="FL9-Ye-FmK"/>
+                            </connections>
                         </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="bookInfoCell" rowHeight="119" id="bPf-Mf-6QE" customClass="SearchBookCell" customModule="moudaTab2" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="375" height="119"/>
+                                <rect key="frame" x="0.0" y="84" width="375" height="119"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bPf-Mf-6QE" id="MAr-Ty-buQ">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="118.5"/>
@@ -35,7 +42,7 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="TAv-C7-l5n">
                                             <rect key="frame" x="8" y="8" width="359" height="102.5"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="es7-eF-6uX">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="es7-eF-6uX">
                                                     <rect key="frame" x="0.0" y="0.0" width="77" height="102.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="es7-eF-6uX" secondAttribute="height" multiplier="3:4" id="e7p-Jj-qXU"/>
@@ -118,6 +125,10 @@
                     </tableView>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="searchBar" destination="Rgx-qC-qbh" id="2Zh-zh-cnh"/>
+                        <outlet property="table" destination="acj-BA-ykM" id="PzK-t8-wVP"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M5j-yf-Xcg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
