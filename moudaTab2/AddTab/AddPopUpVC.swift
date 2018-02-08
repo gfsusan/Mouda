@@ -23,6 +23,13 @@ class AddPopUpVC: UIViewController, UITextViewDelegate, UITabBarControllerDelega
         dataCenter.feeds.append(Feed(book: Book(), page: Int(pageTextView.text)!, line: lineTextView.text, thought: thoughtTextView.text))
         dataCenter.save()
         
+        // 저장 작업 외에는 Cancel과 똑같이 modal dismiss만 해주면 됨
+        cancelAdd(sender)
+        
+    }
+    
+    // Hide keyboard when user touches outside keyboard
+    @IBAction func cancelAdd(_ sender: Any) {
         print("done Button Pressed")
         //delegate로 closeFlag값 true로 설정
         if let addVC = addDelegate {
@@ -30,14 +37,8 @@ class AddPopUpVC: UIViewController, UITextViewDelegate, UITabBarControllerDelega
             addVC.closeFlag = true
         }
         dismiss(animated: true)
-//        let sb = UIStoryboard(name: "MyFeed", bundle: nil)
-//        let backToMyFeed = sb.instantiateInitialViewController()
-        
-    }
-    
-    // Hide keyboard when user touches outside keyboard
-    @IBAction func cancelAdd(_ sender: Any) {
-        
+        //        let sb = UIStoryboard(name: "MyFeed", bundle: nil)
+        //        let backToMyFeed = sb.instantiateInitialViewController()
     }
     @IBAction func tabGesture(_ sender: Any) {
         self.view.endEditing(true)
@@ -89,21 +90,5 @@ class AddPopUpVC: UIViewController, UITextViewDelegate, UITabBarControllerDelega
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-
-    // MARK: - Navigation
-
-//    // In a storyboard-based application, you will often want to do a little preparation before navigation
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        // Get the new view controller using segue.destinationViewController.
-//        // Pass the selected object to the new view controller.
-//
-//
-//        print ("prepare for segue")
-//        let add = segue.destination as? AddVC
-//        add?.closeFlag = true
-//    }
- 
 
 }

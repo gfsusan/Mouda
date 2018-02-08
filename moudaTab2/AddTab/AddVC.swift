@@ -52,9 +52,9 @@ class AddVC: UIViewController {
         // Pass the selected object to the new view controller.
         
         print("build")
-        if let addPopup = segue.destination as? AddPopUpVC {
-            print("segue")
-            addPopup.addDelegate = self
+        if let destinationNavigationController = segue.destination as? UINavigationController {
+            let targetController = destinationNavigationController.topViewController as? AddPopUpVC
+            targetController?.addDelegate = self
         }
     }
  
