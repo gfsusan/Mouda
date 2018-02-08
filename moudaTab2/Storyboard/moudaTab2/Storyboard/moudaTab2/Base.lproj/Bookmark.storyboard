@@ -84,16 +84,6 @@
                                             <constraint firstItem="gXL-eA-DzJ" firstAttribute="height" secondItem="87R-qU-mGS" secondAttribute="height" id="vzq-yB-iIF"/>
                                         </constraints>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="책갈피 추가" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3OU-8F-tH7">
-                                        <rect key="frame" x="0.0" y="29" width="343" height="52"/>
-                                        <color key="backgroundColor" red="0.32156862745098036" green="0.24313725490196078" blue="0.20784313725490194" alpha="0.79652718321917804" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="52" id="CQf-iq-h45"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I0K-1G-fCG">
                                         <rect key="frame" x="0.0" y="81" width="343" height="60"/>
                                         <constraints>
@@ -104,6 +94,16 @@
                                             <segue destination="WgS-b4-IR8" kind="presentation" id="KTV-is-uZO"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="책갈피 추가" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3OU-8F-tH7">
+                                        <rect key="frame" x="0.0" y="35" width="343" height="52"/>
+                                        <color key="backgroundColor" red="0.32156862745098036" green="0.24313725490196078" blue="0.20784313725490194" alpha="0.79652718321917804" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="52" id="CQf-iq-h45"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.97636479139328003" green="0.97653168439865112" blue="0.97635418176651001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
