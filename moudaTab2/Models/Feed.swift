@@ -9,7 +9,9 @@
 import Foundation
 import UIKit
 
+
 class Feed: NSObject, NSCoding {
+
     let book:Book
     var line:String
     var thought:String
@@ -24,24 +26,21 @@ class Feed: NSObject, NSCoding {
         self.date = Date()
     }
     
-    override init() {
-        book = Book()
-        line = "DefaultLine"
-        thought = "DefaultThought"
-        page = 1
-        date = Date()
-    }
-    
+//    override init() {
+//        book = Book()
+//        line = "DefaultLine"
+//        thought = "DefaultThought"
+//        page = 1
+//        date = Date()
+//    }
+//
     required init?(coder aDecoder: NSCoder) {
         self.book = aDecoder.decodeObject(forKey: "book") as! Book
         self.line = aDecoder.decodeObject(forKey: "line") as! String
         self.thought = aDecoder.decodeObject(forKey: "thought") as! String
         self.page = aDecoder.decodeInteger(forKey: "page")
-        if let tempDate = aDecoder.decodeObject(forKey: "time") as? Date {
-            self.date = tempDate
-        } else {
-            self.date = Date(timeIntervalSince1970: 0)
-        }
+        let timeIntervalSince1970 = aDecoder.decodeDouble(forKey: "date")
+        self.date = Date(timeIntervalSince1970: timeIntervalSince1970)
     }
     
     func encode(with aCoder: NSCoder) {
@@ -49,6 +48,6 @@ class Feed: NSObject, NSCoding {
         aCoder.encode(self.line, forKey: "line")
         aCoder.encode(self.thought, forKey: "thought")
         aCoder.encode(self.page, forKey: "page")
-        aCoder.encode(self.date, forKey: "date")
+        aCoder.encode(self.date.timeIntervalSince1970, forKey: "date")
     }
 }
