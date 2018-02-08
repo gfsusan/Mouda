@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,12 +19,25 @@
                     <view key="view" contentMode="scaleToFill" id="4JD-sJ-jz3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P70-lQ-dTh">
+                                <rect key="frame" x="164" y="303" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="nOL-BV-Fc8" kind="presentation" id="GaP-cb-mlR"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="rOZ-MT-fdA"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Add" image="add" id="280-lo-4k8"/>
                     <navigationItem key="navigationItem" id="VWn-lu-8b4"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="popupButton" destination="P70-lQ-dTh" id="c4B-U2-76b"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WtO-CH-dMZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -46,6 +61,183 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2EU-Re-sku" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="46" y="829"/>
+        </scene>
+        <!--Add Pop UpVC-->
+        <scene sceneID="RVr-mF-SOu">
+            <objects>
+                <viewController storyboardIdentifier="addPopupStoryboard" id="nOL-BV-Fc8" customClass="AddPopUpVC" customModule="moudaTab2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tCl-3B-9ul">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hxm-BL-796">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ozb-SH-wtf">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="533"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NKS-ai-p0H">
+                                                <rect key="frame" x="8" y="96" width="359" height="250"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="D5v-yd-LyB">
+                                                        <rect key="frame" x="8" y="8" width="343" height="234"/>
+                                                        <subviews>
+                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="간직하고 싶은 책 속의 한 문장을 작성해주세요." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Iyn-c5-Sr6">
+                                                                <rect key="frame" x="0.0" y="0.0" width="343" height="190"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <accessibility key="accessibilityConfiguration" identifier="lineText"/>
+                                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                            </textView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dtb-NZ-3EL">
+                                                                <rect key="frame" x="121.5" y="190" width="100" height="44"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Page" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7U7-q8-EgY">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="44"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="44" id="L7O-8F-lc6"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                        <size key="shadowOffset" width="0.0" height="0.0"/>
+                                                                    </label>
+                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="123" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bdA-J2-k7z">
+                                                                        <rect key="frame" x="50" y="0.0" width="50" height="44"/>
+                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        <accessibility key="accessibilityConfiguration" identifier="pageText"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="44" id="0w0-eK-YZw"/>
+                                                                        </constraints>
+                                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
+                                                                    </textView>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstItem="bdA-J2-k7z" firstAttribute="width" secondItem="7U7-q8-EgY" secondAttribute="height" multiplier="25:22" id="USp-Yq-2jW"/>
+                                                                    <constraint firstItem="bdA-J2-k7z" firstAttribute="width" secondItem="7U7-q8-EgY" secondAttribute="width" id="f16-Tj-WbC"/>
+                                                                </constraints>
+                                                            </stackView>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="Iyn-c5-Sr6" firstAttribute="width" secondItem="D5v-yd-LyB" secondAttribute="width" id="07d-a6-a9j"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottomMargin" secondItem="D5v-yd-LyB" secondAttribute="bottom" id="1SA-yn-ysq"/>
+                                                    <constraint firstAttribute="height" constant="250" id="5IG-tn-5Va"/>
+                                                    <constraint firstAttribute="trailingMargin" secondItem="D5v-yd-LyB" secondAttribute="trailing" id="Tmh-vx-2PQ"/>
+                                                    <constraint firstItem="D5v-yd-LyB" firstAttribute="leading" secondItem="NKS-ai-p0H" secondAttribute="leadingMargin" id="nnn-IB-Sql"/>
+                                                    <constraint firstItem="D5v-yd-LyB" firstAttribute="top" secondItem="NKS-ai-p0H" secondAttribute="topMargin" id="vJu-ZH-2W6"/>
+                                                </constraints>
+                                            </view>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="기록한 문장에 대한 본인만의 생각이나 감정을 표현해주세요." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="DSG-hl-EzV">
+                                                <rect key="frame" x="8" y="354" width="359" height="80"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="thoughtText"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="ZP6-90-ZYF"/>
+                                                </constraints>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="whW-bx-tWL">
+                                                <rect key="frame" x="8" y="28" width="359" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="sK1-tQ-6RZ"/>
+                                                </constraints>
+                                                <state key="normal" title="책 선택"/>
+                                                <connections>
+                                                    <action selector="selectBookPressed:" destination="nOL-BV-Fc8" eventType="touchUpInside" id="4KJ-j6-dDj"/>
+                                                    <segue destination="csz-iy-wqi" kind="show" id="pOv-MD-K06">
+                                                        <nil key="action"/>
+                                                    </segue>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstItem="DXM-S0-9Cx" firstAttribute="trailing" secondItem="whW-bx-tWL" secondAttribute="trailing" constant="8" id="0mi-g6-3vL"/>
+                                            <constraint firstItem="DSG-hl-EzV" firstAttribute="leading" secondItem="DXM-S0-9Cx" secondAttribute="leading" constant="8" id="E9v-pw-Ic5"/>
+                                            <constraint firstItem="whW-bx-tWL" firstAttribute="top" secondItem="DXM-S0-9Cx" secondAttribute="top" constant="8" id="G4j-Rq-QUg"/>
+                                            <constraint firstItem="DXM-S0-9Cx" firstAttribute="trailing" secondItem="NKS-ai-p0H" secondAttribute="trailing" constant="8" id="HvH-kd-kM5"/>
+                                            <constraint firstItem="NKS-ai-p0H" firstAttribute="leading" secondItem="DXM-S0-9Cx" secondAttribute="leading" constant="8" id="KNU-cU-hYP"/>
+                                            <constraint firstItem="DXM-S0-9Cx" firstAttribute="trailing" secondItem="DSG-hl-EzV" secondAttribute="trailing" constant="8" id="U2t-fd-NrY"/>
+                                            <constraint firstItem="DSG-hl-EzV" firstAttribute="top" secondItem="NKS-ai-p0H" secondAttribute="bottom" constant="8" id="XBn-7c-Awf"/>
+                                            <constraint firstItem="whW-bx-tWL" firstAttribute="leading" secondItem="DXM-S0-9Cx" secondAttribute="leading" constant="8" id="alr-gC-Jrw"/>
+                                            <constraint firstAttribute="height" constant="533" id="cUA-8B-ieA"/>
+                                            <constraint firstItem="NKS-ai-p0H" firstAttribute="top" secondItem="whW-bx-tWL" secondAttribute="bottom" constant="8" id="gfl-3o-hdY"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="safeArea" id="DXM-S0-9Cx"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WRV-oE-I9F">
+                                        <rect key="frame" x="172" y="463" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="완료"/>
+                                        <connections>
+                                            <action selector="doneButtonPressed:" destination="nOL-BV-Fc8" eventType="touchUpInside" id="arb-aL-jlQ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="ozb-SH-wtf" firstAttribute="top" secondItem="Hxm-BL-796" secondAttribute="top" id="L4H-eM-iIg"/>
+                                    <constraint firstItem="ozb-SH-wtf" firstAttribute="leading" secondItem="Hxm-BL-796" secondAttribute="leading" id="MfZ-xY-zN3"/>
+                                    <constraint firstAttribute="bottom" secondItem="ozb-SH-wtf" secondAttribute="bottom" id="RgG-I7-DDL"/>
+                                    <constraint firstAttribute="trailing" secondItem="ozb-SH-wtf" secondAttribute="trailing" id="gxP-7d-K7G"/>
+                                    <constraint firstItem="ozb-SH-wtf" firstAttribute="centerX" secondItem="Hxm-BL-796" secondAttribute="centerX" id="yEa-lf-jqF"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="v0R-Jf-fKL" appends="YES" id="8FW-ti-ZPG"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Hxm-BL-796" firstAttribute="leading" secondItem="0Ed-JX-s0p" secondAttribute="leading" id="405-Gn-nzX"/>
+                            <constraint firstAttribute="bottom" secondItem="Hxm-BL-796" secondAttribute="bottom" id="D4a-fE-gOZ"/>
+                            <constraint firstItem="Hxm-BL-796" firstAttribute="top" secondItem="tCl-3B-9ul" secondAttribute="top" id="DJd-3Q-pS0"/>
+                            <constraint firstItem="Hxm-BL-796" firstAttribute="trailing" secondItem="0Ed-JX-s0p" secondAttribute="trailing" id="ONr-25-Fxl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0Ed-JX-s0p"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="MBl-8t-AE1">
+                        <barButtonItem key="leftBarButtonItem" title="취소" id="6iB-dP-Tjh">
+                            <connections>
+                                <action selector="cancelAdd:" destination="nOL-BV-Fc8" id="TCC-UI-tgc"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="완료" id="rij-8Z-TAU"/>
+                    </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="lineTextView" destination="Iyn-c5-Sr6" id="gUI-Cj-4Au"/>
+                        <outlet property="pageTextView" destination="bdA-J2-k7z" id="9vV-VK-BtC"/>
+                        <outlet property="thoughtTextView" destination="DSG-hl-EzV" id="KdL-TD-pDH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YDW-oH-oXG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="v0R-Jf-fKL">
+                    <connections>
+                        <action selector="tabGesture:" destination="nOL-BV-Fc8" id="xOX-sO-uj8"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2009" y="986"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="C9V-fF-YeW">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Search" id="csz-iy-wqi" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nl6-OL-Dot" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3728.8000000000002" y="906.74662668665678"/>
         </scene>
     </scenes>
     <resources>

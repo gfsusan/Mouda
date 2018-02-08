@@ -12,6 +12,8 @@ class AddVC: UIViewController {
     
     var closeFlag = false
     
+    @IBOutlet weak var popupButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,21 +23,17 @@ class AddVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         print("뷰윌어피어잘됨")
         print(closeFlag)
+        
+    
         if closeFlag == false {
-//            let vc = ViewController(nibName: "AddPopUpVC", bundle: nil)
-//            self.present(vc, animated: true)
-            let sb = UIStoryboard(name: "AddPopUp", bundle: nil)
-            let popup = sb.instantiateInitialViewController()!
-            self.present(popup, animated: true)
+            popupButton.sendActions(for: .touchUpInside)
         } else {
             //change tab bar
-            if let root = self.presentingViewController as? UITabBarController  {
-                var tabBarController = root as UITabBarController
-                tabBarController.selectedIndex = 0
-                
-                closeFlag = false
+            closeFlag = false
+            if (self.presentingViewController as? UITabBarController) != nil {
+                tabBarController?.selectedIndex = 0
             }
-            
+
         }
     }
 
@@ -54,8 +52,7 @@ class AddVC: UIViewController {
         // Pass the selected object to the new view controller.
         
         print("build")
-        let addPopupVC = segue.destination as? AddPopUpVC
-        if let addPopup = addPopupVC {
+        if let addPopup = segue.destination as? AddPopUpVC {
             print("segue")
             addPopup.addDelegate = self
         }
