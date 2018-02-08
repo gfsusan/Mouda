@@ -16,7 +16,10 @@ class AddBookmarkVC: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    @IBAction func saveBookmark(_ sender: UIButton) {
+    @IBAction func cancelBookmark(_ sender: Any) {
+        dismiss(animated: true)
+    }
+    @IBAction func saveBookmark(_ sender: Any) {
         dismiss(animated: true)
     }
     

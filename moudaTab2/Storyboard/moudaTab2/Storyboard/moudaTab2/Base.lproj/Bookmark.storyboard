@@ -37,7 +37,7 @@
                     <navigationItem key="navigationItem" id="87W-2L-Jlf">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="zQO-SG-8um">
                             <connections>
-                                <segue destination="jGX-iR-WvA" kind="presentation" id="Hsr-Mf-99d"/>
+                                <segue destination="03e-GI-t2N" kind="presentation" id="Hsr-Mf-99d"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -56,39 +56,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4MN-Tn-l8E">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P2b-Dx-XrH">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="gfT-rb-PbM">
-                                                <rect key="frame" x="89" y="35" width="196" height="44"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="87R-qU-mGS">
-                                                        <rect key="frame" x="0.0" y="0.0" width="88" height="44"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="88" id="fh3-1k-qvB"/>
-                                                            <constraint firstAttribute="height" constant="44" id="m2A-v5-eKk"/>
-                                                        </constraints>
-                                                        <state key="normal" title="추가"/>
-                                                        <connections>
-                                                            <action selector="saveBookmark:" destination="jGX-iR-WvA" eventType="touchUpInside" id="adp-ea-Ru1"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXL-eA-DzJ">
-                                                        <rect key="frame" x="108" y="0.0" width="88" height="44"/>
-                                                        <state key="normal" title="취소"/>
-                                                        <connections>
-                                                            <action selector="saveBookmark:" destination="jGX-iR-WvA" eventType="touchUpInside" id="6lf-D4-PRF"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="gXL-eA-DzJ" firstAttribute="width" secondItem="87R-qU-mGS" secondAttribute="width" id="mLr-GN-hWQ"/>
-                                                    <constraint firstItem="gXL-eA-DzJ" firstAttribute="height" secondItem="87R-qU-mGS" secondAttribute="height" id="vzq-yB-iIF"/>
-                                                </constraints>
-                                            </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I0K-1G-fCG">
                                                 <rect key="frame" x="0.0" y="81" width="375" height="60"/>
                                                 <constraints>
@@ -125,13 +97,22 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2Qx-K9-1aC"/>
                     </view>
-                    <connections>
-                        <outlet property="addBookmarkButton" destination="87R-qU-mGS" id="Z6z-4N-fBZ"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="g3A-iz-hiM">
+                        <barButtonItem key="leftBarButtonItem" title="취소" id="hK9-LF-ZwS">
+                            <connections>
+                                <action selector="cancelBookmark:" destination="jGX-iR-WvA" id="JN6-c1-NAv"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="완료" id="3RA-Or-OSO">
+                            <connections>
+                                <action selector="saveBookmark:" destination="jGX-iR-WvA" id="bYC-jJ-ghT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qet-hV-kkx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3537" y="-679"/>
+            <point key="canvasLocation" x="4332" y="-680"/>
         </scene>
         <!--Search-->
         <scene sceneID="HW7-Px-4qR">
@@ -139,7 +120,7 @@
                 <viewControllerPlaceholder storyboardName="Search" id="WgS-b4-IR8" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZT8-ek-ePP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4214" y="-741"/>
+            <point key="canvasLocation" x="5177" y="-681"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HCd-mq-V8f">
@@ -158,6 +139,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xIC-By-2AX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1663" y="-466"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="AVv-Wi-j77">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="03e-GI-t2N" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Kg6-dV-5Np">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="jGX-iR-WvA" kind="relationship" relationship="rootViewController" id="RSr-Br-QzG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tkk-r8-RsJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3536" y="-679.16041979010504"/>
         </scene>
     </scenes>
     <resources>

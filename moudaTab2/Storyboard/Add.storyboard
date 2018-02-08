@@ -172,7 +172,7 @@
         <!--Add-->
         <scene sceneID="pkl-1w-7a6">
             <objects>
-                <viewController id="8j4-aT-rqv" customClass="AddPopUpVC" customModule="moudaTab2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8j4-aT-rqv" customClass="AddVC" customModule="moudaTab2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4JD-sJ-jz3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

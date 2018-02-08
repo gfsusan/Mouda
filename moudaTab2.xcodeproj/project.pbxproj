@@ -27,10 +27,10 @@
 		66DBAC9D202BF0AB0043CB4B /* SearchTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DBAC9C202BF0AB0043CB4B /* SearchTableVC.swift */; };
 		66DBAC9F202BF5660043CB4B /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DBAC9E202BF5660043CB4B /* Bookmark.swift */; };
 		66DBACA1202BF8FD0043CB4B /* SearchBookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DBACA0202BF8FD0043CB4B /* SearchBookCell.swift */; };
-		66F902DE202961F40047C959 /* AddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F902DD202961F40047C959 /* AddVC.swift */; };
+		66F902DE202961F40047C959 /* AddPopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F902DD202961F40047C959 /* AddPopUpVC.swift */; };
 		66FCB981202BE604008E1AC5 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66FCB980202BE604008E1AC5 /* Search.storyboard */; };
 		66FCB983202BEF71008E1AC5 /* AddPopUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66FCB982202BEF71008E1AC5 /* AddPopUp.storyboard */; };
-		66FCB985202BEF8B008E1AC5 /* AddPopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FCB984202BEF8B008E1AC5 /* AddPopUpVC.swift */; };
+		66FCB985202BEF8B008E1AC5 /* AddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FCB984202BEF8B008E1AC5 /* AddVC.swift */; };
 		7AD0AF6B2029B3F3002E7F60 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AD0AF6A2029B3F3002E7F60 /* Media.xcassets */; };
 		7AD0AF702029C86A002E7F60 /* NanumMyeongjo.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7AD0AF6D2029C86A002E7F60 /* NanumMyeongjo.otf */; };
 		7AD0AF712029C86A002E7F60 /* NanumMyeongjoBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7AD0AF6E2029C86A002E7F60 /* NanumMyeongjoBold.otf */; };
@@ -62,10 +62,10 @@
 		66DBAC9C202BF0AB0043CB4B /* SearchTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableVC.swift; sourceTree = "<group>"; };
 		66DBAC9E202BF5660043CB4B /* Bookmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmark.swift; sourceTree = "<group>"; };
 		66DBACA0202BF8FD0043CB4B /* SearchBookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookCell.swift; sourceTree = "<group>"; };
-		66F902DD202961F40047C959 /* AddVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVC.swift; sourceTree = "<group>"; };
+		66F902DD202961F40047C959 /* AddPopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPopUpVC.swift; sourceTree = "<group>"; };
 		66FCB980202BE604008E1AC5 /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		66FCB982202BEF71008E1AC5 /* AddPopUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddPopUp.storyboard; sourceTree = "<group>"; };
-		66FCB984202BEF8B008E1AC5 /* AddPopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPopUpVC.swift; sourceTree = "<group>"; };
+		66FCB984202BEF8B008E1AC5 /* AddVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVC.swift; sourceTree = "<group>"; };
 		7AD0AF6A2029B3F3002E7F60 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		7AD0AF6D2029C86A002E7F60 /* NanumMyeongjo.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumMyeongjo.otf; sourceTree = "<group>"; };
 		7AD0AF6E2029C86A002E7F60 /* NanumMyeongjoBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumMyeongjoBold.otf; sourceTree = "<group>"; };
@@ -108,8 +108,8 @@
 		66728F16202A9E290061C168 /* AddTab */ = {
 			isa = PBXGroup;
 			children = (
-				66F902DD202961F40047C959 /* AddVC.swift */,
-				66FCB984202BEF8B008E1AC5 /* AddPopUpVC.swift */,
+				66F902DD202961F40047C959 /* AddPopUpVC.swift */,
+				66FCB984202BEF8B008E1AC5 /* AddVC.swift */,
 			);
 			path = AddTab;
 			sourceTree = "<group>";
@@ -278,10 +278,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66F902DE202961F40047C959 /* AddVC.swift in Sources */,
+				66F902DE202961F40047C959 /* AddPopUpVC.swift in Sources */,
 				669990EC20242F2B00410F21 /* ViewController.swift in Sources */,
 				66728F22202AE7520061C168 /* DataCenter.swift in Sources */,
-				66FCB985202BEF8B008E1AC5 /* AddPopUpVC.swift in Sources */,
+				66FCB985202BEF8B008E1AC5 /* AddVC.swift in Sources */,
 				66999102202437F200410F21 /* Book.swift in Sources */,
 				66DBACA1202BF8FD0043CB4B /* SearchBookCell.swift in Sources */,
 				669991042024386900410F21 /* FeedTableVC.swift in Sources */,
