@@ -6,12 +6,11 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Bookmark TableVC-->
+        <!--bookmark-->
         <scene sceneID="XbB-Pv-76C">
             <objects>
                 <tableViewController id="RDo-Dt-2o6" customClass="BookmarkTableVC" customModule="moudaTab2" customModuleProvider="target" sceneMemberID="viewController">
@@ -34,6 +33,7 @@
                             <outlet property="delegate" destination="RDo-Dt-2o6" id="5e8-hd-7c9"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" title="bookmark" image="bookmark" id="aY5-qM-cdh"/>
                     <navigationItem key="navigationItem" id="87W-2L-Jlf">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="zQO-SG-8um">
                             <connections>
@@ -41,6 +41,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V3h-Ef-kaq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -49,85 +50,78 @@
         <!--Add BookmarkVC-->
         <scene sceneID="2UE-Xi-dlU">
             <objects>
-                <viewController modalPresentationStyle="overCurrentContext" id="jGX-iR-WvA" customClass="AddBookmarkVC" customModule="moudaTab2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="jGX-iR-WvA" customClass="AddBookmarkVC" customModule="moudaTab2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YJk-ft-IcR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P2b-Dx-XrH" customClass="AddBookmarkDesignable" customModule="moudaTab2" customModuleProvider="target">
-                                <rect key="frame" x="16" y="188" width="343" height="291"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4MN-Tn-l8E">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="gfT-rb-PbM">
-                                        <rect key="frame" x="73.5" y="231" width="196" height="44"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P2b-Dx-XrH">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="87R-qU-mGS">
-                                                <rect key="frame" x="0.0" y="0.0" width="88" height="44"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="gfT-rb-PbM">
+                                                <rect key="frame" x="89" y="35" width="196" height="44"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="87R-qU-mGS">
+                                                        <rect key="frame" x="0.0" y="0.0" width="88" height="44"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="88" id="fh3-1k-qvB"/>
+                                                            <constraint firstAttribute="height" constant="44" id="m2A-v5-eKk"/>
+                                                        </constraints>
+                                                        <state key="normal" title="추가"/>
+                                                        <connections>
+                                                            <action selector="saveBookmark:" destination="jGX-iR-WvA" eventType="touchUpInside" id="adp-ea-Ru1"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXL-eA-DzJ">
+                                                        <rect key="frame" x="108" y="0.0" width="88" height="44"/>
+                                                        <state key="normal" title="취소"/>
+                                                        <connections>
+                                                            <action selector="saveBookmark:" destination="jGX-iR-WvA" eventType="touchUpInside" id="6lf-D4-PRF"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="88" id="fh3-1k-qvB"/>
-                                                    <constraint firstAttribute="height" constant="44" id="m2A-v5-eKk"/>
+                                                    <constraint firstItem="gXL-eA-DzJ" firstAttribute="width" secondItem="87R-qU-mGS" secondAttribute="width" id="mLr-GN-hWQ"/>
+                                                    <constraint firstItem="gXL-eA-DzJ" firstAttribute="height" secondItem="87R-qU-mGS" secondAttribute="height" id="vzq-yB-iIF"/>
                                                 </constraints>
-                                                <state key="normal" title="추가"/>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I0K-1G-fCG">
+                                                <rect key="frame" x="0.0" y="81" width="375" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="yTb-mE-guA"/>
+                                                </constraints>
+                                                <state key="normal" title="책 선택"/>
                                                 <connections>
-                                                    <action selector="saveBookmark:" destination="jGX-iR-WvA" eventType="touchUpInside" id="adp-ea-Ru1"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXL-eA-DzJ">
-                                                <rect key="frame" x="108" y="0.0" width="88" height="44"/>
-                                                <state key="normal" title="취소"/>
-                                                <connections>
-                                                    <action selector="saveBookmark:" destination="jGX-iR-WvA" eventType="touchUpInside" id="6lf-D4-PRF"/>
+                                                    <segue destination="WgS-b4-IR8" kind="show" id="gnN-iv-mmR"/>
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstItem="gXL-eA-DzJ" firstAttribute="width" secondItem="87R-qU-mGS" secondAttribute="width" id="mLr-GN-hWQ"/>
-                                            <constraint firstItem="gXL-eA-DzJ" firstAttribute="height" secondItem="87R-qU-mGS" secondAttribute="height" id="vzq-yB-iIF"/>
-                                        </constraints>
-                                    </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I0K-1G-fCG">
-                                        <rect key="frame" x="0.0" y="81" width="343" height="60"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="yTb-mE-guA"/>
-                                        </constraints>
-                                        <state key="normal" title="책 선택"/>
-                                        <connections>
-                                            <segue destination="WgS-b4-IR8" kind="presentation" id="KTV-is-uZO"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="책갈피 추가" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3OU-8F-tH7">
-                                        <rect key="frame" x="0.0" y="35" width="343" height="52"/>
-                                        <color key="backgroundColor" red="0.32156862745098036" green="0.24313725490196078" blue="0.20784313725490194" alpha="0.79652718321917804" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="52" id="CQf-iq-h45"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="25"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                 </subviews>
-                                <color key="backgroundColor" red="0.97636479139328003" green="0.97653168439865112" blue="0.97635418176651001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="I0K-1G-fCG" secondAttribute="trailing" id="6QD-zL-C4s"/>
-                                    <constraint firstItem="gfT-rb-PbM" firstAttribute="centerX" secondItem="P2b-Dx-XrH" secondAttribute="centerX" id="K0c-4D-vWw"/>
-                                    <constraint firstItem="I0K-1G-fCG" firstAttribute="top" secondItem="3OU-8F-tH7" secondAttribute="bottom" id="VLF-w6-ThX"/>
-                                    <constraint firstItem="3OU-8F-tH7" firstAttribute="top" secondItem="P2b-Dx-XrH" secondAttribute="top" constant="29" id="ZYm-0P-Wqn"/>
-                                    <constraint firstItem="I0K-1G-fCG" firstAttribute="leading" secondItem="P2b-Dx-XrH" secondAttribute="leading" id="eG2-N2-Rvg"/>
-                                    <constraint firstAttribute="bottomMargin" secondItem="gfT-rb-PbM" secondAttribute="bottom" constant="8" id="qum-G1-lOw"/>
-                                    <constraint firstAttribute="trailing" secondItem="3OU-8F-tH7" secondAttribute="trailing" id="tWD-o4-xrC"/>
-                                    <constraint firstItem="3OU-8F-tH7" firstAttribute="leading" secondItem="P2b-Dx-XrH" secondAttribute="leading" id="wZG-rv-2UF"/>
+                                    <constraint firstItem="P2b-Dx-XrH" firstAttribute="top" secondItem="4MN-Tn-l8E" secondAttribute="top" id="92J-BI-bDh"/>
+                                    <constraint firstAttribute="bottom" secondItem="P2b-Dx-XrH" secondAttribute="bottom" id="Kb4-Rr-Fc7"/>
+                                    <constraint firstItem="P2b-Dx-XrH" firstAttribute="leading" secondItem="4MN-Tn-l8E" secondAttribute="leading" id="SRj-F7-ZhZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="P2b-Dx-XrH" secondAttribute="trailing" id="TB0-0h-XnL"/>
+                                    <constraint firstItem="P2b-Dx-XrH" firstAttribute="height" secondItem="4MN-Tn-l8E" secondAttribute="height" id="ck2-xS-9la"/>
+                                    <constraint firstItem="P2b-Dx-XrH" firstAttribute="width" secondItem="4MN-Tn-l8E" secondAttribute="width" id="xuV-dP-f4r"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="25"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
+                            </scrollView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="P2b-Dx-XrH" firstAttribute="centerX" secondItem="YJk-ft-IcR" secondAttribute="centerX" id="6oB-Ic-Qgq"/>
-                            <constraint firstItem="P2b-Dx-XrH" firstAttribute="leading" secondItem="YJk-ft-IcR" secondAttribute="leadingMargin" id="AAb-vR-ah1"/>
-                            <constraint firstItem="P2b-Dx-XrH" firstAttribute="centerY" secondItem="YJk-ft-IcR" secondAttribute="centerY" id="vO1-Wi-WhB"/>
-                            <constraint firstItem="P2b-Dx-XrH" firstAttribute="top" secondItem="2Qx-K9-1aC" secondAttribute="top" constant="168" id="za4-yb-gR7"/>
+                            <constraint firstItem="4MN-Tn-l8E" firstAttribute="leading" secondItem="2Qx-K9-1aC" secondAttribute="leading" id="Kb8-SY-Ja8"/>
+                            <constraint firstItem="2Qx-K9-1aC" firstAttribute="bottom" secondItem="4MN-Tn-l8E" secondAttribute="bottom" id="c8z-F8-TCV"/>
+                            <constraint firstItem="4MN-Tn-l8E" firstAttribute="top" secondItem="2Qx-K9-1aC" secondAttribute="top" id="mHZ-0D-pmC"/>
+                            <constraint firstItem="4MN-Tn-l8E" firstAttribute="trailing" secondItem="2Qx-K9-1aC" secondAttribute="trailing" id="mYA-MP-zkS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2Qx-K9-1aC"/>
                     </view>
@@ -137,7 +131,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qet-hV-kkx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3165.5999999999999" y="-682.3088455772114"/>
+            <point key="canvasLocation" x="3537" y="-679"/>
         </scene>
         <!--Search-->
         <scene sceneID="HW7-Px-4qR">
@@ -145,7 +139,7 @@
                 <viewControllerPlaceholder storyboardName="Search" id="WgS-b4-IR8" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZT8-ek-ePP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3831" y="-711"/>
+            <point key="canvasLocation" x="4214" y="-741"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HCd-mq-V8f">
@@ -166,4 +160,7 @@
             <point key="canvasLocation" x="1663" y="-466"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bookmark" width="24" height="24"/>
+    </resources>
 </document>

@@ -145,7 +145,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="X9f-me-yGF"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Add" image="Add" id="Vmn-Eu-JcF"/>
+                    <tabBarItem key="tabBarItem" title="Add" image="add" id="Vmn-Eu-JcF"/>
                     <navigationItem key="navigationItem" id="gZd-2z-hTP">
                         <barButtonItem key="rightBarButtonItem" title="완료" id="Fbm-mt-LWm">
                             <connections>
@@ -169,7 +169,7 @@
             </objects>
             <point key="canvasLocation" x="1942" y="1151"/>
         </scene>
-        <!--Add Pop UpVC-->
+        <!--Add-->
         <scene sceneID="pkl-1w-7a6">
             <objects>
                 <viewController id="8j4-aT-rqv" customClass="AddPopUpVC" customModule="moudaTab2" customModuleProvider="target" sceneMemberID="viewController">
@@ -179,7 +179,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="rOZ-MT-fdA"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Add" image="add" id="280-lo-4k8"/>
                     <navigationItem key="navigationItem" id="VWn-lu-8b4"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WtO-CH-dMZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -204,16 +206,8 @@
             </objects>
             <point key="canvasLocation" x="46" y="829"/>
         </scene>
-        <!--Search-->
-        <scene sceneID="q66-7d-ft7">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Search" id="5kj-dY-7kc" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6v4-Wf-Umd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1714" y="611"/>
-        </scene>
     </scenes>
     <resources>
-        <image name="Add" width="25" height="25"/>
+        <image name="add" width="24" height="24"/>
     </resources>
 </document>

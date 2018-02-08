@@ -18,7 +18,7 @@ class Book:NSObject, NSCoding {
     
     override init () {
         title = "DefaultTitle"
-        coverImage = #imageLiteral(resourceName: "Home")
+        coverImage = #imageLiteral(resourceName: "tempBook1")
         publisher = "DefaultPublisher"
         writer = "DefaultWriter"
         bookDescription = "DefaultDescription"
