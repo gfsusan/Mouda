@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qeM-6p-nfn">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,7 +16,7 @@
             <objects>
                 <tableViewController id="RDo-Dt-2o6" customClass="BookmarkTableVC" customModule="moudaTab2" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="8RX-pC-O5S">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -41,20 +46,70 @@
             </objects>
             <point key="canvasLocation" x="2388" y="-466"/>
         </scene>
-        <!--Add Bookmark View Controller-->
+        <!--Add BookmarkVC-->
         <scene sceneID="2UE-Xi-dlU">
             <objects>
-                <viewController id="jGX-iR-WvA" customClass="AddBookmarkViewController" customModule="moudaTab2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="overCurrentContext" id="jGX-iR-WvA" customClass="AddBookmarkVC" customModule="moudaTab2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YJk-ft-IcR">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P2b-Dx-XrH">
+                                <rect key="frame" x="16" y="188" width="343" height="291"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I0K-1G-fCG">
+                                        <rect key="frame" x="0.0" y="8" width="343" height="67"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="67" id="JbR-xc-3Zh"/>
+                                        </constraints>
+                                        <state key="normal" title="책 선택"/>
+                                        <connections>
+                                            <segue destination="WgS-b4-IR8" kind="presentation" id="KTV-is-uZO"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="87R-qU-mGS">
+                                        <rect key="frame" x="149" y="253" width="45" height="30"/>
+                                        <state key="normal" title="추가"/>
+                                        <connections>
+                                            <action selector="saveBookmark:" destination="jGX-iR-WvA" eventType="touchUpInside" id="adp-ea-Ru1"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="I0K-1G-fCG" firstAttribute="top" secondItem="P2b-Dx-XrH" secondAttribute="topMargin" id="UbK-d2-gBw"/>
+                                    <constraint firstItem="87R-qU-mGS" firstAttribute="leading" secondItem="P2b-Dx-XrH" secondAttribute="leading" constant="149" id="bij-ae-aMw"/>
+                                    <constraint firstAttribute="trailing" secondItem="87R-qU-mGS" secondAttribute="trailing" constant="149" id="kQV-Up-dQL"/>
+                                    <constraint firstItem="87R-qU-mGS" firstAttribute="bottom" secondItem="P2b-Dx-XrH" secondAttribute="bottomMargin" id="nr3-v3-UjB"/>
+                                    <constraint firstItem="87R-qU-mGS" firstAttribute="centerX" secondItem="I0K-1G-fCG" secondAttribute="centerX" id="p8q-bK-WWu"/>
+                                    <constraint firstItem="I0K-1G-fCG" firstAttribute="leading" secondItem="P2b-Dx-XrH" secondAttribute="leading" id="tHP-hR-5bB"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="P2b-Dx-XrH" firstAttribute="centerX" secondItem="YJk-ft-IcR" secondAttribute="centerX" id="6oB-Ic-Qgq"/>
+                            <constraint firstItem="P2b-Dx-XrH" firstAttribute="leading" secondItem="YJk-ft-IcR" secondAttribute="leadingMargin" id="AAb-vR-ah1"/>
+                            <constraint firstItem="P2b-Dx-XrH" firstAttribute="centerY" secondItem="YJk-ft-IcR" secondAttribute="centerY" id="vO1-Wi-WhB"/>
+                            <constraint firstItem="P2b-Dx-XrH" firstAttribute="top" secondItem="2Qx-K9-1aC" secondAttribute="top" constant="168" id="za4-yb-gR7"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="2Qx-K9-1aC"/>
                     </view>
+                    <connections>
+                        <outlet property="addBookmarkButton" destination="87R-qU-mGS" id="Z6z-4N-fBZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qet-hV-kkx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3166" y="-682"/>
+            <point key="canvasLocation" x="3165.5999999999999" y="-682.3088455772114"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="HW7-Px-4qR">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Search" id="WgS-b4-IR8" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZT8-ek-ePP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3831" y="-711"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HCd-mq-V8f">
