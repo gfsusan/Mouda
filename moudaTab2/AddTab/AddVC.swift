@@ -32,6 +32,8 @@ class AddVC: UIViewController, UITextViewDelegate, UITabBarControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         self.lineTextView.delegate = self
         self.pageTextView.delegate = self
         self.thoughtTextView.delegate = self
