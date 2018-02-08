@@ -30,9 +30,10 @@ class AddVC: UIViewController {
         } else {
             //change tab bar
             closeFlag = false
-            if (self.presentingViewController as? UITabBarController) != nil {
-                tabBarController?.selectedIndex = 0
-            }
+            self.navigationController?.tabBarController?.selectedIndex = 0
+//            if (self.presentingViewController as? UITabBarController) != nil {
+//                tabBarController?.selectedIndex = 0
+//            }
 
         }
     }
