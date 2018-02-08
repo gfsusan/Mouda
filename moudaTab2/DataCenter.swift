@@ -23,12 +23,14 @@ class DataCenter {
     init() {
         if FileManager.default.fileExists(atPath: self.filePath) {
             // read
+            print("파일 있음")
             if let unarchArray = NSKeyedUnarchiver.unarchiveObject(withFile: self.filePath) as? [Feed] {
                 feeds += unarchArray
             }
 
         } else {
             //create
+            print("파일 없음")
             feeds += defaultData()
         }
 //        feeds += defaultData()
