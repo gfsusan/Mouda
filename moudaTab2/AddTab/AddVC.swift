@@ -23,14 +23,18 @@ class AddVC: UIViewController, UITextViewDelegate, UITabBarControllerDelegate {
         dataCenter.save()
     }
     
-
+    // Hide keyboard when user touches outside keyboard
+    @IBAction func tabGesture(_ sender: Any) {
+        self.view.endEditing(true)
+        
+    }
         
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        lineTextView.delegate = self
-        pageTextView.delegate = self
-        thoughtTextView.delegate = self
+        self.lineTextView.delegate = self
+        self.pageTextView.delegate = self
+        self.thoughtTextView.delegate = self
         lineTextView.text = "간직하고 싶은 책 속의 한 문장을 작성해주세요."
         pageTextView.text = "123"
         thoughtTextView.text = "기록한 문장에 대한 본인만의 생각이나 감정을 표현해주세요."
@@ -40,7 +44,7 @@ class AddVC: UIViewController, UITextViewDelegate, UITabBarControllerDelegate {
         // Do any additional setup after loading the view.
 
     }
-    
+
     
     // Placeholder text
     func textViewDidBeginEditing(_ textView: UITextView) {
@@ -50,9 +54,9 @@ class AddVC: UIViewController, UITextViewDelegate, UITabBarControllerDelegate {
         }
         textView.becomeFirstResponder()
     }
-    
+
     func textViewDidEndEditing(_ textView: UITextView) {
-        
+
         if textView.text.isEmpty {
             textView.textColor = UIColor.lightGray
             if textView.accessibilityIdentifier == "lineText" {
@@ -65,8 +69,6 @@ class AddVC: UIViewController, UITextViewDelegate, UITabBarControllerDelegate {
         }
         textView.resignFirstResponder()
     }
-    
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
