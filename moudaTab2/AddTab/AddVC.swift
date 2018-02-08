@@ -22,16 +22,18 @@ class AddVC: UIViewController {
         print("뷰윌어피어잘됨")
         print(closeFlag)
         if closeFlag == false {
+//            let vc = ViewController(nibName: "AddPopUpVC", bundle: nil)
+//            self.present(vc, animated: true)
             let sb = UIStoryboard(name: "AddPopUp", bundle: nil)
             let popup = sb.instantiateInitialViewController()!
             self.present(popup, animated: true)
         } else {
-            closeFlag = false
-            
             //change tab bar
             if let root = self.presentingViewController as? UITabBarController  {
                 var tabBarController = root as UITabBarController
                 tabBarController.selectedIndex = 0
+                
+                closeFlag = false
             }
             
         }
@@ -51,8 +53,10 @@ class AddVC: UIViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         
+        print("build")
         let addPopupVC = segue.destination as? AddPopUpVC
         if let addPopup = addPopupVC {
+            print("segue")
             addPopup.addDelegate = self
         }
     }

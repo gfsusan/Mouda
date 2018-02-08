@@ -127,7 +127,7 @@
                     <tabBarItem key="tabBarItem" title="MyFeed" image="home" id="Iif-bQ-dRY"/>
                     <navigationItem key="navigationItem" id="toK-49-5gP">
                         <barButtonItem key="leftBarButtonItem" image="Empty" id="0To-GQ-URE"/>
-                        <barButtonItem key="rightBarButtonItem" image="setup" id="jk6-Ng-rRq"/>
+                        <barButtonItem key="rightBarButtonItem" image="setting" id="jk6-Ng-rRq"/>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
@@ -265,6 +265,6 @@
         <image name="Empty" width="30" height="30"/>
         <image name="book" width="50" height="50"/>
         <image name="home" width="24" height="24"/>
-        <image name="setup" width="32" height="32"/>
+        <image name="setting" width="24" height="24"/>
     </resources>
 </document>
