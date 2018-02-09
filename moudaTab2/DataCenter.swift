@@ -42,31 +42,31 @@ class DataCenter {
         books.append(book2)
         books.append(book3)
         
-        // 피드 파일 존재하는지 확인
-        if FileManager.default.fileExists(atPath: self.feedFilePath) {
-            print("피드 파일 있음")
-            if let unarchArray = NSKeyedUnarchiver.unarchiveObject(withFile: self.feedFilePath) as? [Feed] {
-                feeds += unarchArray
-            }
-
-        } else {
-            print("피드 파일 없음")
-            feeds += defaultFeedData()
-        }
-        
-        if FileManager.default.fileExists(atPath: self.bookmarkFilePath) {
-            // read
-            print("북마크 파일 있음")
-            if let unarchArray = NSKeyedUnarchiver.unarchiveObject(withFile: self.bookmarkFilePath) as? [Bookmark] {
-                bookmarks += unarchArray
-            }
-        } else {
-            print("북마크 파일 없음")
-            bookmarks += defaultBookmarkData()
-        }
+//        // 피드 파일 존재하는지 확인
+//        if FileManager.default.fileExists(atPath: self.feedFilePath) {
+//            print("피드 파일 있음")
+//            if let unarchArray = NSKeyedUnarchiver.unarchiveObject(withFile: self.feedFilePath) as? [Feed] {
+//                feeds += unarchArray
+//            }
+//
+//        } else {
+//            print("피드 파일 없음")
+//            feeds += defaultFeedData()
+//        }
+//
+//        if FileManager.default.fileExists(atPath: self.bookmarkFilePath) {
+//            // read
+//            print("북마크 파일 있음")
+//            if let unarchArray = NSKeyedUnarchiver.unarchiveObject(withFile: self.bookmarkFilePath) as? [Bookmark] {
+//                bookmarks += unarchArray
+//            }
+//        } else {
+//            print("북마크 파일 없음")
+//            bookmarks += defaultBookmarkData()
+//        }
 //        dummy data
-//        feeds += defaultFeedData()
-//        bookmarks += defaultBookmarkData()
+        feeds += defaultFeedData()
+        bookmarks += defaultBookmarkData()
     }
     
     func defaultFeedData() -> Array<Feed> {
