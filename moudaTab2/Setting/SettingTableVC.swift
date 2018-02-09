@@ -39,10 +39,10 @@ class SettingTableVC: UITableViewController, MFMailComposeViewControllerDelegate
             mail.mailComposeDelegate = self
             mail.setToRecipients(["gfsusan@naver.com"])
             mail.setMessageBody("<p>You're so awesome!</p>", isHTML: true)
-            
             present(mail, animated: true)
         } else {
             print("Fail to send E-mail")
+            // 경고창
         }
     }
     override func didReceiveMemoryWarning() {
