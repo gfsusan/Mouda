@@ -10,10 +10,11 @@ import Foundation
 import UIKit
 
 class Book:NSObject, NSCoding {
-    var title:String?
-    var coverImageURL:String?
-    var publisher:String?
-    var writer:String?
+    var title: String?
+    var coverImage: UIImage?
+    var coverImageURL: String?
+    var publisher: String?
+    var writer: String?
     
     override init () {
         title = "DefaultTitle"
@@ -49,6 +50,15 @@ class Book:NSObject, NSCoding {
         aCoder.encode(self.coverImageURL, forKey: "coverImage")
         aCoder.encode(self.publisher, forKey: "publisher")
         aCoder.encode(self.writer, forKey: "writer")
+    }
+    
+    func getCoverImage(withURL imageURL: String) -> UIImage? {
+        if let url = URL(string: imageURL) {
+            let imgData:Data = try! Data(contentsOf: url)
+            let image = UIImage(data: imgData)
+            return image
+        }
+        return nil
     }
 }
 

@@ -134,11 +134,26 @@ class SearchTableVC: UITableViewController,  UISearchBarDelegate, XMLParserDeleg
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "bookInfoCell", for: indexPath) as! SearchBookCell
 
+        
         let book = books[indexPath.row]
         // Configure the cell...
         
-        // TODO 이미지 비동기 처리
-//        cell.bookImageView.image = book.coverImage
+        if let thumbImage = book.coverImage {
+            cell.bookImageView.image = thumbImage
+        } else {
+            cell.bookImageView.image = UIImage(named: "book2")
+            if let thumbImageURL = book.coverImageURL {
+                DispatchQueue.main.async(execute: {
+                    book.coverImage = book.getCoverImage(withURL: book.coverImageURL!)
+                    guard let thumbImage = book.coverImage else {
+                        return
+                    }
+                    cell.bookImageView.image = thumbImage
+                })
+            }
+            
+            
+        }
         cell.titleTV.text = book.title
         cell.writerTV.text = book.writer
         

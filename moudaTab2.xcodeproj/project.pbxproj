@@ -90,6 +90,7 @@
 		66728F14202A9DB50061C168 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				66728F21202AE7520061C168 /* DataCenter.swift */,
 				669990FF202437F200410F21 /* Book.swift */,
 				669990FD202437F100410F21 /* Feed.swift */,
 				66DBAC9E202BF5660043CB4B /* Bookmark.swift */,
@@ -171,7 +172,6 @@
 				7AD0AF6A2029B3F3002E7F60 /* Media.xcassets */,
 				669990F020242F2B00410F21 /* Assets.xcassets */,
 				669990F520242F2B00410F21 /* Info.plist */,
-				66728F21202AE7520061C168 /* DataCenter.swift */,
 			);
 			path = moudaTab2;
 			sourceTree = "<group>";

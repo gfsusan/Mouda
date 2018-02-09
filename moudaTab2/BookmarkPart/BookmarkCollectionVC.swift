@@ -60,6 +60,22 @@ class BookmarkCollectionVC: UICollectionViewController {
         
         // Configure the cell
         retCell.backgroundColor = UIColor.yellow
+        
+        if let thumbImage = bookmark.book.coverImage {
+            retCell.coverImage.image = thumbImage
+        } else {
+            retCell.coverImage.image = UIImage(named: "book2")
+            if let thumbImageURL = bookmark.book.coverImageURL {
+                DispatchQueue.main.async(execute: {
+                    bookmark.book.coverImage = bookmark.book.getCoverImage(withURL: bookmark.book.coverImageURL!)
+                    guard let thumbImage = bookmark.book.coverImage else {
+                        return
+                    }
+                    retCell.coverImage.image = thumbImage
+                })
+            }
+        }
+        
         retCell.titleLabel.text = bookmark.book.title
         retCell.pageLabel.text = "\(bookmark.page)"
         
