@@ -11,20 +11,20 @@ import UIKit
 
 class Book:NSObject, NSCoding {
     var title:String?
-    var coverImage:UIImage?
+    var coverImageURL:String?
     var publisher:String?
     var writer:String?
     
     override init () {
         title = "DefaultTitle"
-        coverImage = #imageLiteral(resourceName: "tempBook1")
+        coverImageURL = "DefaultImageURL"
         publisher = "DefaultPublisher"
         writer = "DefaultWriter"
     }
     
-    init(title:String, coverImage:UIImage, publisher:String, writer:String, bookDescription:String) {
+    init(title:String, coverImageURL:String, publisher:String, writer:String, bookDescription:String) {
         self.title = title
-        self.coverImage = coverImage
+        self.coverImageURL = coverImageURL
         self.publisher = publisher
         self.writer = writer
     }
@@ -33,8 +33,8 @@ class Book:NSObject, NSCoding {
         if let title = aDecoder.decodeObject(forKey: "title") as? String {
             self.title = title
         }
-        if let coverImage = aDecoder.decodeObject(forKey: "coverImage") as? UIImage {
-            self.coverImage = coverImage
+        if let coverImageURL = aDecoder.decodeObject(forKey: "coverImage") as? String {
+            self.coverImageURL = coverImageURL
         }
         if let publisher = aDecoder.decodeObject(forKey: "publisher") as? String {
              self.publisher = publisher
@@ -46,7 +46,7 @@ class Book:NSObject, NSCoding {
     
     func encode(with aCoder: NSCoder) {
         aCoder.encode(self.title, forKey: "title")
-        aCoder.encode(self.coverImage, forKey: "coverImage")
+        aCoder.encode(self.coverImageURL, forKey: "coverImage")
         aCoder.encode(self.publisher, forKey: "publisher")
         aCoder.encode(self.writer, forKey: "writer")
     }

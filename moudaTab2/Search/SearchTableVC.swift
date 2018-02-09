@@ -59,7 +59,7 @@ class SearchTableVC: UITableViewController,  UISearchBarDelegate, XMLParserDeleg
             print(String(data: data, encoding: String.Encoding.utf8))
             
             self.item?.title = ""
-            self.item?.coverImage = #imageLiteral(resourceName: "tempBook3")
+            self.item?.coverImageURL = ""
             self.item?.publisher = ""
             self.item?.writer = ""
             
@@ -102,13 +102,7 @@ class SearchTableVC: UITableViewController,  UISearchBarDelegate, XMLParserDeleg
             item?.title = temp.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
             print("title: \(temp)")
         } else if elementName == "image" {
-            if let url = URL(string: temp){
-                print(url)
-                if let data = try? Data(contentsOf: url) {
-                    print("created data")
-                    item?.coverImage = UIImage(data: data)
-                }
-            }
+            item?.coverImageURL = temp
         } else if elementName == "publisher" {
             item?.publisher = temp
         } else if elementName == "author" {
@@ -142,7 +136,9 @@ class SearchTableVC: UITableViewController,  UISearchBarDelegate, XMLParserDeleg
 
         let book = books[indexPath.row]
         // Configure the cell...
-        cell.bookImageView.image = book.coverImage
+        
+        // TODO 이미지 비동기 처리
+//        cell.bookImageView.image = book.coverImage
         cell.titleTV.text = book.title
         cell.writerTV.text = book.writer
         
