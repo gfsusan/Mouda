@@ -19,6 +19,7 @@
             landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
+<<<<<<< HEAD
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
@@ -51,5 +52,7 @@
             landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
+=======
+>>>>>>> settings
    </Breakpoints>
 </Bucket>

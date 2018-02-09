@@ -19,6 +19,8 @@ class ViewController: UIViewController {
         imageView.contentMode = .scaleAspectFit
         
         navigationItem.titleView = imageView
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
