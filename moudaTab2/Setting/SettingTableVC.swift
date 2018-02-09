@@ -14,15 +14,13 @@ import UserNotifications
 class SettingTableVC: UITableViewController, MFMailComposeViewControllerDelegate {
 
     @IBOutlet weak var alarmSwitch: UISwitch!
+    @IBOutlet weak var myFeedCount: UILabel!
+    @IBOutlet weak var myBookmarkCount: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
     }
     
     @IBAction func switchStatus(_ sender: Any) {
@@ -34,12 +32,25 @@ class SettingTableVC: UITableViewController, MFMailComposeViewControllerDelegate
     func switchOn() {
         print("Switch On")
     }
-    
-    
-    
 
+    @IBAction func feedbackEmail(_ sender: Any) {
+        if MFMailComposeViewController.canSendMail() {
+            let mail = MFMailComposeViewController()
+            mail.mailComposeDelegate = self
+            mail.setToRecipients(["gfsusan@naver.com"])
+            mail.setMessageBody("<p>You're so awesome!</p>", isHTML: true)
+            
+            present(mail, animated: true)
+        } else {
+            print("Fail to send E-mail")
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true)
     }
 }
