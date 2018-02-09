@@ -54,9 +54,11 @@ class Book:NSObject, NSCoding {
     
     func getCoverImage(withURL imageURL: String) -> UIImage? {
         if let url = URL(string: imageURL) {
-            let imgData:Data = try! Data(contentsOf: url)
-            let image = UIImage(data: imgData)
-            return image
+            if let imgData = try? Data(contentsOf: url) {
+                if let image = UIImage(data: imgData) {
+                    return image
+                }
+            }
         }
         return nil
     }

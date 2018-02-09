@@ -104,9 +104,9 @@ class SearchTableVC: UITableViewController,  UISearchBarDelegate, XMLParserDeleg
         } else if elementName == "image" {
             item?.coverImageURL = temp
         } else if elementName == "publisher" {
-            item?.publisher = temp
+            item?.publisher = temp.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
         } else if elementName == "author" {
-            item?.writer = temp
+            item?.writer = temp.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
             books.append(self.item!)
             table.reloadData()
         }
