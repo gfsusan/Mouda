@@ -10,7 +10,7 @@ import Foundation
 
 class Bookmark:NSObject, NSCoding {
     var book:Book
-    var page:Int
+    var page:Int?
     
     init(book:Book, page:Int) {
         self.book = book

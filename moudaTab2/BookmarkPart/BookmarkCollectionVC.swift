@@ -46,7 +46,7 @@ class BookmarkCollectionVC: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return bookmarks.count
+        return bookmarks.count + 1
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -56,10 +56,14 @@ class BookmarkCollectionVC: UICollectionViewController {
             return cell!
         }
         
-        let bookmark = bookmarks[indexPath.row]
+        if indexPath.row == bookmarks.count {
+            retCell.coverImage.image = #imageLiteral(resourceName: "aaaddd")
+            retCell.pageLabel.text = ""
+            
+            return retCell
+        }
         
-        // Configure the cell
-        retCell.backgroundColor = UIColor.yellow
+        let bookmark = bookmarks[indexPath.row]
         
         if let thumbImage = bookmark.book.coverImage {
             retCell.coverImage.image = thumbImage
@@ -67,7 +71,7 @@ class BookmarkCollectionVC: UICollectionViewController {
             retCell.coverImage.image = UIImage(named: "book2")
             if let thumbImageURL = bookmark.book.coverImageURL {
                 DispatchQueue.main.async(execute: {
-                    bookmark.book.coverImage = bookmark.book.getCoverImage(withURL: bookmark.book.coverImageURL!)
+                    bookmark.book.coverImage = bookmark.book.getCoverImage(withURL: thumbImageURL)
                     guard let thumbImage = bookmark.book.coverImage else {
                         return
                     }
@@ -76,10 +80,14 @@ class BookmarkCollectionVC: UICollectionViewController {
             }
         }
         
-        retCell.titleLabel.text = bookmark.book.title
-        retCell.pageLabel.text = "\(bookmark.page)"
+        if let page = bookmark.page {
+            retCell.pageLabel.text = "\(page)쪽까지 읽음"
+        } else {
+            retCell.pageLabel.text = "다 읽음"
+        }
         
         return retCell
+    
     }
 
 

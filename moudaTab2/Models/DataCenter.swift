@@ -12,8 +12,8 @@ let dataCenter: DataCenter = DataCenter()
 var feedDataFileName = "FeedData.brch"
 var bookmarkDataFileName = "BookmarkData.brch"
 
-let book1 = Book(title: "적을 만들지 않는 대화법", coverImageURL: "http://i2.media.daumcdn.net/svc/image/U03/news/201504/09/newsis/20150409141118025.jpeg", publisher: "출판사1", writer: "작가1", bookDescription: "적을 만들지 않는 대화법을 알려주는 책이다.")
-let book2 = Book(title: "필요한 사람인가", coverImageURL: "http://bookthumb.phinf.naver.net/cover/126/921/12692139.jpg?type=m1&udate=20171102", publisher: "출판사2", writer: "작가2", bookDescription: "필요한 사람인가에 대한 고찰")
+let book1 = Book(title: "적을 만들지 않는 대화법", coverImageURL: "http://bookthumb.phinf.naver.net/cover/126/921/12692139.jpg?type=m1&udate=20171102", publisher: "출판사1", writer: "작가1", bookDescription: "적을 만들지 않는 대화법을 알려주는 책이다.")
+let book2 = Book(title: "필요한 사람인가", coverImageURL: "http://i2.media.daumcdn.net/svc/image/U03/news/201504/09/newsis/20150409141118025.jpeg", publisher: "출판사2", writer: "작가2", bookDescription: "필요한 사람인가에 대한 고찰")
 let book3 = Book(title: "신경 끄기의 기술", coverImageURL: "http://image.yes24.com/momo/TopCate1638/MidCate004/163736954.jpg", publisher: "출판사3", writer: "작가3", bookDescription: "신경 끄는 기술에 대한 설명")
 
 class DataCenter {
