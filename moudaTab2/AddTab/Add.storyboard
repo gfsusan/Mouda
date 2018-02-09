@@ -202,7 +202,7 @@
                     <navigationItem key="navigationItem" id="MBl-8t-AE1">
                         <barButtonItem key="leftBarButtonItem" title="취소" id="6iB-dP-Tjh">
                             <connections>
-                                <action selector="cancelAdd:" destination="nOL-BV-Fc8" id="TCC-UI-tgc"/>
+                                <action selector="cancelButtonPressed:" destination="nOL-BV-Fc8" id="TRV-G9-vfF"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="완료" id="rij-8Z-TAU">
@@ -213,6 +213,7 @@
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="bookChooseButton" destination="whW-bx-tWL" id="uR1-7U-7jo"/>
                         <outlet property="lineTextView" destination="Iyn-c5-Sr6" id="gUI-Cj-4Au"/>
                         <outlet property="pageTextView" destination="bdA-J2-k7z" id="9vV-VK-BtC"/>
                         <outlet property="thoughtTextView" destination="DSG-hl-EzV" id="KdL-TD-pDH"/>

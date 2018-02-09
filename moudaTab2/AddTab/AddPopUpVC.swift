@@ -13,7 +13,11 @@ class AddPopUpVC: UIViewController, UITextViewDelegate, UITabBarControllerDelega
     var delegate:DataCenter?
     var addDelegate:AddVC?
     var feedDelegate:FeedTableVC?
-
+    
+    // 책 선택 화면에서 고른 책
+    var book:Book?
+    
+    @IBOutlet weak var bookChooseButton: UIButton!
     @IBOutlet weak var lineTextView: UITextView!
     @IBOutlet weak var pageTextView: UITextView!
     @IBOutlet weak var thoughtTextView: UITextView!
@@ -21,21 +25,31 @@ class AddPopUpVC: UIViewController, UITextViewDelegate, UITabBarControllerDelega
     
     }
     @IBAction func doneButtonPressed(_ sender: Any) {
-        dataCenter.feeds.insert(Feed(book: Book(), page: Int(pageTextView.text)!, line: lineTextView.text, thought: thoughtTextView.text), at: 0)
-        dataCenter.save()
-        
-//        if let feedTableVC = feedDelegate {
-//            print("reloadData")
-//            feedTableVC.tableView.reloadData()
-//        }
-        
-        // 저장 작업 외에는 Cancel과 똑같이 modal dismiss만 해주면 됨
-        cancelAdd(sender)
-        
+        if let chosenBook = book {
+            // line과 page 입력되었는지 확인. thought은 없어도 됨
+            if lineTextView.textColor != UIColor.lightGray {
+                if pageTextView.textColor != UIColor.lightGray {
+                dataCenter.feeds.insert(Feed(book: chosenBook, page: Int(pageTextView.text)!, line: lineTextView.text, thought: thoughtTextView.text), at: 0)
+                dataCenter.save()
+                
+            
+            // 저장 작업 외에는 Cancel과 똑같이 modal dismiss만 해주면 됨
+                cancelButtonPressed(sender)
+                    
+                } else { // page 입력 안됨
+                    
+                }
+            } else { // line 입력 안됨
+                
+            }
+        } else { // 책 선택 안됨
+            // TODO 책을 선택하라는 notification
+        }
     }
     
+    
     // Hide keyboard when user touches outside keyboard
-    @IBAction func cancelAdd(_ sender: Any) {
+    @IBAction func cancelButtonPressed(_ sender: Any) {
         print("done Button Pressed")
         //delegate로 closeFlag값 true로 설정
         if let addVC = addDelegate {
@@ -66,6 +80,14 @@ class AddPopUpVC: UIViewController, UITextViewDelegate, UITabBarControllerDelega
         // Do any additional setup after loading the view.
 
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        print("add popup view will appear")
+        if let chosenBook = book {
+            print("book chosen")
+            bookChooseButton.setTitle(chosenBook.title, for: .normal)
+        }
+    }
 
     
     // Placeholder text
@@ -95,6 +117,19 @@ class AddPopUpVC: UIViewController, UITextViewDelegate, UITabBarControllerDelega
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+
+        if let destinationNavigationController = segue.destination as? SearchTableVC {
+            destinationNavigationController.addPopUpDelegate = self
+        }
     }
 
 }

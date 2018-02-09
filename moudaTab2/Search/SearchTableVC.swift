@@ -14,6 +14,7 @@ class SearchTableVC: UITableViewController,  UISearchBarDelegate, XMLParserDeleg
     @IBOutlet weak var searchBar: UISearchBar!
     
     var books:[Book] = []
+    var addPopUpDelegate:AddPopUpVC?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,12 +22,6 @@ class SearchTableVC: UITableViewController,  UISearchBarDelegate, XMLParserDeleg
         books = dataCenter.books
         
     }
-    
-//    private func setupSearchBar() {
-//        searchBar.delegate = self
-//    }
-    
-    
     // ClientID
     // svT_lXMu_njLXKNKBA2X
     // ClientSecret
@@ -158,14 +153,23 @@ class SearchTableVC: UITableViewController,  UISearchBarDelegate, XMLParserDeleg
         return 100
     }
     
-    /*
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.addPopUpDelegate?.book = books[indexPath.row]
+        navigationController?.popViewController(animated: true)
+        
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+//        if let destinationNavigationController = segue.destination as? UINavigationController {
+//            let targetController = destinationNavigationController.topViewController as? AddPopUpVC
+//            targetController?.addDelegate = self
     }
-    */
+   
 
 }
