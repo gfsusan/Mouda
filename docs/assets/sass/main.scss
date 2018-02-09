@@ -1,109 +1,31 @@
 @import 'libs/vars';
 @import 'libs/functions';
 @import 'libs/mixins';
-@import 'libs/skel';
-@import 'font-awesome.min.css';
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,300i,400i");
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,900');
+@import url('font-awesome.min.css');
 
 /*
-	Ethereal by HTML5 UP
+	Big Picture by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+	@import "libs/skel";
+
 	@include skel-breakpoints((
+		xxlarge: '(max-width: 1920px)',
 		xlarge: '(max-width: 1680px)',
 		large: '(max-width: 1280px)',
-		medium: '(max-width: 980px)',
+		medium: '(max-width: 1000px)',
 		small: '(max-width: 736px)',
 		xsmall: '(max-width: 480px)',
-		xxsmall: '(max-width: 360px)',
-		short: '(min-aspect-ratio: 16/7)',
-		xshort: '(min-aspect-ratio: 16/6)'
 	));
 
 	@include skel-layout((
 		reset: 'full',
 		boxModel: 'border'
 	));
-
-// Mixins.
-
-	@mixin gradient-background($tint: false, $opacity: 0.25, $stop1: 25%, $stop2: 50%, $angle: 45deg) {
-		$background-image: (
-			url('../../images/overlay.png'),
-			linear-gradient($angle, transparentize(_palette(accent1), (1 - $opacity)) $stop1, transparentize(_palette(accent2), (1 - $opacity)) $stop2, transparentize(_palette(accent3), (1 - $opacity)))
-		);
-
-		$background-size: (
-			128px 128px,
-			auto
-		);
-
-		@if ($tint) {
-			$x: linear-gradient(0deg, rgba(0,0,0,0.125), rgba(0,0,0,0.125));
-			$y: auto;
-			$background-image: append($background-image, $x);
-			$background-size: append($background-size, $y);
-		}
-
-		background-image: $background-image;
-		background-size: $background-size;
-	}
-
-	@mixin gradient-background-small($tint: false, $opacity: 0.25, $stop1: 25%, $stop2: 50%) {
-		@include gradient-background($tint, $opacity, $stop1, $stop2, 135deg);
-	}
-
-	@mixin spans($x) {
-		@for $i from 0 through 10 {
-
-			@if ($i > 0) {
-				.span-#{$i} {
-					width: ($x * $i);
-				}
-			}
-
-			@if ($i < 10) {
-				.span-#{$i}-25 {
-					width: ($x * $i) + ($x * 0.25);
-				}
-
-				.span-#{$i}-5 {
-					width: ($x * $i) + ($x * 0.5);
-				}
-
-				.span-#{$i}-75 {
-					width: ($x * $i) + ($x * 0.75);
-				}
-			}
-		}
-	}
-
-	@mixin spans-small($x) {
-		@for $i from 0 through 10 {
-
-			@if ($i > 0) {
-				.span-#{$i} {
-					width: 100%;
-				}
-			}
-
-			@if ($i < 10) {
-				.span-#{$i}-25 {
-					width: 100%;
-				}
-
-				.span-#{$i}-5 {
-					width: 100%;
-				}
-
-				.span-#{$i}-75 {
-					width: 100%;
-				}
-			}
-		}
-	}
 
 // Base.
 
@@ -112,18 +34,72 @@
 
 // Component.
 
+	@import 'components/box';
+	@import 'components/button';
 	@import 'components/form';
 	@import 'components/icon';
 	@import 'components/image';
 	@import 'components/list';
+	@import 'components/section';
 	@import 'components/table';
-	@import 'components/button';
+	@import 'components/poptrox-popup';
 	@import 'components/gallery';
-	@import 'components/panel';
-	@import 'components/panel-banner';
-	@import 'components/panel-spotlight';
 
 // Layout.
 
-	@import 'layout/page-wrapper';
-	@import 'layout/wrapper';
+	@import 'layout/header';
+	@import 'layout/main';
+	@import 'layout/footer';
+
+/* Intro */
+
+	#intro {
+		background: url('images/overlay.png'), url('../../images/intro.jpg');
+		background-size: 256px 256px, cover;
+		background-attachment: fixed, fixed;
+		background-position: top left, bottom center;
+		background-repeat: repeat, no-repeat;
+	}
+
+/* One */
+
+	#one {
+		background: url('images/overlay.png'), url('../../images/one.jpg');
+		background-size: 256px 256px, cover;
+		background-attachment: fixed, fixed;
+		background-position: top left, center center;
+	}
+
+/* Two */
+
+	#two {
+		background: url('images/overlay.png'), url('../../images/two.jpg');
+		background-size: 256px 256px, cover;
+		background-attachment: fixed, fixed;
+		background-position: top left, center center;
+	}
+
+/* Contact */
+
+	#contact {
+		overflow: hidden;
+		padding-bottom: 0;
+
+		.box {
+			@include vendor('transition', 'transform #{_duration(fade-in)} ease');
+			@include vendor('transform', 'translateY(0)');
+			position: relative;
+		}
+
+		&.inactive {
+			.box {
+				@include vendor('transform', 'translateY(100%)');
+			}
+		}
+
+		@include breakpoint(small) {
+			.box {
+				padding-bottom: 2em;
+			}
+		}
+	}

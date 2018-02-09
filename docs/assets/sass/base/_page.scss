@@ -1,105 +1,150 @@
 ///
-/// Ethereal by HTML5 UP
+/// Big Picture by HTML5 UP
 /// html5up.net | @ajlkn
 /// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 ///
 
-/* Page */
-
-	@include keyframes('load-spinner') {
-		0% {
-			@include vendor('transform', 'rotate(0deg)');
-		}
-
-		100% {
-			@include vendor('transform', 'rotate(360deg)');
-		}
-	}
+/* Basic */
 
 	@-ms-viewport {
 		width: device-width;
 	}
 
 	html {
-		width: 100%;
 		height: 100%;
 	}
 
 	body {
-		@include vendor('display', 'flex');
-		@include vendor('align-items', 'center');
-		@include vendor('justify-content', 'flex-start');
-		-ms-overflow-style: scrollbar;
-		width: 100%;
+		background: _palette(bg);
 		height: 100%;
-		min-height: 30rem;
-		overflow: hidden;
+		min-width: 320px;
+
+		// Prevents animation/transition "flicker" on page load.
+		// Automatically added/removed by js/main.js.
+			&.is-loading {
+				*, *:before, *:after {
+					@include vendor('animation', 'none !important');
+					@include vendor('transition', 'none !important');
+				}
+			}
+
+	}
+
+/* Spinner */
+
+	@include keyframes('spinner-rotate') {
+		0% { @include vendor('transform', 'scale(1) rotate(0deg)'); }
+		100% { @include vendor('transform', 'scale(1) rotate(360deg)'); }
+	}
+
+/* Loader */
+
+	@include keyframes('spinner-show') {
+		0% { opacity: 0; }
+		100% { opacity: 1; }
+	}
+
+	@include keyframes('spinner-hide') {
+		0% {
+			@include vendor('transform', 'scale(1) rotate(0deg)');
+			color: _palette(border);
+			z-index: 100001;
+		}
+
+		99% {
+			@include vendor('transform', 'scale(0.5) rotate(360deg)');
+			color: _palette(border);
+			z-index: 100001;
+		}
+
+		100% {
+			@include vendor('transform', 'scale(0.5) rotate(360deg)');
+			color: _palette(border);
+			z-index: -1;
+		}
+	}
+
+	@include keyframes('overlay-hide') {
+		0% {
+			opacity: 1;
+			z-index: 100000;
+		}
+
+		15% {
+			opacity: 1;
+			z-index: 100000;
+		}
+
+		99% {
+			opacity: 0;
+			z-index: 100000;
+		}
+
+		100% {
+			opacity: 0;
+			z-index: -1;
+		}
+	}
+
+	body {
+		text-decoration: none;
 
 		&:before {
-			@include vendor('animation', 'load-spinner 1s infinite linear');
-			@include vendor('transition', 'opacity 0.25s ease');
-			@include vendor('transition-delay', '0s');
-			@include vendor('pointer-events', 'none');
-			content: '';
+			@include vendor('animation', ('spinner-show 1.5s 1 0.25s ease forwards', 'spinner-hide 0.25s ease-in-out forwards !important'));
+			@include vendor('transform-origin', '50% 50%');
+			-moz-osx-font-smoothing: grayscale;
+			-webkit-font-smoothing: antialiased;
+			font-family: FontAwesome;
+			font-style: normal;
+			font-weight: normal;
+			text-transform: none !important;
+			color: _palette(border);
+			content: '\f1ce';
+			cursor: default;
 			display: block;
-			position: absolute;
-			top: 50%;
+			font-size: 2em;
+			height: 2em;
 			left: 50%;
-			width: 4rem;
-			height: 4rem;
-			margin: -2rem 0 0 -2rem;
-			background-image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="96px" height="96px" viewBox="0 0 96 96" zoomAndPan="disable"><style>circle {fill: transparent; stroke: #{_palette(bg)}; stroke-width: 1.5px; }</style><defs><clipPath id="corner"><polygon points="0,0 48,0 48,48 96,48 96,96 0,96" /></clipPath></defs><g clip-path="url(#corner)"><circle cx="48" cy="48" r="32"/></g></svg>');
-			background-position: center;
-			background-repeat: no-repeat;
-			background-size: 4rem;
+			line-height: 2em;
+			margin: -1em 0 0 -1em;
 			opacity: 0;
+			position: fixed;
+			text-align: center;
+			top: 50%;
+			width: 2em;
+			z-index: -1;
 		}
 
 		&:after {
-			@include vendor('pointer-events', 'none');
+			@include vendor('animation', 'overlay-hide 1.5s ease-in forwards !important');
+			background: #ffffff;
 			content: '';
 			display: block;
+			height: 100%;
+			left: 0;
+			opacity: 0;
 			position: fixed;
 			top: 0;
-			left: 0;
 			width: 100%;
-			height: 100%;
 			z-index: -1;
-			background-attachment: fixed;
-			background-color: _palette(bg-alt);
-			background-image: url('../../images/overlay.png'), url('../../images/bg.jpg');
-			background-repeat: repeat, repeat-x;
-			background-size: 128px 128px, cover;
 		}
 
 		&.is-loading {
-			*, *:before, *:after {
-				@include vendor('animation', 'none !important');
-				@include vendor('transition', 'none !important');
-			}
-
 			&:before {
-				@include vendor('transition', 'opacity 1s ease');
-				@include vendor('transition-delay', '0.75s');
-				opacity: 0.25;
+				@include vendor('animation', ('spinner-show 1.5s 1 0.25s ease forwards', 'spinner-rotate 0.75s infinite linear !important'));
+				z-index: 100001;
+			}
+
+			&:after {
+				@include vendor('animation', 'none !important');
+				opacity: 1;
+				z-index: 100000;
 			}
 		}
 	}
 
-	@include breakpoint(small) {
-		html {
-			height: auto;
-		}
-
-		body {
-			height: auto;
-			overflow-x: hidden;
-			overflow-y: auto;
-		}
-	}
-
-	@include breakpoint(xsmall) {
-		html, body {
-			min-width: 320px;
+	@media (-webkit-min-device-pixel-ratio: 2) {
+		body:before {
+			line-height: 2.025em;
 		}
 	}
