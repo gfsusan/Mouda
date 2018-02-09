@@ -37,13 +37,14 @@ class AddPopUpVC: UIViewController, UITextViewDelegate, UITabBarControllerDelega
                 cancelButtonPressed(sender)
                     
                 } else { // page 입력 안됨
-                    
+                    return
                 }
             } else { // line 입력 안됨
-                
+                return
             }
         } else { // 책 선택 안됨
             // TODO 책을 선택하라는 notification
+            return
         }
     }
     

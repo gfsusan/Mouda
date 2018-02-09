@@ -23,13 +23,13 @@ class DataCenter {
     var books: [Book] = []
     
     var feedFilePath: String { get {
-        let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .allDomainsMask, true).first!
+        let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
         return documentDirectory + feedDataFileName
         }
     }
     
     var bookmarkFilePath: String { get {
-        let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .allDomainsMask, true).first!
+        let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
         return documentDirectory + bookmarkDataFileName
         }
     }
@@ -42,15 +42,14 @@ class DataCenter {
         books.append(book2)
         books.append(book3)
         
+        // 피드 파일 존재하는지 확인
         if FileManager.default.fileExists(atPath: self.feedFilePath) {
-            // read
             print("피드 파일 있음")
             if let unarchArray = NSKeyedUnarchiver.unarchiveObject(withFile: self.feedFilePath) as? [Feed] {
                 feeds += unarchArray
             }
 
         } else {
-            //create
             print("피드 파일 없음")
             feeds += defaultFeedData()
         }
@@ -102,6 +101,8 @@ class DataCenter {
     }
     
     func save() {
+        print("save data")
         NSKeyedArchiver.archiveRootObject(self.feeds, toFile: self.feedFilePath)
+        NSKeyedArchiver.archiveRootObject(self.bookmarks, toFile: self.bookmarkFilePath)
     }
 }
