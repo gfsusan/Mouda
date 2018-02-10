@@ -119,7 +119,7 @@ class DataCenter {
     func add(feed:Feed) {
         let book = feed.book
         if self.hasBookmark(of: book) == false {
-            bookmarks.insert(Bookmark(book: book, page: 0), at: 0)
+            bookmarks.insert(Bookmark(book: book, page: feed.page), at: 0)
         }
         feeds.insert(feed, at: 0)
         
