@@ -15,6 +15,8 @@ class SettingTableVC: UITableViewController, MFMailComposeViewControllerDelegate
     
     var alarmDelegate:AlarmVC?
     
+    @IBOutlet weak var myFeedCell: UITableViewCell!
+    @IBOutlet weak var bookmarkCell: UITableViewCell!
     @IBOutlet weak var alarmSwitch: UISwitch!
     @IBOutlet weak var myFeedCount: UILabel!
     @IBOutlet weak var myBookmarkCount: UILabel!
@@ -28,6 +30,12 @@ class SettingTableVC: UITableViewController, MFMailComposeViewControllerDelegate
 //            print("alarmTime")
 //            alarmTimeSmallLabel.text = alarmTime.alarmTimeLabel.text
 //        }
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        myFeedCell.detailTextLabel?.text = "\(dataCenter.feeds.count)개"
+        bookmarkCell.detailTextLabel?.text = "\(dataCenter.bookmarks.count)개"
         
     }
     

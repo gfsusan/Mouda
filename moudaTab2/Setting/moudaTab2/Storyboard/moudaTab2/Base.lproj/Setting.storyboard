@@ -263,7 +263,9 @@
                     <connections>
                         <outlet property="alarmSwitch" destination="fzJ-FB-Fhs" id="BTO-fL-KZp"/>
                         <outlet property="alarmTimeSmallLabel" destination="tZi-Hv-B1d" id="km9-nj-tjD"/>
+                        <outlet property="bookmarkCell" destination="uxp-JE-HFp" id="dot-jZ-1xE"/>
                         <outlet property="myBookmarkCount" destination="Y0o-u7-5jm" id="K4E-UV-X7P"/>
+                        <outlet property="myFeedCell" destination="4bN-BJ-a4f" id="sxA-fg-JIl"/>
                         <outlet property="myFeedCount" destination="Cqx-U9-tTs" id="CRR-2X-Z3Z"/>
                     </connections>
                 </tableViewController>
