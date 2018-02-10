@@ -26,14 +26,15 @@ class BookmarkCollectionVC: UICollectionViewController {
     }
 
  
-//    // MARK: - Navigation
-//
-//    // In a storyboard-based application, you will often want to do a little preparation before navigation
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-////        if let destinationNavigationController = segue.destination as? UINavigationController {
-////            let targetController = destinationNavigationController.topViewController as? AddPopUpVC
-////            targetController?.addDelegate = self
-//    }
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let indexPath = collectionView?.indexPathsForSelectedItems?.first {
+            let vc = segue.destination as? BookFeedVC
+            vc?.bookmark = bookmarks[indexPath.row]
+        }
+    }
  
 
     // MARK: UICollectionViewDataSource

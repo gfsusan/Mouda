@@ -29,6 +29,9 @@
 		66B52A64202DD9AC007C54BF /* SettingTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B52A61202DD9AB007C54BF /* SettingTableVC.swift */; };
 		66B52A65202DD9AC007C54BF /* AppLockTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B52A62202DD9AC007C54BF /* AppLockTableVC.swift */; };
 		66B52A68202DDA95007C54BF /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66B52A67202DDA95007C54BF /* MessageUI.framework */; };
+		66B52A6C202DFD58007C54BF /* BookFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B52A6B202DFD58007C54BF /* BookFeedVC.swift */; };
+		66B52A70202E1290007C54BF /* BookFeed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66B52A6E202E1290007C54BF /* BookFeed.storyboard */; };
+		66B52A72202E12AC007C54BF /* BookFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B52A71202E12AC007C54BF /* BookFeedCell.swift */; };
 		66DBAC9D202BF0AB0043CB4B /* SearchTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DBAC9C202BF0AB0043CB4B /* SearchTableVC.swift */; };
 		66DBAC9F202BF5660043CB4B /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DBAC9E202BF5660043CB4B /* Bookmark.swift */; };
 		66DBACA1202BF8FD0043CB4B /* SearchBookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DBACA0202BF8FD0043CB4B /* SearchBookCell.swift */; };
@@ -69,6 +72,9 @@
 		66B52A61202DD9AB007C54BF /* SettingTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableVC.swift; sourceTree = "<group>"; };
 		66B52A62202DD9AC007C54BF /* AppLockTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLockTableVC.swift; sourceTree = "<group>"; };
 		66B52A67202DDA95007C54BF /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		66B52A6B202DFD58007C54BF /* BookFeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookFeedVC.swift; sourceTree = "<group>"; };
+		66B52A6F202E1290007C54BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = moudaTab2/BookmarkPart/moudaTab2/Storyboard/moudaTab2/Base.lproj/BookFeed.storyboard; sourceTree = "<group>"; };
+		66B52A71202E12AC007C54BF /* BookFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookFeedCell.swift; sourceTree = "<group>"; };
 		66DBAC9C202BF0AB0043CB4B /* SearchTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableVC.swift; sourceTree = "<group>"; };
 		66DBAC9E202BF5660043CB4B /* Bookmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmark.swift; sourceTree = "<group>"; };
 		66DBACA0202BF8FD0043CB4B /* SearchBookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookCell.swift; sourceTree = "<group>"; };
@@ -173,8 +179,9 @@
 				66728F14202A9DB50061C168 /* Models */,
 				66728F1C202AAEAC0061C168 /* Storyboard */,
 				66728F15202A9E130061C168 /* MyFeedTab */,
-				66728F1D202AAEF60061C168 /* BookmarkPart */,
 				66728F16202A9E290061C168 /* AddTab */,
+				66728F1D202AAEF60061C168 /* BookmarkPart */,
+				66B52A6D202E1222007C54BF /* BookFeed */,
 				66FCB97F202BE5AA008E1AC5 /* Search */,
 				66E57500202D5E4D00FEEAAA /* Setting */,
 				669990E920242F2B00410F21 /* AppDelegate.swift */,
@@ -192,6 +199,16 @@
 				66B52A67202DDA95007C54BF /* MessageUI.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		66B52A6D202E1222007C54BF /* BookFeed */ = {
+			isa = PBXGroup;
+			children = (
+				66B52A6E202E1290007C54BF /* BookFeed.storyboard */,
+				66B52A6B202DFD58007C54BF /* BookFeedVC.swift */,
+				66B52A71202E12AC007C54BF /* BookFeedCell.swift */,
+			);
+			path = BookFeed;
 			sourceTree = "<group>";
 		};
 		66E57500202D5E4D00FEEAAA /* Setting */ = {
@@ -286,6 +303,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66B52A70202E1290007C54BF /* BookFeed.storyboard in Resources */,
 				66728F19202AAE800061C168 /* MyFeed.storyboard in Resources */,
 				66728F1B202AAEA20061C168 /* Add.storyboard in Resources */,
 				7AD0AF762029C913002E7F60 /* NanumSquareOTFRegular.otf in Resources */,
@@ -317,10 +335,12 @@
 				66FCB985202BEF8B008E1AC5 /* AddVC.swift in Sources */,
 				66999102202437F200410F21 /* Book.swift in Sources */,
 				66B52A65202DD9AC007C54BF /* AppLockTableVC.swift in Sources */,
+				66B52A6C202DFD58007C54BF /* BookFeedVC.swift in Sources */,
 				66DBACA1202BF8FD0043CB4B /* SearchBookCell.swift in Sources */,
 				669991042024386900410F21 /* FeedTableVC.swift in Sources */,
 				66B52A5F202D5D90007C54BF /* BookmarkCell.swift in Sources */,
 				66B52A64202DD9AC007C54BF /* SettingTableVC.swift in Sources */,
+				66B52A72202E12AC007C54BF /* BookFeedCell.swift in Sources */,
 				66B52A63202DD9AC007C54BF /* AppLockVC.swift in Sources */,
 				66DBAC9D202BF0AB0043CB4B /* SearchTableVC.swift in Sources */,
 				66728F13202A9C480061C168 /* FeedDetailVC.swift in Sources */,
@@ -366,6 +386,14 @@
 				669990F320242F2B00410F21 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		66B52A6E202E1290007C54BF /* BookFeed.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				66B52A6F202E1290007C54BF /* Base */,
+			);
+			name = BookFeed.storyboard;
 			sourceTree = "<group>";
 		};
 		66E574EF202CB16500FEEAAA /* Setting.storyboard */ = {

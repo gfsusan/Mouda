@@ -105,4 +105,14 @@ class DataCenter {
         NSKeyedArchiver.archiveRootObject(self.feeds, toFile: self.feedFilePath)
         NSKeyedArchiver.archiveRootObject(self.bookmarks, toFile: self.bookmarkFilePath)
     }
+    
+    func feeds(of book:Book) -> Array<Feed> {
+        var feeds:[Feed] = []
+        for feed in self.feeds {
+            if feed.book.title == book.title {
+                feeds.append(feed)
+            }
+        }
+        return feeds
+    }
 }

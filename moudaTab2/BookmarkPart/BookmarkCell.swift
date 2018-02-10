@@ -10,7 +10,6 @@ import UIKit
 
 class BookmarkCell: UICollectionViewCell {
     @IBOutlet weak var coverImage: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var pageLabel: UILabel!
     
 }
