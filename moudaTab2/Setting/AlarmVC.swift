@@ -16,6 +16,8 @@ var nowString: String?
 var settingTimeKey = "settingTime"
 
 class AlarmVC: UIViewController {
+    
+    var settingDelegate:SettingTableVC?
 
     @IBOutlet weak var alarmTimePicker: UIDatePicker!
     @IBOutlet weak var alarmTimeLabel: UILabel!
@@ -28,17 +30,29 @@ class AlarmVC: UIViewController {
         dateFormatter.amSymbol = "오전"
         dateFormatter.pmSymbol = "오후"
         
-//        changedTimePicker()
-    
-        let userDefaultAlarm = UserDefaults.standard.array(forKey: settingTimeKey)
+//        let userDefaultAlarm = UserDefaults.standard.string(forKey: settingTimeKey)
+        
+        if  let settedLabel = self.settingDelegate?.alarmTimeSmallLabel {
+            print("setted Label")
+            alarmTimeLabel.text = settedLabel.text
+        }
+        
+//        if let date = userDefaultAlarm as? Date {
+//            alarmTimePicker.setDate(date, animated: true)
+//        }
+        
+        
         if let date = dateFormatter.date(from: "오후 09:00") {
             if let settingDate = dateFormatter.date(from: settingTimeKey) {
+                print("setting Date")
+                settingTime()
                 alarmTimePicker.date = settingDate
             }
             alarmTimePicker.date = date
         }
+
+//        let _ = Timer.scheduledTimer(timeInterval: 0.0001, target: self, selector: #selector(settingTime), userInfo: userDefaultAlarm, repeats: false)
         
-        let _ = Timer.scheduledTimer(timeInterval: 0.0001, target: self, selector: #selector(settingTime), userInfo: userDefaultAlarm, repeats: false)
         
 //        alarmTimeLabel.text = dateFormatter.string(from: alarmTimePicker.date)
 //        alarmTimePicker.addTarget(self, action: #selector(AlarmVC.changedTimePicker(_:)), for: UIControlEvents.valueChanged)
@@ -53,23 +67,23 @@ class AlarmVC: UIViewController {
 ////        alarmTimePicker.addTarget(self, action: #selector(AlarmVC.datePickerValueChanged), for: UIControlEvents.valueChanged)
     }
     
-    @objc func settingTime() {
+    func settingTime() {
         pickerString = dateFormatter.string(from: alarmTimePicker.date)
         if let settingPicker = pickerString {
-            UserDefaults.standard.set(pickerString, forKey: settingTimeKey)
-            alarmTimeLabel.text = pickerString
+            UserDefaults.standard.set(alarmTimePicker.date, forKey: settingTimeKey)
+            alarmTimeLabel.text = settingPicker
         }
     }
     
-//
-//        let content = UNMutableNotificationContent()
-//        content.title = "Title goes here"
-//        content.body = "Main text goes here"
-//        content.categoryIdentifier = "customIdentifier"
-//        content.userInfo = ["customData" : "fizzbuzz"]
-//        content.sound = UNNotificationSound.default()
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        // Get the new view controller using segue.destinationViewController.
+//        // Pass the selected object to the new view controller.
+//        if let settedTime = segue.destination as? SettingTableVC {
+//            print("settedTime")
+//            settedTime.alarmDelegate = self
+//        }
 //    }
-//
+
 //    @objc func scheduleLocal() {
 //        let center = UNUserNotificationCenter.current()
 //
@@ -102,17 +116,13 @@ class AlarmVC: UIViewController {
         guard let changedAlarm = pickerString else {
             return
         }
-        
+
         alarmTimeLabel.text = changedAlarm
         
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateStyle = .none
-//        dateFormatter.timeStyle = .short
-//
-//        alarmTimeLabel.text = dateFormatter.string(from: alarmTimePicker.date)
-//    }
-//        func datePicker() {
-//        alarmTimePicker.datePickerMode = UIDatePickerMode.time
+        if let changeSmallLabel = settingDelegate?.alarmTimeSmallLabel {
+            print("change Samll label")
+            changeSmallLabel.text = alarmTimeLabel.text
+        }
     }
     
     
