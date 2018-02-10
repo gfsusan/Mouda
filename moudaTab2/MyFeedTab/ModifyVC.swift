@@ -103,6 +103,7 @@ class ModifyVC: UIViewController, UITextViewDelegate{
             thoughtTextView.text = "기록한 문장에 대한 본인만의 생각이나 감정을 표현해주세요."
             return
         }
+        book = feed.book
         lineTextView.textColor = UIColor.black
         pageTextView.textColor = UIColor.black
         if thoughtTextView.text == "" {

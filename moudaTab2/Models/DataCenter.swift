@@ -22,6 +22,7 @@ let book4 = Book(title: "인생극장", coverImageURL: "http://image.yes24.com/m
 class DataCenter {
     var feeds: [Feed] = []
     var bookmarks: [Bookmark] = []
+    
     // search 위해서 걍 만들어놓은 dummy data
     var books: [Book] = []
     
