@@ -147,7 +147,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fzJ-FB-Fhs">
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fzJ-FB-Fhs">
                                                     <rect key="frame" x="290" y="6" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="switchStatus:" destination="1oh-BO-PvA" eventType="valueChanged" id="hDk-DU-5Vt"/>
@@ -225,7 +225,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2t9-qG-REu">
-                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="47"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="46"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <connections>
                                                         <action selector="feedbackEmail:" destination="1oh-BO-PvA" eventType="touchUpInside" id="JtY-b6-tBX"/>
@@ -262,6 +262,7 @@
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <connections>
                         <outlet property="alarmSwitch" destination="fzJ-FB-Fhs" id="BTO-fL-KZp"/>
+                        <outlet property="alarmTimeSmallLabel" destination="tZi-Hv-B1d" id="km9-nj-tjD"/>
                         <outlet property="myBookmarkCount" destination="Y0o-u7-5jm" id="K4E-UV-X7P"/>
                         <outlet property="myFeedCount" destination="Cqx-U9-tTs" id="CRR-2X-Z3Z"/>
                     </connections>
@@ -410,20 +411,23 @@
             </objects>
             <point key="canvasLocation" x="4305" y="-1530"/>
         </scene>
-        <!--View Controller-->
+        <!--AlarmVC-->
         <scene sceneID="npO-v5-mY5">
             <objects>
-                <viewController storyboardIdentifier="setAlarm" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Hvr-p0-ChN" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="setAlarm" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Hvr-p0-ChN" customClass="AlarmVC" customModule="moudaTab2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uIo-Up-TgJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="10" translatesAutoresizingMaskIntoConstraints="NO" id="uUD-Tm-emt">
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="5" translatesAutoresizingMaskIntoConstraints="NO" id="uUD-Tm-emt">
                                 <rect key="frame" x="0.0" y="389" width="375" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="539855426.60057294">
                                     <!--2018-02-09 07:50:26 +0000-->
                                 </date>
                                 <locale key="locale" localeIdentifier="ko_KR"/>
+                                <connections>
+                                    <action selector="changedTimePicker" destination="Hvr-p0-ChN" eventType="valueChanged" id="guD-BD-m7h"/>
+                                </connections>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ViU-43-9as">
                                 <rect key="frame" x="16" y="170" width="343" height="60"/>
@@ -443,6 +447,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TNk-29-AUy"/>
                     </view>
+                    <connections>
+                        <outlet property="alarmTimeLabel" destination="ViU-43-9as" id="7Yj-0i-vFc"/>
+                        <outlet property="alarmTimePicker" destination="uUD-Tm-emt" id="LDS-jY-Shh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lxs-YH-khM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
