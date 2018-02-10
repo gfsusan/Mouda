@@ -8,8 +8,7 @@
 
 import UIKit
 
-class BookFeedVC: UITableViewController {
-    
+class BookFeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var bookmark:Bookmark?
     var feeds:[Feed] = []
     var dateFormatter:DateFormatter = DateFormatter()
@@ -26,16 +25,21 @@ class BookFeedVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dateFormatter.dateFormat = "yyyy년 MM월 dd일"
         print("view did load")
+        tableTableView.delegate = self
+        tableTableView.dataSource = self
+        
+        dateFormatter.dateFormat = "yyyy년 MM월 dd일"
         
         bookInfoView.layer.shadowOpacity = 1
-        bookInfoView.layer.shadowOffset = CGSize.zero
-        bookInfoView.layer.shadowRadius = 3
+        bookInfoView.layer.shadowOffset = CGSize(width: 0, height: 5)
+        bookInfoView.layer.shadowRadius = 5
         bookInfoView.layer.shadowPath = UIBezierPath(rect: bookInfoView.bounds).cgPath
+        bookInfoView.layer.masksToBounds = false
         
-        tableTableView.estimatedRowHeight = 250
-        tableTableView.rowHeight = UITableViewAutomaticDimension
+//        tableTableView.estimatedRowHeight = 250
+//        tableTableView.rowHeight = UITableViewAutomaticDimension
+
         
         if let bm = bookmark {
             print(bm)
@@ -60,17 +64,17 @@ class BookFeedVC: UITableViewController {
     }
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return feeds.count
     }
 
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "bookFeedCell", for: indexPath) as! BookFeedCell
 
         // Configure the cell...
