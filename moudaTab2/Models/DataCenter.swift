@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import UIKit
 
 let dataCenter: DataCenter = DataCenter()
 var feedDataFileName = "FeedData.brch"
@@ -131,6 +131,38 @@ class DataCenter {
     
     func add(bookmark: Bookmark) {
         self.bookmarks.insert(bookmark, at: 0)
+        self.save()
+    }
+    
+    func delete(feedAt index:Int) {
+        self.feeds.remove(at: index)
+        self.save()
+    }
+    
+    func delete(feed:Feed, at index:Int) {
+        // index 유효한지 체크
+        if index < self.feeds.count {
+            let lineData = feeds[index].line
+            if lineData == feed.line {
+                self.feeds.remove(at: index)
+            } else {
+                print("Feed가 일치하지 않습니다.")
+            }
+        } else {
+            print("index out of bound")
+        }
+        
+    }
+    
+    func delete(bookmarkOf book:Book, at index:Int) {
+        if index < self.bookmarks.count {
+            let titleData = bookmarks[index].book.title
+            if titleData == book.title{
+                self.bookmarks.remove(at: index)
+            } else {
+                print("책갈피가 일치하지 않습니다")
+            }
+        }
     }
     
     func hasBookmark(of book:Book) -> Bool {
@@ -142,6 +174,18 @@ class DataCenter {
         }
         return false
         
+    }
+    
+    func createAlert (title:String, message:String, sender:Any?) {
+        let alert = UIAlertController(title: title, message:message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title:"OK", style:UIAlertActionStyle.default, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+            print("OK")
+        }))
+        
+        if let delegate = sender as? UIViewController {
+            delegate.present(alert, animated: true, completion: nil)
+        }
     }
     
 

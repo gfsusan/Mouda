@@ -51,30 +51,22 @@ class AddBookmarkVC: UIViewController {
                         self.dismiss(animated: true, completion: nil)
                     }
                     else {
-                        createAlert(title: "이미 북마크가 있어요!", message: "")
+                        dataCenter.createAlert(title: "이미 북마크가 있어요!", message: "", sender:self)
                         return
                     }
                 } else {
-                    createAlert(title: "페이지를 입력해주세요.", message: "")
+                    dataCenter.createAlert(title: "페이지를 입력해주세요.", message: "", sender:self)
                     return
                 }
             }
 
         } else {
-            createAlert(title: "책을 선택하지 않으셨네요", message: "책 선택 버튼을 눌러 책을 선택해주세요!")
+            dataCenter.createAlert(title: "책을 선택하지 않으셨네요", message: "책 선택 버튼을 눌러 책을 선택해주세요!", sender: self)
             return
         }
     }
     
-    func createAlert (title:String, message:String) {
-        let alert = UIAlertController(title: title, message:message, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title:"OK", style:UIAlertActionStyle.default, handler: { (action) in
-            alert.dismiss(animated: true, completion: nil)
-            print("OK")
-        }))
-        
-        self.present(alert, animated: true, completion: nil)
-    }
+    
 
     // MARK: - Navigation
 

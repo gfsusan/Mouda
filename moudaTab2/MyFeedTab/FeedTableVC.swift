@@ -138,6 +138,7 @@ class FeedTableVC: UITableViewController {
             
             let vc = segue.destination as? FeedDetailVC
             vc?.feed = feeds[selectedRow]
+            vc?.indexPath = selectedRow
         }
     }
 
