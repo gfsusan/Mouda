@@ -9,6 +9,8 @@
 import UIKit
 
 class AddBookmarkVC: UIViewController {
+    
+    var delegate:BookmarkCollectionVC?
 
     @IBOutlet weak var addBookmarkButton: UIButton!
     override func viewDidLoad() {

@@ -8,7 +8,6 @@
 
 import UIKit
 
-private let reuseIdentifier = "bookmarkCell"
 
 class BookmarkCollectionVC: UICollectionViewController {
 
@@ -31,8 +30,13 @@ class BookmarkCollectionVC: UICollectionViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let indexPath = collectionView?.indexPathsForSelectedItems?.first {
-            let vc = segue.destination as? BookFeedVC
-            vc?.bookmark = bookmarks[indexPath.row]
+            if indexPath.row < bookmarks.count {
+                let vc = segue.destination as? BookFeedVC
+                vc?.bookmark = bookmarks[indexPath.row]
+            } else {
+                let vc = segue.destination as? AddBookmarkVC
+                vc?.delegate = self
+            }
         }
     }
  
@@ -51,43 +55,43 @@ class BookmarkCollectionVC: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? BookmarkCell
-        
-        guard let retCell = cell else {
-            return cell!
-        }
-        
-        if indexPath.row == bookmarks.count {
-            retCell.coverImage.image = #imageLiteral(resourceName: "aaaddd")
-            retCell.pageLabel.text = ""
+        if indexPath.row < bookmarks.count {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "bookmarkCell", for: indexPath) as? BookmarkCell
+            
+            guard let retCell = cell else {
+                return cell!
+            }
+            
+            let bookmark = bookmarks[indexPath.row]
+            
+            if let thumbImage = bookmark.book.coverImage {
+                retCell.coverImage.image = thumbImage
+            } else {
+                retCell.coverImage.image = UIImage(named: "book2")
+                if let thumbImageURL = bookmark.book.coverImageURL {
+                    DispatchQueue.main.async(execute: {
+                        bookmark.book.coverImage = bookmark.book.getCoverImage(withURL: thumbImageURL)
+                        guard let thumbImage = bookmark.book.coverImage else {
+                            return
+                        }
+                        retCell.coverImage.image = thumbImage
+                    })
+                }
+            }
+            
+            if let page = bookmark.page {
+                retCell.pageLabel.text = "\(page)쪽까지 읽음"
+            } else {
+                retCell.pageLabel.text = "다 읽음"
+            }
             
             return retCell
-        }
-        
-        let bookmark = bookmarks[indexPath.row]
-        
-        if let thumbImage = bookmark.book.coverImage {
-            retCell.coverImage.image = thumbImage
+            
         } else {
-            retCell.coverImage.image = UIImage(named: "book2")
-            if let thumbImageURL = bookmark.book.coverImageURL {
-                DispatchQueue.main.async(execute: {
-                    bookmark.book.coverImage = bookmark.book.getCoverImage(withURL: thumbImageURL)
-                    guard let thumbImage = bookmark.book.coverImage else {
-                        return
-                    }
-                    retCell.coverImage.image = thumbImage
-                })
-            }
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "bookmarkAddCell", for: indexPath)
+            
+            return cell
         }
-        
-        if let page = bookmark.page {
-            retCell.pageLabel.text = "\(page)쪽까지 읽음"
-        } else {
-            retCell.pageLabel.text = "다 읽음"
-        }
-        
-        return retCell
     
     }
 
