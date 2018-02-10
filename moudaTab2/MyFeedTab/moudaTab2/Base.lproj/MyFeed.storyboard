@@ -24,7 +24,7 @@
         <scene sceneID="TEE-Em-mcI">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DVG-za-uDk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="MyFeed" image="home" id="DGU-PH-Qlp"/>
+                    <tabBarItem key="tabBarItem" title="MyFeed" image="home" selectedImage="Home" id="DGU-PH-Qlp"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="36P-mR-mk1">
@@ -40,7 +40,7 @@
             </objects>
             <point key="canvasLocation" x="47" y="117"/>
         </scene>
-        <!--MyFeed-->
+        <!--Feed TableVC-->
         <scene sceneID="KE8-ws-tzS">
             <objects>
                 <tableViewController restorationIdentifier="reuseIdentifier" id="29z-43-9fN" customClass="FeedTableVC" customModule="moudaTab2" customModuleProvider="target" sceneMemberID="viewController">
@@ -126,7 +126,6 @@
                             <outlet property="delegate" destination="29z-43-9fN" id="m6x-aV-NrL"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="MyFeed" image="home" id="Iif-bQ-dRY"/>
                     <navigationItem key="navigationItem" id="toK-49-5gP">
                         <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" image="Empty" id="0To-GQ-URE"/>
@@ -488,6 +487,7 @@
     </scenes>
     <resources>
         <image name="Empty" width="30" height="30"/>
+        <image name="Home" width="24" height="24"/>
         <image name="home" width="24" height="24"/>
         <image name="icons8-pen-50" width="50" height="50"/>
         <image name="setting" width="24" height="24"/>

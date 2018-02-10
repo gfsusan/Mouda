@@ -12,7 +12,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Add-->
+        <!--AddVC-->
         <scene sceneID="pkl-1w-7a6">
             <objects>
                 <viewController modalPresentationStyle="overCurrentContext" id="8j4-aT-rqv" customClass="AddVC" customModule="moudaTab2" customModuleProvider="target" sceneMemberID="viewController">
@@ -32,7 +32,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="rOZ-MT-fdA"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Add" image="add" id="280-lo-4k8"/>
                     <navigationItem key="navigationItem" id="VWn-lu-8b4"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -43,12 +42,13 @@
             </objects>
             <point key="canvasLocation" x="1145" y="987"/>
         </scene>
-        <!--Item-->
+        <!--글쓰기-->
         <scene sceneID="wWI-so-2HI">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="overCurrentContext" id="FAR-gO-tvF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="kLm-OK-6sw"/>
+                    <tabBarItem key="tabBarItem" title="글쓰기" image="Add" id="ug1-Yz-462"/>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NIZ-5F-R6y">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -256,6 +256,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="add" width="24" height="24"/>
+        <image name="Add" width="24" height="24"/>
     </resources>
 </document>

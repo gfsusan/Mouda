@@ -37,9 +37,11 @@ class BookFeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         bookInfoView.layer.shadowPath = UIBezierPath(rect: bookInfoView.bounds).cgPath
         bookInfoView.layer.masksToBounds = false
         
-//        tableTableView.estimatedRowHeight = 250
-//        tableTableView.rowHeight = UITableViewAutomaticDimension
-
+        let deleteButton = UIButton(type: .system)
+        deleteButton.setTitle("삭제", for: .normal)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: deleteButton)
+        
+        navigationController?.navigationBar.tintColor = UIColor.white
         
         if let bm = bookmark {
             print(bm)
