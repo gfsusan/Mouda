@@ -16,6 +16,8 @@ var nowString: String?
 var settingTimeKey = "settingTime"
 
 class AlarmVC: UIViewController {
+    
+    var settingDelegate:SettingTableVC?
 
     @IBOutlet weak var alarmTimePicker: UIDatePicker!
     @IBOutlet weak var alarmTimeLabel: UILabel!
@@ -31,13 +33,16 @@ class AlarmVC: UIViewController {
 //        changedTimePicker()
     
         let userDefaultAlarm = UserDefaults.standard.array(forKey: settingTimeKey)
-        if let date = dateFormatter.date(from: "오후 09:00") {
-            if let settingDate = dateFormatter.date(from: settingTimeKey) {
-                alarmTimePicker.date = settingDate
-            }
-            alarmTimePicker.date = date
-        }
         
+        if alarmTimeLabel.text == "Label" {
+            if let date = dateFormatter.date(from: "오후 09:00") {
+                if let settingDate = dateFormatter.date(from: settingTimeKey) {
+                    alarmTimePicker.date = settingDate
+                }
+                alarmTimePicker.date = date
+            }
+        }
+
         let _ = Timer.scheduledTimer(timeInterval: 0.0001, target: self, selector: #selector(settingTime), userInfo: userDefaultAlarm, repeats: false)
         
 //        alarmTimeLabel.text = dateFormatter.string(from: alarmTimePicker.date)
@@ -102,17 +107,13 @@ class AlarmVC: UIViewController {
         guard let changedAlarm = pickerString else {
             return
         }
-        
+
         alarmTimeLabel.text = changedAlarm
         
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateStyle = .none
-//        dateFormatter.timeStyle = .short
-//
-//        alarmTimeLabel.text = dateFormatter.string(from: alarmTimePicker.date)
-//    }
-//        func datePicker() {
-//        alarmTimePicker.datePickerMode = UIDatePickerMode.time
+        if let changeSmallLabel = settingDelegate?.alarmTimeSmallLabel {
+            print("change Samll label")
+            changeSmallLabel.text = alarmTimeLabel.text
+        }
     }
     
     
