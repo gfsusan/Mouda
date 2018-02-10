@@ -12,10 +12,21 @@ class AddBookmarkVC: UIViewController {
     
     var delegate:BookmarkCollectionVC?
 
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var publisherLabel: UILabel!
+    @IBOutlet weak var authorLabel: UILabel!
+    
+    
     @IBOutlet weak var addBookmarkButton: UIButton!
+    @IBAction func chooseButton(_ sender: Any) {
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        titleLabel.text = ""
+        publisherLabel.text = ""
+        authorLabel.text = ""
         // Do any additional setup after loading the view.
     }
     @IBAction func cancelBookmark(_ sender: Any) {
