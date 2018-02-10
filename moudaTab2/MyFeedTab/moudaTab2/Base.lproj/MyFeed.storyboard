@@ -215,7 +215,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N72-Ic-ceS">
-                                                <rect key="frame" x="8" y="198" width="359" height="30"/>
+                                                <rect key="frame" x="8" y="222" width="359" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="hbX-J4-QdN"/>
                                                 </constraints>
@@ -237,7 +237,7 @@
                                             <constraint firstItem="ezr-qH-Jvr" firstAttribute="top" secondItem="M3G-mS-H0Z" secondAttribute="bottom" id="hBM-AJ-qQ2"/>
                                             <constraint firstAttribute="trailing" secondItem="N72-Ic-ceS" secondAttribute="trailing" constant="8" id="oof-j7-KgM"/>
                                             <constraint firstItem="M3G-mS-H0Z" firstAttribute="leading" secondItem="tcA-p8-m05" secondAttribute="leading" id="wgl-xY-Chy"/>
-                                            <constraint firstItem="N72-Ic-ceS" firstAttribute="top" secondItem="ezr-qH-Jvr" secondAttribute="bottom" constant="8" id="xff-ij-GMb"/>
+                                            <constraint firstItem="N72-Ic-ceS" firstAttribute="top" secondItem="ezr-qH-Jvr" secondAttribute="bottom" constant="32" id="xff-ij-GMb"/>
                                         </constraints>
                                     </view>
                                 </subviews>

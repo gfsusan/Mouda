@@ -87,11 +87,11 @@
                                 <rect key="frame" x="0.0" y="148" width="375" height="519"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="bookFeedCell" rowHeight="255" id="2Xl-Hf-ZVG" customClass="BookFeedCell" customModule="moudaTab2" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="255"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="bookFeedCell" rowHeight="274" id="2Xl-Hf-ZVG" customClass="BookFeedCell" customModule="moudaTab2" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="274"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2Xl-Hf-ZVG" id="a5h-Gb-ccv">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="254.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="273.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Page 561" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T0x-6u-bJq">
@@ -113,7 +113,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ToG-R3-2Jh" userLabel="Thought Label">
-                                                    <rect key="frame" x="16" y="183" width="343" height="60"/>
+                                                    <rect key="frame" x="16" y="207" width="343" height="60"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" priority="250" constant="60" id="JSk-Je-1wX"/>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="iqu-GI-tGC"/>
@@ -149,11 +149,11 @@
                                                 <constraint firstItem="T0x-6u-bJq" firstAttribute="leading" secondItem="a5h-Gb-ccv" secondAttribute="leading" id="0BO-y4-62r"/>
                                                 <constraint firstItem="gNb-69-DHb" firstAttribute="top" secondItem="8c0-BF-fL0" secondAttribute="bottom" id="9K8-Nn-C2e"/>
                                                 <constraint firstAttribute="trailing" secondItem="gNb-69-DHb" secondAttribute="trailing" id="Cbn-iw-TXL"/>
+                                                <constraint firstAttribute="bottom" secondItem="ToG-R3-2Jh" secondAttribute="bottom" constant="6.5" id="GHm-nL-nxF"/>
                                                 <constraint firstAttribute="trailing" secondItem="ToG-R3-2Jh" secondAttribute="trailing" constant="16" id="Ho7-46-A7d"/>
                                                 <constraint firstItem="8c0-BF-fL0" firstAttribute="leading" secondItem="a5h-Gb-ccv" secondAttribute="leading" constant="8" id="Icy-NK-cOu"/>
                                                 <constraint firstAttribute="trailing" secondItem="T0x-6u-bJq" secondAttribute="trailing" id="NBv-6a-CbI"/>
-                                                <constraint firstItem="ToG-R3-2Jh" firstAttribute="top" secondItem="T0x-6u-bJq" secondAttribute="bottom" constant="8" id="SmE-S3-usW"/>
-                                                <constraint firstAttribute="bottom" secondItem="ToG-R3-2Jh" secondAttribute="bottom" constant="11.5" id="ff0-Ea-xTa"/>
+                                                <constraint firstItem="ToG-R3-2Jh" firstAttribute="top" secondItem="T0x-6u-bJq" secondAttribute="bottom" constant="32" id="SmE-S3-usW"/>
                                                 <constraint firstItem="ToG-R3-2Jh" firstAttribute="leading" secondItem="a5h-Gb-ccv" secondAttribute="leading" constant="16" id="hA0-E3-1sp"/>
                                                 <constraint firstAttribute="trailing" secondItem="8c0-BF-fL0" secondAttribute="trailing" constant="8" id="oT7-Xk-Y8y"/>
                                                 <constraint firstItem="gNb-69-DHb" firstAttribute="leading" secondItem="a5h-Gb-ccv" secondAttribute="leading" id="qUT-zt-twa"/>
@@ -195,7 +195,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LXU-qc-yHC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5089" y="-897"/>
+            <point key="canvasLocation" x="-5090.3999999999996" y="-897.30134932533736"/>
         </scene>
     </scenes>
     <resources>
