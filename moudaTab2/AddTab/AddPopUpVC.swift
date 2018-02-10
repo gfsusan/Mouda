@@ -29,20 +29,28 @@ class AddPopUpVC: UIViewController, UITextViewDelegate, UITabBarControllerDelega
             // line과 page 입력되었는지 확인. thought은 없어도 됨
             if lineTextView.textColor != UIColor.lightGray {
                 if pageTextView.textColor != UIColor.lightGray {
-                    let feed = Feed(book: chosenBook, page: Int(pageTextView.text)!, line: lineTextView.text, thought: thoughtTextView.text)
+                    var text:String
+                    if thoughtTextView.textColor == UIColor.lightGray {
+                        text = ""
+                    } else {
+                        text = thoughtTextView.text
+                    }
+                    let feed = Feed(book: chosenBook, page: Int(pageTextView.text)!, line: lineTextView.text, thought: text)
                     dataCenter.add(feed: feed)
             
-            // 저장 작업 외에는 Cancel과 똑같이 modal dismiss만 해주면 됨
-                cancelButtonPressed(sender)
+                    // 저장 작업 외에는 Cancel과 똑같이 modal dismiss만 해주면 됨
+                        cancelButtonPressed(sender)
                     
                 } else { // page 입력 안됨
+                    dataCenter.createAlert(title: "알림", message: "페이지를 입력해주세요.", sender: self)
                     return
                 }
             } else { // line 입력 안됨
+                dataCenter.createAlert(title: "알림", message: "마음에 드는 문장을 입력해주세요.", sender: self)
                 return
             }
         } else { // 책 선택 안됨
-            // TODO 책을 선택하라는 notification
+            dataCenter.createAlert(title: "알림", message: "책을 선택해주세요.", sender: self)
             return
         }
     }
