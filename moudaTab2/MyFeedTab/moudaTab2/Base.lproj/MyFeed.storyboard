@@ -9,6 +9,7 @@
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -259,6 +260,20 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zlm-9e-Pcq"/>
                     </view>
+                    <navigationItem key="navigationItem" id="mTl-2w-ZeW">
+                        <rightBarButtonItems>
+                            <barButtonItem title="삭제" id="9Ns-Vq-PWg">
+                                <connections>
+                                    <action selector="deletePressed:" destination="7qI-Td-x9L" id="9aS-1J-ID3"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="수정" id="jc6-3m-E2y">
+                                <connections>
+                                    <action selector="editPressed:" destination="7qI-Td-x9L" id="Y1q-Dc-2wH"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <connections>
                         <outlet property="dateLabel" destination="jEG-Do-roM" id="FJa-h9-Yfi"/>
                         <outlet property="lineLabel" destination="dZ7-X6-y58" id="brC-Cf-0K0"/>
