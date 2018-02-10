@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-
 		66029A93202DF82B001D4E77 /* AlarmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66029A92202DF82B001D4E77 /* AlarmVC.swift */; };
-		667194ED202BFF87006D309D /* AddBookmarkDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667194EC202BFF87006D309D /* AddBookmarkDesignable.swift */; };
 		66728F11202A99480061C168 /* AddBookmarkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66728F10202A99470061C168 /* AddBookmarkVC.swift */; };
 		66728F13202A9C480061C168 /* FeedDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66728F12202A9C480061C168 /* FeedDetailVC.swift */; };
 		66728F19202AAE800061C168 /* MyFeed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66728F17202AAE800061C168 /* MyFeed.storyboard */; };
@@ -50,9 +48,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-
 		66029A92202DF82B001D4E77 /* AlarmVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmVC.swift; sourceTree = "<group>"; };
-		667194EC202BFF87006D309D /* AddBookmarkDesignable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookmarkDesignable.swift; sourceTree = "<group>"; };
 		66728F10202A99470061C168 /* AddBookmarkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookmarkVC.swift; sourceTree = "<group>"; };
 		66728F12202A9C480061C168 /* FeedDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailVC.swift; sourceTree = "<group>"; };
 		66728F18202AAE800061C168 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = moudaTab2/Base.lproj/MyFeed.storyboard; sourceTree = "<group>"; };
@@ -523,7 +519,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3ZLXC439TG;
 				INFOPLIST_FILE = moudaTab2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.teammouda.Mouda;
@@ -538,7 +534,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3ZLXC439TG;
 				INFOPLIST_FILE = moudaTab2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.teammouda.Mouda;

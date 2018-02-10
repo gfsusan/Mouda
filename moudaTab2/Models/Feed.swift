@@ -26,6 +26,14 @@ class Feed: NSObject, NSCoding {
         self.date = Date()
     }
     
+    init(book:Book, page:Int, line:String, thought:String, date:Date) {
+        self.book = book
+        self.line = line
+        self.thought = thought
+        self.page = page
+        self.date = date
+    }
+    
 //    override init() {
 //        book = Book()
 //        line = "DefaultLine"

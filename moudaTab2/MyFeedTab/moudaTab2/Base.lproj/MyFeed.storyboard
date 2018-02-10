@@ -270,6 +270,7 @@
                             <barButtonItem title="수정" id="jc6-3m-E2y">
                                 <connections>
                                     <action selector="editPressed:" destination="7qI-Td-x9L" id="Y1q-Dc-2wH"/>
+                                    <segue destination="gAc-hr-5aY" kind="presentation" id="j8E-DJ-mc4"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -285,6 +286,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZYB-Dc-t1d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1836" y="494.30284857571218"/>
+        </scene>
+        <!--Add-->
+        <scene sceneID="jaW-EJ-vue">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Add" id="gAc-hr-5aY" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lr6-3X-2N1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2497" y="390"/>
         </scene>
         <!--Setting-->
         <scene sceneID="Wn7-rr-zHy">
