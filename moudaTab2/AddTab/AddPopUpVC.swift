@@ -29,9 +29,8 @@ class AddPopUpVC: UIViewController, UITextViewDelegate, UITabBarControllerDelega
             // line과 page 입력되었는지 확인. thought은 없어도 됨
             if lineTextView.textColor != UIColor.lightGray {
                 if pageTextView.textColor != UIColor.lightGray {
-                dataCenter.feeds.insert(Feed(book: chosenBook, page: Int(pageTextView.text)!, line: lineTextView.text, thought: thoughtTextView.text), at: 0)
-                dataCenter.save()
-                
+                    let feed = Feed(book: chosenBook, page: Int(pageTextView.text)!, line: lineTextView.text, thought: thoughtTextView.text)
+                    dataCenter.add(feed: feed)
             
             // 저장 작업 외에는 Cancel과 똑같이 modal dismiss만 해주면 됨
                 cancelButtonPressed(sender)

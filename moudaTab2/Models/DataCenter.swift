@@ -115,4 +115,31 @@ class DataCenter {
         }
         return feeds
     }
+    
+    func add(feed:Feed) {
+        let book = feed.book
+        if self.hasBookmark(of: book) == false {
+            bookmarks.insert(Bookmark(book: book, page: 0), at: 0)
+        }
+        feeds.insert(feed, at: 0)
+        
+        self.save()
+    }
+    
+    func add(bookmark: Bookmark) {
+        self.bookmarks.insert(bookmark, at: 0)
+    }
+    
+    func hasBookmark(of book:Book) -> Bool {
+        let title = book.title
+        for bookmark in bookmarks {
+            if bookmark.book.title == title {
+                return true
+            }
+        }
+        return false
+        
+    }
+    
+
 }

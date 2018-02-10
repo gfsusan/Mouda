@@ -15,6 +15,7 @@ class SearchTableVC: UITableViewController,  UISearchBarDelegate, XMLParserDeleg
     
     var books:[Book] = []
     var addPopUpDelegate:AddPopUpVC?
+    var addBookmarkDelegate:AddBookmarkVC?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -166,6 +167,8 @@ class SearchTableVC: UITableViewController,  UISearchBarDelegate, XMLParserDeleg
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.addPopUpDelegate?.book = books[indexPath.row]
+        self.addBookmarkDelegate?.book = books[indexPath.row]
+        self.addBookmarkDelegate?.addBookmarkButton.setTitle("다시 선택", for: .normal)
         navigationController?.popViewController(animated: true)
         
     }

@@ -11,16 +11,17 @@ import UIKit
 class AddBookmarkVC: UIViewController {
     
     var delegate:BookmarkCollectionVC?
+    
+    var book:Book?
+    var page:Int?
 
+    @IBOutlet weak var bookImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var publisherLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
-    
+    @IBOutlet weak var PageTextField: UITextField!
     
     @IBOutlet weak var addBookmarkButton: UIButton!
-    @IBAction func chooseButton(_ sender: Any) {
-        
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,27 +30,60 @@ class AddBookmarkVC: UIViewController {
         authorLabel.text = ""
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        bookImageView.image = book?.coverImage
+        titleLabel.text = book?.title
+        publisherLabel.text = book?.publisher
+        authorLabel.text = book?.writer
+    }
+    
     @IBAction func cancelBookmark(_ sender: Any) {
         dismiss(animated: true)
     }
+    
     @IBAction func saveBookmark(_ sender: Any) {
-        dismiss(animated: true)
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+        if let selectedBook = book {
+            if let pageText = PageTextField.text {
+                if let page = Int(pageText) {
+                    if dataCenter.hasBookmark(of: selectedBook) == false{
+                        dataCenter.add(bookmark: Bookmark(book: selectedBook, page: page))
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                    else {
+                        createAlert(title: "이미 북마크가 있어요!", message: "")
+                        return
+                    }
+                } else {
+                    createAlert(title: "페이지를 입력해주세요.", message: "")
+                    return
+                }
+            }
 
-    /*
+        } else {
+            createAlert(title: "책을 선택하지 않으셨네요", message: "책 선택 버튼을 눌러 책을 선택해주세요!")
+            return
+        }
+    }
+    
+    func createAlert (title:String, message:String) {
+        let alert = UIAlertController(title: title, message:message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title:"OK", style:UIAlertActionStyle.default, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+            print("OK")
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if let destinationNavigationController = segue.destination as? SearchTableVC {
+            destinationNavigationController.addBookmarkDelegate = self
+        }
     }
-    */
+ 
 
 }

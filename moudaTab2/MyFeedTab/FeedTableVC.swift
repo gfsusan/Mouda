@@ -47,7 +47,6 @@ class FeedTableVC: UITableViewController {
         super.viewWillAppear(animated)
         feeds = dataCenter.feeds
         self.tableView.reloadData()
-        print("viewWillAppear")
     }
 
     override func didReceiveMemoryWarning() {

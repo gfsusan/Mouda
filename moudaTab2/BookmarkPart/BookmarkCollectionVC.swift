@@ -11,14 +11,17 @@ import UIKit
 
 class BookmarkCollectionVC: UICollectionViewController {
 
-    var bookmarks:[Bookmark] = dataCenter.bookmarks
+    var bookmarks:[Bookmark] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        bookmarks = dataCenter.bookmarks
+        self.collectionView?.reloadData()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

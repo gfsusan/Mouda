@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		667194ED202BFF87006D309D /* AddBookmarkDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667194EC202BFF87006D309D /* AddBookmarkDesignable.swift */; };
 		66728F11202A99480061C168 /* AddBookmarkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66728F10202A99470061C168 /* AddBookmarkVC.swift */; };
 		66728F13202A9C480061C168 /* FeedDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66728F12202A9C480061C168 /* FeedDetailVC.swift */; };
 		66728F19202AAE800061C168 /* MyFeed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66728F17202AAE800061C168 /* MyFeed.storyboard */; };
@@ -48,7 +47,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		667194EC202BFF87006D309D /* AddBookmarkDesignable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookmarkDesignable.swift; sourceTree = "<group>"; };
 		66728F10202A99470061C168 /* AddBookmarkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookmarkVC.swift; sourceTree = "<group>"; };
 		66728F12202A9C480061C168 /* FeedDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailVC.swift; sourceTree = "<group>"; };
 		66728F18202AAE800061C168 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = moudaTab2/Base.lproj/MyFeed.storyboard; sourceTree = "<group>"; };
@@ -148,7 +146,6 @@
 			children = (
 				66728F1E202AAF420061C168 /* Bookmark.storyboard */,
 				66728F10202A99470061C168 /* AddBookmarkVC.swift */,
-				667194EC202BFF87006D309D /* AddBookmarkDesignable.swift */,
 				66B52A5C202D5D7A007C54BF /* BookmarkCollectionVC.swift */,
 				66B52A5E202D5D90007C54BF /* BookmarkCell.swift */,
 			);
@@ -345,7 +342,6 @@
 				66DBAC9D202BF0AB0043CB4B /* SearchTableVC.swift in Sources */,
 				66728F13202A9C480061C168 /* FeedDetailVC.swift in Sources */,
 				66999100202437F200410F21 /* Feed.swift in Sources */,
-				667194ED202BFF87006D309D /* AddBookmarkDesignable.swift in Sources */,
 				66DBAC9F202BF5660043CB4B /* Bookmark.swift in Sources */,
 				669990FC202437D200410F21 /* MyFeedCell.swift in Sources */,
 				66728F11202A99480061C168 /* AddBookmarkVC.swift in Sources */,
