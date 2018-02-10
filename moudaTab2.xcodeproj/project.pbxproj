@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		66029A93202DF82B001D4E77 /* AlarmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66029A92202DF82B001D4E77 /* AlarmVC.swift */; };
 		667194ED202BFF87006D309D /* AddBookmarkDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667194EC202BFF87006D309D /* AddBookmarkDesignable.swift */; };
 		66728F11202A99480061C168 /* AddBookmarkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66728F10202A99470061C168 /* AddBookmarkVC.swift */; };
 		66728F13202A9C480061C168 /* FeedDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66728F12202A9C480061C168 /* FeedDetailVC.swift */; };
@@ -48,6 +49,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		66029A92202DF82B001D4E77 /* AlarmVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmVC.swift; sourceTree = "<group>"; };
 		667194EC202BFF87006D309D /* AddBookmarkDesignable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookmarkDesignable.swift; sourceTree = "<group>"; };
 		66728F10202A99470061C168 /* AddBookmarkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookmarkVC.swift; sourceTree = "<group>"; };
 		66728F12202A9C480061C168 /* FeedDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailVC.swift; sourceTree = "<group>"; };
@@ -214,10 +216,11 @@
 		66E57500202D5E4D00FEEAAA /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				66E574EF202CB16500FEEAAA /* Setting.storyboard */,
+				66B52A61202DD9AB007C54BF /* SettingTableVC.swift */,
 				66B52A62202DD9AC007C54BF /* AppLockTableVC.swift */,
 				66B52A60202DD9AB007C54BF /* AppLockVC.swift */,
-				66B52A61202DD9AB007C54BF /* SettingTableVC.swift */,
-				66E574EF202CB16500FEEAAA /* Setting.storyboard */,
+				66029A92202DF82B001D4E77 /* AlarmVC.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				66999102202437F200410F21 /* Book.swift in Sources */,
 				66B52A65202DD9AC007C54BF /* AppLockTableVC.swift in Sources */,
 				66B52A6C202DFD58007C54BF /* BookFeedVC.swift in Sources */,
+				66029A93202DF82B001D4E77 /* AlarmVC.swift in Sources */,
 				66DBACA1202BF8FD0043CB4B /* SearchBookCell.swift in Sources */,
 				669991042024386900410F21 /* FeedTableVC.swift in Sources */,
 				66B52A5F202D5D90007C54BF /* BookmarkCell.swift in Sources */,

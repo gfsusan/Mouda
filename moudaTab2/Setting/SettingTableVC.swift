@@ -13,27 +13,37 @@ import UserNotifications
 
 class SettingTableVC: UITableViewController, MFMailComposeViewControllerDelegate {
 
+    var alarmDelegate:AlarmVC?
+    
     @IBOutlet weak var alarmSwitch: UISwitch!
     @IBOutlet weak var myFeedCount: UILabel!
     @IBOutlet weak var myBookmarkCount: UILabel!
+    @IBOutlet weak var alarmTimeSmallLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        if let alarmTime = self.alarmDelegate {
+            print("alarmTime")
+            alarmTimeSmallLabel.text = alarmTime.alarmTimeLabel.text
+        }
         
     }
     
     @IBAction func switchStatus(_ sender: Any) {
-        if alarmSwitch.isOn == true {
-            switchOn()
-        }
+//        if alarmSwitch.isOn == true {
+//            if let alarmVC = self.alarmDelegate {
+//                print("SwitchOn")
+//                alarmVC.switchOn()
+//            }
+//        }
     }
     
-    func switchOn() {
-        print("Switch On")
-    }
 
     @IBAction func feedbackEmail(_ sender: Any) {
+        
+        //피드백 이메일
         if MFMailComposeViewController.canSendMail() {
             let mail = MFMailComposeViewController()
             mail.mailComposeDelegate = self
@@ -54,3 +64,4 @@ class SettingTableVC: UITableViewController, MFMailComposeViewControllerDelegate
         controller.dismiss(animated: true)
     }
 }
+

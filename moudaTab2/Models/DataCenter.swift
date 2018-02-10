@@ -8,9 +8,11 @@
 
 import Foundation
 
+
 let dataCenter: DataCenter = DataCenter()
 var feedDataFileName = "FeedData.brch"
 var bookmarkDataFileName = "BookmarkData.brch"
+var alarmDelegate:AlarmVC?
 
 let book1 = Book(title: "적을 만들지 않는 대화법", coverImageURL: "http://bookthumb.phinf.naver.net/cover/126/921/12692139.jpg?type=m1&udate=20171102", publisher: "출판사1", writer: "작가1", bookDescription: "적을 만들지 않는 대화법을 알려주는 책이다.")
 let book2 = Book(title: "필요한 사람인가", coverImageURL: "http://i2.media.daumcdn.net/svc/image/U03/news/201504/09/newsis/20150409141118025.jpeg", publisher: "출판사2", writer: "작가2", bookDescription: "필요한 사람인가에 대한 고찰")
@@ -21,6 +23,7 @@ class DataCenter {
     var bookmarks: [Bookmark] = []
     // search 위해서 걍 만들어놓은 dummy data
     var books: [Book] = []
+    
     
     var feedFilePath: String { get {
         let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
