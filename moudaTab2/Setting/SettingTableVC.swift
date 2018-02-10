@@ -13,6 +13,8 @@ import UserNotifications
 
 class SettingTableVC: UITableViewController, MFMailComposeViewControllerDelegate {
     
+    var alarmDelegate:AlarmVC?
+    
     @IBOutlet weak var alarmSwitch: UISwitch!
     @IBOutlet weak var myFeedCount: UILabel!
     @IBOutlet weak var myBookmarkCount: UILabel!
@@ -64,13 +66,14 @@ class SettingTableVC: UITableViewController, MFMailComposeViewControllerDelegate
             // 경고창
         }
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true)
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
 }
 
