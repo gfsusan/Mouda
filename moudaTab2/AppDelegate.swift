@@ -20,12 +20,12 @@
 //
 
 import UIKit
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -38,8 +38,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // status bar 아이템 색상 변경
         UIApplication.shared.statusBarStyle = .lightContent
         
+        // 알람 설정
+        UNUserNotificationCenter.current().requestAuthorization(options: [ .alert, .sound, .badge], completionHandler: {didAllow, error in
+            if didAllow {
+                print("Yes, Alarm")
+
+            } else {
+                print("No, Alarm")
+            }
+        })
         
-    
         return true
     }
 
