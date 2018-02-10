@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
@@ -270,7 +271,7 @@
                             <barButtonItem title="수정" id="jc6-3m-E2y">
                                 <connections>
                                     <action selector="editPressed:" destination="7qI-Td-x9L" id="Y1q-Dc-2wH"/>
-                                    <segue destination="gAc-hr-5aY" kind="presentation" id="j8E-DJ-mc4"/>
+                                    <segue destination="Ew5-cH-KG0" kind="presentation" id="F3w-Pb-pcF"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -287,14 +288,6 @@
             </objects>
             <point key="canvasLocation" x="1836" y="494.30284857571218"/>
         </scene>
-        <!--Add-->
-        <scene sceneID="jaW-EJ-vue">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Add" id="gAc-hr-5aY" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Lr6-3X-2N1" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2497" y="390"/>
-        </scene>
         <!--Setting-->
         <scene sceneID="Wn7-rr-zHy">
             <objects>
@@ -302,6 +295,169 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZDd-Fp-RQD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1836" y="-258"/>
+        </scene>
+        <!--Add Pop UpVC-->
+        <scene sceneID="Z5z-qt-8TD">
+            <objects>
+                <viewController storyboardIdentifier="addPopupStoryboard" id="Ew5-cH-KG0" customClass="AddPopUpVC" customModule="moudaTab2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NBg-AC-CKm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="azq-ZD-yJr">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fVl-yn-vyJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="533"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bz6-n3-plG">
+                                                <rect key="frame" x="8" y="96" width="359" height="250"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hoF-98-oiJ">
+                                                        <rect key="frame" x="8" y="8" width="343" height="234"/>
+                                                        <subviews>
+                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="간직하고 싶은 책 속의 한 문장을 작성해주세요." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="kYY-sr-vH0">
+                                                                <rect key="frame" x="0.0" y="0.0" width="343" height="190"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <accessibility key="accessibilityConfiguration" identifier="lineText"/>
+                                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                            </textView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zn9-dd-IEL">
+                                                                <rect key="frame" x="121.5" y="190" width="100" height="44"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Page" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lgY-E1-nqN">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="44"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="44" id="plo-BR-7FB"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                        <size key="shadowOffset" width="0.0" height="0.0"/>
+                                                                    </label>
+                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="123" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="IuE-dz-qnW">
+                                                                        <rect key="frame" x="50" y="0.0" width="50" height="44"/>
+                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        <accessibility key="accessibilityConfiguration" identifier="pageText"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="44" id="zav-iW-SO5"/>
+                                                                        </constraints>
+                                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
+                                                                    </textView>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstItem="IuE-dz-qnW" firstAttribute="width" secondItem="lgY-E1-nqN" secondAttribute="height" multiplier="25:22" id="8ew-FV-Qvk"/>
+                                                                    <constraint firstItem="IuE-dz-qnW" firstAttribute="width" secondItem="lgY-E1-nqN" secondAttribute="width" id="UVZ-1p-nhW"/>
+                                                                </constraints>
+                                                            </stackView>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="kYY-sr-vH0" firstAttribute="width" secondItem="hoF-98-oiJ" secondAttribute="width" id="NYl-yA-zDv"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="hoF-98-oiJ" firstAttribute="top" secondItem="Bz6-n3-plG" secondAttribute="topMargin" id="94P-WG-BRc"/>
+                                                    <constraint firstAttribute="height" constant="250" id="JvA-bK-mqP"/>
+                                                    <constraint firstAttribute="bottomMargin" secondItem="hoF-98-oiJ" secondAttribute="bottom" id="R7w-PF-7Ru"/>
+                                                    <constraint firstAttribute="trailingMargin" secondItem="hoF-98-oiJ" secondAttribute="trailing" id="biK-JC-nT6"/>
+                                                    <constraint firstItem="hoF-98-oiJ" firstAttribute="leading" secondItem="Bz6-n3-plG" secondAttribute="leadingMargin" id="dTN-AD-wzI"/>
+                                                </constraints>
+                                            </view>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="기록한 문장에 대한 본인만의 생각이나 감정을 표현해주세요." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6In-RB-jdG">
+                                                <rect key="frame" x="8" y="354" width="359" height="80"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="thoughtText"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="FJD-t7-bKO"/>
+                                                </constraints>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ANo-Hp-AhO">
+                                                <rect key="frame" x="8" y="28" width="359" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="RCj-4Y-2Ox"/>
+                                                </constraints>
+                                                <state key="normal" title="책 선택"/>
+                                                <connections>
+                                                    <action selector="selectBookPressed:" destination="Ew5-cH-KG0" eventType="touchUpInside" id="Qvg-Fq-j3W"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstItem="Bz6-n3-plG" firstAttribute="top" secondItem="ANo-Hp-AhO" secondAttribute="bottom" constant="8" id="0CB-lE-NmK"/>
+                                            <constraint firstItem="4rA-WA-Fqo" firstAttribute="trailing" secondItem="ANo-Hp-AhO" secondAttribute="trailing" constant="8" id="81P-PX-T8U"/>
+                                            <constraint firstItem="4rA-WA-Fqo" firstAttribute="trailing" secondItem="Bz6-n3-plG" secondAttribute="trailing" constant="8" id="NYi-2F-qzE"/>
+                                            <constraint firstItem="Bz6-n3-plG" firstAttribute="leading" secondItem="4rA-WA-Fqo" secondAttribute="leading" constant="8" id="Oew-Bo-rxQ"/>
+                                            <constraint firstItem="4rA-WA-Fqo" firstAttribute="trailing" secondItem="6In-RB-jdG" secondAttribute="trailing" constant="8" id="aVc-8L-bij"/>
+                                            <constraint firstItem="ANo-Hp-AhO" firstAttribute="leading" secondItem="4rA-WA-Fqo" secondAttribute="leading" constant="8" id="cw2-bD-RKn"/>
+                                            <constraint firstItem="6In-RB-jdG" firstAttribute="top" secondItem="Bz6-n3-plG" secondAttribute="bottom" constant="8" id="lxx-3c-CjR"/>
+                                            <constraint firstAttribute="height" constant="533" id="qCG-Aa-ysz"/>
+                                            <constraint firstItem="6In-RB-jdG" firstAttribute="leading" secondItem="4rA-WA-Fqo" secondAttribute="leading" constant="8" id="s3M-HJ-coS"/>
+                                            <constraint firstItem="ANo-Hp-AhO" firstAttribute="top" secondItem="4rA-WA-Fqo" secondAttribute="top" constant="8" id="sdR-5c-cX8"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="safeArea" id="4rA-WA-Fqo"/>
+                                    </view>
+                                </subviews>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="fVl-yn-vyJ" firstAttribute="centerX" secondItem="azq-ZD-yJr" secondAttribute="centerX" id="0Tb-tO-kFE"/>
+                                    <constraint firstItem="fVl-yn-vyJ" firstAttribute="top" secondItem="azq-ZD-yJr" secondAttribute="top" id="Sly-gh-hlW"/>
+                                    <constraint firstAttribute="bottom" secondItem="fVl-yn-vyJ" secondAttribute="bottom" id="VOd-sS-921"/>
+                                    <constraint firstAttribute="trailing" secondItem="fVl-yn-vyJ" secondAttribute="trailing" id="bkH-Sd-GGs"/>
+                                    <constraint firstItem="fVl-yn-vyJ" firstAttribute="leading" secondItem="azq-ZD-yJr" secondAttribute="leading" id="rco-8d-Q3j"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Qgf-ux-C15" appends="YES" id="nsK-vX-evd"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="azq-ZD-yJr" secondAttribute="bottom" id="4tC-NS-zWL"/>
+                            <constraint firstItem="azq-ZD-yJr" firstAttribute="top" secondItem="NBg-AC-CKm" secondAttribute="top" id="8WM-rL-FAk"/>
+                            <constraint firstItem="azq-ZD-yJr" firstAttribute="leading" secondItem="XlK-XB-EaL" secondAttribute="leading" id="CHs-SY-CEM"/>
+                            <constraint firstItem="azq-ZD-yJr" firstAttribute="trailing" secondItem="XlK-XB-EaL" secondAttribute="trailing" id="Ts1-1I-1HR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="XlK-XB-EaL"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="OMM-D7-zXc">
+                        <barButtonItem key="leftBarButtonItem" title="취소" id="rgn-XO-lZB">
+                            <connections>
+                                <action selector="cancelButtonPressed:" destination="Ew5-cH-KG0" id="AdG-yQ-5WN"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="완료" id="P9d-R2-HbM">
+                            <connections>
+                                <action selector="doneButtonPressed:" destination="Ew5-cH-KG0" id="O9o-Xb-hpB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="bookChooseButton" destination="ANo-Hp-AhO" id="bLu-9B-KZ0"/>
+                        <outlet property="lineTextView" destination="kYY-sr-vH0" id="tky-Ye-UfY"/>
+                        <outlet property="pageTextView" destination="IuE-dz-qnW" id="BOm-KV-apR"/>
+                        <outlet property="thoughtTextView" destination="6In-RB-jdG" id="DxW-Dg-9Zx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BpT-Vx-YVy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Qgf-ux-C15">
+                    <connections>
+                        <action selector="tabGesture:" destination="Ew5-cH-KG0" id="Gqf-hn-qRE"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2769" y="494"/>
         </scene>
     </scenes>
     <resources>

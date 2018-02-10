@@ -11,6 +11,8 @@ import UIKit
 class FeedTableVC: UITableViewController {
     
     var feeds:[Feed] = []
+    var receivedFeed:Feed?
+    
 //    @IBOutlet weak var myFeedButton: UIButton!
     let formatdate = DateFormatter()
     
@@ -45,6 +47,7 @@ class FeedTableVC: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         feeds = dataCenter.feeds
         self.tableView.reloadData()
     }

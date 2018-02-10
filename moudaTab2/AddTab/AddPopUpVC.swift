@@ -57,9 +57,8 @@ class AddPopUpVC: UIViewController, UITextViewDelegate, UITabBarControllerDelega
             addVC.closeFlag = true
         }
         dismiss(animated: true)
-        //        let sb = UIStoryboard(name: "MyFeed", bundle: nil)
-        //        let backToMyFeed = sb.instantiateInitialViewController()
     }
+    
     @IBAction func tabGesture(_ sender: Any) {
         self.view.endEditing(true)
         
