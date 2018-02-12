@@ -38,12 +38,14 @@ class ModifyVC: UIViewController, UITextViewDelegate{
                     }
                     // 새로운 피드 생성
                     let feed:Feed
-                    if let original = originalFeed  {
-                        feed = Feed(book: chosenBook, page: Int(pageTextView.text)!, line: lineTextView.text, thought: text, date: original.date)
-                        
-                    } else {
+                    guard let original = originalFeed else {
                         feed = Feed(book: chosenBook, page: Int(pageTextView.text)!, line: lineTextView.text, thought: text)
+                        dataCenter.createAlert(title: "삭제에 실패하였습니다.", message: "다시 시도해주세요.", sender: self)
+                        return
                     }
+                    
+                    feed = Feed(book: chosenBook, page: Int(pageTextView.text)!, line: lineTextView.text, thought: text, date: original.date)
+                   
                     
                     //델리게이트 업데이트
                     feedDetailDelegate?.titleLabel.text = feed.book.title
@@ -54,9 +56,10 @@ class ModifyVC: UIViewController, UITextViewDelegate{
                     
                     //데이터 센터 업데이트
                     if let index = indexPath {
-                        dataCenter.delete(feedAt: index)
+                        dataCenter.delete(feed: original, at: index, sender: self)
+                        dataCenter.add(feed: feed)
                     }
-                    dataCenter.add(feed: feed)
+                    
                     
                     // 저장 작업 외에는 Cancel과 똑같이 modal dismiss만 해주면 됨
                     cancelButtonPressed(sender)

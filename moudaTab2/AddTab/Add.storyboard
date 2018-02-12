@@ -41,11 +41,11 @@
             </objects>
             <point key="canvasLocation" x="1145" y="987"/>
         </scene>
-        <!--글쓰기-->
+        <!--쓰다-->
         <scene sceneID="wWI-so-2HI">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="overCurrentContext" id="FAR-gO-tvF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="글쓰기" image="Add" id="ug1-Yz-462"/>
+                    <tabBarItem key="tabBarItem" title="쓰다" image="Add" id="ug1-Yz-462"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NIZ-5F-R6y">

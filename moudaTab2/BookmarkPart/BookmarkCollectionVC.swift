@@ -16,11 +16,14 @@ class BookmarkCollectionVC: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        let textAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
     }
     
     override func viewWillAppear(_ animated: Bool) {
         bookmarks = dataCenter.bookmarks
         self.collectionView?.reloadData()
+       
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -36,6 +39,7 @@ class BookmarkCollectionVC: UICollectionViewController {
             if indexPath.row < bookmarks.count {
                 let vc = segue.destination as? BookFeedVC
                 vc?.bookmark = bookmarks[indexPath.row]
+                vc?.indexPath = indexPath.row
             } else {
                 let vc = segue.destination as? AddBookmarkVC
                 vc?.delegate = self

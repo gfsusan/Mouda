@@ -20,11 +20,11 @@
         </array>
     </customFonts>
     <scenes>
-        <!--MyFeed-->
+        <!--보이다-->
         <scene sceneID="TEE-Em-mcI">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DVG-za-uDk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="MyFeed" image="home" selectedImage="Home" id="DGU-PH-Qlp"/>
+                    <tabBarItem key="tabBarItem" title="보이다" image="Home" id="DGU-PH-Qlp"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="36P-mR-mk1">
@@ -488,7 +488,6 @@
     <resources>
         <image name="Empty" width="30" height="30"/>
         <image name="Home" width="24" height="24"/>
-        <image name="home" width="24" height="24"/>
         <image name="icons8-pen-50" width="50" height="50"/>
         <image name="setting" width="24" height="24"/>
     </resources>

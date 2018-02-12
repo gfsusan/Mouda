@@ -27,8 +27,6 @@ class FeedDetailVC: UIViewController {
             if let index = self.indexPath {
                 dataCenter.delete(feedAt: index)
                 self.navigationController?.popToRootViewController(animated: true)
-            } else {
-                dataCenter.createAlert(title: "삭제에 실패했습니다.", message: "다시 시도해 보세요.", sender: self)
             }
         }
         

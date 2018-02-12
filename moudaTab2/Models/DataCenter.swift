@@ -14,7 +14,7 @@ var feedDataFileName = "FeedData.brch"
 var bookmarkDataFileName = "BookmarkData.brch"
 var alarmDelegate:AlarmVC?
 
-let book1 = Book(title: "적을 만들지 않는 대화법", coverImageURL: "http://bookthumb.phinf.naver.net/cover/126/921/12692139.jpg?type=m1&udate=20171102", publisher: "출판사1", writer: "작가1", bookDescription: "적을 만들지 않는 대화법을 알려주는 책이다.")
+let book1 = Book(title: "적을 만들지 않는 대화법", coverImageURL: "http://cfile5.uf.tistory.com/image/214D5C37583EE5952C31D0", publisher: "출판사1", writer: "작가1", bookDescription: "적을 만들지 않는 대화법을 알려주는 책이다.")
 let book2 = Book(title: "필요한 사람인가", coverImageURL: "http://i2.media.daumcdn.net/svc/image/U03/news/201504/09/newsis/20150409141118025.jpeg", publisher: "출판사2", writer: "작가2", bookDescription: "필요한 사람인가에 대한 고찰")
 let book3 = Book(title: "신경 끄기의 기술", coverImageURL: "http://image.yes24.com/momo/TopCate1638/MidCate004/163736954.jpg", publisher: "출판사3", writer: "작가3", bookDescription: "신경 끄는 기술에 대한 설명")
 let book4 = Book(title: "인생극장", coverImageURL: "http://image.yes24.com/momo/TopCate1768/MidCate003/175796554.jpg", publisher: "출판사4", writer: "작가4", bookDescription: "사회학자인 아들이 대신 쓰는 부모의 자서전!")
@@ -49,31 +49,31 @@ class DataCenter {
         books.append(book4)
         
         // 피드 파일 존재하는지 확인
-        if FileManager.default.fileExists(atPath: self.feedFilePath) {
-            print("피드 파일 있음")
-            if let unarchArray = NSKeyedUnarchiver.unarchiveObject(withFile: self.feedFilePath) as? [Feed] {
-                feeds += unarchArray
-            }
-
-        } else {
-            print("피드 파일 없음")
-            feeds += defaultFeedData()
-        }
-
-        if FileManager.default.fileExists(atPath: self.bookmarkFilePath) {
-            // read
-            print("북마크 파일 있음")
-            if let unarchArray = NSKeyedUnarchiver.unarchiveObject(withFile: self.bookmarkFilePath) as? [Bookmark] {
-                bookmarks += unarchArray
-            }
-        } else {
-            print("북마크 파일 없음")
-            bookmarks += defaultBookmarkData()
-        }
+//        if FileManager.default.fileExists(atPath: self.feedFilePath) {
+//            print("피드 파일 있음")
+//            if let unarchArray = NSKeyedUnarchiver.unarchiveObject(withFile: self.feedFilePath) as? [Feed] {
+//                feeds += unarchArray
+//            }
+//
+//        } else {
+//            print("피드 파일 없음")
+//            feeds += defaultFeedData()
+//        }
+//
+//        if FileManager.default.fileExists(atPath: self.bookmarkFilePath) {
+//            // read
+//            print("북마크 파일 있음")
+//            if let unarchArray = NSKeyedUnarchiver.unarchiveObject(withFile: self.bookmarkFilePath) as? [Bookmark] {
+//                bookmarks += unarchArray
+//            }
+//        } else {
+//            print("북마크 파일 없음")
+//            bookmarks += defaultBookmarkData()
+//        }
         
 //        dummy data
-//        feeds += defaultFeedData()
-//        bookmarks += defaultBookmarkData()
+        feeds += defaultFeedData()
+        bookmarks += defaultBookmarkData()
         
         // 데이터 소팅
         self.sortFeed()
@@ -151,28 +151,28 @@ class DataCenter {
         self.save()
     }
     
-    func delete(feed:Feed, at index:Int) {
+    func delete(feed:Feed, at index:Int, sender:Any?) {
         // index 유효한지 체크
         if index < self.feeds.count {
             let lineData = feeds[index].line
             if lineData == feed.line {
                 self.feeds.remove(at: index)
             } else {
-                print("Feed가 일치하지 않습니다.")
+                createAlert(title: "알림", message: "삭제에 실패하였습니다. 다시 시도해주세요.", sender: sender)
             }
         } else {
-            print("index out of bound")
+            createAlert(title: "알림", message: "삭제에 실패하였습니다. 다시 시도해주세요.", sender: sender)
         }
         
     }
     
-    func delete(bookmarkOf book:Book, at index:Int) {
+    func delete(bookmarkOf book:Book, at index:Int, sender:Any?) {
         if index < self.bookmarks.count {
             let titleData = bookmarks[index].book.title
             if titleData == book.title{
                 self.bookmarks.remove(at: index)
             } else {
-                print("책갈피가 일치하지 않습니다")
+                createAlert(title: "알림", message: "삭제에 실패하였습니다. 다시 시도해주세요.", sender: sender)
             }
         }
     }

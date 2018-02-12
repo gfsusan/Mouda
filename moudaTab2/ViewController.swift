@@ -19,6 +19,7 @@ class ViewController: UIViewController {
         imageView.contentMode = .scaleAspectFit
         
         navigationItem.titleView = imageView
+        navigationController?.navigationBar.tintColor = UIColor.white
         
         
     }
