@@ -18,6 +18,11 @@ class BookmarkCollectionVC: UICollectionViewController {
         // Do any additional setup after loading the view.
         let textAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
+        
+        let imageView = UIImageView(image: #imageLiteral(resourceName: "Logo"))
+        imageView.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
+        imageView.contentMode = .scaleAspectFit
+        navigationItem.titleView = imageView
     }
     
     override func viewWillAppear(_ animated: Bool) {
