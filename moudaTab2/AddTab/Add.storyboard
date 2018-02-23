@@ -44,8 +44,8 @@
         <!--쓰다-->
         <scene sceneID="wWI-so-2HI">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="overCurrentContext" id="FAR-gO-tvF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="쓰다" image="Add" id="ug1-Yz-462"/>
+                <navigationController storyboardIdentifier="AddVC" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="overCurrentContext" id="FAR-gO-tvF" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="쓰다" id="ug1-Yz-462"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NIZ-5F-R6y">
@@ -54,7 +54,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="8j4-aT-rqv" kind="relationship" relationship="rootViewController" id="Wv7-ao-Bhk"/>
+                        <segue destination="nOL-BV-Fc8" kind="relationship" relationship="rootViewController" id="kXZ-hX-blZ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2EU-Re-sku" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -245,16 +245,10 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="nOL-BV-Fc8" kind="relationship" relationship="rootViewController" id="WW7-M2-L9I"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0EG-Nc-RhF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2008" y="985.90704647676171"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Add" width="24" height="24"/>
-    </resources>
 </document>

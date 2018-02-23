@@ -24,7 +24,7 @@
         <scene sceneID="TEE-Em-mcI">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DVG-za-uDk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="보이다" image="Home" id="DGU-PH-Qlp"/>
+                    <tabBarItem key="tabBarItem" title="보이다" image="home" id="DGU-PH-Qlp"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="36P-mR-mk1">
@@ -129,11 +129,7 @@
                     <navigationItem key="navigationItem" id="toK-49-5gP">
                         <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" image="Empty" id="0To-GQ-URE"/>
-                        <barButtonItem key="rightBarButtonItem" image="setting" id="jk6-Ng-rRq">
-                            <connections>
-                                <segue destination="r8b-SF-IHl" kind="show" id="euG-Bu-nv9"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="setting" id="jk6-Ng-rRq"/>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
@@ -285,14 +281,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZYB-Dc-t1d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1836" y="494.30284857571218"/>
-        </scene>
-        <!--Setting-->
-        <scene sceneID="Wn7-rr-zHy">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Setting" id="r8b-SF-IHl" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZDd-Fp-RQD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1836" y="-258"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4xe-d1-pOL">
@@ -487,7 +475,7 @@
     </scenes>
     <resources>
         <image name="Empty" width="30" height="30"/>
-        <image name="Home" width="24" height="24"/>
+        <image name="home" width="24" height="24"/>
         <image name="icons8-pen-50" width="50" height="50"/>
         <image name="setting" width="24" height="24"/>
     </resources>
