@@ -10,7 +10,6 @@
 		66029A93202DF82B001D4E77 /* AlarmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66029A92202DF82B001D4E77 /* AlarmVC.swift */; };
 		6626BE86204003D4003F0C23 /* Feeds.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6626BE84204003D4003F0C23 /* Feeds.storyboard */; };
 		6626BE88204009C1003F0C23 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6626BE87204009C1003F0C23 /* TabBarVC.swift */; };
-		6626BE8A20400A03003F0C23 /* AddTabBarIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6626BE8920400A03003F0C23 /* AddTabBarIcon.png */; };
 		66728F11202A99480061C168 /* AddBookmarkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66728F10202A99470061C168 /* AddBookmarkVC.swift */; };
 		66728F13202A9C480061C168 /* FeedDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66728F12202A9C480061C168 /* FeedDetailVC.swift */; };
 		66728F19202AAE800061C168 /* MyFeed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66728F17202AAE800061C168 /* MyFeed.storyboard */; };
@@ -55,7 +54,6 @@
 		66029A92202DF82B001D4E77 /* AlarmVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmVC.swift; sourceTree = "<group>"; };
 		6626BE85204003D4003F0C23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = moudaTab2/Storyboard/Base.lproj/Feeds.storyboard; sourceTree = "<group>"; };
 		6626BE87204009C1003F0C23 /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
-		6626BE8920400A03003F0C23 /* AddTabBarIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AddTabBarIcon.png; sourceTree = "<group>"; };
 		66728F10202A99470061C168 /* AddBookmarkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookmarkVC.swift; sourceTree = "<group>"; };
 		66728F12202A9C480061C168 /* FeedDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailVC.swift; sourceTree = "<group>"; };
 		66728F18202AAE800061C168 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = moudaTab2/Base.lproj/MyFeed.storyboard; sourceTree = "<group>"; };
@@ -147,7 +145,6 @@
 				66728F1A202AAEA20061C168 /* Add.storyboard */,
 				66F902DD202961F40047C959 /* AddPopUpVC.swift */,
 				66FCB984202BEF8B008E1AC5 /* AddVC.swift */,
-				6626BE8920400A03003F0C23 /* AddTabBarIcon.png */,
 				7AE837822047ADF80012C1CE /* Empty.png */,
 			);
 			path = AddTab;
@@ -317,7 +314,6 @@
 			files = (
 				66728F19202AAE800061C168 /* MyFeed.storyboard in Resources */,
 				66728F1B202AAEA20061C168 /* Add.storyboard in Resources */,
-				6626BE8A20400A03003F0C23 /* AddTabBarIcon.png in Resources */,
 				7AD0AF762029C913002E7F60 /* NanumSquareOTFRegular.otf in Resources */,
 				669990F420242F2B00410F21 /* LaunchScreen.storyboard in Resources */,
 				7AE837832047ADF80012C1CE /* Empty.png in Resources */,

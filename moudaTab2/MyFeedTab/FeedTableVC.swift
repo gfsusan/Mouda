@@ -21,11 +21,9 @@ class FeedTableVC: UITableViewController {
         
         feeds += dataCenter.feeds
         
+        
         // refresh
-        refreshData()
-//        myFeedButton.addTarget(self, action: Selector(("refresh:")), for: .touchUpInside)
-//        var refresher = UIRefreshControl()
-//        refresher.addTarget(self, action: Selector(("refresh:")), for: .valueChanged)
+        self.tableView.reloadData()
 
         print("FeedTableVC")
         // Navigation Bar Item
@@ -41,9 +39,6 @@ class FeedTableVC: UITableViewController {
         formatdate.dateFormat = "yyyy년 MM월 dd일"
     }
     
-    func refreshData() {
-        refreshControl?.beginRefreshing()
-    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

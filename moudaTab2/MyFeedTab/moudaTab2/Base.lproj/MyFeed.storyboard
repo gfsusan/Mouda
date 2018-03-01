@@ -23,7 +23,7 @@
         <!--보이다-->
         <scene sceneID="TEE-Em-mcI">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DVG-za-uDk" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MyFeedVC" automaticallyAdjustsScrollViewInsets="NO" id="DVG-za-uDk" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="보이다" image="Home" id="DGU-PH-Qlp"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -280,7 +280,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZYB-Dc-t1d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1836" y="494.30284857571218"/>
+            <point key="canvasLocation" x="1687" y="116"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4xe-d1-pOL">
@@ -298,7 +298,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ATI-r8-E5D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2768" y="493.8530734632684"/>
+            <point key="canvasLocation" x="2545" y="116"/>
         </scene>
         <!--ModifyVC-->
         <scene sceneID="UCo-CT-aWD">
@@ -462,7 +462,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3569" y="494"/>
+            <point key="canvasLocation" x="3391" y="116"/>
         </scene>
         <!--Search-->
         <scene sceneID="ySd-Dt-HNQ">
