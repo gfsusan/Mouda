@@ -37,6 +37,12 @@ class AddPopUpVC: UIViewController, UITextViewDelegate, UITabBarControllerDelega
                     let feed = Feed(book: chosenBook, page: Int(pageTextView.text)!, line: lineTextView.text, thought: text)
                     dataCenter.add(feed: feed)
                     
+                    if let tabBarController = self.presentingViewController as? UITabBarController {
+                        print("done Button Presend")
+                        tabBarController.selectedIndex = 1
+                        tabBarController.selectedIndex = 0
+                    }
+                    
                     // 저장 작업 외에는 Cancel과 똑같이 modal dismiss만 해주면 됨
                         cancelButtonPressed(sender)
                     
@@ -62,12 +68,7 @@ class AddPopUpVC: UIViewController, UITextViewDelegate, UITabBarControllerDelega
 //            print("add view controller delegate 성공")
 //            addVC.closeFlag = true
 //        }
-        if let tabBarController = self.presentingViewController as? UITabBarController {
-            print("done Button Presend")
-            tabBarController.selectedIndex = 1
-            tabBarController.selectedIndex = 0
-            dismiss(animated: true)
-        }
+        dismiss(animated: true)
     }
     
     @IBAction func tabGesture(_ sender: Any) {
