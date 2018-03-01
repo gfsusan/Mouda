@@ -129,7 +129,7 @@
                     <navigationItem key="navigationItem" id="toK-49-5gP">
                         <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" image="Empty" id="0To-GQ-URE"/>
-                        <barButtonItem key="rightBarButtonItem" image="setting" id="jk6-Ng-rRq"/>
+                        <barButtonItem key="rightBarButtonItem" image="Empty" id="9p1-Cz-dJK"/>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
@@ -477,6 +477,5 @@
         <image name="Empty" width="30" height="30"/>
         <image name="Home" width="24" height="24"/>
         <image name="icons8-pen-50" width="50" height="50"/>
-        <image name="setting" width="24" height="24"/>
     </resources>
 </document>

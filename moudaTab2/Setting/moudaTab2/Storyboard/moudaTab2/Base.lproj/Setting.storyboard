@@ -22,22 +22,21 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="1oh-BO-PvA" kind="relationship" relationship="rootViewController" id="shB-IF-n21"/>
+                        <segue destination="cfr-Mk-UJ0" kind="relationship" relationship="rootViewController" id="zvK-jS-zbX"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="88L-yp-Ksl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1526" y="-1263"/>
+            <point key="canvasLocation" x="841" y="-1297"/>
         </scene>
-        <!--Setting TableVC-->
-        <scene sceneID="A9I-KU-49T">
+        <!--설정-->
+        <scene sceneID="XpC-7B-Zkq">
             <objects>
-                <tableViewController hidesBottomBarWhenPushed="YES" id="1oh-BO-PvA" customClass="SettingTableVC" customModule="moudaTab2" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="UdS-QO-wwJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                <tableViewController id="cfr-Mk-UJ0" customClass="SettingTableVC" customModule="moudaTab2" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="WGx-a9-5G2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <color key="separatorColor" red="0.97636479139999999" green="0.97653168440000004" blue="0.9763541818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <sections>
                             <tableViewSection id="iAl-62-egs">
                                 <cells>
@@ -168,7 +167,7 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fzJ-FB-Fhs">
                                                     <rect key="frame" x="290" y="6" width="51" height="31"/>
                                                     <connections>
-                                                        <action selector="switchStatus:" destination="1oh-BO-PvA" eventType="valueChanged" id="hDk-DU-5Vt"/>
+                                                        <action selector="switchStatus:" destination="cfr-Mk-UJ0" eventType="valueChanged" id="9Df-1v-gfc"/>
                                                     </connections>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="알람" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ir4-Ch-ZKy">
@@ -246,7 +245,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="374" height="45"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <connections>
-                                                        <action selector="feedbackEmail:" destination="1oh-BO-PvA" eventType="touchUpInside" id="JtY-b6-tBX"/>
+                                                        <action selector="feedbackEmail:" destination="cfr-Mk-UJ0" eventType="touchUpInside" id="Sfe-ZU-zfr"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -273,24 +272,21 @@
                             </tableViewSection>
                         </sections>
                         <connections>
-                            <outlet property="dataSource" destination="1oh-BO-PvA" id="tPq-n5-lfh"/>
-                            <outlet property="delegate" destination="1oh-BO-PvA" id="Ean-vu-UO8"/>
+                            <outlet property="dataSource" destination="cfr-Mk-UJ0" id="cg4-SJ-8jd"/>
+                            <outlet property="delegate" destination="cfr-Mk-UJ0" id="BXh-1i-7bl"/>
                         </connections>
                     </tableView>
-                    <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationItem key="navigationItem" id="4ii-HF-X5x"/>
+                    <navigationItem key="navigationItem" title="설정" id="YGw-ld-wI4"/>
                     <connections>
-                        <outlet property="alarmSwitch" destination="fzJ-FB-Fhs" id="BTO-fL-KZp"/>
-                        <outlet property="alarmTimeSmallLabel" destination="tZi-Hv-B1d" id="km9-nj-tjD"/>
-                        <outlet property="bookmarkCell" destination="uxp-JE-HFp" id="dot-jZ-1xE"/>
-                        <outlet property="myBookmarkCount" destination="Y0o-u7-5jm" id="K4E-UV-X7P"/>
-                        <outlet property="myFeedCell" destination="4bN-BJ-a4f" id="sxA-fg-JIl"/>
-                        <outlet property="myFeedCount" destination="Cqx-U9-tTs" id="CRR-2X-Z3Z"/>
+                        <outlet property="alarmSwitch" destination="fzJ-FB-Fhs" id="7Ay-ZK-xbN"/>
+                        <outlet property="alarmTimeSmallLabel" destination="tZi-Hv-B1d" id="mB0-Tg-JLH"/>
+                        <outlet property="bookmarkCell" destination="uxp-JE-HFp" id="gfj-bA-aJW"/>
+                        <outlet property="myFeedCell" destination="4bN-BJ-a4f" id="apw-xc-jYM"/>
                     </connections>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oRZ-7c-AXj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xpT-lG-drh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2293.5999999999999" y="-1263.4182908545729"/>
+            <point key="canvasLocation" x="1551" y="-871"/>
         </scene>
         <!--App Lock TableVC-->
         <scene sceneID="A8U-nD-bjL">

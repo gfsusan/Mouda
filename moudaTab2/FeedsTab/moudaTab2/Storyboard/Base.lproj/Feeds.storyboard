@@ -125,7 +125,7 @@
                     <navigationItem key="navigationItem" id="coV-BB-90L">
                         <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" image="Empty" id="n44-pV-bCB"/>
-                        <barButtonItem key="rightBarButtonItem" image="setting" id="L6J-QI-Vyq"/>
+                        <barButtonItem key="rightBarButtonItem" image="Empty" id="L6J-QI-Vyq"/>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
@@ -138,6 +138,5 @@
         <image name="Bookmark" width="24" height="24"/>
         <image name="Empty" width="30" height="30"/>
         <image name="icons8-pen-50" width="50" height="50"/>
-        <image name="setting" width="24" height="24"/>
     </resources>
 </document>
