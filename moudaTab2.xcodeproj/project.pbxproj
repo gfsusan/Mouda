@@ -48,6 +48,7 @@
 		7AD0AF722029C86A002E7F60 /* NanumMyeongjoExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7AD0AF6F2029C86A002E7F60 /* NanumMyeongjoExtraBold.otf */; };
 		7AD0AF742029C906002E7F60 /* NanumGothic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7AD0AF732029C906002E7F60 /* NanumGothic.otf */; };
 		7AD0AF762029C913002E7F60 /* NanumSquareOTFRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7AD0AF752029C913002E7F60 /* NanumSquareOTFRegular.otf */; };
+		7AE837832047ADF80012C1CE /* Empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AE837822047ADF80012C1CE /* Empty.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +95,7 @@
 		7AD0AF6F2029C86A002E7F60 /* NanumMyeongjoExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumMyeongjoExtraBold.otf; sourceTree = "<group>"; };
 		7AD0AF732029C906002E7F60 /* NanumGothic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothic.otf; sourceTree = "<group>"; };
 		7AD0AF752029C913002E7F60 /* NanumSquareOTFRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareOTFRegular.otf; sourceTree = "<group>"; };
+		7AE837822047ADF80012C1CE /* Empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Empty.png; path = moudaTab2/Assets.xcassets/Empty.imageset/Empty.png; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 				66F902DD202961F40047C959 /* AddPopUpVC.swift */,
 				66FCB984202BEF8B008E1AC5 /* AddVC.swift */,
 				6626BE8920400A03003F0C23 /* AddTabBarIcon.png */,
+				7AE837822047ADF80012C1CE /* Empty.png */,
 			);
 			path = AddTab;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				6626BE8A20400A03003F0C23 /* AddTabBarIcon.png in Resources */,
 				7AD0AF762029C913002E7F60 /* NanumSquareOTFRegular.otf in Resources */,
 				669990F420242F2B00410F21 /* LaunchScreen.storyboard in Resources */,
+				7AE837832047ADF80012C1CE /* Empty.png in Resources */,
 				66728F20202AAF420061C168 /* Bookmark.storyboard in Resources */,
 				669990F120242F2B00410F21 /* Assets.xcassets in Resources */,
 				7AD0AF6B2029B3F3002E7F60 /* Media.xcassets in Resources */,

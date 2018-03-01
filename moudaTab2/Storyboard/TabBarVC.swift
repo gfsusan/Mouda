@@ -17,7 +17,7 @@ class TabBarVC: UITabBarController {
         let itemWidth = self.view.frame.size.width / 5
         let itemHeight = self.tabBar.frame.size.height
         let button = UIButton(frame: CGRect(x: itemWidth * 2, y: self.view.frame.size.height - itemHeight, width: itemWidth - 10, height: itemHeight))
-        button.setBackgroundImage(UIImage(named: "AddTabBarIcon.png"), for: .normal)
+        button.setBackgroundImage(UIImage(named: "Empty.png"), for: .normal)
         button.addTarget(self, action: #selector(TabBarVC.upload(sender:)), for: UIControlEvents.touchUpInside)
         self.view.addSubview(button)
     }

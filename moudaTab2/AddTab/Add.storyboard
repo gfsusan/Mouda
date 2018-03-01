@@ -45,7 +45,7 @@
         <scene sceneID="wWI-so-2HI">
             <objects>
                 <navigationController storyboardIdentifier="AddVC" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="overCurrentContext" id="FAR-gO-tvF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="쓰다" id="ug1-Yz-462"/>
+                    <tabBarItem key="tabBarItem" title="쓰다" image="Add" id="ug1-Yz-462"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NIZ-5F-R6y">
@@ -251,4 +251,7 @@
             <point key="canvasLocation" x="2008" y="985.90704647676171"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Add" width="24" height="24"/>
+    </resources>
 </document>
