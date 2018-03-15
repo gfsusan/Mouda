@@ -7,23 +7,38 @@
 //
 
 import Foundation
+import os.log
 
 class Bookmark:NSObject, NSCoding {
+    
+    //MARK: Archiving Paths
+    
+    static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("bookmarks")
+    
     var book:Book
-    var page:Int?
+    var pageMark:Int?
     
     init(book:Book, page:Int) {
         self.book = book
-        self.page = page
+        self.pageMark = page
     }
     
     required init?(coder aDecoder: NSCoder) {
-        self.book = aDecoder.decodeObject(forKey: "book") as! Book
-        self.page = aDecoder.decodeInteger(forKey: "page")
+        guard let book = aDecoder.decodeObject(forKey: "book") as? Book else {
+            os_log("Unable to decode the Book object for a Bookmark Object", log: OSLog.default, type: .debug)
+            return nil
+        }
+        if let page = aDecoder.decodeObject(forKey: "pageMark") as? Int  {
+            self.pageMark = page
+        }
+        self.book = book
     }
     
     func encode(with aCoder: NSCoder) {
         aCoder.encode(self.book, forKey: "book")
-        aCoder.encode(self.page, forKey: "page")
+        if let pageNum = self.pageMark {
+            aCoder.encode(self.pageMark, forKey: "pageMark")
+        }
     }
 }

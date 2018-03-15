@@ -73,7 +73,7 @@ class BookFeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         titleLabel.text = bookmark?.book.title
         publisherLabel.text = bookmark?.book.publisher
         authorLabel.text = bookmark?.book.writer
-        if let page = bookmark?.page {
+        if let page = bookmark?.pageMark {
              bookmarkLabel.text = "\(page)페이지까지 읽음"
         } else {
             bookmarkLabel.text = "다 읽음"

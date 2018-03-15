@@ -91,7 +91,7 @@ class BookmarkCollectionVC: UICollectionViewController {
                 }
             }
             
-            if let page = bookmark.page {
+            if let page = bookmark.pageMark {
                 retCell.pageLabel.text = "\(page)쪽까지 읽음"
             } else {
                 retCell.pageLabel.text = "다 읽음"

@@ -8,10 +8,16 @@
 
 import Foundation
 import UIKit
-
+import os.log
 
 class Feed: NSObject, NSCoding {
 
+    //MARK: Archiving Paths
+    
+    static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("feeds")
+    
+    //MARK: Properties
     let book:Book
     var line:String
     var thought:String
@@ -34,21 +40,27 @@ class Feed: NSObject, NSCoding {
         self.date = date
     }
     
-//    override init() {
-//        book = Book()
-//        line = "DefaultLine"
-//        thought = "DefaultThought"
-//        page = 1
-//        date = Date()
-//    }
-//
     required init?(coder aDecoder: NSCoder) {
-        self.book = aDecoder.decodeObject(forKey: "book") as! Book
-        self.line = aDecoder.decodeObject(forKey: "line") as! String
-        self.thought = aDecoder.decodeObject(forKey: "thought") as! String
-        self.page = aDecoder.decodeInteger(forKey: "page")
+        guard let book = aDecoder.decodeObject(forKey: "book") as? Book else {
+            os_log("Unable to decode the Book object for a Feed object.", log: OSLog.default, type: .debug)
+            return nil
+        }
+        guard let line = aDecoder.decodeObject(forKey: "line") as? String else {
+            os_log("Unable to decode the line for a Feed object.", log: OSLog.default, type: .debug)
+            return nil
+        }
+        guard let thought = aDecoder.decodeObject(forKey: "thought") as? String else {
+            os_log("Unable to decode the line for a Feed object.", log: OSLog.default, type: .debug)
+            return nil
+        }
         let timeIntervalSince1970 = aDecoder.decodeDouble(forKey: "date")
+        
+        self.book = book
+        self.line = line
+        self.thought = thought
+        self.page = aDecoder.decodeInteger(forKey: "page")
         self.date = Date(timeIntervalSince1970: timeIntervalSince1970)
+
     }
     
     func encode(with aCoder: NSCoder) {
@@ -58,4 +70,7 @@ class Feed: NSObject, NSCoding {
         aCoder.encode(self.page, forKey: "page")
         aCoder.encode(self.date.timeIntervalSince1970, forKey: "date")
     }
+    
 }
+
+
