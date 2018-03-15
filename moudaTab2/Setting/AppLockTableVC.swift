@@ -18,10 +18,19 @@ class AppLockTableVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        appLockSwitch.isOn = PWDatas.login.state
 
     }
     
     @IBAction func appLockStatus(_ sender: Any) {
+        if (appLockSwitch.isOn == true) {
+            LoginCheck.set(1, forKey: "LoginAvailable")
+            PWDatas.login.state = true
+        } else if (appLockSwitch.isOn == false) {
+            LoginCheck.set(0, forKey: "LoginAvailable")
+            PWDatas.login.state = false
+        }
+        PWDatas.save()
     }
     
     @IBAction func touchIDStatus(_ sender: Any) {
