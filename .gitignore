@@ -85,3 +85,4 @@ fastlane/test_output
 # End of https://www.gitignore.io/api/swift,xcode
 *.xcuserstate
 */UserInterfaceState.xcuserstate
+moudaTab2.xcodeproj/project.xcworkspace/xcuserdata/caucse.xcuserdatad/UserInterfaceState.xcuserstate

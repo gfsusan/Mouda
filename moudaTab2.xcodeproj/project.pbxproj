@@ -41,6 +41,9 @@
 		66F902DE202961F40047C959 /* AddPopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F902DD202961F40047C959 /* AddPopUpVC.swift */; };
 		66FCB981202BE604008E1AC5 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66FCB980202BE604008E1AC5 /* Search.storyboard */; };
 		66FCB985202BEF8B008E1AC5 /* AddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FCB984202BEF8B008E1AC5 /* AddVC.swift */; };
+		7AB7832B205A56EC00DE993A /* PWVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB7832A205A56EC00DE993A /* PWVC.swift */; };
+		7AB7832E205A59BC00DE993A /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB7832D205A59BC00DE993A /* Keychain.swift */; };
+		7AB78330205A642F00DE993A /* PWDataStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB7832F205A642F00DE993A /* PWDataStructure.swift */; };
 		7AD0AF6B2029B3F3002E7F60 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AD0AF6A2029B3F3002E7F60 /* Media.xcassets */; };
 		7AD0AF702029C86A002E7F60 /* NanumMyeongjo.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7AD0AF6D2029C86A002E7F60 /* NanumMyeongjo.otf */; };
 		7AD0AF712029C86A002E7F60 /* NanumMyeongjoBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7AD0AF6E2029C86A002E7F60 /* NanumMyeongjoBold.otf */; };
@@ -87,6 +90,9 @@
 		66F902DD202961F40047C959 /* AddPopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPopUpVC.swift; sourceTree = "<group>"; };
 		66FCB980202BE604008E1AC5 /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		66FCB984202BEF8B008E1AC5 /* AddVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVC.swift; sourceTree = "<group>"; };
+		7AB7832A205A56EC00DE993A /* PWVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWVC.swift; sourceTree = "<group>"; };
+		7AB7832D205A59BC00DE993A /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		7AB7832F205A642F00DE993A /* PWDataStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWDataStructure.swift; sourceTree = "<group>"; };
 		7AD0AF6A2029B3F3002E7F60 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		7AD0AF6D2029C86A002E7F60 /* NanumMyeongjo.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumMyeongjo.otf; sourceTree = "<group>"; };
 		7AD0AF6E2029C86A002E7F60 /* NanumMyeongjoBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumMyeongjoBold.otf; sourceTree = "<group>"; };
@@ -135,6 +141,7 @@
 				669990FB202437D200410F21 /* MyFeedCell.swift */,
 				66728F12202A9C480061C168 /* FeedDetailVC.swift */,
 				6685C132202EFF1900EE066F /* ModifyVC.swift */,
+				7AB7832A205A56EC00DE993A /* PWVC.swift */,
 			);
 			path = MyFeedTab;
 			sourceTree = "<group>";
@@ -204,6 +211,7 @@
 				66E57500202D5E4D00FEEAAA /* Setting */,
 				669990E920242F2B00410F21 /* AppDelegate.swift */,
 				669990EB20242F2B00410F21 /* ViewController.swift */,
+				7AB7832D205A59BC00DE993A /* Keychain.swift */,
 				7AD0AF6A2029B3F3002E7F60 /* Media.xcassets */,
 				669990F020242F2B00410F21 /* Assets.xcassets */,
 				669990F520242F2B00410F21 /* Info.plist */,
@@ -227,6 +235,7 @@
 				66B52A62202DD9AC007C54BF /* AppLockTableVC.swift */,
 				66B52A60202DD9AB007C54BF /* AppLockVC.swift */,
 				66029A92202DF82B001D4E77 /* AlarmVC.swift */,
+				7AB7832F205A642F00DE993A /* PWDataStructure.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -342,6 +351,7 @@
 				66F902DE202961F40047C959 /* AddPopUpVC.swift in Sources */,
 				669990EC20242F2B00410F21 /* ViewController.swift in Sources */,
 				66728F22202AE7520061C168 /* DataCenter.swift in Sources */,
+				7AB7832B205A56EC00DE993A /* PWVC.swift in Sources */,
 				66FCB985202BEF8B008E1AC5 /* AddVC.swift in Sources */,
 				66999102202437F200410F21 /* Book.swift in Sources */,
 				66B52A65202DD9AC007C54BF /* AppLockTableVC.swift in Sources */,
@@ -351,7 +361,9 @@
 				669991042024386900410F21 /* FeedTableVC.swift in Sources */,
 				66B52A5F202D5D90007C54BF /* BookmarkCell.swift in Sources */,
 				66B52A64202DD9AC007C54BF /* SettingTableVC.swift in Sources */,
+				7AB78330205A642F00DE993A /* PWDataStructure.swift in Sources */,
 				6685C133202EFF1900EE066F /* ModifyVC.swift in Sources */,
+				7AB7832E205A59BC00DE993A /* Keychain.swift in Sources */,
 				66B52A72202E12AC007C54BF /* BookFeedCell.swift in Sources */,
 				66B52A63202DD9AC007C54BF /* AppLockVC.swift in Sources */,
 				66DBAC9D202BF0AB0043CB4B /* SearchTableVC.swift in Sources */,

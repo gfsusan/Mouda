@@ -555,7 +555,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="NanumMyeongjo" family="Nanum Myeongjo" pointSize="14"/>
                                 <state key="normal" title="취소">
-                                    <color key="titleColor" red="0.0" green="0.19179370101854401" blue="0.30962479110000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleColor" red="0.30179962515830994" green="0.2514532208442688" blue="0.21567845344543457" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9P-Oc-Mu4">
