@@ -110,7 +110,9 @@ class SearchTableVC: UITableViewController,  UISearchBarDelegate, XMLParserDeleg
         } else if elementName == "author" {
             item?.writer = temp.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
             books.append(self.item!)
-            table.reloadData()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
         
     }
