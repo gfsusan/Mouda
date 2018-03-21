@@ -41,10 +41,13 @@ class BookmarkCollectionVC: UICollectionViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let indexPath = collectionView?.indexPathsForSelectedItems?.first {
-            if indexPath.row < bookmarks.count {
+            if indexPath.row > 0 {
+                // Add bookmark cell 때문에 1 밀림
+                var bookmarkIndex = indexPath.row - 1;
+                
                 let vc = segue.destination as? BookFeedVC
-                vc?.bookmark = bookmarks[indexPath.row]
-                vc?.indexPath = indexPath.row
+                vc?.bookmark = bookmarks[bookmarkIndex]
+                vc?.indexPath = bookmarkIndex
             } else {
                 let vc = segue.destination as? AddBookmarkVC
                 vc?.delegate = self
@@ -67,14 +70,17 @@ class BookmarkCollectionVC: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if indexPath.row < bookmarks.count {
+        if indexPath.row > 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "bookmarkCell", for: indexPath) as? BookmarkCell
             
             guard let retCell = cell else {
                 return cell!
             }
             
-            let bookmark = bookmarks[indexPath.row]
+            // 인덱스가 Add Boookmark Cell때문에 한칸 밀리기 때문에
+            var bookmarkIndex = indexPath.row - 1
+            
+            let bookmark = bookmarks[bookmarkIndex]
             
             if let thumbImage = bookmark.book.coverImage {
                 retCell.coverImage.image = thumbImage

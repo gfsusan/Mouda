@@ -61,7 +61,7 @@ class AddBookmarkVC: UIViewController {
             }
 
         } else {
-            dataCenter.createAlert(title: "책을 선택하지 않으셨네요", message: "책 선택 버튼을 눌러 책을 선택해주세요!", sender: self)
+            dataCenter.createAlert(title: "책을 선택하지 않으셨네요.", message: "책 선택 버튼을 눌러 책을 선택해주세요!", sender: self)
             return
         }
     }
