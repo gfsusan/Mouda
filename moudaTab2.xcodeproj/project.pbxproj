@@ -10,6 +10,15 @@
 		66029A93202DF82B001D4E77 /* AlarmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66029A92202DF82B001D4E77 /* AlarmVC.swift */; };
 		6626BE86204003D4003F0C23 /* Feeds.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6626BE84204003D4003F0C23 /* Feeds.storyboard */; };
 		6626BE88204009C1003F0C23 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6626BE87204009C1003F0C23 /* TabBarVC.swift */; };
+		66427307206258B6008EF872 /* Passcode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66427306206258B6008EF872 /* Passcode.framework */; };
+		6642730B20625AEA008EF872 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6642730A20625AEA008EF872 /* Info.plist */; };
+		6642730D20625BF2008EF872 /* NumberButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6642730C20625BF2008EF872 /* NumberButton.swift */; };
+		6642730F20625BFA008EF872 /* PasscodeCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6642730E20625BFA008EF872 /* PasscodeCharacter.swift */; };
+		6642731120625C03008EF872 /* Passcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6642731020625C03008EF872 /* Passcode.swift */; };
+		6642731320625C0F008EF872 /* PasscodeConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6642731220625C0F008EF872 /* PasscodeConfig.swift */; };
+		6642731520625C3A008EF872 /* Passcode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6642731420625C3A008EF872 /* Passcode.storyboard */; };
+		6642731720625C69008EF872 /* PasscodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6642731620625C69008EF872 /* PasscodeVC.swift */; };
+		6642731A20626085008EF872 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6642731920626085008EF872 /* Localizable.swift */; };
 		66728F11202A99480061C168 /* AddBookmarkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66728F10202A99470061C168 /* AddBookmarkVC.swift */; };
 		66728F13202A9C480061C168 /* FeedDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66728F12202A9C480061C168 /* FeedDetailVC.swift */; };
 		66728F19202AAE800061C168 /* MyFeed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66728F17202AAE800061C168 /* MyFeed.storyboard */; };
@@ -57,6 +66,16 @@
 		66029A92202DF82B001D4E77 /* AlarmVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmVC.swift; sourceTree = "<group>"; };
 		6626BE85204003D4003F0C23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = moudaTab2/Storyboard/Base.lproj/Feeds.storyboard; sourceTree = "<group>"; };
 		6626BE87204009C1003F0C23 /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
+		66427306206258B6008EF872 /* Passcode.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Passcode.framework; sourceTree = "<group>"; };
+		6642730920625AE9008EF872 /* Passcode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Passcode.h; sourceTree = "<group>"; };
+		6642730A20625AEA008EF872 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6642730C20625BF2008EF872 /* NumberButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberButton.swift; sourceTree = "<group>"; };
+		6642730E20625BFA008EF872 /* PasscodeCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasscodeCharacter.swift; sourceTree = "<group>"; };
+		6642731020625C03008EF872 /* Passcode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Passcode.swift; sourceTree = "<group>"; };
+		6642731220625C0F008EF872 /* PasscodeConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasscodeConfig.swift; sourceTree = "<group>"; };
+		6642731420625C3A008EF872 /* Passcode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Passcode.storyboard; sourceTree = "<group>"; };
+		6642731620625C69008EF872 /* PasscodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeVC.swift; sourceTree = "<group>"; };
+		6642731920626085008EF872 /* Localizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
 		66728F10202A99470061C168 /* AddBookmarkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookmarkVC.swift; sourceTree = "<group>"; };
 		66728F12202A9C480061C168 /* FeedDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailVC.swift; sourceTree = "<group>"; };
 		66728F18202AAE800061C168 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = moudaTab2/Base.lproj/MyFeed.storyboard; sourceTree = "<group>"; };
@@ -107,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66427307206258B6008EF872 /* Passcode.framework in Frameworks */,
 				66B52A68202DDA95007C54BF /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -120,6 +140,22 @@
 				6626BE84204003D4003F0C23 /* Feeds.storyboard */,
 			);
 			path = FeedsTab;
+			sourceTree = "<group>";
+		};
+		6642730820625ADA008EF872 /* Passcode */ = {
+			isa = PBXGroup;
+			children = (
+				6642731420625C3A008EF872 /* Passcode.storyboard */,
+				6642730920625AE9008EF872 /* Passcode.h */,
+				6642730A20625AEA008EF872 /* Info.plist */,
+				6642730C20625BF2008EF872 /* NumberButton.swift */,
+				6642730E20625BFA008EF872 /* PasscodeCharacter.swift */,
+				6642731020625C03008EF872 /* Passcode.swift */,
+				6642731220625C0F008EF872 /* PasscodeConfig.swift */,
+				6642731620625C69008EF872 /* PasscodeVC.swift */,
+				6642731920626085008EF872 /* Localizable.swift */,
+			);
+			path = Passcode;
 			sourceTree = "<group>";
 		};
 		66728F14202A9DB50061C168 /* Models */ = {
@@ -223,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				66B52A67202DDA95007C54BF /* MessageUI.framework */,
+				66427306206258B6008EF872 /* Passcode.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -236,6 +273,7 @@
 				66B52A60202DD9AB007C54BF /* AppLockVC.swift */,
 				66029A92202DF82B001D4E77 /* AlarmVC.swift */,
 				7AB7832F205A642F00DE993A /* PWDataStructure.swift */,
+				6642730820625ADA008EF872 /* Passcode */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -331,11 +369,13 @@
 				7AD0AF6B2029B3F3002E7F60 /* Media.xcassets in Resources */,
 				7AD0AF742029C906002E7F60 /* NanumGothic.otf in Resources */,
 				6626BE86204003D4003F0C23 /* Feeds.storyboard in Resources */,
+				6642730B20625AEA008EF872 /* Info.plist in Resources */,
 				7AD0AF702029C86A002E7F60 /* NanumMyeongjo.otf in Resources */,
 				66E574F1202CB16500FEEAAA /* Setting.storyboard in Resources */,
 				7AD0AF712029C86A002E7F60 /* NanumMyeongjoBold.otf in Resources */,
 				669990EF20242F2B00410F21 /* Main.storyboard in Resources */,
 				7AD0AF722029C86A002E7F60 /* NanumMyeongjoExtraBold.otf in Resources */,
+				6642731520625C3A008EF872 /* Passcode.storyboard in Resources */,
 				66FCB981202BE604008E1AC5 /* Search.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,12 +403,18 @@
 				66B52A64202DD9AC007C54BF /* SettingTableVC.swift in Sources */,
 				7AB78330205A642F00DE993A /* PWDataStructure.swift in Sources */,
 				6685C133202EFF1900EE066F /* ModifyVC.swift in Sources */,
+				6642730F20625BFA008EF872 /* PasscodeCharacter.swift in Sources */,
 				7AB7832E205A59BC00DE993A /* Keychain.swift in Sources */,
 				66B52A72202E12AC007C54BF /* BookFeedCell.swift in Sources */,
+				6642731320625C0F008EF872 /* PasscodeConfig.swift in Sources */,
 				66B52A63202DD9AC007C54BF /* AppLockVC.swift in Sources */,
 				66DBAC9D202BF0AB0043CB4B /* SearchTableVC.swift in Sources */,
+				6642731A20626085008EF872 /* Localizable.swift in Sources */,
+				6642731720625C69008EF872 /* PasscodeVC.swift in Sources */,
+				6642731120625C03008EF872 /* Passcode.swift in Sources */,
 				66728F13202A9C480061C168 /* FeedDetailVC.swift in Sources */,
 				66999100202437F200410F21 /* Feed.swift in Sources */,
+				6642730D20625BF2008EF872 /* NumberButton.swift in Sources */,
 				66DBAC9F202BF5660043CB4B /* Bookmark.swift in Sources */,
 				669990FC202437D200410F21 /* MyFeedCell.swift in Sources */,
 				66728F11202A99480061C168 /* AddBookmarkVC.swift in Sources */,
@@ -544,6 +590,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3ZLXC439TG;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = moudaTab2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.teammouda.Mouda;
@@ -559,6 +609,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3ZLXC439TG;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = moudaTab2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.teammouda.Mouda;

@@ -1,0 +1,11 @@
+framework module Passcode {
+  umbrella header "Passcode.h"
+
+  export *
+  module * { export * }
+}
+
+module Passcode.Swift {
+    header "Passcode-Swift.h"
+    requires objc
+}

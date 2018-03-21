@@ -132,9 +132,6 @@
                         <barButtonItem key="rightBarButtonItem" image="Empty" id="9p1-Cz-dJK"/>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <segue destination="cAP-3d-xES" kind="presentation" id="7MO-wg-hMI"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oc6-Xw-dge" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -478,6 +475,7 @@
         <!--PWVC-->
         <scene sceneID="yAO-5B-R4b">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F47-RF-S0C" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="cAP-3d-xES" customClass="PWVC" customModule="moudaTab2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FYM-ri-1oY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -732,7 +730,6 @@
                         <outlet property="err" destination="dtZ-oP-1MU" id="phT-3k-ogN"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="F47-RF-S0C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="816.79999999999995" y="-659.82008995502258"/>
         </scene>
