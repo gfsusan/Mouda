@@ -31,9 +31,9 @@ class FeedTableVC: UITableViewController {
         imageView.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
         imageView.contentMode = .scaleAspectFit
         navigationItem.titleView = imageView
-        
-        
-        self.tableView.separatorColor = UIColor.clear
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 326
+//        self.tableView.separatorColor = UIColor.clear
     
         
         formatdate.dateFormat = "yyyy년 MM월 dd일"
@@ -77,14 +77,22 @@ class FeedTableVC: UITableViewController {
         if let title = feed.book.title {
             retCell.titleLabel.text = title
         }
-//        retCell.lineLabel.text = feed.line
         retCell.dateLabel.text = "\(formatdate.string(from: feed.date))"
+        retCell.pageLabel.text = "Page \(feed.page)"
         
+        // attribute text style
         let style = NSMutableParagraphStyle()
         style.lineSpacing = 5
         style.alignment = .center
         let attributes = [NSAttributedStringKey.paragraphStyle: style]
         retCell.lineLabel.attributedText = NSAttributedString(string: feed.line, attributes: attributes)
+//        retCell.lineLabel.text = "\(feed.line)"
+       
+        let thoughtStyle = NSMutableParagraphStyle()
+        thoughtStyle.lineSpacing = 5
+        thoughtStyle.alignment = .center
+        let thoughtAttributes = [NSAttributedStringKey.paragraphStyle: thoughtStyle]
+        retCell.thoughtLabel.attributedText = NSAttributedString(string: feed.thought, attributes: thoughtAttributes)
         
         return retCell
     }

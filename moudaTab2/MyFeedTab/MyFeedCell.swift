@@ -13,7 +13,9 @@ class MyFeedCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var lineLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-//    @IBAction func userButton(_ sender: Any) {
+    @IBOutlet weak var pageLabel: UILabel!
+    @IBOutlet weak var thoughtLabel: UILabel!
+    //    @IBAction func userButton(_ sender: Any) {
 //    }
 //    @IBOutlet weak var bookmarkImage: UIImageView!
     
