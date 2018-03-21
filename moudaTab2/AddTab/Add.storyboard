@@ -76,21 +76,20 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="533"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NKS-ai-p0H">
-                                                <rect key="frame" x="8" y="76" width="359" height="250"/>
+                                                <rect key="frame" x="0.0" y="76" width="375" height="200"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="D5v-yd-LyB">
-                                                        <rect key="frame" x="8" y="8" width="343" height="234"/>
+                                                        <rect key="frame" x="8" y="8" width="359" height="184"/>
                                                         <subviews>
                                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="간직하고 싶은 책 속의 한 문장을 작성해주세요." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Iyn-c5-Sr6">
-                                                                <rect key="frame" x="0.0" y="0.0" width="343" height="190"/>
-                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="359" height="140"/>
                                                                 <accessibility key="accessibilityConfiguration" identifier="lineText"/>
                                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                             </textView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dtb-NZ-3EL">
-                                                                <rect key="frame" x="121.5" y="190" width="100" height="44"/>
+                                                                <rect key="frame" x="129.5" y="140" width="100" height="44"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Page" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7U7-q8-EgY">
                                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="44"/>
@@ -104,7 +103,6 @@
                                                                     </label>
                                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="123" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bdA-J2-k7z">
                                                                         <rect key="frame" x="50" y="0.0" width="50" height="44"/>
-                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                         <accessibility key="accessibilityConfiguration" identifier="pageText"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="44" id="0w0-eK-YZw"/>
@@ -125,32 +123,24 @@
                                                         </constraints>
                                                     </stackView>
                                                 </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="bottomMargin" secondItem="D5v-yd-LyB" secondAttribute="bottom" id="1SA-yn-ysq"/>
-                                                    <constraint firstAttribute="height" constant="250" id="5IG-tn-5Va"/>
+                                                    <constraint firstAttribute="height" constant="200" id="5IG-tn-5Va"/>
                                                     <constraint firstAttribute="trailingMargin" secondItem="D5v-yd-LyB" secondAttribute="trailing" id="Tmh-vx-2PQ"/>
                                                     <constraint firstItem="D5v-yd-LyB" firstAttribute="leading" secondItem="NKS-ai-p0H" secondAttribute="leadingMargin" id="nnn-IB-Sql"/>
                                                     <constraint firstItem="D5v-yd-LyB" firstAttribute="top" secondItem="NKS-ai-p0H" secondAttribute="topMargin" id="vJu-ZH-2W6"/>
                                                 </constraints>
                                             </view>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="기록한 문장에 대한 본인만의 생각이나 감정을 표현해주세요." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="DSG-hl-EzV">
-                                                <rect key="frame" x="8" y="334" width="359" height="80"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <accessibility key="accessibilityConfiguration" identifier="thoughtText"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="80" id="ZP6-90-ZYF"/>
-                                                </constraints>
-                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="whW-bx-tWL">
-                                                <rect key="frame" x="8" y="8" width="359" height="60"/>
+                                                <rect key="frame" x="0.0" y="8" width="375" height="60"/>
+                                                <color key="backgroundColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.0" alpha="0.87580265410958902" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="sK1-tQ-6RZ"/>
                                                 </constraints>
-                                                <state key="normal" title="책 선택"/>
+                                                <state key="normal" title="+ 책 선택">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="selectBookPressed:" destination="nOL-BV-Fc8" eventType="touchUpInside" id="4KJ-j6-dDj"/>
                                                     <segue destination="csz-iy-wqi" kind="show" id="pOv-MD-K06">
@@ -158,19 +148,40 @@
                                                     </segue>
                                                 </connections>
                                             </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x2D-rw-qIj">
+                                                <rect key="frame" x="0.0" y="284" width="375" height="130"/>
+                                                <subviews>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="기록한 문장에 대한 본인만의 생각이나 감정을 표현해주세요." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="DSG-hl-EzV">
+                                                        <rect key="frame" x="8" y="8" width="359" height="114"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="thoughtText"/>
+                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                </subviews>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="DSG-hl-EzV" firstAttribute="leading" secondItem="x2D-rw-qIj" secondAttribute="leading" constant="8" id="1PU-uW-zfB"/>
+                                                    <constraint firstItem="DSG-hl-EzV" firstAttribute="top" secondItem="x2D-rw-qIj" secondAttribute="top" constant="8" id="HED-Bu-Bu9"/>
+                                                    <constraint firstAttribute="trailing" secondItem="DSG-hl-EzV" secondAttribute="trailing" constant="8" id="PDy-CX-Ls9"/>
+                                                    <constraint firstAttribute="bottom" secondItem="DSG-hl-EzV" secondAttribute="bottom" constant="8" id="niV-ZQ-shd"/>
+                                                    <constraint firstAttribute="height" constant="130" id="tUw-c1-qoA"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <gestureRecognizers/>
                                         <constraints>
-                                            <constraint firstItem="DXM-S0-9Cx" firstAttribute="trailing" secondItem="whW-bx-tWL" secondAttribute="trailing" constant="8" id="0mi-g6-3vL"/>
-                                            <constraint firstItem="DSG-hl-EzV" firstAttribute="leading" secondItem="DXM-S0-9Cx" secondAttribute="leading" constant="8" id="E9v-pw-Ic5"/>
+                                            <constraint firstItem="DXM-S0-9Cx" firstAttribute="trailing" secondItem="whW-bx-tWL" secondAttribute="trailing" id="0mi-g6-3vL"/>
                                             <constraint firstItem="whW-bx-tWL" firstAttribute="top" secondItem="DXM-S0-9Cx" secondAttribute="top" constant="8" id="G4j-Rq-QUg"/>
-                                            <constraint firstItem="DXM-S0-9Cx" firstAttribute="trailing" secondItem="NKS-ai-p0H" secondAttribute="trailing" constant="8" id="HvH-kd-kM5"/>
-                                            <constraint firstItem="NKS-ai-p0H" firstAttribute="leading" secondItem="DXM-S0-9Cx" secondAttribute="leading" constant="8" id="KNU-cU-hYP"/>
-                                            <constraint firstItem="DXM-S0-9Cx" firstAttribute="trailing" secondItem="DSG-hl-EzV" secondAttribute="trailing" constant="8" id="U2t-fd-NrY"/>
-                                            <constraint firstItem="DSG-hl-EzV" firstAttribute="top" secondItem="NKS-ai-p0H" secondAttribute="bottom" constant="8" id="XBn-7c-Awf"/>
-                                            <constraint firstItem="whW-bx-tWL" firstAttribute="leading" secondItem="DXM-S0-9Cx" secondAttribute="leading" constant="8" id="alr-gC-Jrw"/>
+                                            <constraint firstItem="DXM-S0-9Cx" firstAttribute="trailing" secondItem="NKS-ai-p0H" secondAttribute="trailing" id="HvH-kd-kM5"/>
+                                            <constraint firstItem="NKS-ai-p0H" firstAttribute="leading" secondItem="DXM-S0-9Cx" secondAttribute="leading" id="KNU-cU-hYP"/>
+                                            <constraint firstItem="x2D-rw-qIj" firstAttribute="leading" secondItem="DXM-S0-9Cx" secondAttribute="leading" id="Mod-HA-AmH"/>
+                                            <constraint firstItem="DXM-S0-9Cx" firstAttribute="trailing" secondItem="x2D-rw-qIj" secondAttribute="trailing" id="VAb-0R-KWf"/>
+                                            <constraint firstItem="whW-bx-tWL" firstAttribute="leading" secondItem="DXM-S0-9Cx" secondAttribute="leading" id="alr-gC-Jrw"/>
                                             <constraint firstAttribute="height" constant="533" id="cUA-8B-ieA"/>
+                                            <constraint firstItem="x2D-rw-qIj" firstAttribute="top" secondItem="NKS-ai-p0H" secondAttribute="bottom" constant="8" id="cnb-GT-2F8"/>
                                             <constraint firstItem="NKS-ai-p0H" firstAttribute="top" secondItem="whW-bx-tWL" secondAttribute="bottom" constant="8" id="gfl-3o-hdY"/>
                                         </constraints>
                                         <viewLayoutGuide key="safeArea" id="DXM-S0-9Cx"/>
@@ -178,9 +189,9 @@
                                 </subviews>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstItem="ozb-SH-wtf" firstAttribute="top" secondItem="Hxm-BL-796" secondAttribute="top" id="L4H-eM-iIg"/>
+                                    <constraint firstItem="ozb-SH-wtf" firstAttribute="top" secondItem="Hxm-BL-796" secondAttribute="top" id="BNl-pM-L9j"/>
                                     <constraint firstItem="ozb-SH-wtf" firstAttribute="leading" secondItem="Hxm-BL-796" secondAttribute="leading" id="MfZ-xY-zN3"/>
-                                    <constraint firstAttribute="bottom" secondItem="ozb-SH-wtf" secondAttribute="bottom" id="RgG-I7-DDL"/>
+                                    <constraint firstAttribute="bottom" secondItem="ozb-SH-wtf" secondAttribute="bottom" id="Nyr-pw-mnb"/>
                                     <constraint firstAttribute="trailing" secondItem="ozb-SH-wtf" secondAttribute="trailing" id="gxP-7d-K7G"/>
                                     <constraint firstItem="ozb-SH-wtf" firstAttribute="centerX" secondItem="Hxm-BL-796" secondAttribute="centerX" id="yEa-lf-jqF"/>
                                 </constraints>
@@ -213,8 +224,10 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="bookChooseButton" destination="whW-bx-tWL" id="uR1-7U-7jo"/>
+                        <outlet property="bottomConstraint" destination="D4a-fE-gOZ" id="GZA-hD-GQ7"/>
                         <outlet property="lineTextView" destination="Iyn-c5-Sr6" id="gUI-Cj-4Au"/>
                         <outlet property="pageTextView" destination="bdA-J2-k7z" id="9vV-VK-BtC"/>
+                        <outlet property="scrollView" destination="Hxm-BL-796" id="UTA-Jv-lwu"/>
                         <outlet property="thoughtTextView" destination="DSG-hl-EzV" id="KdL-TD-pDH"/>
                     </connections>
                 </viewController>
@@ -225,7 +238,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2770" y="986"/>
+            <point key="canvasLocation" x="2768.8000000000002" y="985.45727136431788"/>
         </scene>
         <!--Search-->
         <scene sceneID="C9V-fF-YeW">

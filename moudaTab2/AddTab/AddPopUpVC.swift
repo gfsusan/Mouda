@@ -20,6 +20,8 @@ class AddPopUpVC: UIViewController, UITextViewDelegate, UITabBarControllerDelega
     @IBOutlet weak var lineTextView: UITextView!
     @IBOutlet weak var pageTextView: UITextView!
     @IBOutlet weak var thoughtTextView: UITextView!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBAction func selectBookPressed(_ sender: Any) {
     
     }
@@ -88,15 +90,34 @@ class AddPopUpVC: UIViewController, UITextViewDelegate, UITabBarControllerDelega
         lineTextView.textColor = UIColor.lightGray
         pageTextView.textColor = UIColor.lightGray
         thoughtTextView.textColor = UIColor.lightGray
-        // Do any additional setup after loading the view.
-
-    }
         
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardDidShow), name: NSNotification.Name.UIKeyboardDidShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardDidHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+    
+    @objc func keyboardDidShow(notification: NSNotification) {
+        var info = notification.userInfo
+        let keyBoardSize = info![UIKeyboardFrameEndUserInfoKey] as! CGRect
+        scrollView.contentInset = UIEdgeInsetsMake(0.0, 0.0, keyBoardSize.height, 0.0)
+        scrollView.scrollIndicatorInsets = UIEdgeInsetsMake(0.0, 0.0, keyBoardSize.height, 0.0)
+    }
+    
+    @objc func keyboardDidHide(notification: NSNotification) {
+        
+        scrollView.contentInset = UIEdgeInsets.zero
+        scrollView.scrollIndicatorInsets = UIEdgeInsets.zero
+    }
+    
     // Placeholder text
     func textViewDidBeginEditing(_ textView: UITextView) {
         if(textView.textColor == UIColor.lightGray) {
             textView.text = nil
             textView.textColor = UIColor.black
+            if textView.accessibilityIdentifier == "lineText" {
+                // scroll to top
+            } else if textView.accessibilityIdentifier == "thoughtText" {
+                // scroll to bottom of thought textview
+            } 
         }
         textView.becomeFirstResponder()
     }
