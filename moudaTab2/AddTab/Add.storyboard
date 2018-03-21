@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -82,19 +81,19 @@
                                                         <rect key="frame" x="8" y="8" width="359" height="184"/>
                                                         <subviews>
                                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="간직하고 싶은 책 속의 한 문장을 작성해주세요." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Iyn-c5-Sr6">
-                                                                <rect key="frame" x="0.0" y="0.0" width="359" height="140"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="359" height="144"/>
                                                                 <accessibility key="accessibilityConfiguration" identifier="lineText"/>
                                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                             </textView>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dtb-NZ-3EL">
-                                                                <rect key="frame" x="129.5" y="140" width="100" height="44"/>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="dtb-NZ-3EL">
+                                                                <rect key="frame" x="127.5" y="144" width="104" height="40"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Page" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7U7-q8-EgY">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="44"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="44" height="40"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="height" constant="44" id="L7O-8F-lc6"/>
+                                                                            <constraint firstAttribute="width" constant="44" id="Khc-9I-fsN"/>
                                                                         </constraints>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
@@ -102,20 +101,17 @@
                                                                         <size key="shadowOffset" width="0.0" height="0.0"/>
                                                                     </label>
                                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="123" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bdA-J2-k7z">
-                                                                        <rect key="frame" x="50" y="0.0" width="50" height="44"/>
+                                                                        <rect key="frame" x="44" y="0.0" width="60" height="40"/>
                                                                         <accessibility key="accessibilityConfiguration" identifier="pageText"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="height" constant="44" id="0w0-eK-YZw"/>
+                                                                            <constraint firstAttribute="height" constant="40" id="8be-tW-11S"/>
+                                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="sBR-Y9-D5C"/>
                                                                         </constraints>
                                                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
                                                                     </textView>
                                                                 </subviews>
-                                                                <constraints>
-                                                                    <constraint firstItem="bdA-J2-k7z" firstAttribute="width" secondItem="7U7-q8-EgY" secondAttribute="height" multiplier="25:22" id="USp-Yq-2jW"/>
-                                                                    <constraint firstItem="bdA-J2-k7z" firstAttribute="width" secondItem="7U7-q8-EgY" secondAttribute="width" id="f16-Tj-WbC"/>
-                                                                </constraints>
                                                             </stackView>
                                                         </subviews>
                                                         <constraints>
