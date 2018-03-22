@@ -195,7 +195,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tcA-p8-m05">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="DkG-fq-ASi">
                                                 <rect key="frame" x="8" y="8" width="359" height="30"/>
@@ -277,6 +277,7 @@
                                             <constraint firstAttribute="trailing" secondItem="ezr-qH-Jvr" secondAttribute="trailing" id="eAE-dg-RjL"/>
                                             <constraint firstItem="ezr-qH-Jvr" firstAttribute="leading" secondItem="tcA-p8-m05" secondAttribute="leading" id="gkA-Ag-I9A"/>
                                             <constraint firstItem="ezr-qH-Jvr" firstAttribute="top" secondItem="M3G-mS-H0Z" secondAttribute="bottom" id="hBM-AJ-qQ2"/>
+                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="N72-Ic-ceS" secondAttribute="bottom" constant="32" id="jWy-ea-Fdk"/>
                                             <constraint firstAttribute="trailing" secondItem="N72-Ic-ceS" secondAttribute="trailing" constant="8" id="oof-j7-KgM"/>
                                             <constraint firstItem="M3G-mS-H0Z" firstAttribute="leading" secondItem="tcA-p8-m05" secondAttribute="leading" id="wgl-xY-Chy"/>
                                             <constraint firstItem="N72-Ic-ceS" firstAttribute="top" secondItem="ezr-qH-Jvr" secondAttribute="bottom" constant="32" id="xff-ij-GMb"/>
@@ -293,10 +294,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="tcA-p8-m05" firstAttribute="height" secondItem="zlm-9e-Pcq" secondAttribute="height" priority="250" id="1iE-qt-zVG"/>
                             <constraint firstItem="r2j-FY-7qt" firstAttribute="top" secondItem="zlm-9e-Pcq" secondAttribute="top" id="C1d-MP-SnB"/>
                             <constraint firstItem="r2j-FY-7qt" firstAttribute="trailing" secondItem="zlm-9e-Pcq" secondAttribute="trailing" id="G69-AI-Ujz"/>
-                            <constraint firstItem="tcA-p8-m05" firstAttribute="height" secondItem="G2F-c2-sdO" secondAttribute="height" priority="250" id="H54-8d-UXv"/>
                             <constraint firstItem="tcA-p8-m05" firstAttribute="width" secondItem="G2F-c2-sdO" secondAttribute="width" id="Ouc-04-i83"/>
+                            <constraint firstItem="tcA-p8-m05" firstAttribute="height" relation="greaterThanOrEqual" secondItem="zlm-9e-Pcq" secondAttribute="height" id="ZYR-Fb-U5L"/>
                             <constraint firstItem="r2j-FY-7qt" firstAttribute="leading" secondItem="zlm-9e-Pcq" secondAttribute="leading" id="ouK-Ry-YeH"/>
                             <constraint firstItem="r2j-FY-7qt" firstAttribute="bottom" secondItem="zlm-9e-Pcq" secondAttribute="bottom" id="zz1-83-6Ff"/>
                         </constraints>
