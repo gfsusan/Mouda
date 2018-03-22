@@ -60,7 +60,7 @@ class DataCenter {
             print("북마크 파일 없음")
             bookmarks += defaultBookmarkData()
         }
-        
+
         // dummy data
 //        feeds += defaultFeedData()
 //        bookmarks += defaultBookmarkData()
