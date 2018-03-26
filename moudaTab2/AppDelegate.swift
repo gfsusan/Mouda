@@ -43,15 +43,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.shared.statusBarStyle = .lightContent
         
         // 알람 설정
-        UNUserNotificationCenter.current().requestAuthorization(options: [ .alert, .sound, .badge], completionHandler: {didAllow, error in
-            if didAllow {
-                print("Yes, Alarm")
+//        UNUserNotificationCenter.current().requestAuthorization(options: [ .alert, .sound, .badge], completionHandler: {didAllow, error in
+//            if didAllow {
+//                print("Yes, Alarm")
+//
+//            } else {
+//                print("No, Alarm")
+//            }
+//        })
 
-            } else {
-                print("No, Alarm")
-            }
-        })
-        
         return true
     }
 
@@ -81,4 +81,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
-
