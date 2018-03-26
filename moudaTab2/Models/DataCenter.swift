@@ -65,9 +65,9 @@ class DataCenter {
 //        feeds += defaultFeedData()
 //        bookmarks += defaultBookmarkData()
         
-        for feed in feeds {
-            books.append(feed.book)
-        }
+//        for feed in feeds {
+//            books.append(feed.book)
+//        }
         // 데이터 소팅
         self.sortFeed()
     }
