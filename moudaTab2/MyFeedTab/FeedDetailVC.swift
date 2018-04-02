@@ -25,7 +25,7 @@ class FeedDetailVC: UIViewController {
         let alertView = UIAlertController(title: "삭제", message: "정말로 피드를 삭제하시겠습니까?", preferredStyle: .alert)
         let delete = UIAlertAction(title: "피드 삭제", style: .destructive) { (action) in
             if let index = self.indexPath {
-                dataCenter.delete(feedAt: index)
+                dataCenter.delete(feed: self.feed!, at: self.indexPath!, sender: self)
                 self.navigationController?.popToRootViewController(animated: true)
             }
         }

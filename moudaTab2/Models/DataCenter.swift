@@ -152,10 +152,7 @@ class DataCenter {
         self.save()
     }
     
-    func delete(feedAt index:Int) {
-        self.feeds.remove(at: index)
-        self.save()
-    }
+ 
     
     func delete(feed:Feed, at index:Int, sender:Any?) {
         // index 유효한지 체크
