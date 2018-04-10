@@ -12,18 +12,17 @@ class AppLockTableVC: UITableViewController {
 
     
     @IBOutlet weak var appLockSwitch: UISwitch!
-    @IBOutlet weak var touchIDSwitch: UISwitch!
-    @IBOutlet weak var touchIDLabel: UILabel!
     @IBOutlet weak var changePasswordLabel: UILabel!
     
     @IBAction func appLock(_ sender: UISwitch) {
-        if appLockSwitch.isOn == true {
+        if (appLockSwitch.isOn == true) {
             LoginCheck.set(1, forKey: "LoginAvailable")
             pin(.create)
+            changePasswordLabel.isEnabled = true
             PWDatas.login.state = true
-        } else if appLockSwitch.isOn == false {
+        } else if (appLockSwitch.isOn == false) {
             LoginCheck.set(0, forKey: "LoginAvailable")
-            pin(.deactive)
+            changePasswordLabel.isEnabled = false
             PWDatas.login.state = false
         }
         PWDatas.save()
@@ -31,6 +30,11 @@ class AppLockTableVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         appLockSwitch.isOn = PWDatas.login.state
+        if (appLockSwitch.isOn == true) {
+            changePasswordLabel.isEnabled = true
+        } else if (appLockSwitch.isOn == false) {
+            changePasswordLabel.isEnabled = false
+        }
         
     }
     

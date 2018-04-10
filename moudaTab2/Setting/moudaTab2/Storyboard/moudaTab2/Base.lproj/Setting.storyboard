@@ -195,8 +195,8 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="y7z-1R-IhN">
                                                     <rect key="frame" x="310" y="6" width="51" height="31"/>
                                                     <connections>
+                                                        <action selector="appLock:" destination="hwj-1q-keX" eventType="valueChanged" id="2dJ-mK-Lc1"/>
                                                         <action selector="appLockStatus:" destination="hwj-1q-keX" eventType="valueChanged" id="CDp-cb-tJF"/>
-                                                        <action selector="appLockSwitch:" destination="hwj-1q-keX" eventType="valueChanged" id="bpq-jg-AWo"/>
                                                     </connections>
                                                 </switch>
                                             </subviews>
@@ -210,42 +210,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="34h-X7-Rnt">
-                                        <rect key="frame" x="0.0" y="79" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="34h-X7-Rnt" id="iCj-ze-xZa">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="IIG-ox-sWd">
-                                                    <rect key="frame" x="310" y="6" width="51" height="31"/>
-                                                    <connections>
-                                                        <action selector="touchIDStatus:" destination="hwj-1q-keX" eventType="valueChanged" id="uQ5-Jc-FCd"/>
-                                                    </connections>
-                                                </switch>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Touch ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZDJ-g2-tMt">
-                                                    <rect key="frame" x="16" y="11" width="68" height="22"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="IIG-ox-sWd" firstAttribute="top" secondItem="iCj-ze-xZa" secondAttribute="top" constant="6" id="CFv-9i-FqH"/>
-                                                <constraint firstItem="ZDJ-g2-tMt" firstAttribute="leading" secondItem="iCj-ze-xZa" secondAttribute="leadingMargin" id="UVg-dP-B8q"/>
-                                                <constraint firstAttribute="bottom" secondItem="IIG-ox-sWd" secondAttribute="bottom" constant="6.5" id="c1k-7n-qQc"/>
-                                                <constraint firstItem="ZDJ-g2-tMt" firstAttribute="top" secondItem="iCj-ze-xZa" secondAttribute="topMargin" id="gpv-yV-GWR"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="ZDJ-g2-tMt" secondAttribute="bottom" id="hl0-qE-ZGP"/>
-                                                <constraint firstAttribute="trailing" secondItem="IIG-ox-sWd" secondAttribute="trailing" constant="16" id="kIl-vW-h5B"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection id="o6K-5s-Ahz">
-                                <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="fPE-yE-1bf">
-                                        <rect key="frame" x="0.0" y="159" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="79" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fPE-yE-1bf" id="f5U-vH-0jm">
                                             <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
@@ -276,8 +242,6 @@
                     <connections>
                         <outlet property="appLockSwitch" destination="y7z-1R-IhN" id="Qmd-K2-Bt9"/>
                         <outlet property="changePasswordLabel" destination="pnV-fa-gfv" id="E7R-Qm-MHJ"/>
-                        <outlet property="touchIDLabel" destination="ZDJ-g2-tMt" id="gp0-wL-jOC"/>
-                        <outlet property="touchIDSwitch" destination="IIG-ox-sWd" id="peb-4V-erB"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LfP-6K-eiK" userLabel="First Responder" sceneMemberID="firstResponder"/>
