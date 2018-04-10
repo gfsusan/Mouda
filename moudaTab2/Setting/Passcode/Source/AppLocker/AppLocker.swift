@@ -64,7 +64,7 @@ class AppLocker: UIViewController {
             case .create:
                 submessageLabel.text = "비밀번호를 입력해 주세요."
             case .change:
-                submessageLabel.text = "비밀번호를 입력해 주세요."
+                submessageLabel.text = "현재 비밀번호를 입력해 주세요."
             case .deactive:
                 submessageLabel.text = "비밀번호를 입력해 주세요."
             case .validate:

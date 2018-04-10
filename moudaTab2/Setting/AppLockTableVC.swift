@@ -13,16 +13,19 @@ class AppLockTableVC: UITableViewController {
     
     @IBOutlet weak var appLockSwitch: UISwitch!
     @IBOutlet weak var changePasswordLabel: UILabel!
+    @IBOutlet weak var changePasswordButton: UIButton!
     
     @IBAction func appLock(_ sender: UISwitch) {
         if (appLockSwitch.isOn == true) {
             LoginCheck.set(1, forKey: "LoginAvailable")
             pin(.create)
             changePasswordLabel.isEnabled = true
+            changePasswordButton.isEnabled = true
             PWDatas.login.state = true
         } else if (appLockSwitch.isOn == false) {
             LoginCheck.set(0, forKey: "LoginAvailable")
             changePasswordLabel.isEnabled = false
+            changePasswordButton.isEnabled = false
             PWDatas.login.state = false
         }
         PWDatas.save()
@@ -32,16 +35,16 @@ class AppLockTableVC: UITableViewController {
         appLockSwitch.isOn = PWDatas.login.state
         if (appLockSwitch.isOn == true) {
             changePasswordLabel.isEnabled = true
+            changePasswordButton.isEnabled = true
         } else if (appLockSwitch.isOn == false) {
             changePasswordLabel.isEnabled = false
+            changePasswordButton.isEnabled = false
         }
         
     }
     
-    @IBAction func appLockStatus(_ sender: Any) {
-    }
-    
-    @IBAction func touchIDStatus(_ sender: Any) {
+    @IBAction func changePassword(_ sender: UIButton) {
+        pin(.change)
     }
     
     func pin(_ mode: ALMode) {

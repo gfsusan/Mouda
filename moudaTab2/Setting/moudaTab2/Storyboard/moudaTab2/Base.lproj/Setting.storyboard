@@ -196,7 +196,6 @@
                                                     <rect key="frame" x="310" y="6" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="appLock:" destination="hwj-1q-keX" eventType="valueChanged" id="2dJ-mK-Lc1"/>
-                                                        <action selector="appLockStatus:" destination="hwj-1q-keX" eventType="valueChanged" id="CDp-cb-tJF"/>
                                                     </connections>
                                                 </switch>
                                             </subviews>
@@ -223,11 +222,24 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1CD-CG-KZm">
+                                                    <rect key="frame" x="0.0" y="0.0" width="376" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="0m7-iq-R9u"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <action selector="changePassword:" destination="hwj-1q-keX" eventType="touchUpInside" id="f4e-RZ-6mI"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="1CD-CG-KZm" firstAttribute="leading" secondItem="f5U-vH-0jm" secondAttribute="leading" id="FlA-nW-fYd"/>
                                                 <constraint firstItem="pnV-fa-gfv" firstAttribute="top" secondItem="f5U-vH-0jm" secondAttribute="topMargin" id="Iuk-Ik-W9B"/>
                                                 <constraint firstItem="pnV-fa-gfv" firstAttribute="bottom" secondItem="f5U-vH-0jm" secondAttribute="bottomMargin" id="Kdf-um-G49"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="1CD-CG-KZm" secondAttribute="trailing" constant="-43" id="SpO-hg-OEr"/>
                                                 <constraint firstItem="pnV-fa-gfv" firstAttribute="leading" secondItem="f5U-vH-0jm" secondAttribute="leadingMargin" id="gZd-pe-7Wl"/>
+                                                <constraint firstItem="1CD-CG-KZm" firstAttribute="centerY" secondItem="pnV-fa-gfv" secondAttribute="centerY" id="osX-0Q-sez"/>
+                                                <constraint firstItem="1CD-CG-KZm" firstAttribute="centerY" secondItem="f5U-vH-0jm" secondAttribute="centerY" id="usB-Lx-mSb"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -241,12 +253,13 @@
                     </tableView>
                     <connections>
                         <outlet property="appLockSwitch" destination="y7z-1R-IhN" id="Qmd-K2-Bt9"/>
+                        <outlet property="changePasswordButton" destination="1CD-CG-KZm" id="kYA-BJ-hu9"/>
                         <outlet property="changePasswordLabel" destination="pnV-fa-gfv" id="E7R-Qm-MHJ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LfP-6K-eiK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3441" y="-1529"/>
+            <point key="canvasLocation" x="3440.8000000000002" y="-1529.6851574212894"/>
         </scene>
         <!--AlarmVC-->
         <scene sceneID="npO-v5-mY5">
