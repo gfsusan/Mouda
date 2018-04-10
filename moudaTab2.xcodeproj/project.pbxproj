@@ -47,6 +47,7 @@
 		7AD0AF742029C906002E7F60 /* NanumGothic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7AD0AF732029C906002E7F60 /* NanumGothic.otf */; };
 		7AD0AF762029C913002E7F60 /* NanumSquareOTFRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7AD0AF752029C913002E7F60 /* NanumSquareOTFRegular.otf */; };
 		7AE837832047ADF80012C1CE /* Empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AE837822047ADF80012C1CE /* Empty.png */; };
+		FC516307207CF52400BF0D1F /* DataStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC516306207CF52400BF0D1F /* DataStructure.swift */; };
 		FC662A60207B587600C44A6C /* AppLocker.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC662A5F207B587600C44A6C /* AppLocker.xib */; };
 		FC662A62207B603100C44A6C /* AppLocker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC662A61207B603100C44A6C /* AppLocker.swift */; };
 		FC662A64207B634D00C44A6C /* UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC662A63207B634D00C44A6C /* UI.swift */; };
@@ -95,6 +96,7 @@
 		7AD0AF732029C906002E7F60 /* NanumGothic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothic.otf; sourceTree = "<group>"; };
 		7AD0AF752029C913002E7F60 /* NanumSquareOTFRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareOTFRegular.otf; sourceTree = "<group>"; };
 		7AE837822047ADF80012C1CE /* Empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Empty.png; path = moudaTab2/Assets.xcassets/Empty.imageset/Empty.png; sourceTree = SOURCE_ROOT; };
+		FC516306207CF52400BF0D1F /* DataStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructure.swift; sourceTree = "<group>"; };
 		FC662A5F207B587600C44A6C /* AppLocker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppLocker.xib; sourceTree = "<group>"; };
 		FC662A61207B603100C44A6C /* AppLocker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLocker.swift; sourceTree = "<group>"; };
 		FC662A63207B634D00C44A6C /* UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI.swift; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 			children = (
 				FC662A5C207B582C00C44A6C /* AppLocker */,
 				FC662A63207B634D00C44A6C /* UI.swift */,
+				FC516306207CF52400BF0D1F /* DataStructure.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 				6685C133202EFF1900EE066F /* ModifyVC.swift in Sources */,
 				66B52A72202E12AC007C54BF /* BookFeedCell.swift in Sources */,
 				66DBAC9D202BF0AB0043CB4B /* SearchTableVC.swift in Sources */,
+				FC516307207CF52400BF0D1F /* DataStructure.swift in Sources */,
 				66728F13202A9C480061C168 /* FeedDetailVC.swift in Sources */,
 				66999100202437F200410F21 /* Feed.swift in Sources */,
 				66DBAC9F202BF5660043CB4B /* Bookmark.swift in Sources */,
