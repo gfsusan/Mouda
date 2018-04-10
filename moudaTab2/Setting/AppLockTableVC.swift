@@ -16,6 +16,9 @@ class AppLockTableVC: UITableViewController {
     @IBOutlet weak var touchIDLabel: UILabel!
     @IBOutlet weak var changePasswordLabel: UILabel!
     
+    @IBAction func appLock(_ sender: UISwitch) {
+                
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
