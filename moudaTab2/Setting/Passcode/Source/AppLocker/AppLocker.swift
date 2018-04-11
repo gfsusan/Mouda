@@ -37,7 +37,7 @@ enum ALMode {
 }
 
 class AppLocker: UIViewController {
-
+    
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var submessageLabel: UILabel!
     @IBOutlet var pinIndicator: [Indicator]!
@@ -62,13 +62,13 @@ class AppLocker: UIViewController {
             let mode = self.mode ?? .validate
             switch mode {
             case .create:
-                submessageLabel.text = "비밀번호를 입력해 주세요."
+                submessageLabel.text = "비밀번호를 입력하세요"
             case .change:
-                submessageLabel.text = "현재 비밀번호를 입력해 주세요."
+                submessageLabel.text = "현재 비밀번호를 입력하세요"
             case .deactive:
-                submessageLabel.text = "비밀번호를 입력해 주세요."
+                submessageLabel.text = "비밀번호를 입력하세요"
             case .validate:
-                submessageLabel.text = "비밀번호를 입력해 주세요."
+                submessageLabel.text = "비밀번호를 입력하세요"
                 isFirstCreationStep = false
             }
         }
@@ -85,7 +85,7 @@ class AppLocker: UIViewController {
         pinView?.isNeedClear = !isNeedClear
         
         UIView.animate(withDuration: ALConstants.duration, animations: {
-            pinView?.backgroundColor = isNeedClear ? .clear : .white
+            pinView?.backgroundColor = isNeedClear ? .clear : UIColor(red: 77.0/255.0, green: 64.0/255.0, blue: 55.0/255.0, alpha: 1.0)
         }) { _ in
             isNeedClear ? self.pin = String(self.pin.dropLast()) : self.pincodeChecker(tag ?? 0)
         }
@@ -211,7 +211,7 @@ extension AppLocker {
         }
         locker.messageLabel.text = config?.title ?? ""
         locker.submessageLabel.text = config?.subtitle ?? ""
-        locker.view.backgroundColor = config?.color ?? .black
+        locker.view.backgroundColor = config?.color ?? .white
         locker.mode = mode
         
         if config?.isSensorsEnabled ?? false {

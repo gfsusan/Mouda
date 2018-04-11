@@ -15,6 +15,9 @@
         <array key="NanumMyeongjo.otf">
             <string>NanumMyeongjoOTF</string>
         </array>
+        <array key="NanumMyeongjoExtraBold.otf">
+            <string>NanumMyeongjoOTFExtraBold</string>
+        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -31,20 +34,20 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O4o-Ks-4Ii">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="222.5"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BiA-iv-5oK">
-                                <rect key="frame" x="20" y="140" width="335" height="23"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="19"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Message" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BiA-iv-5oK">
+                                <rect key="frame" x="20" y="100" width="335" height="22"/>
+                                <fontDescription key="fontDescription" name="NanumMyeongjoOTFExtraBold" family="NanumMyeongjoOTF" pointSize="20"/>
+                                <color key="textColor" red="0.30179962519999998" green="0.25145322079999999" blue="0.2156784534" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="submessage" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Yc-zm-CFr">
-                                <rect key="frame" x="8" y="171" width="359" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="submessage" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Yc-zm-CFr">
+                                <rect key="frame" x="8" y="130" width="359" height="20.5"/>
+                                <fontDescription key="fontDescription" name="NanumMyeongjoOTF" family="NanumMyeongjoOTF" pointSize="17"/>
+                                <color key="textColor" red="0.30179962519999998" green="0.25145322079999999" blue="0.2156784534" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6kS-ba-3rR">
-                                <rect key="frame" x="8" y="199.5" width="359" height="27.5"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6kS-ba-3rR">
+                                <rect key="frame" x="8" y="158" width="359" height="27.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y48-OI-bV6" userLabel="first" customClass="Indicator" customModule="moudaTab2" customModuleProvider="target">
                                         <rect key="frame" x="121" y="7" width="14" height="14"/>

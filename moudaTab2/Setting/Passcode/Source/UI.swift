@@ -12,7 +12,7 @@ extension UIView {
     func rounded() {
         layer.cornerRadius = frame.width/2
         layer.borderWidth = 1
-        layer.borderColor = UIColor.white.cgColor
+        layer.borderColor = UIColor(red: 77.0/255.0, green: 64.0/255.0, blue: 55.0/255.0, alpha: 1.0).cgColor
     }
     
     func shake(delegate: CAAnimationDelegate) {

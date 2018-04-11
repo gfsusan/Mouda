@@ -50,7 +50,7 @@ class AppLockTableVC: UITableViewController {
     func pin(_ mode: ALMode) {
         
         var appearance = ALAppearance()
-        appearance.title = "비밀번호를 입력해주세요."
+        appearance.title = "비밀번호"
         appearance.isSensorsEnabled = true
         
         AppLocker.present(with: mode, and: appearance)
