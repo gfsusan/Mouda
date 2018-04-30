@@ -34,6 +34,7 @@ enum ALMode {
     case change
     case deactive
     case create
+    case contact
 }
 
 class AppLocker: UIViewController {
@@ -65,6 +66,8 @@ class AppLocker: UIViewController {
                 submessageLabel.text = "비밀번호를 입력하세요"
             case .change:
                 submessageLabel.text = "현재 비밀번호를 입력하세요"
+            case .contact:
+                submessageLabel.text = "비밀번호를 입력하세요"
             case .deactive:
                 submessageLabel.text = "비밀번호를 입력하세요"
             case .validate:
@@ -100,6 +103,8 @@ class AppLocker: UIViewController {
                     createModeAction()
                 case .change:
                     changeModeAction()
+                case .contact:
+                    contactModeAction()
                 case .deactive:
                     deactiveModeAction()
                 case .validate:
@@ -122,6 +127,10 @@ class AppLocker: UIViewController {
     
     fileprivate func changeModeAction() {
         pin == savedPin ? precreateSettings() : incorrectPinAnimation()
+    }
+    
+    fileprivate func contactModeAction() {
+        pin == savedPin ? dismiss(animated: true, completion: nil) : incorrectPinAnimation()
     }
     
     fileprivate func deactiveModeAction() {

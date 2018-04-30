@@ -26,13 +26,20 @@ import UserNotifications
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         //암호
-        sleep(1)
-        LoginCheck.set(1, forKey: "LoginAvailable")
+//        sleep(1)
+//        LoginCheck.set(PWDatas.login.state, forKey: "LoginAvailable")
+        
+        if UserDefaults.standard.bool(forKey: Setting.State.Passcode.rawValue) {
+            print("App locked")
+            AppLocker.present(with: .contact)
+        } else {
+            print("App didn't lock")
+        }
         
         print("App Delegate")
         // 네비게이션 바 색상
@@ -68,10 +75,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        
+//        if UserDefaults.standard.bool(forKey: Setting.State.Passcode.rawValue) {
+//            print("App locked")
+//            AppLocker.present(with: .contact)
+//        } else {
+//            print("App didn't lock")
+//        }
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        if UserDefaults.standard.bool(forKey: Setting.State.Passcode.rawValue) {
+            print("App locked")
+            AppLocker.present(with: .contact)
+        } else {
+            print("App didn't lock")
+        }
     }
 
     func applicationWillTerminate(_ application: UIApplication) {

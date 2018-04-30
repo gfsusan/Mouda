@@ -171,7 +171,7 @@
         <!--App Lock TableVC-->
         <scene sceneID="A8U-nD-bjL">
             <objects>
-                <tableViewController id="hwj-1q-keX" customClass="AppLockTableVC" customModule="moudaTab2" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController restorationIdentifier="appLockTableVC" storyboardIdentifier="appLockTableVC" id="hwj-1q-keX" customClass="AppLockTableVC" customModule="moudaTab2" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="HCN-gg-UjJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
