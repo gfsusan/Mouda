@@ -129,12 +129,12 @@ class AppLocker: UIViewController {
         pin == savedPin ? precreateSettings() : incorrectPinAnimation()
     }
     
-    fileprivate func contactModeAction() {
-        pin == savedPin ? dismiss(animated: true, completion: nil) : incorrectPinAnimation()
-    }
-    
     fileprivate func deactiveModeAction() {
         pin == savedPin ? removePin() : incorrectPinAnimation()
+    }
+    
+    fileprivate func contactModeAction() {
+        pin == savedPin ? dismiss(animated: true, completion: nil) : incorrectPinAnimation()
     }
     
     fileprivate func validateModeAction() {

@@ -1,16 +1,3 @@
-/*
- TODO
- 1. iCloud에 어떻게 저장하는 지 알아보기
- 2. 설정 탭 내용
- 3. 북마크 테이블 뷰
- 4. 책 검색
- 5. 아이콘 화질 ---> 코딘 ??????? :)
-
- 하면 좋은것
- 1. AddVC 모달 띄우기
- 
- */
-
 //
 //  AppDelegate.swift
 //  moudaTab2
@@ -31,15 +18,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         //암호
-//        sleep(1)
-//        LoginCheck.set(PWDatas.login.state, forKey: "LoginAvailable")
         
-        if UserDefaults.standard.bool(forKey: Setting.State.Passcode.rawValue) {
-            print("App locked")
-            AppLocker.present(with: .contact)
-        } else {
-            print("App didn't lock")
-        }
+//        if UserDefaults.standard.bool(forKey: Setting.State.Passcode.rawValue) {
+//            print("App locked")
+//            AppLocker.present(with: .contact)
+//        } else {
+//            print("App didn't lock")
+//        }
         
         print("App Delegate")
         // 네비게이션 바 색상
@@ -75,13 +60,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
-        
-//        if UserDefaults.standard.bool(forKey: Setting.State.Passcode.rawValue) {
-//            print("App locked")
-//            AppLocker.present(with: .contact)
-//        } else {
-//            print("App didn't lock")
-//        }
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {

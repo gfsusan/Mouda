@@ -20,8 +20,7 @@ class SettingTableVC: UITableViewController, MFMailComposeViewControllerDelegate
     @IBOutlet weak var alarmSwitch: UISwitch!
     @IBOutlet weak var myFeedCount: UILabel!
     @IBOutlet weak var myBookmarkCount: UILabel!
-    @IBOutlet weak var alarmTimeSmallLabel: UILabel!
-    
+    @IBOutlet weak var alarmTimeSmallLabel: UILabel!    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +30,14 @@ class SettingTableVC: UITableViewController, MFMailComposeViewControllerDelegate
 //            alarmTimeSmallLabel.text = alarmTime.alarmTimeLabel.text
 //        }
         
+    }
+    
+    @IBAction func protect(_ sender: Any) {
+        if UserDefaults.standard.value(forKey: ALConstants.kPincode) != nil {
+            print("contact protection")
+            AppLocker.present(with: .contact)
+            performSegue(withIdentifier: "appLockTableVC", sender: nil)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
