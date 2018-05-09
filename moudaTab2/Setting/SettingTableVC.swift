@@ -54,6 +54,13 @@ class SettingTableVC: UITableViewController, MFMailComposeViewControllerDelegate
             print("alarmTime")
             alarmTime.settingDelegate = self
         }
+        
+        if segue.identifier == "ProtectionSegue" {
+            if UserDefaults.standard.bool(forKey: Setting.State.Passcode.rawValue) {
+                print("Contact Protection")
+                AppLocker.present(with: .contact)
+            }
+        }
     }
  
     
@@ -73,7 +80,7 @@ class SettingTableVC: UITableViewController, MFMailComposeViewControllerDelegate
         if MFMailComposeViewController.canSendMail() {
             let mail = MFMailComposeViewController()
             mail.mailComposeDelegate = self
-            mail.setToRecipients(["gfsusan@naver.com"])
+            mail.setToRecipients(["moudadevelopers@gmail.com"])
             mail.setMessageBody("<p>You're so awesome!</p>", isHTML: true)
             present(mail, animated: true)
         } else {
