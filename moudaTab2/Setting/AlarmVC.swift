@@ -14,10 +14,9 @@ var dateFormatter:DateFormatter!
 struct Alarm {
     enum AlarmSetting:String {
         case Time
+        case TimeLabel
     }
 }
-
-var settingTimeKey = "settingTime"
 
 class AlarmVC: UIViewController {
     
@@ -54,21 +53,14 @@ class AlarmVC: UIViewController {
             print("setted alarm")
             self.alarmTimePicker.date = time as! Date
         }
+        alarmTimeLabel.text = dateFormatter.string(from: alarmTimePicker.date)
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let settedTime = segue.destination as? SettingTableVC {
-            print("settedTime")
-            settedTime.alarmDelegate = self
-        }
-    }
-    
     
     @IBAction func changedTimePicker() {
         UserDefaults.standard.set(alarmTimePicker.date, forKey: Alarm.AlarmSetting.Time.rawValue)
         
         let settingTime = dateFormatter.string(from: alarmTimePicker.date)
-        UserDefaults.standard.set(settingTime, forKey: settingTimeKey)
+        UserDefaults.standard.set(settingTime, forKey: Alarm.AlarmSetting.TimeLabel.rawValue)
         
         alarmTimeLabel.text = settingTime
     }
@@ -95,6 +87,7 @@ class AlarmVC: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
 
 }

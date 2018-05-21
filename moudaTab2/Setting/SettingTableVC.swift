@@ -18,18 +18,13 @@ class SettingTableVC: UITableViewController, MFMailComposeViewControllerDelegate
     @IBOutlet weak var myFeedCell: UITableViewCell!
     @IBOutlet weak var bookmarkCell: UITableViewCell!
     @IBOutlet weak var alarmSwitch: UISwitch!
-    @IBOutlet weak var myFeedCount: UILabel!
-    @IBOutlet weak var myBookmarkCount: UILabel!
     @IBOutlet weak var alarmTimeSmallLabel: UILabel!    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        if let alarmTime = self.alarmDelegate {
-//            print("alarmTime")
-//            alarmTimeSmallLabel.text = alarmTime.alarmTimeLabel.text
-//        }
-        
+        alarmTimeSmallLabel.text = "오후 09:00"
+        alarmTimeSmallLabel.text = UserDefaults.standard.string(forKey: Alarm.AlarmSetting.TimeLabel.rawValue)
     }
     
     @IBAction func protect(_ sender: Any) {
@@ -41,9 +36,11 @@ class SettingTableVC: UITableViewController, MFMailComposeViewControllerDelegate
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        //User Info
         myFeedCell.detailTextLabel?.text = "\(dataCenter.feeds.count)개"
         bookmarkCell.detailTextLabel?.text = "\(dataCenter.bookmarks.count)개"
-        
+
     }
     
     
@@ -51,7 +48,7 @@ class SettingTableVC: UITableViewController, MFMailComposeViewControllerDelegate
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if let alarmTime = segue.destination as? AlarmVC {
-            print("alarmTime")
+            print("alarm Time")
             alarmTime.settingDelegate = self
         }
         
@@ -74,9 +71,9 @@ class SettingTableVC: UITableViewController, MFMailComposeViewControllerDelegate
     }
     
 
+    //피드백 이메일
     @IBAction func feedbackEmail(_ sender: Any) {
         
-        //피드백 이메일
         if MFMailComposeViewController.canSendMail() {
             let mail = MFMailComposeViewController()
             mail.mailComposeDelegate = self
@@ -95,7 +92,6 @@ class SettingTableVC: UITableViewController, MFMailComposeViewControllerDelegate
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 }
 
