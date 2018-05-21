@@ -10,8 +10,12 @@ import UIKit
 import UserNotifications
 
 var dateFormatter:DateFormatter!
-var pickerString: String?
-var nowString: String?
+
+struct Alarm {
+    enum AlarmSetting:String {
+        case Time
+    }
+}
 
 var settingTimeKey = "settingTime"
 
@@ -30,49 +34,38 @@ class AlarmVC: UIViewController {
         dateFormatter.amSymbol = "오전"
         dateFormatter.pmSymbol = "오후"
         
-        let userDefaultAlarm = UserDefaults.standard.string(forKey: settingTimeKey)
         
-        if  let settedLabel = self.settingDelegate?.alarmTimeSmallLabel {
-            print("setted Label")
-            alarmTimeLabel.text = settedLabel.text
-        }
-        
-//        if let date = userDefaultAlarm as? Date {
-//            alarmTimePicker.setDate(date, animated: true)
-//        }
-        
-        
+        //default data
         if let date = dateFormatter.date(from: "오후 09:00") {
-            if let settingDate = dateFormatter.date(from: settingTimeKey) {
-                print("setting Date")
-                settingTime()
-                alarmTimePicker.date = settingDate
-            }
             alarmTimePicker.date = date
         }
-
-//        let _ = Timer.scheduledTimer(timeInterval: 0.0001, target: self, selector: #selector(settingTime), userInfo: userDefaultAlarm, repeats: false)
         
+//        if let time = UserDefaults.standard.value(forKey: Alarm.AlarmSetting.Time.rawValue) {
+//            print("setting Date")
+//            self.alarmTimePicker.date = time as! Date
+//        } else {
+//            //default data
+//            if let date = dateFormatter.date(from: "오후 09:00") {
+//                alarmTimePicker.date = date
+//            }
+//
+//        }
         
+        settingTime()
         alarmTimeLabel.text = dateFormatter.string(from: alarmTimePicker.date)
-//        alarmTimePicker.addTarget(self, action: #selector(AlarmVC.changedTimePicke), for: UIControlEvents.valueChanged)
         
-        
-        
+        var userDefaultAlarm = alarmTimeLabel.text
         let _ = Timer.scheduledTimer(timeInterval: 0.0001, target: self, selector: #selector(changedTimePicker), userInfo: userDefaultAlarm, repeats: true)
-        
-        
-
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Schedule", style: .plain, target: self, action: #selector(scheduleLocal))
-//        alarmTimePicker.addTarget(self, action: #selector(AlarmVC.datePickerValueChanged), for: UIControlEvents.valueChanged)
     }
     
     func settingTime() {
-        pickerString = dateFormatter.string(from: alarmTimePicker.date)
-        if let settingPicker = pickerString {
-            UserDefaults.standard.set(alarmTimePicker.date, forKey: settingTimeKey)
-            alarmTimeLabel.text = settingPicker
+        let userDefaults = UserDefaults.standard
+        
+        if let time = userDefaults.value(forKey: Alarm.AlarmSetting.Time.rawValue) {
+            print("setted alarm")
+            self.alarmTimePicker.date = time as! Date
         }
+        alarmTimeLabel.text = dateFormatter.string(from: alarmTimePicker.date)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -83,90 +76,16 @@ class AlarmVC: UIViewController {
             settedTime.alarmDelegate = self
         }
     }
-
-    @objc func scheduleLocal() {
-        let center = UNUserNotificationCenter.current()
-
-        let content = UNMutableNotificationContent()
-        content.title = "Late wake up call"
-        content.body = "The early bird catches the worm, but the second mouse gets the cheese."
-        content.categoryIdentifier = "alarm"
-        content.userInfo = ["customData": "fizzbuzz"]
-        content.sound = UNNotificationSound.default()
-
-        var dateComponents = DateComponents()
-        dateComponents.hour = 10
-        dateComponents.minute = 30
-        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-
-        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
-
-        center.add(request)
-    }
     
     
     @IBAction func changedTimePicker() {
+        UserDefaults.standard.set(alarmTimePicker.date, forKey: Alarm.AlarmSetting.Time.rawValue)
         
-        pickerString = dateFormatter.string(from: alarmTimePicker.date)
-        nowString = dateFormatter.string(from: Date())
-        
-        let settingTime = pickerString
+        let settingTime = dateFormatter.string(from: alarmTimePicker.date)
         UserDefaults.standard.set(settingTime, forKey: settingTimeKey)
         
-        guard let changedAlarm = pickerString else {
-            return
-        }
-
-        alarmTimeLabel.text = changedAlarm
-        
-        if let changeSmallLabel = settingDelegate?.alarmTimeSmallLabel {
-            print("change Samll label")
-            changeSmallLabel.text = alarmTimeLabel.text
-        }
+        alarmTimeLabel.text = settingTime
     }
-    
-    
-    //알람
-//    func defaultAlarm(date:String, time: String, subject: String) {
-//
-//        var dateString = date+" "+time
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
-//
-//        let convertedDate = dateFormatter.date(from: dateString)!
-//
-//        let subtractTime = Calendar.current.date(byAdding: .minute, value: -10, to: convertedDate)
-//
-//        dateString = dateFormatter.string(from: subtractTime!)
-//
-//        var localTimeZoneName: String { return TimeZone.current.identifier }
-//        var secondsFromGMT: Int {return TimeZone.current.secondsFromGMT() }
-//        dateFormatter.timeZone = TimeZone(secondsFromGMT: secondsFromGMT)
-//        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
-//
-//        let dateObj:Date = dateFormatter.date(from: dateString)!
-//
-//        print("alarm time: \(dateObj)")
-//
-//        let triggerDaily = Calendar.current.dateComponents([.day, .month, .year, .hour, .minute], from: dateObj)
-//
-//        let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDaily, repeats: true)
-//
-//        let alarmId = UUID().uuidString
-//
-//        let content = UNMutableNotificationContent()
-//        content.title = "오늘의 책을 기록하세요."
-//
-//        let request = UNNotificationRequest(identifier: "alarmIdentifier", content: content, trigger: trigger)
-//
-//        UNUserNotificationCenter.current().delegate = self
-//        UNUserNotificationCenter.current().add(request) {(error) in
-//            if let error = error {
-//                print("Uh oh! I had an error: \(error)")
-//            }
-//        }
-//    }
-    
     
     func switchOn() {
         print("Switch is On")
@@ -192,6 +111,5 @@ class AlarmVC: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-   
 
 }
