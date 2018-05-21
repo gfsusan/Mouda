@@ -40,17 +40,6 @@ class AlarmVC: UIViewController {
             alarmTimePicker.date = date
         }
         
-//        if let time = UserDefaults.standard.value(forKey: Alarm.AlarmSetting.Time.rawValue) {
-//            print("setting Date")
-//            self.alarmTimePicker.date = time as! Date
-//        } else {
-//            //default data
-//            if let date = dateFormatter.date(from: "오후 09:00") {
-//                alarmTimePicker.date = date
-//            }
-//
-//        }
-        
         settingTime()
         alarmTimeLabel.text = dateFormatter.string(from: alarmTimePicker.date)
         
@@ -65,12 +54,9 @@ class AlarmVC: UIViewController {
             print("setted alarm")
             self.alarmTimePicker.date = time as! Date
         }
-        alarmTimeLabel.text = dateFormatter.string(from: alarmTimePicker.date)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
         if let settedTime = segue.destination as? SettingTableVC {
             print("settedTime")
             settedTime.alarmDelegate = self
@@ -109,7 +95,6 @@ class AlarmVC: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 }
