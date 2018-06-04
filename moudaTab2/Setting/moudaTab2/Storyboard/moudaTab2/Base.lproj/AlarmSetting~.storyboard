@@ -158,12 +158,23 @@
                                                         <action selector="switchStatus:" destination="cfr-Mk-UJ0" eventType="valueChanged" id="pPI-23-eIC"/>
                                                     </connections>
                                                 </switch>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Px4-Nd-KH3">
+                                                    <rect key="frame" x="254" y="13" width="35.5" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="Px4-Nd-KH3" firstAttribute="top" secondItem="3mW-iy-0Xq" secondAttribute="topMargin" constant="2" id="Aj7-fp-xon"/>
+                                                <constraint firstItem="Px4-Nd-KH3" firstAttribute="centerY" secondItem="3mW-iy-0Xq" secondAttribute="centerY" id="KMT-C3-1fQ"/>
                                                 <constraint firstAttribute="bottom" secondItem="Ado-SY-71N" secondAttribute="bottom" constant="6.5" id="MDW-f8-U1p"/>
                                                 <constraint firstItem="Ado-SY-71N" firstAttribute="centerY" secondItem="3mW-iy-0Xq" secondAttribute="centerY" id="T7H-6s-tCW"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Px4-Nd-KH3" secondAttribute="bottom" constant="3" id="Uah-3v-MtH"/>
                                                 <constraint firstAttribute="trailing" secondItem="Ado-SY-71N" secondAttribute="trailing" constant="-2" id="bfS-fY-ZKc"/>
+                                                <constraint firstItem="Ado-SY-71N" firstAttribute="leading" secondItem="Px4-Nd-KH3" secondAttribute="trailing" constant="4.5" id="sul-G3-2vO"/>
                                                 <constraint firstItem="Ado-SY-71N" firstAttribute="top" secondItem="3mW-iy-0Xq" secondAttribute="top" constant="6" id="ttt-kW-G4Y"/>
+                                                <constraint firstItem="Px4-Nd-KH3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="3mW-iy-0Xq" secondAttribute="leading" constant="20" symbolic="YES" id="w6n-Qs-lMw"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -209,6 +220,7 @@
                     <navigationItem key="navigationItem" title="설정" id="YGw-ld-wI4"/>
                     <connections>
                         <outlet property="alarmSwitch" destination="Ado-SY-71N" id="5kv-ps-aSy"/>
+                        <outlet property="alarmTimeSmallLabel" destination="Px4-Nd-KH3" id="Mcc-JO-Z0b"/>
                         <outlet property="bookmarkCell" destination="uxp-JE-HFp" id="gfj-bA-aJW"/>
                         <outlet property="myFeedCell" destination="4bN-BJ-a4f" id="apw-xc-jYM"/>
                     </connections>

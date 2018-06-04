@@ -18,13 +18,9 @@ class SettingTableVC: UITableViewController, MFMailComposeViewControllerDelegate
     @IBOutlet weak var myFeedCell: UITableViewCell!
     @IBOutlet weak var bookmarkCell: UITableViewCell!
     @IBOutlet weak var alarmSwitch: UISwitch!
-    @IBOutlet weak var alarmTimeSmallLabel: UILabel!    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        alarmTimeSmallLabel.text = "오후 09:00"
-        alarmTimeSmallLabel.text = UserDefaults.standard.string(forKey: Alarm.AlarmSetting.TimeLabel.rawValue)
     }
     
     @IBAction func protect(_ sender: Any) {
