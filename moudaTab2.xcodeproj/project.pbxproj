@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1487EF295B242917832AE1C9 /* Pods_moudaTab2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE0D893C05B4653E2000B07C /* Pods_moudaTab2.framework */; };
 		66029A93202DF82B001D4E77 /* AlarmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66029A92202DF82B001D4E77 /* AlarmVC.swift */; };
 		6626BE86204003D4003F0C23 /* Feeds.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6626BE84204003D4003F0C23 /* Feeds.storyboard */; };
 		6626BE88204009C1003F0C23 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6626BE87204009C1003F0C23 /* TabBarVC.swift */; };
@@ -41,6 +42,7 @@
 		66F902DE202961F40047C959 /* AddPopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F902DD202961F40047C959 /* AddPopUpVC.swift */; };
 		66FCB981202BE604008E1AC5 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66FCB980202BE604008E1AC5 /* Search.storyboard */; };
 		66FCB985202BEF8B008E1AC5 /* AddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FCB984202BEF8B008E1AC5 /* AddVC.swift */; };
+		7A532C1020CE620400E79CB1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A532C0F20CE620400E79CB1 /* GoogleService-Info.plist */; };
 		7AB7832B205A56EC00DE993A /* PWVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB7832A205A56EC00DE993A /* PWVC.swift */; };
 		7AB7832E205A59BC00DE993A /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB7832D205A59BC00DE993A /* Keychain.swift */; };
 		7AB78330205A642F00DE993A /* PWDataStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB7832F205A642F00DE993A /* PWDataStructure.swift */; };
@@ -90,6 +92,7 @@
 		66F902DD202961F40047C959 /* AddPopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPopUpVC.swift; sourceTree = "<group>"; };
 		66FCB980202BE604008E1AC5 /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		66FCB984202BEF8B008E1AC5 /* AddVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVC.swift; sourceTree = "<group>"; };
+		7A532C0F20CE620400E79CB1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7AB7832A205A56EC00DE993A /* PWVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWVC.swift; sourceTree = "<group>"; };
 		7AB7832D205A59BC00DE993A /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		7AB7832F205A642F00DE993A /* PWDataStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWDataStructure.swift; sourceTree = "<group>"; };
@@ -100,6 +103,9 @@
 		7AD0AF732029C906002E7F60 /* NanumGothic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothic.otf; sourceTree = "<group>"; };
 		7AD0AF752029C913002E7F60 /* NanumSquareOTFRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareOTFRegular.otf; sourceTree = "<group>"; };
 		7AE837822047ADF80012C1CE /* Empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Empty.png; path = moudaTab2/Assets.xcassets/Empty.imageset/Empty.png; sourceTree = SOURCE_ROOT; };
+		9C02A1D7E2AA8F1B8156F52F /* Pods-moudaTab2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moudaTab2.release.xcconfig"; path = "Pods/Target Support Files/Pods-moudaTab2/Pods-moudaTab2.release.xcconfig"; sourceTree = "<group>"; };
+		AE0D893C05B4653E2000B07C /* Pods_moudaTab2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_moudaTab2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF6D96779BBA2BDB74FA448E /* Pods-moudaTab2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moudaTab2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-moudaTab2/Pods-moudaTab2.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +114,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				66B52A68202DDA95007C54BF /* MessageUI.framework in Frameworks */,
+				1487EF295B242917832AE1C9 /* Pods_moudaTab2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,6 +193,7 @@
 				669990E820242F2B00410F21 /* moudaTab2 */,
 				669990E720242F2B00410F21 /* Products */,
 				66B52A66202DDA95007C54BF /* Frameworks */,
+				B3BC2F1077F437A878582D91 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -215,6 +223,7 @@
 				7AD0AF6A2029B3F3002E7F60 /* Media.xcassets */,
 				669990F020242F2B00410F21 /* Assets.xcassets */,
 				669990F520242F2B00410F21 /* Info.plist */,
+				7A532C0F20CE620400E79CB1 /* GoogleService-Info.plist */,
 			);
 			path = moudaTab2;
 			sourceTree = "<group>";
@@ -223,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				66B52A67202DDA95007C54BF /* MessageUI.framework */,
+				AE0D893C05B4653E2000B07C /* Pods_moudaTab2.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -262,6 +272,15 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		B3BC2F1077F437A878582D91 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CF6D96779BBA2BDB74FA448E /* Pods-moudaTab2.debug.xcconfig */,
+				9C02A1D7E2AA8F1B8156F52F /* Pods-moudaTab2.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -269,9 +288,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 669990F820242F2B00410F21 /* Build configuration list for PBXNativeTarget "moudaTab2" */;
 			buildPhases = (
+				26B1E8A07DEA8665C0C18196 /* [CP] Check Pods Manifest.lock */,
 				669990E220242F2B00410F21 /* Sources */,
 				669990E320242F2B00410F21 /* Frameworks */,
 				669990E420242F2B00410F21 /* Resources */,
+				A4F15392B2CB2F37AD5B57A0 /* [CP] Embed Pods Frameworks */,
+				8EF3766B2A8B884C596EFFA0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -333,6 +355,7 @@
 				6626BE86204003D4003F0C23 /* Feeds.storyboard in Resources */,
 				7AD0AF702029C86A002E7F60 /* NanumMyeongjo.otf in Resources */,
 				66E574F1202CB16500FEEAAA /* Setting.storyboard in Resources */,
+				7A532C1020CE620400E79CB1 /* GoogleService-Info.plist in Resources */,
 				7AD0AF712029C86A002E7F60 /* NanumMyeongjoBold.otf in Resources */,
 				669990EF20242F2B00410F21 /* Main.storyboard in Resources */,
 				7AD0AF722029C86A002E7F60 /* NanumMyeongjoExtraBold.otf in Resources */,
@@ -341,6 +364,66 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		26B1E8A07DEA8665C0C18196 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-moudaTab2-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8EF3766B2A8B884C596EFFA0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-moudaTab2/Pods-moudaTab2-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A4F15392B2CB2F37AD5B57A0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-moudaTab2/Pods-moudaTab2-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-moudaTab2/Pods-moudaTab2-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		669990E220242F2B00410F21 /* Sources */ = {
@@ -540,6 +623,7 @@
 		};
 		669990F920242F2B00410F21 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF6D96779BBA2BDB74FA448E /* Pods-moudaTab2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -555,6 +639,7 @@
 		};
 		669990FA20242F2B00410F21 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9C02A1D7E2AA8F1B8156F52F /* Pods-moudaTab2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
