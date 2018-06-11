@@ -160,11 +160,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="모으다" id="QJx-23-P47">
                         <barButtonItem key="leftBarButtonItem" enabled="NO" image="Empty" id="A1o-NK-LgG"/>
-                        <barButtonItem key="rightBarButtonItem" title="Setting" image="setting" id="NSE-JS-XZu">
-                            <connections>
-                                <segue destination="CFE-LH-Spl" kind="show" id="ff2-vA-pNA"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Setting" image="setting" id="NSE-JS-XZu"/>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>

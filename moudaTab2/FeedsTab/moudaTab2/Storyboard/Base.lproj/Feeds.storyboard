@@ -21,7 +21,7 @@
         <scene sceneID="QC1-xH-IyR">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7QW-d5-hNE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Feeds" image="Bookmark" id="XAd-sA-kVN"/>
+                    <tabBarItem key="tabBarItem" title="Feeds" image="Home" id="XAd-sA-kVN"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Fs7-fL-9oh">
@@ -135,8 +135,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Bookmark" width="24" height="24"/>
         <image name="Empty" width="30" height="30"/>
+        <image name="Home" width="24" height="24"/>
         <image name="icons8-pen-50" width="50" height="50"/>
     </resources>
 </document>
