@@ -66,7 +66,7 @@ class SettingTableVC: UITableViewController, MFMailComposeViewControllerDelegate
         if MFMailComposeViewController.canSendMail() {
             let mail = MFMailComposeViewController()
             mail.mailComposeDelegate = self
-            mail.setToRecipients(["gfsusan@naver.com"])
+            mail.setToRecipients(["moudadevelopers@gmail.com"])
             mail.setMessageBody("<p>You're so awesome!</p>", isHTML: true)
             present(mail, animated: true)
         } else {
