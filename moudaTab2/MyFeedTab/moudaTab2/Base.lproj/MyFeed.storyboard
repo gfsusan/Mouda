@@ -160,7 +160,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="모으다" id="QJx-23-P47">
                         <barButtonItem key="leftBarButtonItem" enabled="NO" image="Empty" id="A1o-NK-LgG"/>
-                        <barButtonItem key="rightBarButtonItem" title="Setting" image="setting" id="NSE-JS-XZu"/>
+                        <barButtonItem key="rightBarButtonItem" image="Empty" id="gzA-i4-weg"/>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -170,14 +170,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oc6-Xw-dge" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="816.79999999999995" y="115.59220389805098"/>
-        </scene>
-        <!--Setting-->
-        <scene sceneID="uCa-GA-A9B">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Setting" id="CFE-LH-Spl" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tnz-Qc-Woq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1305" y="-243"/>
         </scene>
         <!--Feed DetailVC-->
         <scene sceneID="uhz-NU-SK4">
@@ -827,6 +819,5 @@
         <image name="Home" width="24" height="24"/>
         <image name="PWBtn" width="150" height="150"/>
         <image name="icons8-pen-50" width="50" height="50"/>
-        <image name="setting" width="24" height="24"/>
     </resources>
 </document>
