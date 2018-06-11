@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7QW-d5-hNE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7QW-d5-hNE">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -20,7 +20,7 @@
         <!--Feeds-->
         <scene sceneID="QC1-xH-IyR">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7QW-d5-hNE" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7QW-d5-hNE" customClass="Feeds" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Feeds" image="Home" id="XAd-sA-kVN"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -37,10 +37,10 @@
             </objects>
             <point key="canvasLocation" x="-890" y="1361"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Feeds TableVC-->
         <scene sceneID="atm-sJ-kDY">
             <objects>
-                <tableViewController restorationIdentifier="reuseIdentifier" id="Nfa-TE-udD" sceneMemberID="viewController">
+                <tableViewController restorationIdentifier="reuseIdentifier" id="Nfa-TE-udD" customClass="FeedsTableVC" customModule="moudaTab2" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="reuseIdentifier" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="131" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="7sJ-ad-Y9N">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -119,7 +119,7 @@
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="Nfa-TE-udD" id="OoW-Ug-c1r"/>
-                            <outlet property="delegate" destination="Nfa-TE-udD" id="pIb-4D-XPl"/>
+                            <outlet property="delegate" destination="Nfa-TE-udD" id="IoE-6j-oGM"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="coV-BB-90L">
@@ -128,6 +128,9 @@
                         <barButtonItem key="rightBarButtonItem" image="Empty" id="L6J-QI-Vyq"/>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="view" destination="7sJ-ad-Y9N" id="EB5-Td-gd6"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H7E-ax-4kP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

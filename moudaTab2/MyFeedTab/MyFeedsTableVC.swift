@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FeedTableVC: UITableViewController {
+class MyFeedsTableVC: UITableViewController {
     
     var feeds:[Feed] = []
     var receivedFeed:Feed?
@@ -37,14 +37,17 @@ class FeedTableVC: UITableViewController {
     
         
         formatdate.dateFormat = "yyyy년 MM월 dd일"
+        
+        
+        performSegue(withIdentifier: "loginSegue", sender: self)
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         feeds = dataCenter.feeds
         self.tableView.reloadData()
+        
     }
 
     override func didReceiveMemoryWarning() {

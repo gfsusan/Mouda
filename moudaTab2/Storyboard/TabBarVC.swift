@@ -20,6 +20,7 @@ class TabBarVC: UITabBarController {
         button.setBackgroundImage(UIImage(named: "Empty.png"), for: .normal)
         button.addTarget(self, action: #selector(TabBarVC.upload(sender:)), for: UIControlEvents.touchUpInside)
         self.view.addSubview(button)
+        
     }
 
     override func didReceiveMemoryWarning() {
