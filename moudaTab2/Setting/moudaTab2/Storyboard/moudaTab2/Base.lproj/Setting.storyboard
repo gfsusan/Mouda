@@ -134,7 +134,10 @@
                             <outlet property="delegate" destination="cfr-Mk-UJ0" id="BXh-1i-7bl"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="설정" id="YGw-ld-wI4"/>
+                    <navigationItem key="navigationItem" title="설정" id="78r-4Z-i3i">
+                        <barButtonItem key="leftBarButtonItem" image="Empty" id="9mI-6b-tK7"/>
+                        <barButtonItem key="rightBarButtonItem" image="Empty" id="f8q-mN-hc7"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="bookmarkCell" destination="uxp-JE-HFp" id="gfj-bA-aJW"/>
                         <outlet property="myFeedCell" destination="4bN-BJ-a4f" id="apw-xc-jYM"/>
@@ -539,6 +542,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Empty" width="30" height="30"/>
         <image name="PWBtn" width="150" height="150"/>
         <image name="setting" width="24" height="24"/>
     </resources>
