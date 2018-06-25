@@ -10,11 +10,14 @@ import UIKit
 import Firebase
 
 class FeedsTableVC: UITableViewController {
+    
+    let formatdate = DateFormatter()
     var feeds:[Feed] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
+        
+        formatdate.dateFormat = "yyyy년 MM월 dd일"    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -43,6 +46,7 @@ class FeedsTableVC: UITableViewController {
         let feed = feeds[indexPath.row]
         cell.titleLabel.text = feed.book.title
         cell.lineLabel.text = feed.line
+        cell.dateLabel.text = "\(formatdate.string(from: feed.date))"
 //        cell.pageLabel.text = "\(feed.page)"
 //        cell.thoughtLabel.text = feed.thought
         
@@ -59,6 +63,7 @@ class FeedsTableVC: UITableViewController {
                     let feedObject = feeds.value as? [String: AnyObject]
                     let feedLine = feedObject?["line"]
                     let feedPage = feedObject?["page"]
+                    let feedDate = feedObject?["date"]
                     let feedThought = feedObject?["thought"]
                     
                     let feedBookUid = feedObject?["bookUid"]
@@ -71,10 +76,11 @@ class FeedsTableVC: UITableViewController {
                         
                         
                     })
+                    print(feedDate)
+                    print(Date(timeIntervalSince1970: feedDate as! TimeInterval))
                     
                     
-                    
-                                        let feed = Feed(book: Book(title: "dlsfj" as! String, coverImageURL: "dslfasdlk", publisher: "sdsdf", writer: "sdf", bookDescription: "dslkfj"), page: feedPage as! Int, line: feedLine as! String, thought: feedThought as! String)
+                    let feed = Feed(book: Book(title: "dlsfj" as! String, coverImageURL: "dslfasdlk", publisher: "sdsdf", writer: "sdf", bookDescription: "dslkfj"), page: feedPage as! Int, line: feedLine as! String, thought: feedThought as! String, date: Date(timeIntervalSince1970: feedDate as! TimeInterval))
                     
                                         self.feeds.append(feed)
                 }
