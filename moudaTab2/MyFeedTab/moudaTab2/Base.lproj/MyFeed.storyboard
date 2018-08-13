@@ -163,9 +163,6 @@
                         <barButtonItem key="rightBarButtonItem" image="Empty" id="gzA-i4-weg"/>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <segue destination="3Ct-vf-QRD" kind="presentation" identifier="loginSegue" id="3Xc-cZ-czh"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oc6-Xw-dge" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
