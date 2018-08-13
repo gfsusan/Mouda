@@ -37,9 +37,6 @@ class MyFeedsTableVC: UITableViewController {
     
         
         formatdate.dateFormat = "yyyy년 MM월 dd일"
-        
-        
-        performSegue(withIdentifier: "loginSegue", sender: self)
     }
     
     
