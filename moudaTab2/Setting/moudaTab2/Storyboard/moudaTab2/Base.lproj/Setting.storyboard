@@ -547,7 +547,7 @@
             </objects>
             <point key="canvasLocation" x="3441" y="-796"/>
         </scene>
-        <!--Jinny-->
+        <!--My Feeds TableVC-->
         <scene sceneID="Ef3-IQ-we9">
             <objects>
                 <tableViewController id="Me0-Lu-d6K" customClass="MyFeedsTableVC" customModule="moudaTab2" customModuleProvider="target" sceneMemberID="viewController">
@@ -573,7 +573,7 @@
                                             <rect key="frame" x="8" y="0.0" width="227" height="36.5"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="VnE-I1-EV3">
-                                                    <rect key="frame" x="0.0" y="0.0" width="44" height="36.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="45" height="36.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ygi-6E-6IR">
                                                             <rect key="frame" x="0.0" y="0.0" width="44" height="20.5"/>
@@ -584,8 +584,8 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pets" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q1t-Wy-LTV">
-                                                            <rect key="frame" x="0.0" y="20.5" width="44" height="16"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내보이기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q1t-Wy-LTV">
+                                                            <rect key="frame" x="0.0" y="20.5" width="45" height="16"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="xMS-X6-340"/>
                                                             </constraints>
@@ -600,19 +600,16 @@
                                                     </connections>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="hMS-1S-D17">
-                                                    <rect key="frame" x="91.5" y="0.0" width="44" height="36.5"/>
+                                                    <rect key="frame" x="86" y="0.0" width="56.5" height="36.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gNN-mK-Oj8">
-                                                            <rect key="frame" x="0.0" y="0.0" width="44" height="20.5"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="44" id="dtC-M7-FfV"/>
-                                                            </constraints>
+                                                            <rect key="frame" x="0.0" y="0.0" width="56.5" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Found" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="haS-CL-qn1">
-                                                            <rect key="frame" x="0.0" y="20.5" width="44" height="16"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="들여다보기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="haS-CL-qn1">
+                                                            <rect key="frame" x="0.0" y="20.5" width="56.5" height="16"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="gua-N7-2ye"/>
                                                             </constraints>
@@ -621,6 +618,9 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="gNN-mK-Oj8" firstAttribute="width" secondItem="haS-CL-qn1" secondAttribute="width" id="7HW-D0-cJB"/>
+                                                    </constraints>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="0mn-h1-czS">
                                                     <rect key="frame" x="183" y="0.0" width="44" height="36.5"/>
@@ -634,7 +634,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Posts" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8eJ-Dg-9Oa">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내 글" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8eJ-Dg-9Oa">
                                                             <rect key="frame" x="0.0" y="20.5" width="44" height="16"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="hEZ-Uw-rea"/>
@@ -780,7 +780,7 @@
                             <outlet property="delegate" destination="Me0-Lu-d6K" id="AMQ-pD-IqT"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Jinny" id="2LE-fw-g0H">
+                    <navigationItem key="navigationItem" id="2LE-fw-g0H">
                         <barButtonItem key="rightBarButtonItem" image="setting" id="LNe-LE-wxL">
                             <connections>
                                 <segue destination="cfr-Mk-UJ0" kind="show" id="7Dt-tO-hcP"/>
