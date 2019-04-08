@@ -10,18 +10,32 @@ import UIKit
 
 class TabBarVC: UITabBarController {
 
+    private var addPostTapBarItem: UIButton = {
+        let button = UIButton()
+        button.setBackgroundImage(UIImage(named: "Empty.png"), for: .normal)
+        button.addTarget(self, action: #selector(TabBarVC.upload(sender:)), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // custom button
-        let itemWidth = self.view.frame.size.width / 5
-        let itemHeight = self.tabBar.frame.size.height
-        let button = UIButton(frame: CGRect(x: itemWidth * 2, y: self.view.frame.size.height - itemHeight, width: itemWidth - 10, height: itemHeight))
-        button.setBackgroundImage(UIImage(named: "Empty.png"), for: .normal)
-        button.addTarget(self, action: #selector(TabBarVC.upload(sender:)), for: UIControlEvents.touchUpInside)
-        self.view.addSubview(button)
+        self.setupAddPostButton()
     }
 
+    func setupAddPostButton() {
+        self.view.addSubview(addPostTapBarItem)
+        
+        let tabBarItemsCount: CGFloat = 3
+        let itemWidth = self.view.frame.size.width / tabBarItemsCount
+
+        addPostTapBarItem.widthAnchor.constraint(equalToConstant: itemWidth).isActive = true
+        addPostTapBarItem.topAnchor.constraint(equalTo: self.tabBar.topAnchor).isActive = true
+        addPostTapBarItem.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        addPostTapBarItem.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
