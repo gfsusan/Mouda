@@ -43,7 +43,7 @@ class BookmarkCollectionVC: UICollectionViewController {
         if let indexPath = collectionView?.indexPathsForSelectedItems?.first {
             if indexPath.row > 0 {
                 // Add bookmark cell 때문에 1 밀림
-                var bookmarkIndex = indexPath.row - 1;
+                let bookmarkIndex = indexPath.row - 1;
                 
                 let vc = segue.destination as? BookFeedVC
                 vc?.bookmark = bookmarks[bookmarkIndex]
@@ -78,7 +78,7 @@ class BookmarkCollectionVC: UICollectionViewController {
             }
             
             // 인덱스가 Add Boookmark Cell때문에 한칸 밀리기 때문에
-            var bookmarkIndex = indexPath.row - 1
+            let bookmarkIndex = indexPath.row - 1
             
             let bookmark = bookmarks[bookmarkIndex]
             

@@ -38,7 +38,7 @@ class Bookmark:NSObject, NSCoding {
     func encode(with aCoder: NSCoder) {
         aCoder.encode(self.book, forKey: "book")
         if let pageNum = self.pageMark {
-            aCoder.encode(self.pageMark, forKey: "pageMark")
+            aCoder.encode(pageNum, forKey: "pageMark")
         }
     }
 }

@@ -148,7 +148,7 @@ class SearchTableVC: UITableViewController,  UISearchBarDelegate, XMLParserDeleg
             cell.bookImageView.image = UIImage(named: "book2")
             if let thumbImageURL = book.coverImageURL {
                 DispatchQueue.main.async(execute: {
-                    book.coverImage = book.getCoverImage(withURL: book.coverImageURL!)
+                    book.coverImage = book.getCoverImage(withURL: thumbImageURL)
                     guard let thumbImage = book.coverImage else {
                         return
                     }

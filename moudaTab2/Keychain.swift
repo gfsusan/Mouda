@@ -29,23 +29,23 @@ class KeychainController : NSObject {
     }
     
     public class func loadToken(serviceIdentifier:NSString, userAccount:NSString) -> NSString? {
-        var token = self.load(service: serviceIdentifier, userAccount: userAccount)
+        let token = self.load(service: serviceIdentifier, userAccount: userAccount)
         
         return token
     }
     
     private class func save(service: NSString, userAccount:NSString, data:NSString) {
-        var dataFromString: NSData = data.data(using: String.Encoding.utf8.rawValue, allowLossyConversion: false)! as NSData
+        let dataFromString: NSData = data.data(using: String.Encoding.utf8.rawValue, allowLossyConversion: false)! as NSData
         
-        var keychainQuery: NSMutableDictionary = NSMutableDictionary(objects: [kSecClassGenericPasswordValue, service, userAccount, dataFromString], forKeys: [kSecClassValue, kSecAttrServiceValue, kSecAttrAccountValue, kSecValueDataValue])
+        let keychainQuery: NSMutableDictionary = NSMutableDictionary(objects: [kSecClassGenericPasswordValue, service, userAccount, dataFromString], forKeys: [kSecClassValue, kSecAttrServiceValue, kSecAttrAccountValue, kSecValueDataValue])
         
         SecItemDelete(keychainQuery as CFDictionary)
         
-        var status: OSStatus = SecItemAdd(keychainQuery as CFDictionary, nil)
+        let status: OSStatus = SecItemAdd(keychainQuery as CFDictionary, nil)
     }
     
     private class func load(service: NSString, userAccount:NSString) -> NSString? {
-        var keychainQuery: NSMutableDictionary = NSMutableDictionary(objects: [kSecClassGenericPasswordValue, service, userAccount, kCFBooleanTrue, kSecMatchLimitOneValue], forKeys: [kSecClassValue, kSecAttrServiceValue, kSecAttrAccountValue, kSecReturnDataValue, kSecMatchLimitValue])
+        let keychainQuery: NSMutableDictionary = NSMutableDictionary(objects: [kSecClassGenericPasswordValue, service, userAccount, kCFBooleanTrue, kSecMatchLimitOneValue], forKeys: [kSecClassValue, kSecAttrServiceValue, kSecAttrAccountValue, kSecReturnDataValue, kSecMatchLimitValue])
         
         var retrievedData: NSData?
         var dataTypeRef: AnyObject?

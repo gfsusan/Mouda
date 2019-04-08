@@ -9,7 +9,12 @@
 import UIKit
 
 class FeedTableVC: UITableViewController {
-    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    } 
+    // status bar 아이템 색상 변경
+//    UIApplication.shared.statusBarStyle = .lightContent
+
     var feeds:[Feed] = []
     var receivedFeed:Feed?
     
@@ -37,6 +42,8 @@ class FeedTableVC: UITableViewController {
     
         
         formatdate.dateFormat = "yyyy년 MM월 dd일"
+        
+        self.tableView.scrollsToTop = true
     }
     
     
@@ -72,7 +79,7 @@ class FeedTableVC: UITableViewController {
             return cell!
         }
         
-        var feed = feeds[indexPath.row]
+        let feed = feeds[indexPath.row]
         
         if let title = feed.book.title {
             retCell.titleLabel.text = title
