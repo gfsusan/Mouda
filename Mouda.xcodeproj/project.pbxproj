@@ -43,10 +43,12 @@
 		7AD0AF742029C906002E7F60 /* NanumGothic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7AD0AF732029C906002E7F60 /* NanumGothic.otf */; };
 		7AD0AF762029C913002E7F60 /* NanumSquareOTFRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7AD0AF752029C913002E7F60 /* NanumSquareOTFRegular.otf */; };
 		7AE837832047ADF80012C1CE /* Empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AE837822047ADF80012C1CE /* Empty.png */; };
+		CC2E0FDE98586CF5EC8C1F85 /* Pods_Mouda.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10161C9620B613CB23A2620D /* Pods_Mouda.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0860A77322C1BE5C007839E4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		10161C9620B613CB23A2620D /* Pods_Mouda.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mouda.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6626BE85204003D4003F0C23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Mouda/Storyboard/Base.lproj/Feeds.storyboard; sourceTree = "<group>"; };
 		6626BE87204009C1003F0C23 /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		66728F10202A99470061C168 /* AddBookmarkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookmarkVC.swift; sourceTree = "<group>"; };
@@ -84,6 +86,8 @@
 		7AD0AF732029C906002E7F60 /* NanumGothic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothic.otf; sourceTree = "<group>"; };
 		7AD0AF752029C913002E7F60 /* NanumSquareOTFRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareOTFRegular.otf; sourceTree = "<group>"; };
 		7AE837822047ADF80012C1CE /* Empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Empty.png; path = Mouda/Assets.xcassets/Empty.imageset/Empty.png; sourceTree = SOURCE_ROOT; };
+		A23CC00EA99B9C7D6D0857A8 /* Pods-Mouda.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mouda.debug.xcconfig"; path = "Target Support Files/Pods-Mouda/Pods-Mouda.debug.xcconfig"; sourceTree = "<group>"; };
+		BBB15446DDD6546CF2C60DD5 /* Pods-Mouda.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mouda.release.xcconfig"; path = "Target Support Files/Pods-Mouda/Pods-Mouda.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				66B52A68202DDA95007C54BF /* MessageUI.framework in Frameworks */,
+				CC2E0FDE98586CF5EC8C1F85 /* Pods_Mouda.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +173,7 @@
 				669990E820242F2B00410F21 /* Mouda */,
 				669990E720242F2B00410F21 /* Products */,
 				66B52A66202DDA95007C54BF /* Frameworks */,
+				B02E0D51341D5D2C38693601 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -204,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				66B52A67202DDA95007C54BF /* MessageUI.framework */,
+				10161C9620B613CB23A2620D /* Pods_Mouda.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -238,6 +245,16 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		B02E0D51341D5D2C38693601 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A23CC00EA99B9C7D6D0857A8 /* Pods-Mouda.debug.xcconfig */,
+				BBB15446DDD6546CF2C60DD5 /* Pods-Mouda.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -245,9 +262,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 669990F820242F2B00410F21 /* Build configuration list for PBXNativeTarget "Mouda" */;
 			buildPhases = (
+				8951068A4A3CE0343F15A605 /* [CP] Check Pods Manifest.lock */,
 				669990E220242F2B00410F21 /* Sources */,
 				669990E320242F2B00410F21 /* Frameworks */,
 				669990E420242F2B00410F21 /* Resources */,
+				E65BB3ABDFF655C07DDC6B4A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -317,6 +336,49 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8951068A4A3CE0343F15A605 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Mouda-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E65BB3ABDFF655C07DDC6B4A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mouda/Pods-Mouda-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/LBTATools/LBTATools.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LBTATools.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mouda/Pods-Mouda-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		669990E220242F2B00410F21 /* Sources */ = {
@@ -513,6 +575,7 @@
 		};
 		669990F920242F2B00410F21 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A23CC00EA99B9C7D6D0857A8 /* Pods-Mouda.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -528,6 +591,7 @@
 		};
 		669990FA20242F2B00410F21 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BBB15446DDD6546CF2C60DD5 /* Pods-Mouda.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
