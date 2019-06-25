@@ -10,7 +10,6 @@ import UIKit
 
 class AddPopUpVC: UIViewController, UITextViewDelegate, UITabBarControllerDelegate {
     
-    var addDelegate:AddVC?
     var feedDelegate:FeedTableVC?
     
     // 책 선택 화면에서 고른 책

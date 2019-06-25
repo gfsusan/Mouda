@@ -36,7 +36,6 @@
 		66DBACA1202BF8FD0043CB4B /* SearchBookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DBACA0202BF8FD0043CB4B /* SearchBookCell.swift */; };
 		66E574F1202CB16500FEEAAA /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66E574EF202CB16500FEEAAA /* Setting.storyboard */; };
 		66F902DE202961F40047C959 /* AddPopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F902DD202961F40047C959 /* AddPopUpVC.swift */; };
-		66FCB985202BEF8B008E1AC5 /* AddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FCB984202BEF8B008E1AC5 /* AddVC.swift */; };
 		7AD0AF6B2029B3F3002E7F60 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AD0AF6A2029B3F3002E7F60 /* Media.xcassets */; };
 		7AD0AF702029C86A002E7F60 /* NanumMyeongjo.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7AD0AF6D2029C86A002E7F60 /* NanumMyeongjo.otf */; };
 		7AD0AF712029C86A002E7F60 /* NanumMyeongjoBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7AD0AF6E2029C86A002E7F60 /* NanumMyeongjoBold.otf */; };
@@ -78,7 +77,6 @@
 		66DBACA0202BF8FD0043CB4B /* SearchBookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookCell.swift; sourceTree = "<group>"; };
 		66E574F0202CB16500FEEAAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Mouda/Storyboard/Mouda/Base.lproj/Setting.storyboard; sourceTree = "<group>"; };
 		66F902DD202961F40047C959 /* AddPopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPopUpVC.swift; sourceTree = "<group>"; };
-		66FCB984202BEF8B008E1AC5 /* AddVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVC.swift; sourceTree = "<group>"; };
 		7AD0AF6A2029B3F3002E7F60 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		7AD0AF6D2029C86A002E7F60 /* NanumMyeongjo.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumMyeongjo.otf; sourceTree = "<group>"; };
 		7AD0AF6E2029C86A002E7F60 /* NanumMyeongjoBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumMyeongjoBold.otf; sourceTree = "<group>"; };
@@ -136,7 +134,6 @@
 			children = (
 				66728F1A202AAEA20061C168 /* Add.storyboard */,
 				66F902DD202961F40047C959 /* AddPopUpVC.swift */,
-				66FCB984202BEF8B008E1AC5 /* AddVC.swift */,
 				7AE837822047ADF80012C1CE /* Empty.png */,
 			);
 			path = AddTab;
@@ -329,7 +326,6 @@
 				66B52A5D202D5D7A007C54BF /* BookmarkCollectionVC.swift in Sources */,
 				66F902DE202961F40047C959 /* AddPopUpVC.swift in Sources */,
 				66728F22202AE7520061C168 /* DataCenter.swift in Sources */,
-				66FCB985202BEF8B008E1AC5 /* AddVC.swift in Sources */,
 				66999102202437F200410F21 /* Book.swift in Sources */,
 				66B52A6C202DFD58007C54BF /* BookFeedVC.swift in Sources */,
 				66DBACA1202BF8FD0043CB4B /* SearchBookCell.swift in Sources */,
