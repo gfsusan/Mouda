@@ -47,12 +47,12 @@ class FeedDetailVC: UIViewController {
         let lineStyle = NSMutableParagraphStyle()
         lineStyle.lineSpacing = 5
         lineStyle.alignment = .justified
-        let lineAttributes = [NSAttributedStringKey.paragraphStyle: lineStyle]
+        let lineAttributes = [NSAttributedString.Key.paragraphStyle: lineStyle]
         
         let thoughtStyle = NSMutableParagraphStyle()
         thoughtStyle.lineSpacing = 5
         thoughtStyle.alignment = .center
-        let thoughtAttributes = [NSAttributedStringKey.paragraphStyle: thoughtStyle]
+        let thoughtAttributes = [NSAttributedString.Key.paragraphStyle: thoughtStyle]
         
         if let myFeed = feed {
             titleLabel.text = myFeed.book.title

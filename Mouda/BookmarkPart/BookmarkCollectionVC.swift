@@ -16,7 +16,7 @@ class BookmarkCollectionVC: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        let textAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white]
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
         
         let imageView = UIImageView(image: #imageLiteral(resourceName: "Logo"))

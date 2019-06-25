@@ -34,16 +34,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // 네비게이션 바 색상
         UINavigationBar.appearance().barTintColor = UIColor(displayP3Red: 82/255, green: 62/255, blue: 53/255, alpha: 1)
         UINavigationBar.appearance().tintColor = UIColor.white
-        
-        // 알람 설정
-//        UNUserNotificationCenter.current().requestAuthorization(options: [ .alert, .sound, .badge], completionHandler: {didAllow, error in
-//            if didAllow {
-//                print("Yes, Alarm")
-//
-//            } else {
-//                print("No, Alarm")
-//            }
-//        })
 
         return true
     }

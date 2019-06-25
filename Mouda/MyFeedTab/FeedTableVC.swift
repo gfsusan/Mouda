@@ -36,7 +36,7 @@ class FeedTableVC: UITableViewController {
         imageView.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
         imageView.contentMode = .scaleAspectFit
         navigationItem.titleView = imageView
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 326
 //        self.tableView.separatorColor = UIColor.clear
     
@@ -91,14 +91,14 @@ class FeedTableVC: UITableViewController {
         let style = NSMutableParagraphStyle()
         style.lineSpacing = 5
         style.alignment = .center
-        let attributes = [NSAttributedStringKey.paragraphStyle: style]
+        let attributes = [NSAttributedString.Key.paragraphStyle: style]
         retCell.lineLabel.attributedText = NSAttributedString(string: feed.line, attributes: attributes)
 //        retCell.lineLabel.text = "\(feed.line)"
        
         let thoughtStyle = NSMutableParagraphStyle()
         thoughtStyle.lineSpacing = 5
         thoughtStyle.alignment = .center
-        let thoughtAttributes = [NSAttributedStringKey.paragraphStyle: thoughtStyle]
+        let thoughtAttributes = [NSAttributedString.Key.paragraphStyle: thoughtStyle]
         retCell.thoughtLabel.attributedText = NSAttributedString(string: feed.thought, attributes: thoughtAttributes)
         
         return retCell

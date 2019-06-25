@@ -91,15 +91,15 @@ class AddPopUpVC: UIViewController, UITextViewDelegate, UITabBarControllerDelega
         pageTextView.textColor = UIColor.lightGray
         thoughtTextView.textColor = UIColor.lightGray
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardDidShow), name: NSNotification.Name.UIKeyboardDidShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardDidHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardDidShow), name: UIResponder.keyboardDidShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardDidHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     @objc func keyboardDidShow(notification: NSNotification) {
         var info = notification.userInfo
-        let keyBoardSize = info![UIKeyboardFrameEndUserInfoKey] as! CGRect
-        scrollView.contentInset = UIEdgeInsetsMake(0.0, 0.0, keyBoardSize.height, 0.0)
-        scrollView.scrollIndicatorInsets = UIEdgeInsetsMake(0.0, 0.0, keyBoardSize.height, 0.0)
+        let keyBoardSize = info![UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
+        scrollView.contentInset = UIEdgeInsets.init(top: 0.0, left: 0.0, bottom: keyBoardSize.height, right: 0.0)
+        scrollView.scrollIndicatorInsets = UIEdgeInsets.init(top: 0.0, left: 0.0, bottom: keyBoardSize.height, right: 0.0)
     }
     
     @objc func keyboardDidHide(notification: NSNotification) {
