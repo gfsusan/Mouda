@@ -49,7 +49,7 @@ class SearchTableVC: UITableViewController,  UISearchBarDelegate, XMLParserDeleg
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard error == nil else {
-                print(error)
+                print(error as Any)
                 return
             }
             guard let data = data else {
@@ -58,7 +58,7 @@ class SearchTableVC: UITableViewController,  UISearchBarDelegate, XMLParserDeleg
             }
             
             // 수신한 데이터 출력
-            print(String(data: data, encoding: String.Encoding.utf8))
+            print(String(data: data, encoding: String.Encoding.utf8) as Any)
             
             self.item?.title = ""
             self.item?.coverImageURL = ""
@@ -71,7 +71,7 @@ class SearchTableVC: UITableViewController,  UISearchBarDelegate, XMLParserDeleg
             let success:Bool = parser.parse()
             if success {
                 print("parse success!")
-                print(self.strXMLData)
+                print(self.strXMLData as Any)
             } else {
                 print("parse failure!")
             }
