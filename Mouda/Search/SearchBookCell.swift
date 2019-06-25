@@ -34,23 +34,14 @@ class SearchBookCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        let labelsStackView = UIStackView(arrangedSubviews: [titleTV, writerTV])
-        labelsStackView.axis = .vertical
-        labelsStackView.distribution = .fillEqually
+        hstack(
+            bookImageView,
+            stack(titleTV,
+                    writerTV,
+                    distribution: .fillEqually),
+              spacing: 16).withMargins(.init(top: 8, left: 8, bottom: 8, right: 8))
         
-        let stackView = UIStackView(arrangedSubviews: [bookImageView, labelsStackView])
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.spacing = 16
-        
-        addSubview(stackView)
-        
-        NSLayoutConstraint.activate([
-            bookImageView.widthAnchor.constraint(equalTo: bookImageView.heightAnchor, multiplier: 0.75),
-            stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
-            stackView.topAnchor.constraint(equalTo: topAnchor, constant: 8),
-            stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
-            stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8)
-            ])
+        bookImageView.widthAnchor.constraint(equalTo: bookImageView.heightAnchor, multiplier: 0.75).isActive = true
     }
     
     required init?(coder aDecoder: NSCoder) {

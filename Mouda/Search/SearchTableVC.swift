@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import LBTATools
 
 private let cellId = "bookInfoCellId"
 
@@ -37,9 +38,8 @@ class SearchTableVC: UITableViewController,  UISearchBarDelegate, XMLParserDeleg
     
     func configureConstraints() {
         tableView.tableHeaderView = searchBar
-        searchBar.translatesAutoresizingMaskIntoConstraints = false
+        searchBar.withHeight(44)
         searchBar.widthAnchor.constraint(equalTo: tableView.widthAnchor).isActive = true
-        searchBar.heightAnchor.constraint(equalToConstant: 44).isActive = true
     }
     
     func addTargets() {
@@ -103,7 +103,7 @@ class SearchTableVC: UITableViewController,  UISearchBarDelegate, XMLParserDeleg
         
     }
     
-    // XML delegate
+    // MARK: - XML delegate
     var currentElement : String? = ""
     var strXMLData : String? = ""
     var item:Book? = nil
