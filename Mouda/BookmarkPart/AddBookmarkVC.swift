@@ -23,6 +23,12 @@ class AddBookmarkVC: UIViewController {
     
     @IBOutlet weak var addBookmarkButton: UIButton!
     
+    @IBAction func selectBookPressed(_ sender: Any) {
+        let searchVC = SearchTableVC()
+        searchVC.addBookmarkDelegate = self
+        navigationController?.pushViewController(searchVC, animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         titleLabel.text = ""
@@ -65,17 +71,5 @@ class AddBookmarkVC: UIViewController {
             return
         }
     }
-    
-    
-
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destinationNavigationController = segue.destination as? SearchTableVC {
-            destinationNavigationController.addBookmarkDelegate = self
-        }
-    }
- 
 
 }

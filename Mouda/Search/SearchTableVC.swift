@@ -8,22 +8,44 @@
 
 import UIKit
 
+private let cellId = "bookInfoCellId"
+
 class SearchTableVC: UITableViewController,  UISearchBarDelegate, XMLParserDelegate {
-    
-    @IBOutlet var table: UITableView!
-    @IBOutlet weak var searchBar: UISearchBar!
     
     var books:[Book] = []
     var addPopUpDelegate:AddPopUpVC?
     var modifyDelegate:ModifyVC?
     var addBookmarkDelegate:AddBookmarkVC?
     
+    let searchBar: UISearchBar = {
+        let sb = UISearchBar()
+        return sb
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        configureConstraints()
+        addTargets()
+        
+        tableView.register(SearchBookCell.self, forCellReuseIdentifier: cellId)
+        
         searchBar.delegate = self
         books = dataCenter.books
         
     }
+    
+    func configureConstraints() {
+        tableView.tableHeaderView = searchBar
+        searchBar.translatesAutoresizingMaskIntoConstraints = false
+        searchBar.widthAnchor.constraint(equalTo: tableView.widthAnchor).isActive = true
+        searchBar.heightAnchor.constraint(equalToConstant: 44).isActive = true
+    }
+    
+    func addTargets() {
+        
+    }
+    
     // ClientID
     // svT_lXMu_njLXKNKBA2X
     // ClientSecret
@@ -136,7 +158,7 @@ class SearchTableVC: UITableViewController,  UISearchBarDelegate, XMLParserDeleg
 
    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "bookInfoCell", for: indexPath) as! SearchBookCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! SearchBookCell
 
         
         let book = books[indexPath.row]
@@ -165,7 +187,7 @@ class SearchTableVC: UITableViewController,  UISearchBarDelegate, XMLParserDeleg
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 120
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -182,17 +204,4 @@ class SearchTableVC: UITableViewController,  UISearchBarDelegate, XMLParserDeleg
         
     }
     
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-        
-//        if let destinationNavigationController = segue.destination as? UINavigationController {
-//            let targetController = destinationNavigationController.topViewController as? AddPopUpVC
-//            targetController?.addDelegate = self
-    }
-   
-
 }

@@ -22,7 +22,9 @@ class ModifyVC: UIViewController, UITextViewDelegate{
     @IBOutlet weak var pageTextView: UITextView!
     @IBOutlet weak var thoughtTextView: UITextView!
     @IBAction func selectBookPressed(_ sender: Any) {
-        
+        let searchVC = SearchTableVC()
+        searchVC.modifyDelegate = self
+        navigationController?.pushViewController(searchVC, animated: true)
     }
     
     @IBAction func doneButtonPressed(_ sender: Any) {
@@ -161,18 +163,5 @@ class ModifyVC: UIViewController, UITextViewDelegate{
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-
-
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destinationNavigationController = segue.destination as? SearchTableVC {
-            destinationNavigationController.modifyDelegate = self
-        }
-    }
- 
 
 }

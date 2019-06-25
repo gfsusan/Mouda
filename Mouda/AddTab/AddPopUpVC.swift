@@ -22,9 +22,13 @@ class AddPopUpVC: UIViewController, UITextViewDelegate, UITabBarControllerDelega
     @IBOutlet weak var thoughtTextView: UITextView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
-    @IBAction func selectBookPressed(_ sender: Any) {
     
+    @IBAction func selectBookPressed(_ sender: Any) {
+        let searchVC = SearchTableVC()
+        searchVC.addPopUpDelegate = self
+        navigationController?.pushViewController(searchVC, animated: true)
     }
+    
     @IBAction func doneButtonPressed(_ sender: Any) {
         if let chosenBook = book {
             // line과 page 입력되었는지 확인. thought은 없어도 됨

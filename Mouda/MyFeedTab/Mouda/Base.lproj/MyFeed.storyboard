@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DVG-za-uDk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DVG-za-uDk">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -205,12 +200,12 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZJS-dz-yyE">
-                                                        <rect key="frame" x="32.5" y="0.0" width="216" height="30"/>
+                                                        <rect key="frame" x="33" y="0.0" width="215.5" height="30"/>
                                                         <fontDescription key="fontDescription" name="NanumMyeongjoOTF" family="NanumMyeongjoOTF" pointSize="16"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="yyyy년 MM월 dd일" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jEG-Do-roM">
-                                                        <rect key="frame" x="251" y="0.0" width="108" height="30"/>
+                                                        <rect key="frame" x="251.5" y="0.0" width="107.5" height="30"/>
                                                         <fontDescription key="fontDescription" name="NanumMyeongjoOTF" family="NanumMyeongjoOTF" pointSize="11"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <nil key="highlightedColor"/>
@@ -437,7 +432,6 @@
                                                 <state key="normal" title="책 선택"/>
                                                 <connections>
                                                     <action selector="selectBookPressed:" destination="32E-8G-lvY" eventType="touchUpInside" id="mlg-0z-5LB"/>
-                                                    <segue destination="awv-77-nuo" kind="show" id="s8D-SL-4J6"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -509,14 +503,6 @@
             </objects>
             <point key="canvasLocation" x="3391" y="116"/>
         </scene>
-        <!--Search-->
-        <scene sceneID="ySd-Dt-HNQ">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Search" id="awv-77-nuo" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TSz-Pv-Qm6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4295" y="415"/>
-        </scene>
         <!--PWVC-->
         <scene sceneID="yAO-5B-R4b">
             <objects>
@@ -526,10 +512,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Hxa-BE-UY1">
-                                <rect key="frame" x="113" y="195" width="149" height="36"/>
+                                <rect key="frame" x="114" y="195" width="147" height="36"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="__" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CRi-0a-59F" userLabel="PW1">
-                                        <rect key="frame" x="0.0" y="0.0" width="26" height="36"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="25.5" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="25.5" id="bRU-Bq-Zxf"/>
                                         </constraints>
@@ -538,19 +524,19 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="__" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1QL-Ic-1Q4" userLabel="PW2">
-                                        <rect key="frame" x="41" y="0.0" width="26" height="36"/>
+                                        <rect key="frame" x="40.5" y="0.0" width="25.5" height="36"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
                                         <color key="textColor" red="0.30962479110000002" green="0.2475391626" blue="0.21175628899999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="__" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xW4-4x-Nva" userLabel="PW3">
-                                        <rect key="frame" x="82" y="0.0" width="26" height="36"/>
+                                        <rect key="frame" x="81" y="0.0" width="25.5" height="36"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
                                         <color key="textColor" red="0.30962479110000002" green="0.2475391626" blue="0.21175628899999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="__" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CEV-Ye-SPk" userLabel="PW4">
-                                        <rect key="frame" x="123" y="0.0" width="26" height="36"/>
+                                        <rect key="frame" x="121.5" y="0.0" width="25.5" height="36"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
                                         <color key="textColor" red="0.30962479110000002" green="0.2475391626" blue="0.21175628899999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
