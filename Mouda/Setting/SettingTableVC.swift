@@ -12,9 +12,7 @@ import MessageUI
 import UserNotifications
 
 class SettingTableVC: UITableViewController, MFMailComposeViewControllerDelegate {
-    
-    var alarmDelegate:AlarmVC?
-    
+        
     @IBOutlet weak var myFeedCell: UITableViewCell!
     @IBOutlet weak var bookmarkCell: UITableViewCell!
     @IBOutlet weak var alarmSwitch: UISwitch!
@@ -26,39 +24,12 @@ class SettingTableVC: UITableViewController, MFMailComposeViewControllerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        if let alarmTime = self.alarmDelegate {
-//            print("alarmTime")
-//            alarmTimeSmallLabel.text = alarmTime.alarmTimeLabel.text
-//        }
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         myFeedCell.detailTextLabel?.text = "\(dataCenter.feeds.count)개"
         bookmarkCell.detailTextLabel?.text = "\(dataCenter.bookmarks.count)개"
-        
     }
-    
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-        if let alarmTime = segue.destination as? AlarmVC {
-            print("alarmTime")
-            alarmTime.settingDelegate = self
-        }
-    }
- 
-    
-    @IBAction func switchStatus(_ sender: Any) {
-//        if alarmSwitch.isOn == true {
-//            if let alarmVC = self.alarmDelegate {
-//                print("SwitchOn")
-//                alarmVC.switchOn()
-//            }
-//        }
-    }
-    
 
     @IBAction func feedbackEmail(_ sender: Any) {
         
