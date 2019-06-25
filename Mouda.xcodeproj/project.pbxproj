@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0860A77422C1BE5C007839E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0860A77322C1BE5C007839E4 /* ViewController.swift */; };
 		6626BE86204003D4003F0C23 /* Feeds.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6626BE84204003D4003F0C23 /* Feeds.storyboard */; };
 		6626BE88204009C1003F0C23 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6626BE87204009C1003F0C23 /* TabBarVC.swift */; };
 		66728F11202A99480061C168 /* AddBookmarkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66728F10202A99470061C168 /* AddBookmarkVC.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0860A77322C1BE5C007839E4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6626BE85204003D4003F0C23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Mouda/Storyboard/Base.lproj/Feeds.storyboard; sourceTree = "<group>"; };
 		6626BE87204009C1003F0C23 /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		66728F10202A99470061C168 /* AddBookmarkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookmarkVC.swift; sourceTree = "<group>"; };
@@ -185,6 +187,8 @@
 		669990E820242F2B00410F21 /* Mouda */ = {
 			isa = PBXGroup;
 			children = (
+				669990E920242F2B00410F21 /* AppDelegate.swift */,
+				0860A77322C1BE5C007839E4 /* ViewController.swift */,
 				7AD0AF6C2029C7D9002E7F60 /* Fonts */,
 				66728F14202A9DB50061C168 /* Models */,
 				66728F1C202AAEAC0061C168 /* Storyboard */,
@@ -194,7 +198,6 @@
 				66728F1D202AAEF60061C168 /* BookmarkPart */,
 				66FCB97F202BE5AA008E1AC5 /* Search */,
 				66E57500202D5E4D00FEEAAA /* Setting */,
-				669990E920242F2B00410F21 /* AppDelegate.swift */,
 				7AD0AF6A2029B3F3002E7F60 /* Media.xcassets */,
 				669990F020242F2B00410F21 /* Assets.xcassets */,
 				669990F520242F2B00410F21 /* Info.plist */,
@@ -345,6 +348,7 @@
 				66DBAC9F202BF5660043CB4B /* Bookmark.swift in Sources */,
 				669990FC202437D200410F21 /* MyFeedCell.swift in Sources */,
 				66728F11202A99480061C168 /* AddBookmarkVC.swift in Sources */,
+				0860A77422C1BE5C007839E4 /* ViewController.swift in Sources */,
 				6626BE88204009C1003F0C23 /* TabBarVC.swift in Sources */,
 				669990EA20242F2B00410F21 /* AppDelegate.swift in Sources */,
 			);
