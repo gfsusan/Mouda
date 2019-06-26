@@ -194,7 +194,7 @@ class SearchTableVC: UITableViewController,  UISearchBarDelegate, XMLParserDeleg
         self.addPopUpDelegate?.book = books[indexPath.row]
         
         self.addBookmarkDelegate?.book = books[indexPath.row]
-        self.addBookmarkDelegate?.addBookmarkButton.setTitle("다시 선택", for: .normal)
+
         navigationController?.popViewController(animated: true)
         
     }

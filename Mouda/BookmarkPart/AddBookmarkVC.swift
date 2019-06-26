@@ -8,34 +8,41 @@
 
 import UIKit
 
-class AddBookmarkVC: UIViewController {
+class AddBookmarkVC: AddFeedVC {
     
-    var delegate:BookmarkCollectionVC?
+    var delegate: BookmarkCollectionVC?
     
-    var book:Book?
-    var page:Int?
+    var page: Int?
+    override var book: Book? {
+        didSet {
+           bookChooseButton.setTitle("다시 선택", for: .normal)
+        }
+    }
 
-    @IBOutlet weak var bookImageView: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var publisherLabel: UILabel!
-    @IBOutlet weak var authorLabel: UILabel!
-    @IBOutlet weak var PageTextField: UITextField!
+    let bookImageView: UIImageView = {
+        let iv = UIImageView()
+        iv.contentMode = .scaleAspectFit
+        iv.clipsToBounds = true
+        return iv
+    }()
+
+    let titleLabel: UILabel = {
+        let l = UILabel()
+        l.font = .systemFont(ofSize: 20)
+        return l
+    }()
     
-    @IBOutlet weak var addBookmarkButton: UIButton!
+    let publisherLabel: UILabel = {
+        let l = UILabel()
+        l.font = .systemFont(ofSize: 14)
+        return l
+    }()
     
-    @IBAction func selectBookPressed(_ sender: Any) {
-        let searchVC = SearchTableVC()
-        searchVC.addBookmarkDelegate = self
-        navigationController?.pushViewController(searchVC, animated: true)
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        titleLabel.text = ""
-        publisherLabel.text = ""
-        authorLabel.text = ""
-        // Do any additional setup after loading the view.
-    }
+    let authorLabel: UILabel = {
+        let l = UILabel()
+        l.font = .systemFont(ofSize: 14)
+        return l
+    }()
     
     override func viewWillAppear(_ animated: Bool) {
         bookImageView.image = book?.coverImage
@@ -44,13 +51,9 @@ class AddBookmarkVC: UIViewController {
         authorLabel.text = book?.writer
     }
     
-    @IBAction func cancelBookmark(_ sender: Any) {
-        dismiss(animated: true)
-    }
-    
-    @IBAction func saveBookmark(_ sender: Any) {
+    override func doneButtonPressed(_ sender: Any) {
         if let selectedBook = book {
-            if let pageText = PageTextField.text {
+            if let pageText = pageTextField.text {
                 if let page = Int(pageText) {
                     if dataCenter.hasBookmark(of: selectedBook) == false{
                         dataCenter.add(bookmark: Bookmark(book: selectedBook, page: page))
@@ -72,4 +75,46 @@ class AddBookmarkVC: UIViewController {
         }
     }
 
+    override func configureConstraints() {
+        navigationItem.leftBarButtonItem = cancelButton
+        navigationItem.rightBarButtonItem = doneButton
+        
+        view.addSubview(scrollView)
+        scrollView.fillSuperview()
+        
+        let bookView = UIView()
+        bookView.stack(
+            view.hstack(bookImageView,
+                        view.stack(titleLabel,
+                                   publisherLabel,
+                                   authorLabel,
+                                   distribution: .fillEqually),
+                        spacing: 12)
+            ).withMargins(.init(top: 24, left: 8, bottom: 24, right: 8)).withHeight(168)
+        bookView.backgroundColor = .veryLightGray
+        bookImageView.widthAnchor.constraint(equalTo: bookImageView.heightAnchor, multiplier: 0.75).isActive = true
+        
+        let pageView = UIView()
+        pageView.hstack(UIView(),
+                        pageTextField,
+                        UIView(),
+                        distribution: .equalCentering
+            ).withMargins(.init(top: 8, left: 8, bottom: 8, right: 8)).withHeight(44)
+        pageTextField.widthAnchor.constraint(greaterThanOrEqualToConstant: 80).isActive = true
+        pageView.backgroundColor = .veryLightGray
+        
+        let contentView = UIView()
+        contentView.stack(bookChooseButton.withHeight(60),
+                          bookView,
+                          pageView,
+                          spacing: 8
+            ).withMargins(.init(top: 8, left: 0, bottom: 0, right: 0))
+        
+        scrollView.addSubview(contentView)
+        contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
+        contentView.anchor(top: scrollView.topAnchor, leading: scrollView.leadingAnchor, bottom: nil, trailing: scrollView.trailingAnchor)
+        
+        scrollView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+
+    }
 }

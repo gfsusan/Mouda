@@ -48,9 +48,6 @@ class BookmarkCollectionVC: UICollectionViewController {
                 let vc = segue.destination as? BookFeedVC
                 vc?.bookmark = bookmarks[bookmarkIndex]
                 vc?.indexPath = bookmarkIndex
-            } else {
-                let vc = segue.destination as? AddBookmarkVC
-                vc?.delegate = self
             }
         }
     }
@@ -118,6 +115,15 @@ class BookmarkCollectionVC: UICollectionViewController {
         return CGSize(width: 150, height: 200)
     }
     
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.item == 0 {
+            let addBookmarkVC = AddBookmarkVC()
+            addBookmarkVC.delegate = self
+            let navContr = UINavigationController(rootViewController: addBookmarkVC)
+            
+            self.present(navContr, animated: true)
+        }
+    }
     
     // MARK: UICollectionViewDelegate
 
