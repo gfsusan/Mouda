@@ -8,19 +8,80 @@
 
 import UIKit
 
-class AddPopUpVC: UIViewController, UITextViewDelegate, UITabBarControllerDelegate {
+class AddPopUpVC: ViewController, UITabBarControllerDelegate {
     
     var feedDelegate:FeedTableVC?
     
     // 책 선택 화면에서 고른 책
     var book:Book?
     
-    @IBOutlet weak var bookChooseButton: UIButton!
-    @IBOutlet weak var lineTextView: UITextView!
-    @IBOutlet weak var pageTextView: UITextView!
-    @IBOutlet weak var thoughtTextView: UITextView!
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    lazy var cancelButton: UIBarButtonItem = {
+        let b = UIBarButtonItem(title: "취소", style: .plain, target: self, action: #selector(cancelButtonPressed(_:)))
+        return b
+    }()
+    
+    lazy var doneButton: UIBarButtonItem = {
+        let b = UIBarButtonItem(title: "저장", style: .done, target: self, action: #selector(doneButtonPressed(_:)))
+        return b
+    }()
+    
+    let bookChooseButton: UIButton = {
+        let b = UIButton()
+        b.setTitle("+ 책 선택", for: .normal)
+        b.setTitleColor(.white, for: .normal)
+        b.titleLabel?.font = .systemFont(ofSize: 15)
+        b.backgroundColor = .themeColor
+        return b
+    }()
+    
+    let lineTextView: UITextView = {
+        let tv = UITextView()
+        tv.font = .systemFont(ofSize: 14)
+        tv.backgroundColor = .clear
+        tv.isScrollEnabled = false
+        return tv
+    }()
+    
+    let pageTextField: UITextField = {
+        let tv = UITextField()
+        tv.font = .systemFont(ofSize: 17)
+        tv.placeholder = "123"
+        tv.contentHorizontalAlignment = .center
+        
+        let l = UILabel(text: "Page", font: .systemFont(ofSize: 17), textAlignment: .left, numberOfLines: 1)
+        l.sizeToFit()
+        l.frame = CGRect(x: 0, y: 0, width: l.frame.width + 8, height: l.frame.height)
+        tv.leftViewMode = .always
+        tv.leftView = l
+        return tv
+    }()
+    
+    let thoughtTextView: UITextView = {
+        let tv = UITextView()
+        tv.font = .systemFont(ofSize: 14)
+        tv.backgroundColor = .clear
+        tv.isScrollEnabled = false
+        return tv
+    }()
+    
+    let scrollView: UIScrollView = {
+        let sv = UIScrollView()
+        return sv
+    }()
+    
+    var bottomConstraint: NSLayoutConstraint?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        view.backgroundColor = .white
+        
+        configureTextFieldDelegates()
+    }
+    
+    deinit {
+        removeKeyboardObservers()
+    }
     
     @IBAction func selectBookPressed(_ sender: Any) {
         let searchVC = SearchTableVC()
@@ -32,14 +93,14 @@ class AddPopUpVC: UIViewController, UITextViewDelegate, UITabBarControllerDelega
         if let chosenBook = book {
             // line과 page 입력되었는지 확인. thought은 없어도 됨
             if lineTextView.textColor != UIColor.lightGray {
-                if pageTextView.textColor != UIColor.lightGray {
+                if pageTextField.textColor != UIColor.lightGray {
                     var text:String
                     if thoughtTextView.textColor == UIColor.lightGray {
                         text = ""
                     } else {
                         text = thoughtTextView.text
                     }
-                    let feed = Feed(book: chosenBook, page: Int(pageTextView.text)!, line: lineTextView.text, thought: text)
+                    let feed = Feed(book: chosenBook, page: Int(pageTextField.text!)!, line: lineTextView.text, thought: text)
                     dataCenter.add(feed: feed)
                     
                     if let tabBarController = self.presentingViewController as? UITabBarController {
@@ -49,7 +110,7 @@ class AddPopUpVC: UIViewController, UITextViewDelegate, UITabBarControllerDelega
                     }
                     
                     // 저장 작업 외에는 Cancel과 똑같이 modal dismiss만 해주면 됨
-                        cancelButtonPressed(sender)
+                    cancelButtonPressed(sender)
                     
                 } else { // page 입력 안됨
                     dataCenter.createAlert(title: "알림", message: "페이지를 입력해주세요.", sender: self)
@@ -65,37 +126,88 @@ class AddPopUpVC: UIViewController, UITextViewDelegate, UITabBarControllerDelega
         }
     }
     
-    
-    // Hide keyboard when user touches outside keyboard
     @IBAction func cancelButtonPressed(_ sender: Any) {
-        //delegate로 closeFlag값 true로 설정
-//        if let addVC = addDelegate {
-//            print("add view controller delegate 성공")
-//            addVC.closeFlag = true
-//        }
-        dismiss(animated: true)
+        self.dismiss(animated: true)
     }
     
-    @IBAction func tabGesture(_ sender: Any) {
-        self.view.endEditing(true)
+    override func configureConstraints() {
+        navigationItem.leftBarButtonItem = cancelButton
+        navigationItem.rightBarButtonItem = doneButton
         
+        view.addSubview(scrollView)
+        scrollView.fillSuperview()
+        
+        let lineView = UIView()
+        lineView.stack(lineTextView,
+                       view.hstack(UIView(), pageTextField, UIView(),
+                                   distribution: .equalCentering),
+                       spacing: 8).withMargins(.init(top: 8, left: 8, bottom: 8, right: 8))
+        lineView.backgroundColor = .veryLightGray
+        pageTextField.widthAnchor.constraint(greaterThanOrEqualToConstant: 80).isActive = true
+        
+        let thoughtView = UIView()
+        thoughtView.stack(thoughtTextView).withMargins(.init(top: 8, left: 8, bottom: 8, right: 8))
+        thoughtView.backgroundColor = .veryLightGray
+        
+        let contentView = UIView()
+        contentView.stack(bookChooseButton.withHeight(60),
+                          lineView,
+                          thoughtView,
+                          spacing: 8)
+            .withMargins(.init(top: 8, left: 0, bottom: 0, right: 0))
+        
+        lineView.heightAnchor.constraint(greaterThanOrEqualToConstant: 200).isActive = true
+        lineTextView.widthAnchor.constraint(equalTo: contentView.widthAnchor).isActive = true
+        
+        thoughtView.heightAnchor.constraint(greaterThanOrEqualToConstant: 130).isActive = true
+
+        scrollView.addSubview(contentView)
+        contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
+        contentView.anchor(top: scrollView.topAnchor, leading: scrollView.leadingAnchor, bottom: nil, trailing: scrollView.trailingAnchor)
+        
+        scrollView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
     }
+    
+    override func addTargets() {
+        bookChooseButton.addTarget(self, action: #selector(selectBookPressed(_:)), for: .touchUpInside)
+    }
+}
+
+extension AddPopUpVC: UITextViewDelegate {
+    func configureTextFieldDelegates() {
+        setupDelegates()
+        addKeyboardObservers()
+        configureTapGesture()
         
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        self.lineTextView.delegate = self
-        self.pageTextView.delegate = self
-        self.thoughtTextView.delegate = self
         lineTextView.text = "간직하고 싶은 책 속의 한 문장을 작성해주세요."
-        pageTextView.text = "123"
         thoughtTextView.text = "기록한 문장에 대한 본인만의 생각이나 감정을 표현해주세요."
         lineTextView.textColor = UIColor.lightGray
-        pageTextView.textColor = UIColor.lightGray
         thoughtTextView.textColor = UIColor.lightGray
-        
+    }
+    
+    func setupDelegates() {
+        lineTextView.delegate = self
+        thoughtTextView.delegate = self
+    }
+    
+    func addKeyboardObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardDidShow), name: UIResponder.keyboardDidShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardDidHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    func removeKeyboardObservers() {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardDidShowNotification, object: nil)
+    }
+    
+    func configureTapGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        view.addGestureRecognizer(tapGesture)
+    }
+
+    /** Hide the keyboard when user touches outside keyboard */
+    @objc func handleTap() {
+        self.view.endEditing(true)
     }
     
     @objc func keyboardDidShow(notification: NSNotification) {
@@ -106,7 +218,6 @@ class AddPopUpVC: UIViewController, UITextViewDelegate, UITabBarControllerDelega
     }
     
     @objc func keyboardDidHide(notification: NSNotification) {
-        
         scrollView.contentInset = UIEdgeInsets.zero
         scrollView.scrollIndicatorInsets = UIEdgeInsets.zero
     }
@@ -133,29 +244,9 @@ class AddPopUpVC: UIViewController, UITextViewDelegate, UITabBarControllerDelega
                 textView.text = "간직하고 싶은 책 속의 한 문장을 작성해주세요."
             } else if textView.accessibilityIdentifier == "thoughtText" {
                 textView.text = "기록한 문장에 대한 본인만의 생각이나 감정을 표현해주세요."
-            } else if textView.accessibilityIdentifier == "pageText" {
-                textView.text = "123"
             }
         }
+        
         textView.resignFirstResponder()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-
-        if let destinationNavigationController = segue.destination as? SearchTableVC {
-            destinationNavigationController.addPopUpDelegate = self
-        }
-    }
-
 }

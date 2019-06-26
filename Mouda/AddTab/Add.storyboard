@@ -10,35 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--AddVC-->
-        <scene sceneID="pkl-1w-7a6">
-            <objects>
-                <viewController modalPresentationStyle="overCurrentContext" id="8j4-aT-rqv" customClass="AddVC" customModule="Mouda" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="4JD-sJ-jz3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P70-lQ-dTh">
-                                <rect key="frame" x="164" y="588" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <segue destination="aTX-lW-uXQ" kind="presentation" id="GaP-cb-mlR"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <viewLayoutGuide key="safeArea" id="rOZ-MT-fdA"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="VWn-lu-8b4"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="popupButton" destination="P70-lQ-dTh" id="c4B-U2-76b"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WtO-CH-dMZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="950" y="829"/>
-        </scene>
         <!--쓰다-->
         <scene sceneID="wWI-so-2HI">
             <objects>
@@ -214,21 +185,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="bookChooseButton" destination="whW-bx-tWL" id="uR1-7U-7jo"/>
-                        <outlet property="bottomConstraint" destination="D4a-fE-gOZ" id="GZA-hD-GQ7"/>
-                        <outlet property="lineTextView" destination="Iyn-c5-Sr6" id="gUI-Cj-4Au"/>
-                        <outlet property="pageTextView" destination="bdA-J2-k7z" id="9vV-VK-BtC"/>
-                        <outlet property="scrollView" destination="Hxm-BL-796" id="UTA-Jv-lwu"/>
-                        <outlet property="thoughtTextView" destination="DSG-hl-EzV" id="KdL-TD-pDH"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YDW-oH-oXG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="v0R-Jf-fKL">
-                    <connections>
-                        <action selector="tabGesture:" destination="nOL-BV-Fc8" id="xOX-sO-uj8"/>
-                    </connections>
-                </tapGestureRecognizer>
+                <tapGestureRecognizer id="v0R-Jf-fKL"/>
             </objects>
             <point key="canvasLocation" x="2768.8000000000002" y="985.45727136431788"/>
         </scene>

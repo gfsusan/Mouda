@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0860A77422C1BE5C007839E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0860A77322C1BE5C007839E4 /* ViewController.swift */; };
+		0860A77722C1CD8D007839E4 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0860A77622C1CD8D007839E4 /* UIColor+Extension.swift */; };
 		6626BE86204003D4003F0C23 /* Feeds.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6626BE84204003D4003F0C23 /* Feeds.storyboard */; };
 		6626BE88204009C1003F0C23 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6626BE87204009C1003F0C23 /* TabBarVC.swift */; };
 		66728F11202A99480061C168 /* AddBookmarkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66728F10202A99470061C168 /* AddBookmarkVC.swift */; };
@@ -48,6 +49,7 @@
 
 /* Begin PBXFileReference section */
 		0860A77322C1BE5C007839E4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0860A77622C1CD8D007839E4 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		10161C9620B613CB23A2620D /* Pods_Mouda.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mouda.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6626BE85204003D4003F0C23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Mouda/Storyboard/Base.lproj/Feeds.storyboard; sourceTree = "<group>"; };
 		6626BE87204009C1003F0C23 /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
@@ -103,6 +105,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0860A77522C1CD7C007839E4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0860A77622C1CD8D007839E4 /* UIColor+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		6626BE83204003B3003F0C23 /* FeedsTab */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +200,7 @@
 			children = (
 				669990E920242F2B00410F21 /* AppDelegate.swift */,
 				0860A77322C1BE5C007839E4 /* ViewController.swift */,
+				0860A77522C1CD7C007839E4 /* Extensions */,
 				7AD0AF6C2029C7D9002E7F60 /* Fonts */,
 				66728F14202A9DB50061C168 /* Models */,
 				66728F1C202AAEAC0061C168 /* Storyboard */,
@@ -251,7 +262,6 @@
 				A23CC00EA99B9C7D6D0857A8 /* Pods-Mouda.debug.xcconfig */,
 				BBB15446DDD6546CF2C60DD5 /* Pods-Mouda.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -385,6 +395,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0860A77722C1CD8D007839E4 /* UIColor+Extension.swift in Sources */,
 				66B52A5D202D5D7A007C54BF /* BookmarkCollectionVC.swift in Sources */,
 				66F902DE202961F40047C959 /* AddPopUpVC.swift in Sources */,
 				66728F22202AE7520061C168 /* DataCenter.swift in Sources */,
