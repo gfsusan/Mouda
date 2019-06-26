@@ -11,7 +11,8 @@ import UIKit
 
 struct AppFontName {
     static let regular = "NanumMyeongjoOTF"
-    static let extraBold = "NanumMyeongjoOTFExtraBold"
+    static let bold = "NanumMyeongjoBoldOTF"
+    static let extraBold = "NanumMyeongjoExtraBoldOTF"
 }
 
 extension UIFontDescriptor.AttributeName {
@@ -21,11 +22,15 @@ extension UIFontDescriptor.AttributeName {
 extension UIFont {
     
     @objc class func mySystemFont(ofSize size: CGFloat) -> UIFont {
-        return UIFont(name: AppFontName.regular, size: size) ?? .systemFont(ofSize: size)
+        return UIFont(name: AppFontName.regular, size: size)!
+    }
+    
+    @objc class func myBoldSystemFont(ofSize size: CGFloat) -> UIFont {
+        return UIFont(name: AppFontName.bold, size: size)!
     }
     
     @objc class func myExtraBoldSystemFont(ofSize size: CGFloat) -> UIFont {
-        return UIFont(name: AppFontName.extraBold, size: size) ?? .systemFont(ofSize: size)
+        return UIFont(name: AppFontName.extraBold, size: size)!
     }
     
     @objc convenience init(myCoder aDecoder: NSCoder) {
@@ -40,7 +45,7 @@ extension UIFont {
         case "CTFontRegularUsage":
             fontName = AppFontName.regular
         case "CTFontEmphasizedUsage", "CTFontBoldUsage":
-            fontName = AppFontName.extraBold
+            fontName = AppFontName.bold
         case "CTFontObliqueUsage":
             fontName = AppFontName.extraBold
         default:
@@ -58,7 +63,7 @@ extension UIFont {
         }
         
         if let boldSystemFontMethod = class_getClassMethod(self, #selector(boldSystemFont(ofSize:))),
-            let myBoldSystemFontMethod = class_getClassMethod(self, #selector(myExtraBoldSystemFont(ofSize:))) {
+            let myBoldSystemFontMethod = class_getClassMethod(self, #selector(myBoldSystemFont(ofSize:))) {
             method_exchangeImplementations(boldSystemFontMethod, myBoldSystemFontMethod)
         }
         
