@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FeedDetailVC: UIViewController {
+class FeedDetailVC: ViewController {
     
     var feed:Feed?
     let formatDate = DateFormatter()
@@ -19,7 +19,6 @@ class FeedDetailVC: UIViewController {
     @IBOutlet weak var lineLabel: UILabel!
     @IBOutlet weak var pageLabel: UILabel!
     @IBOutlet weak var thoughtLabel: UILabel!
-    
     
     @IBAction func deletePressed(_ sender: Any) {
         let alertView = UIAlertController(title: "삭제", message: "정말로 피드를 삭제하시겠습니까?", preferredStyle: .alert)
@@ -35,6 +34,15 @@ class FeedDetailVC: UIViewController {
         alertView.addAction(cancel)
         alertView.addAction(delete)
         present(alertView, animated: true, completion: nil)
+    }
+    
+    @IBAction func handleEdit(_ sender: Any) {
+        let modifyVC = ModifyVC()
+        modifyVC.originalFeed = feed
+        modifyVC.indexPath = self.indexPath
+        modifyVC.feedDetailDelegate = self
+        let navContr = UINavigationController(rootViewController: modifyVC)
+        self.present(navContr, animated: true)
     }
     
     override func viewDidLoad() {
@@ -62,25 +70,5 @@ class FeedDetailVC: UIViewController {
             thoughtLabel.attributedText = NSAttributedString(string: myFeed.thought, attributes: thoughtAttributes)
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
- 
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-      if let destinationNavigationController = segue.destination as? UINavigationController {
-            let targetController = destinationNavigationController.topViewController as? ModifyVC
-            targetController?.originalFeed = feed
-            targetController?.indexPath = self.indexPath
-            targetController?.feedDetailDelegate = self
-        }
-    }
-  
 
 }

@@ -19,7 +19,7 @@ class SearchBookCell: UITableViewCell {
     
     let titleTV: UILabel = {
         let l = UILabel()
-        l.font = .myBoldSystemFont(ofSize: 20)
+        l.font = .systemFont(ofSize: 20)
         l.minimumScaleFactor = 0.7
         l.adjustsFontSizeToFitWidth = true
         return l

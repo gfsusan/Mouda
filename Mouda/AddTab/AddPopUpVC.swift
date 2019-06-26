@@ -13,7 +13,11 @@ class AddPopUpVC: ViewController, UITabBarControllerDelegate {
     var feedDelegate:FeedTableVC?
     
     // 책 선택 화면에서 고른 책
-    var book:Book?
+    var book:Book? {
+        didSet {
+            bookChooseButton.setTitle(book?.title, for: .normal)
+        }
+    }
     
     lazy var cancelButton: UIBarButtonItem = {
         let b = UIBarButtonItem(title: "취소", style: .plain, target: self, action: #selector(cancelButtonPressed(_:)))

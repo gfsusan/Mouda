@@ -8,30 +8,17 @@
 
 import UIKit
 
-class ModifyVC: UIViewController, UITextViewDelegate{
+class ModifyVC: AddPopUpVC {
 
-    var originalFeed:Feed?
-    var indexPath:Int?
-    var feedDetailDelegate:FeedDetailVC?
+    var originalFeed: Feed?
+    var indexPath: Int?
+    var feedDetailDelegate: FeedDetailVC?
     
-    // 책 선택 화면에서 고른 책
-    var book:Book?
-    
-    @IBOutlet weak var bookChooseButton: UIButton!
-    @IBOutlet weak var lineTextView: UITextView!
-    @IBOutlet weak var pageTextView: UITextView!
-    @IBOutlet weak var thoughtTextView: UITextView!
-    @IBAction func selectBookPressed(_ sender: Any) {
-        let searchVC = SearchTableVC()
-        searchVC.modifyDelegate = self
-        navigationController?.pushViewController(searchVC, animated: true)
-    }
-    
-    @IBAction func doneButtonPressed(_ sender: Any) {
+    @IBAction override func doneButtonPressed(_ sender: Any) {
         if let chosenBook = book {
             // line과 page 입력되었는지 확인. thought은 없어도 됨
             if lineTextView.textColor != UIColor.lightGray {
-                if pageTextView.textColor != UIColor.lightGray {
+                if pageTextField.textColor != UIColor.lightGray {
                     var text:String
                     if thoughtTextView.textColor == UIColor.lightGray {
                         text = ""
@@ -41,12 +28,12 @@ class ModifyVC: UIViewController, UITextViewDelegate{
                     // 새로운 피드 생성
                     let feed:Feed
                     guard let original = originalFeed else {
-                        feed = Feed(book: chosenBook, page: Int(pageTextView.text)!, line: lineTextView.text, thought: text)
+                        feed = Feed(book: chosenBook, page: Int(pageTextField.text!)!, line: lineTextView.text, thought: text)
                         dataCenter.createAlert(title: "삭제에 실패하였습니다.", message: "다시 시도해주세요.", sender: self)
                         return
                     }
                     
-                    feed = Feed(book: chosenBook, page: Int(pageTextView.text)!, line: lineTextView.text, thought: text, date: original.date)
+                    feed = Feed(book: chosenBook, page: Int(pageTextField.text!)!, line: lineTextView.text, thought: text, date: original.date)
                    
                     
                     //델리게이트 업데이트
@@ -80,37 +67,15 @@ class ModifyVC: UIViewController, UITextViewDelegate{
         }
     }
     
-    
-    // Hide keyboard when user touches outside keyboard
-    @IBAction func cancelButtonPressed(_ sender: Any) {
-        dismiss(animated: true)
-    }
-    
-    @IBAction func tabGesture(_ sender: Any) {
-        self.view.endEditing(true)
-        
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.lineTextView.delegate = self
-        self.pageTextView.delegate = self
-        self.thoughtTextView.delegate = self
-        
-        
         guard let feed = originalFeed else {
-            lineTextView.textColor = UIColor.lightGray
-            pageTextView.textColor = UIColor.lightGray
-            thoughtTextView.textColor = UIColor.lightGray
-            lineTextView.text = "간직하고 싶은 책 속의 한 문장을 작성해주세요."
-            pageTextView.text = "123"
-            thoughtTextView.text = "기록한 문장에 대한 본인만의 생각이나 감정을 표현해주세요."
             return
         }
+        
         book = feed.book
         lineTextView.textColor = UIColor.black
-        pageTextView.textColor = UIColor.black
         if thoughtTextView.text == "" {
             thoughtTextView.text = "기록한 문장에 대한 본인만의 생각이나 감정을 표현해주세요."
             thoughtTextView.textColor = UIColor.lightGray
@@ -119,49 +84,12 @@ class ModifyVC: UIViewController, UITextViewDelegate{
             thoughtTextView.text = feed.thought
         }
         lineTextView.text = feed.line
-        pageTextView.text = "\(feed.page)"
+        pageTextField.text = "\(feed.page)"
         bookChooseButton.setTitle(feed.book.title, for: .normal)
-      
-        // Do any additional setup after loading the view.
         
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        print("add popup view will appear")
-        if let chosenBook = book {
-            print("book chosen")
-            bookChooseButton.setTitle(chosenBook.title, for: .normal)
-        }
-    }
-    
-    
-    // Placeholder text
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        if(textView.textColor == UIColor.lightGray) {
-            textView.text = nil
-            textView.textColor = UIColor.black
-        }
-        textView.becomeFirstResponder()
-    }
-    
-    func textViewDidEndEditing(_ textView: UITextView) {
-        
-        if textView.text.isEmpty {
-            textView.textColor = UIColor.lightGray
-            if textView.accessibilityIdentifier == "lineText" {
-                textView.text = "간직하고 싶은 책 속의 한 문장을 작성해주세요."
-            } else if textView.accessibilityIdentifier == "thoughtText" {
-                textView.text = "기록한 문장에 대한 본인만의 생각이나 감정을 표현해주세요."
-            } else if textView.accessibilityIdentifier == "pageText" {
-                textView.text = "123"
-            }
-        }
-        textView.resignFirstResponder()
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 }
+//
+//extension ModifyVC { // TextViewDelegate
+//
+//}
