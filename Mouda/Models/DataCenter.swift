@@ -163,10 +163,14 @@ class DataCenter {
             if lineData == feed.line {
                 self.feeds.remove(at: index)
             } else {
-                createAlert(title: "알림", message: "삭제에 실패하였습니다. 다시 시도해주세요.", sender: sender)
+                if let sender = sender as? UIViewController {
+                    sender.showAlert(title: "알림", message: "삭제에 실패하였습니다. 다시 시도해주세요.")
+                }
             }
         } else {
-            createAlert(title: "알림", message: "삭제에 실패하였습니다. 다시 시도해주세요.", sender: sender)
+            if let sender = sender as? UIViewController {
+                sender.showAlert(title: "알림", message: "삭제에 실패하였습니다. 다시 시도해주세요.")
+            }
         }
         
     }
@@ -177,7 +181,9 @@ class DataCenter {
             if titleData == book.title{
                 self.bookmarks.remove(at: index)
             } else {
-                createAlert(title: "알림", message: "삭제에 실패하였습니다. 다시 시도해주세요.", sender: sender)
+                if let sender = sender as? UIViewController {
+                    sender.showAlert(title: "알림", message: "삭제에 실패하였습니다. 다시 시도해주세요.")
+                }
             }
         }
     }
@@ -192,18 +198,5 @@ class DataCenter {
         return false
         
     }
-    
-    func createAlert (title:String, message:String, sender:Any?) {
-        let alert = UIAlertController(title: title, message:message, preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title:"OK", style:UIAlertAction.Style.default, handler: { (action) in
-            alert.dismiss(animated: true, completion: nil)
-            print("OK")
-        }))
-        
-        if let delegate = sender as? UIViewController {
-            delegate.present(alert, animated: true, completion: nil)
-        }
-    }
-    
 
 }

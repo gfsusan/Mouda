@@ -60,17 +60,17 @@ class AddBookmarkVC: AddFeedVC {
                         self.dismiss(animated: true, completion: nil)
                     }
                     else {
-                        dataCenter.createAlert(title: "이미 북마크가 있어요!", message: "", sender:self)
+                        showAlert(title: "이미 북마크가 있어요!", message: "")
                         return
                     }
                 } else {
-                    dataCenter.createAlert(title: "페이지를 입력해주세요.", message: "", sender:self)
+                    showAlert(title: "페이지를 입력해주세요.", message: "")
                     return
                 }
             }
 
         } else {
-            dataCenter.createAlert(title: "책을 선택하지 않으셨네요.", message: "책 선택 버튼을 눌러 책을 선택해주세요!", sender: self)
+            showAlert(title: "책을 선택하지 않으셨네요.", message: "책 선택 버튼을 눌러 책을 선택해주세요!")
             return
         }
     }

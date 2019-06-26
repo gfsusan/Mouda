@@ -29,7 +29,7 @@ class ModifyFeedVC: AddFeedVC {
                     let feed:Feed
                     guard let original = originalFeed else {
                         feed = Feed(book: chosenBook, page: Int(pageTextField.text!)!, line: lineTextView.text, thought: text)
-                        dataCenter.createAlert(title: "삭제에 실패하였습니다.", message: "다시 시도해주세요.", sender: self)
+                        showAlert(title: "삭제에 실패하였습니다.", message: "다시 시도해주세요.")
                         return
                     }
                     
@@ -54,15 +54,15 @@ class ModifyFeedVC: AddFeedVC {
                     cancelButtonPressed(sender)
                     
                 } else { // page 입력 안됨
-                    dataCenter.createAlert(title: "알림", message: "페이지를 입력해주세요.", sender: self)
+                    showAlert(title: "알림", message: "페이지를 입력해주세요.")
                     return
                 }
             } else { // line 입력 안됨
-                dataCenter.createAlert(title: "알림", message: "마음에 드는 문장을 입력해주세요.", sender: self)
+                showAlert(title: "알림", message: "마음에 드는 문장을 입력해주세요.")
                 return
             }
         } else { // 책 선택 안됨
-            dataCenter.createAlert(title: "알림", message: "책을 선택해주세요.", sender: self)
+            showAlert(title: "알림", message: "책을 선택해주세요.")
             return
         }
     }

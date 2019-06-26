@@ -117,15 +117,15 @@ class AddFeedVC: ViewController, UITabBarControllerDelegate {
                     cancelButtonPressed(sender)
                     
                 } else { // page 입력 안됨
-                    dataCenter.createAlert(title: "알림", message: "페이지를 입력해주세요.", sender: self)
+                    showAlert(title: "알림", message: "페이지를 입력해주세요.")
                     return
                 }
             } else { // line 입력 안됨
-                dataCenter.createAlert(title: "알림", message: "마음에 드는 문장을 입력해주세요.", sender: self)
+                showAlert(title: "알림", message: "마음에 드는 문장을 입력해주세요.")
                 return
             }
         } else { // 책 선택 안됨
-            dataCenter.createAlert(title: "알림", message: "책을 선택해주세요.", sender: self)
+            showAlert(title: "알림", message: "책을 선택해주세요.")
             return
         }
     }
