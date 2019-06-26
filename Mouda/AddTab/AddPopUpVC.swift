@@ -36,7 +36,7 @@ class AddPopUpVC: ViewController, UITabBarControllerDelegate {
     
     let lineTextView: UITextView = {
         let tv = UITextView()
-        tv.font = .systemFont(ofSize: 14)
+        tv.font = .mySystemFont(ofSize: 14)
         tv.backgroundColor = .clear
         tv.isScrollEnabled = false
         return tv
@@ -44,11 +44,11 @@ class AddPopUpVC: ViewController, UITabBarControllerDelegate {
     
     let pageTextField: UITextField = {
         let tv = UITextField()
-        tv.font = .systemFont(ofSize: 17)
+        tv.font = .mySystemFont(ofSize: 17)
         tv.placeholder = "123"
         tv.contentHorizontalAlignment = .center
         
-        let l = UILabel(text: "Page", font: .systemFont(ofSize: 17), textAlignment: .left, numberOfLines: 1)
+        let l = UILabel(text: "Page", font: .mySystemFont(ofSize: 17), textAlignment: .left, numberOfLines: 1)
         l.sizeToFit()
         l.frame = CGRect(x: 0, y: 0, width: l.frame.width + 8, height: l.frame.height)
         tv.leftViewMode = .always
@@ -58,7 +58,7 @@ class AddPopUpVC: ViewController, UITabBarControllerDelegate {
     
     let thoughtTextView: UITextView = {
         let tv = UITextView()
-        tv.font = .systemFont(ofSize: 14)
+        tv.font = .mySystemFont(ofSize: 14)
         tv.backgroundColor = .clear
         tv.isScrollEnabled = false
         return tv
