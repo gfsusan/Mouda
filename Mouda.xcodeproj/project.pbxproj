@@ -17,7 +17,7 @@
 		66728F19202AAE800061C168 /* MyFeed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66728F17202AAE800061C168 /* MyFeed.storyboard */; };
 		66728F20202AAF420061C168 /* Bookmark.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66728F1E202AAF420061C168 /* Bookmark.storyboard */; };
 		66728F22202AE7520061C168 /* DataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66728F21202AE7520061C168 /* DataCenter.swift */; };
-		6685C133202EFF1900EE066F /* ModifyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6685C132202EFF1900EE066F /* ModifyVC.swift */; };
+		6685C133202EFF1900EE066F /* ModifyFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6685C132202EFF1900EE066F /* ModifyFeedVC.swift */; };
 		669990EA20242F2B00410F21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669990E920242F2B00410F21 /* AppDelegate.swift */; };
 		669990EF20242F2B00410F21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 669990ED20242F2B00410F21 /* Main.storyboard */; };
 		669990F120242F2B00410F21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 669990F020242F2B00410F21 /* Assets.xcassets */; };
@@ -59,7 +59,7 @@
 		66728F18202AAE800061C168 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Mouda/Base.lproj/MyFeed.storyboard; sourceTree = "<group>"; };
 		66728F1F202AAF420061C168 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Mouda/Storyboard/Mouda/Base.lproj/Bookmark.storyboard; sourceTree = "<group>"; };
 		66728F21202AE7520061C168 /* DataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCenter.swift; sourceTree = "<group>"; };
-		6685C132202EFF1900EE066F /* ModifyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyVC.swift; sourceTree = "<group>"; };
+		6685C132202EFF1900EE066F /* ModifyFeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyFeedVC.swift; sourceTree = "<group>"; };
 		669990E620242F2B00410F21 /* Mouda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mouda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		669990E920242F2B00410F21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		669990EE20242F2B00410F21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -140,7 +140,7 @@
 				669991032024386900410F21 /* FeedTableVC.swift */,
 				669990FB202437D200410F21 /* MyFeedCell.swift */,
 				66728F12202A9C480061C168 /* FeedDetailVC.swift */,
-				6685C132202EFF1900EE066F /* ModifyVC.swift */,
+				6685C132202EFF1900EE066F /* ModifyFeedVC.swift */,
 			);
 			path = MyFeedTab;
 			sourceTree = "<group>";
@@ -405,7 +405,7 @@
 				66B52A5F202D5D90007C54BF /* BookmarkCell.swift in Sources */,
 				66B52A64202DD9AC007C54BF /* SettingTableVC.swift in Sources */,
 				083066BA22C3665B00EBDAFE /* UIFont+Extension.swift in Sources */,
-				6685C133202EFF1900EE066F /* ModifyVC.swift in Sources */,
+				6685C133202EFF1900EE066F /* ModifyFeedVC.swift in Sources */,
 				66B52A72202E12AC007C54BF /* BookFeedCell.swift in Sources */,
 				66DBAC9D202BF0AB0043CB4B /* SearchTableVC.swift in Sources */,
 				66728F13202A9C480061C168 /* FeedDetailVC.swift in Sources */,

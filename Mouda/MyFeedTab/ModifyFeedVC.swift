@@ -1,5 +1,5 @@
 //
-//  ModifyVC.swift
+//  ModifyFeedVC.swift
 //  Mouda
 //
 //  Created by cauadc on 2018. 2. 10..
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ModifyVC: AddFeedVC {
+class ModifyFeedVC: AddFeedVC {
 
     var originalFeed: Feed?
     var indexPath: Int?
@@ -89,7 +89,3 @@ class ModifyVC: AddFeedVC {
         
     }
 }
-//
-//extension ModifyVC { // TextViewDelegate
-//
-//}

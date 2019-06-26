@@ -37,7 +37,7 @@ class FeedDetailVC: ViewController {
     }
     
     @IBAction func handleEdit(_ sender: Any) {
-        let modifyVC = ModifyVC()
+        let modifyVC = ModifyFeedVC()
         modifyVC.originalFeed = feed
         modifyVC.indexPath = self.indexPath
         modifyVC.feedDetailDelegate = self
