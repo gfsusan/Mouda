@@ -43,7 +43,7 @@ class TabBarVC: UITabBarController {
     
     // clicked upload button (go to upload)
     @objc func upload(sender : UIButton) {
-        let addVC = AddPopUpVC()
+        let addVC = AddFeedVC()
         let navContr = UINavigationController(rootViewController: addVC)
         self.present(navContr, animated: true, completion: nil)
     }

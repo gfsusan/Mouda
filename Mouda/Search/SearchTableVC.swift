@@ -14,7 +14,7 @@ private let cellId = "bookInfoCellId"
 class SearchTableVC: UITableViewController,  UISearchBarDelegate, XMLParserDelegate {
     
     var books:[Book] = []
-    var addPopUpDelegate:AddPopUpVC?
+    var addPopUpDelegate:AddFeedVC?
     var addBookmarkDelegate:AddBookmarkVC?
     
     let searchBar: UISearchBar = {

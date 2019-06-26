@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ModifyVC: AddPopUpVC {
+class ModifyVC: AddFeedVC {
 
     var originalFeed: Feed?
     var indexPath: Int?

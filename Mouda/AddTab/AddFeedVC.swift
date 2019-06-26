@@ -1,5 +1,5 @@
 //
-//  AddVC.swift
+//  AddFeedVC.swift
 //  Mouda
 //
 //  Created by cauadc on 2018. 2. 6..
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddPopUpVC: ViewController, UITabBarControllerDelegate {
+class AddFeedVC: ViewController, UITabBarControllerDelegate {
     
     var feedDelegate:FeedTableVC?
     
@@ -177,7 +177,7 @@ class AddPopUpVC: ViewController, UITabBarControllerDelegate {
     }
 }
 
-extension AddPopUpVC: UITextViewDelegate {
+extension AddFeedVC: UITextViewDelegate {
     func configureTextFieldDelegates() {
         setupDelegates()
         addKeyboardObservers()
