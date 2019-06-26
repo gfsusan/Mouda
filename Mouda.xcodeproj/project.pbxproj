@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		083066BA22C3665B00EBDAFE /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083066B922C3665B00EBDAFE /* UIFont+Extension.swift */; };
-
 		0860A77422C1BE5C007839E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0860A77322C1BE5C007839E4 /* ViewController.swift */; };
 		0860A77722C1CD8D007839E4 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0860A77622C1CD8D007839E4 /* UIColor+Extension.swift */; };
 		6626BE86204003D4003F0C23 /* Feeds.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6626BE84204003D4003F0C23 /* Feeds.storyboard */; };
@@ -37,7 +36,7 @@
 		66DBAC9F202BF5660043CB4B /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DBAC9E202BF5660043CB4B /* Bookmark.swift */; };
 		66DBACA1202BF8FD0043CB4B /* SearchBookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DBACA0202BF8FD0043CB4B /* SearchBookCell.swift */; };
 		66E574F1202CB16500FEEAAA /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66E574EF202CB16500FEEAAA /* Setting.storyboard */; };
-		66F902DE202961F40047C959 /* AddPopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F902DD202961F40047C959 /* AddPopUpVC.swift */; };
+		66F902DE202961F40047C959 /* AddFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F902DD202961F40047C959 /* AddFeedVC.swift */; };
 		7AD0AF6B2029B3F3002E7F60 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AD0AF6A2029B3F3002E7F60 /* Media.xcassets */; };
 		7AD0AF702029C86A002E7F60 /* NanumMyeongjo.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7AD0AF6D2029C86A002E7F60 /* NanumMyeongjo.otf */; };
 		7AD0AF712029C86A002E7F60 /* NanumMyeongjoBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7AD0AF6E2029C86A002E7F60 /* NanumMyeongjoBold.otf */; };
@@ -81,7 +80,7 @@
 		66DBAC9E202BF5660043CB4B /* Bookmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmark.swift; sourceTree = "<group>"; };
 		66DBACA0202BF8FD0043CB4B /* SearchBookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookCell.swift; sourceTree = "<group>"; };
 		66E574F0202CB16500FEEAAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Mouda/Storyboard/Mouda/Base.lproj/Setting.storyboard; sourceTree = "<group>"; };
-		66F902DD202961F40047C959 /* AddPopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPopUpVC.swift; sourceTree = "<group>"; };
+		66F902DD202961F40047C959 /* AddFeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFeedVC.swift; sourceTree = "<group>"; };
 		7AD0AF6A2029B3F3002E7F60 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		7AD0AF6D2029C86A002E7F60 /* NanumMyeongjo.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumMyeongjo.otf; sourceTree = "<group>"; };
 		7AD0AF6E2029C86A002E7F60 /* NanumMyeongjoBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumMyeongjoBold.otf; sourceTree = "<group>"; };
@@ -149,7 +148,7 @@
 		66728F16202A9E290061C168 /* AddTab */ = {
 			isa = PBXGroup;
 			children = (
-				66F902DD202961F40047C959 /* AddPopUpVC.swift */,
+				66F902DD202961F40047C959 /* AddFeedVC.swift */,
 				7AE837822047ADF80012C1CE /* Empty.png */,
 			);
 			path = AddTab;
@@ -397,7 +396,7 @@
 			files = (
 				0860A77722C1CD8D007839E4 /* UIColor+Extension.swift in Sources */,
 				66B52A5D202D5D7A007C54BF /* BookmarkCollectionVC.swift in Sources */,
-				66F902DE202961F40047C959 /* AddPopUpVC.swift in Sources */,
+				66F902DE202961F40047C959 /* AddFeedVC.swift in Sources */,
 				66728F22202AE7520061C168 /* DataCenter.swift in Sources */,
 				66999102202437F200410F21 /* Book.swift in Sources */,
 				66B52A6C202DFD58007C54BF /* BookFeedVC.swift in Sources */,
