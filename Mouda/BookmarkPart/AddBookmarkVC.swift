@@ -91,7 +91,7 @@ class AddBookmarkVC: AddFeedVC {
                                    distribution: .fillEqually),
                         spacing: 12)
             ).withMargins(.init(top: 24, left: 8, bottom: 24, right: 8)).withHeight(168)
-        bookView.backgroundColor = .veryLightGray
+        bookView.backgroundColor = .groupTableViewBackground
         bookImageView.widthAnchor.constraint(equalTo: bookImageView.heightAnchor, multiplier: 0.75).isActive = true
         
         let pageView = UIView()
@@ -101,7 +101,7 @@ class AddBookmarkVC: AddFeedVC {
                         distribution: .equalCentering
             ).withMargins(.init(top: 8, left: 8, bottom: 8, right: 8)).withHeight(44)
         pageTextField.widthAnchor.constraint(greaterThanOrEqualToConstant: 80).isActive = true
-        pageView.backgroundColor = .veryLightGray
+        pageView.backgroundColor = .groupTableViewBackground
         
         let contentView = UIView()
         contentView.stack(bookChooseButton.withHeight(60),

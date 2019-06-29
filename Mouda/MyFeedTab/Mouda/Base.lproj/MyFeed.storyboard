@@ -18,7 +18,7 @@
         <!--보이다-->
         <scene sceneID="TEE-Em-mcI">
             <objects>
-                <navigationController storyboardIdentifier="MyFeedVC" automaticallyAdjustsScrollViewInsets="NO" id="DVG-za-uDk" sceneMemberID="viewController">
+                <navigationController restorationIdentifier="myFeed" storyboardIdentifier="MyFeedVC" automaticallyAdjustsScrollViewInsets="NO" id="DVG-za-uDk" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="보이다" image="Home" id="DGU-PH-Qlp"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>

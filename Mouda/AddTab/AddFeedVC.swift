@@ -146,12 +146,12 @@ class AddFeedVC: ViewController, UITabBarControllerDelegate {
                        view.hstack(UIView(), pageTextField, UIView(),
                                    distribution: .equalCentering),
                        spacing: 8).withMargins(.init(top: 8, left: 8, bottom: 8, right: 8))
-        lineView.backgroundColor = .veryLightGray
+        lineView.backgroundColor = .groupTableViewBackground
         pageTextField.widthAnchor.constraint(greaterThanOrEqualToConstant: 80).isActive = true
         
         let thoughtView = UIView()
         thoughtView.stack(thoughtTextView).withMargins(.init(top: 8, left: 8, bottom: 8, right: 8))
-        thoughtView.backgroundColor = .veryLightGray
+        thoughtView.backgroundColor = .groupTableViewBackground
         
         let contentView = UIView()
         contentView.stack(bookChooseButton.withHeight(60),

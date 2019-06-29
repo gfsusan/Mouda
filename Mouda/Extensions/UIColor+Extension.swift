@@ -10,5 +10,5 @@ import UIKit
 
 extension UIColor {
     static let themeColor = UIColor(red: 139/255.0, green: 104/255.0, blue: 88/255.0, alpha: 0.9)
-    static let veryLightGray = UIColor(red: 239/250.0, green: 239/255.0, blue: 244/255.0, alpha: 1.0)
+    static let tabBarTintColor = UIColor(red: 82/255.0, green: 62/255.0, blue: 53/255.0, alpha: 1.0)
 }

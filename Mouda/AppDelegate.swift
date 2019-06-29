@@ -30,11 +30,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        print("App Delegate")
         // 네비게이션 바 색상
         UINavigationBar.appearance().barTintColor = UIColor(displayP3Red: 82/255, green: 62/255, blue: 53/255, alpha: 1)
         UINavigationBar.appearance().tintColor = UIColor.white
-
+        
+//        let myFeedsVC = FeedTableVC()
+        let myFeedsVC = UIViewController()
+        myFeedsVC.view.backgroundColor = .groupTableViewBackground
+        let myFeedNavContr = UINavigationController(rootViewController: myFeedsVC)
+        myFeedNavContr.tabBarItem = UITabBarItem(title: "보이다", image: #imageLiteral(resourceName: "Home"), tag: 0)
+        
+        let addVC = AddFeedVC()
+        let addNavContr = UINavigationController(rootViewController: addVC)
+        addNavContr.tabBarItem = UITabBarItem(title: "쓰다", image: #imageLiteral(resourceName: "Add"), tag: 1)
+        
+        let layout = UICollectionViewFlowLayout()
+//        let bookmarkVC = BookmarkCollectionVC(collectionViewLayout: layout)
+        let bookmarkVC = UIViewController()
+        bookmarkVC.view.backgroundColor = .groupTableViewBackground
+        let bookmarkNavContr = UINavigationController(rootViewController: bookmarkVC)
+        bookmarkNavContr.tabBarItem = UITabBarItem(title: "남기다", image: #imageLiteral(resourceName: "Bookmark"), tag: 2)
+        
+        let tabBarController = UITabBarController()
+        tabBarController.viewControllers = [myFeedNavContr, addNavContr, bookmarkNavContr]
+        tabBarController.tabBar.tintColor = .tabBarTintColor
+        window = UIWindow()
+        window?.rootViewController = tabBarController
+        window?.makeKeyAndVisible()
+        
         return true
     }
 
