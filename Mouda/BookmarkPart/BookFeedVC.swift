@@ -8,21 +8,65 @@
 
 import UIKit
 
-class BookFeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    var bookmark:Bookmark?
-    var indexPath:Int?
-    var feeds:[Feed] = []
-    var dateFormatter:DateFormatter = DateFormatter()
+private let bookFeedCellId = "bookFeedCellId"
+
+class BookFeedVC: UITableViewController {
+    var bookmark: Bookmark? {
+        didSet {
+
+            guard let bookmark = bookmark else { return }
+            let book = bookmark.book
+            coverImageView.image = book.coverImage
+            titleLabel.text = book.title
+            publisherLabel.text = book.publisher
+            authorLabel.text = book.writer
+            if let page = bookmark.pageMark {
+                bookmarkLabel.text = "\(page)페이지까지 읽음"
+            } else {
+                bookmarkLabel.text = "다 읽음"
+            }
+            
+            feeds += dataCenter.feeds(of: book)
+        }
+    }
+    var indexPath: Int?
+    var feeds: [Feed] = []
     
-    @IBOutlet weak var bookInfoView: UIView!
+    var dateFormatter: DateFormatter = {
+        let df = DateFormatter()
+        df.dateFormat = "yyyy년 MM월 dd일"
+        return df
+    }()
     
-    @IBOutlet var tableTableView: UITableView!
+    let coverImageView: UIImageView = {
+        let iv = UIImageView()
+        return iv
+    }()
     
-    @IBOutlet weak var coverImageView: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var publisherLabel: UILabel!
-    @IBOutlet weak var authorLabel: UILabel!
-    @IBOutlet weak var bookmarkLabel: UILabel!
+    let titleLabel: UILabel = {
+        let l = UILabel()
+        l.font = .systemFont(ofSize: 20)
+        return l
+    }()
+    
+    let publisherLabel: UILabel = {
+        let l = UILabel()
+        l.font = .systemFont(ofSize: 14)
+        return l
+    }()
+    
+    let authorLabel: UILabel = {
+        let l = UILabel()
+        l.font = .systemFont(ofSize: 14)
+        return l
+    }()
+    
+    let bookmarkLabel: UILabel = {
+        let l = UILabel()
+        l.font = .systemFont(ofSize: 17)
+        l.textAlignment = .right
+        return l
+    }()
     
     @IBAction func deletePressed(_ sender: Any) {
        
@@ -43,57 +87,46 @@ class BookFeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         present(alertView, animated: true, completion: nil)
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("view did load")
-        tableTableView.delegate = self
-        tableTableView.dataSource = self
         
-        dateFormatter.dateFormat = "yyyy년 MM월 dd일"
+        tableView.register(BookFeedCell.self, forCellReuseIdentifier: bookFeedCellId)
         
-        bookInfoView.layer.shadowOpacity = 1
-        bookInfoView.layer.shadowOffset = CGSize(width: 0, height: 5)
-        bookInfoView.layer.shadowRadius = 5
-        bookInfoView.layer.shadowPath = UIBezierPath(rect: bookInfoView.bounds).cgPath
-        bookInfoView.layer.masksToBounds = false
-        
-        
-        if let bm = bookmark {
-            print(bm)
-            feeds += dataCenter.feeds(of: bm.book)
-             print(feeds)
-        }
-       
+        configureConstraints()
     }
-    override func viewWillAppear(_ animated: Bool) {
-        print("view will appear")
+    
+    func configureConstraints() {
         
-        coverImageView.image = bookmark?.book.coverImage
-        titleLabel.text = bookmark?.book.title
-        publisherLabel.text = bookmark?.book.publisher
-        authorLabel.text = bookmark?.book.writer
-        if let page = bookmark?.pageMark {
-             bookmarkLabel.text = "\(page)페이지까지 읽음"
-        } else {
-            bookmarkLabel.text = "다 읽음"
-        }
-       
-    }
-    // MARK: - Table view data source
+        let bookInfoView = UIView()
+        bookInfoView.frame = CGRect(x: 0, y: 0, width: 0, height: 156)
 
-    func numberOfSections(in tableView: UITableView) -> Int {
+        bookInfoView.hstack(coverImageView,
+                            view.stack(titleLabel,
+                                       publisherLabel,
+                                       authorLabel,
+                                       bookmarkLabel,
+                                       distribution: .fillEqually),
+                            spacing: 8
+        ).withMargins(.init(top: 8, left: 8, bottom: 8, right: 8))
+        
+        tableView.tableHeaderView = bookInfoView
+
+        coverImageView.widthAnchor.constraint(equalTo: coverImageView.heightAnchor, multiplier: 0.75).isActive = true
+    }
+    
+    // MARK: - Table view data source
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return feeds.count
     }
 
     
-     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "bookFeedCell", for: indexPath) as! BookFeedCell
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: bookFeedCellId, for: indexPath) as? BookFeedCell else { return UITableViewCell()}
 
         // Configure the cell...
         let feed = feeds[indexPath.row]
