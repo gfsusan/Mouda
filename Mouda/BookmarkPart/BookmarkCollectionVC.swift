@@ -30,24 +30,12 @@ class BookmarkCollectionVC: UICollectionViewController {
         self.collectionView?.reloadData()
        
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
  
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let indexPath = collectionView?.indexPathsForSelectedItems?.first {
-            if indexPath.row > 0 {
-                
-            }
-        }
-    }
- 
-
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -102,9 +90,7 @@ class BookmarkCollectionVC: UICollectionViewController {
             
             return cell
         }
-    
     }
-
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 150, height: 200)
