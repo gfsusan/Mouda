@@ -34,8 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().barTintColor = UIColor(displayP3Red: 82/255, green: 62/255, blue: 53/255, alpha: 1)
         UINavigationBar.appearance().tintColor = UIColor.white
         
-//        let myFeedsVC = FeedTableVC()
-        let myFeedsVC = UIViewController()
+        let myFeedsVC = FeedTableVC()
         myFeedsVC.view.backgroundColor = .groupTableViewBackground
         let myFeedNavContr = UINavigationController(rootViewController: myFeedsVC)
         myFeedNavContr.tabBarItem = UITabBarItem(title: "보이다", image: #imageLiteral(resourceName: "Home"), tag: 0)
