@@ -37,11 +37,10 @@ class ModifyFeedVC: AddFeedVC {
                    
                     
                     //델리게이트 업데이트
-                    feedDetailDelegate?.titleLabel.text = feed.book.title
-                    feedDetailDelegate?.lineLabel.text = feed.line
-                    feedDetailDelegate?.pageLabel.text = "Page \(feed.page)"
-                    feedDetailDelegate?.thoughtLabel.text = feed.thought
-                    
+//                    feedDetailDelegate?.titleLabel.text = feed.book.title
+//                    feedDetailDelegate?.lineLabel.text = feed.line
+//                    feedDetailDelegate?.pageLabel.text = "Page \(feed.page)"
+//                    feedDetailDelegate?.thoughtLabel.text = feed.thought
                     
                     //데이터 센터 업데이트
                     if let index = indexPath {

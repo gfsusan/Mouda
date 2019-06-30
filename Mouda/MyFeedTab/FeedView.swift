@@ -20,6 +20,12 @@ class FeedView: UIView {
         }
     }
     
+    var isSummaryMode: Bool = true {
+        didSet {
+            updateView()
+        }
+    }
+    
     private let titleLabel: UILabel = {
         let l = UILabel()
         l.font = .mySystemFont(ofSize: 16)
@@ -37,7 +43,6 @@ class FeedView: UIView {
         let l = UILabel()
         l.font = .mySystemFont(ofSize: 15)
         l.textAlignment = .center
-        l.numberOfLines = 4
         //        let style = NSMutableParagraphStyle()
         //        style.lineSpacing = 5
         //        style.alignment = .center
@@ -57,7 +62,6 @@ class FeedView: UIView {
         let l = UILabel()
         l.font = .mySystemFont(ofSize: 14)
         l.textAlignment = .center
-        l.numberOfLines = 3
         //        let thoughtStyle = NSMutableParagraphStyle()
         //        thoughtStyle.lineSpacing = 5
         //        thoughtStyle.alignment = .center
@@ -69,7 +73,7 @@ class FeedView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        configureConstraints()
+        updateView()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -94,16 +98,38 @@ class FeedView: UIView {
         let thoughtView = UIView()
         thoughtView.stack(thoughtLabel).withMargins(.init(top: 32, left: 8, bottom: 32, right: 8))
         
-        addSubview(lineView)
-        addSubview(thoughtView)
-        addSubview(titleView)
-        
-        titleView.anchor(top: topAnchor, leading: leadingAnchor, bottom: nil, trailing: trailingAnchor,
-                         padding: .init(top: 16, left: 8, bottom: 0, right: 8))
-        lineView.anchor(top: titleView.centerYAnchor, leading: leadingAnchor, bottom: nil, trailing: trailingAnchor)
-        thoughtView.anchor(top: lineView.bottomAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor)
+        if isSummaryMode {
+            addSubview(lineView)
+            addSubview(thoughtView)
+            addSubview(titleView)
+            
+            titleView.anchor(top: topAnchor, leading: leadingAnchor, bottom: nil, trailing: trailingAnchor,
+                             padding: .init(top: 16, left: 8, bottom: 0, right: 8))
+            lineView.anchor(top: titleView.centerYAnchor, leading: leadingAnchor, bottom: nil, trailing: trailingAnchor)
+            thoughtView.anchor(top: lineView.bottomAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor)
+        } else {
+            stack(stack(titleView).withMargins(.init(top: 16, left: 8, bottom: 0, right: 8)),
+                  lineView,
+                  thoughtView)
+        }
         
         lineLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 120).isActive = true
         thoughtView.heightAnchor.constraint(greaterThanOrEqualToConstant: 30).isActive = true
+    }
+    
+    func updateView() {
+        subviews.forEach { (v) in
+            v.removeFromSuperview()
+        }
+        
+        configureConstraints()
+        
+        if isSummaryMode {
+            lineLabel.numberOfLines = 4
+            thoughtLabel.numberOfLines = 3
+        } else {
+            lineLabel.numberOfLines = 0
+            thoughtLabel.numberOfLines = 0
+        }
     }
 }
