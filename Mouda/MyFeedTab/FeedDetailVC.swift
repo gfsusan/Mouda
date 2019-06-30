@@ -10,15 +10,21 @@ import UIKit
 
 class FeedDetailVC: ViewController {
     
-    var feed:Feed?
-    let formatDate = DateFormatter()
-    var indexPath:Int?
+    var feed: Feed? {
+        didSet {
+            if let feed = feed {
+                feedView.feedViewModel = FeedViewModel(feed: feed)
+            }
+        }
+    }
     
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var lineLabel: UILabel!
-    @IBOutlet weak var pageLabel: UILabel!
-    @IBOutlet weak var thoughtLabel: UILabel!
+    var indexPath: Int?
+    
+    var feedView: FeedView = {
+        let v = FeedView()
+        v.isSummaryMode = false
+        return v
+    }()
     
     @IBAction func deletePressed(_ sender: Any) {
         let alertView = UIAlertController(title: "삭제", message: "정말로 피드를 삭제하시겠습니까?", preferredStyle: .alert)
@@ -47,28 +53,22 @@ class FeedDetailVC: ViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        formatDate.dateFormat = "yyyy년 MM월 dd일"
-        // Do any additional setup after loading the view.
         
-        // attribute text style
-        let lineStyle = NSMutableParagraphStyle()
-        lineStyle.lineSpacing = 5
-        lineStyle.alignment = .justified
-        let lineAttributes = [NSAttributedString.Key.paragraphStyle: lineStyle]
-        
-        let thoughtStyle = NSMutableParagraphStyle()
-        thoughtStyle.lineSpacing = 5
-        thoughtStyle.alignment = .center
-        let thoughtAttributes = [NSAttributedString.Key.paragraphStyle: thoughtStyle]
-        
-        if let myFeed = feed {
-            titleLabel.text = myFeed.book.title
-            dateLabel.text = "\(formatDate.string(from: myFeed.date))"
-            lineLabel.attributedText = NSAttributedString(string: myFeed.line, attributes: lineAttributes)
-            pageLabel.text = "Page \(myFeed.page)"
-            thoughtLabel.attributedText = NSAttributedString(string: myFeed.thought, attributes: thoughtAttributes)
-        }
+        view.backgroundColor = .white
     }
 
+    override func configureConstraints() {
+        let scrollView = UIScrollView()
+        view.addSubview(scrollView)
+        scrollView.fillSuperview()
+        
+        let contentView = UIView()
+        contentView.stack(feedView)
+        
+        scrollView.addSubview(contentView)
+        contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
+        contentView.anchor(top: scrollView.topAnchor, leading: scrollView.leadingAnchor, bottom: nil, trailing: scrollView.trailingAnchor)
+        
+        scrollView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+    }
 }

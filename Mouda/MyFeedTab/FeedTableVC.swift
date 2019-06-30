@@ -28,7 +28,8 @@ class FeedTableVC: UITableViewController {
         imageView.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
         imageView.contentMode = .scaleAspectFit
         navigationItem.titleView = imageView
-        
+        navigationItem.title = "모으다"
+
         tableView.register(MyFeedCell.self, forCellReuseIdentifier: cellId)
         tableView.separatorColor = UIColor.clear
         tableView.scrollsToTop = true
@@ -62,13 +63,13 @@ class FeedTableVC: UITableViewController {
     
     // MARK: - Navigation
 
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let selectedRow = indexPath.row
-//
-//        let feedDetailVC = FeedDetailVC()
-//        feedDetailVC.feed = feeds[selectedRow]
-//        feedDetailVC.indexPath = selectedRow
-//
-//        navigationController?.pushViewController(feedDetailVC, animated: true)
-//    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedRow = indexPath.row
+
+        let feedDetailVC = FeedDetailVC()
+        feedDetailVC.feed = feeds[selectedRow]
+        feedDetailVC.indexPath = selectedRow
+
+        navigationController?.pushViewController(feedDetailVC, animated: true)
+    }
 }
