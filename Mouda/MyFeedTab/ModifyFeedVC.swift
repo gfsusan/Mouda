@@ -37,17 +37,13 @@ class ModifyFeedVC: AddFeedVC {
                    
                     
                     //델리게이트 업데이트
-//                    feedDetailDelegate?.titleLabel.text = feed.book.title
-//                    feedDetailDelegate?.lineLabel.text = feed.line
-//                    feedDetailDelegate?.pageLabel.text = "Page \(feed.page)"
-//                    feedDetailDelegate?.thoughtLabel.text = feed.thought
+                    feedDetailDelegate?.feed = feed
                     
                     //데이터 센터 업데이트
                     if let index = indexPath {
                         dataCenter.delete(feed: original, at: index, sender: self)
                         dataCenter.add(feed: feed)
                     }
-                    
                     
                     // 저장 작업 외에는 Cancel과 똑같이 modal dismiss만 해주면 됨
                     cancelButtonPressed(sender)
