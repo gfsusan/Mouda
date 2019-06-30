@@ -47,7 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let bookmarkNavContr = UINavigationController(rootViewController: bookmarkVC)
         bookmarkNavContr.tabBarItem = UITabBarItem(title: "남기다", image: #imageLiteral(resourceName: "Bookmark"), tag: 2)
         
-        let tabBarController = UITabBarController()
+        let tabBarController = TabBarController()
         tabBarController.viewControllers = [myFeedNavContr, addNavContr, bookmarkNavContr]
         tabBarController.tabBar.tintColor = .tabBarTintColor
         window = UIWindow()
