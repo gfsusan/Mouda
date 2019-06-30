@@ -10,13 +10,30 @@ import UIKit
 
 class FeedView: UIView {
     
-    let titleLabel: UILabel = {
+    var feedViewModel: FeedViewModel? {
+        didSet {
+            titleLabel.text = feedViewModel?.title
+            dateLabel.text = feedViewModel?.date
+            lineLabel.text = feedViewModel?.line
+            pageLabel.text = feedViewModel?.page
+            thoughtLabel.text = feedViewModel?.thought
+        }
+    }
+    
+    private let titleLabel: UILabel = {
         let l = UILabel()
         l.font = .mySystemFont(ofSize: 16)
         return l
     }()
     
-    let lineLabel: UILabel = {
+    private let dateLabel: UILabel = {
+        let l = UILabel()
+        l.font = .mySystemFont(ofSize: 11)
+        l.textAlignment = .right
+        return l
+    }()
+    
+    private let lineLabel: UILabel = {
         let l = UILabel()
         l.font = .mySystemFont(ofSize: 15)
         l.textAlignment = .center
@@ -29,21 +46,14 @@ class FeedView: UIView {
         return l
     }()
     
-    let dateLabel: UILabel = {
-        let l = UILabel()
-        l.font = .mySystemFont(ofSize: 11)
-        l.textAlignment = .right
-        return l
-    }()
-    
-    let pageLabel: UILabel = {
+    private let pageLabel: UILabel = {
         let l = UILabel()
         l.font = .mySystemFont(ofSize: 14)
         l.textAlignment = .center
         return l
     }()
     
-    let thoughtLabel: UILabel = {
+    private let thoughtLabel: UILabel = {
         let l = UILabel()
         l.font = .mySystemFont(ofSize: 14)
         l.textAlignment = .center

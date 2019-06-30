@@ -10,7 +10,13 @@ import UIKit
 
 class MyFeedCell: UITableViewCell {
     
-    let feedView: FeedView = {
+    var feedViewModel: FeedViewModel? {
+        didSet {
+            feedView.feedViewModel = feedViewModel
+        }
+    }
+    
+    private let feedView: FeedView = {
         let v = FeedView()
         return v
     }()

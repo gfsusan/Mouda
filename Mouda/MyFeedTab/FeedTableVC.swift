@@ -55,11 +55,7 @@ class FeedTableVC: UITableViewController {
         
         let feed = feeds[indexPath.row]
         
-        cell.feedView.titleLabel.text = feed.book.title
-        cell.feedView.dateLabel.text = "\(formatdate.string(from: feed.date))"
-        cell.feedView.lineLabel.text = feed.line
-        cell.feedView.pageLabel.text = "Page \(feed.page)"
-        cell.feedView.thoughtLabel.text = feed.thought
+        cell.feedViewModel = FeedViewModel(feed: feed)
         
         return cell
     }
