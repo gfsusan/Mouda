@@ -43,9 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         addNavContr.tabBarItem = UITabBarItem(title: "쓰다", image: #imageLiteral(resourceName: "Add"), tag: 1)
         
         let layout = UICollectionViewFlowLayout()
-//        let bookmarkVC = BookmarkCollectionVC(collectionViewLayout: layout)
-        let bookmarkVC = UIViewController()
-        bookmarkVC.view.backgroundColor = .groupTableViewBackground
+        let bookmarkVC = BookmarkCollectionVC(collectionViewLayout: layout)
         let bookmarkNavContr = UINavigationController(rootViewController: bookmarkVC)
         bookmarkNavContr.tabBarItem = UITabBarItem(title: "남기다", image: #imageLiteral(resourceName: "Bookmark"), tag: 2)
         

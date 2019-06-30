@@ -8,14 +8,19 @@
 
 import UIKit
 
+private let cellId = "bookmarkCellId"
+private let addCellId = "addBookmarkCellId"
 
-class BookmarkCollectionVC: UICollectionViewController {
+class BookmarkCollectionVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     var bookmarks:[Bookmark] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        collectionView.backgroundColor = .white
+        collectionView.delegate = self
+        
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
         
@@ -23,77 +28,49 @@ class BookmarkCollectionVC: UICollectionViewController {
         imageView.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
         imageView.contentMode = .scaleAspectFit
         navigationItem.titleView = imageView
+        
+        collectionView.register(BookmarkCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.register(BookmarkCell.self, forCellWithReuseIdentifier: addCellId)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         bookmarks = dataCenter.bookmarks
         self.collectionView?.reloadData()
-       
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
- 
-    // MARK: UICollectionViewDataSource
+    // MARK: - UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
         return bookmarks.count + 1
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if indexPath.row > 0 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "bookmarkCell", for: indexPath) as? BookmarkCell
-            
-            guard let retCell = cell else {
-                return cell!
-            }
+        if indexPath.item > 0 {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as? BookmarkCell else { return UICollectionViewCell() }
             
             // 인덱스가 Add Boookmark Cell때문에 한칸 밀리기 때문에
             let bookmarkIndex = indexPath.row - 1
             
             let bookmark = bookmarks[bookmarkIndex]
             
-            if let thumbImage = bookmark.book.coverImage {
-                retCell.coverImage.image = thumbImage
-            } else {
-                retCell.coverImage.image = UIImage(named: "book2")
-                if let thumbImageURL = bookmark.book.coverImageURL {
-                    DispatchQueue.main.async(execute: {
-                        bookmark.book.coverImage = bookmark.book.getCoverImage(withURL: thumbImageURL)
-                        guard let thumbImage = bookmark.book.coverImage else {
-                            return
-                        }
-                        retCell.coverImage.image = thumbImage
-                    })
-                }
-            }
+            cell.bookmarkViewModel = BookmarkViewModel(bookmark: bookmark)
             
-            if let page = bookmark.pageMark {
-                retCell.pageLabel.text = "\(page)쪽까지 읽음"
-            } else {
-                retCell.pageLabel.text = "다 읽음"
-            }
-            
-            return retCell
+            return cell
             
         } else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "bookmarkAddCell", for: indexPath)
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: addCellId, for: indexPath) as? BookmarkCell else { return UICollectionViewCell() }
+            
+            cell.bookmarkViewModel = BookmarkViewModel(bookmark: nil)
+            cell.coverImage.backgroundColor = .white
+            cell.coverImage.contentMode = .scaleAspectFit
+            cell.coverImage.image = #imageLiteral(resourceName: "LaunchLogo")
             
             return cell
         }
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 150, height: 200)
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -114,4 +91,25 @@ class BookmarkCollectionVC: UICollectionViewController {
         }
     }
 
+    // MARK: - UICollectionViewDelegateFlowLayout
+    
+    let spacing: CGFloat = 20
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = (collectionView.frame.width - (spacing * 3)) / 2.0
+        let height = width * (4 / 3.0)
+        return CGSize(width: width, height: height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return spacing
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return spacing
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return .init(top: spacing, left: spacing, bottom: spacing, right: spacing)
+    }
 }
