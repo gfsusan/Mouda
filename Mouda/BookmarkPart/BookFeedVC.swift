@@ -70,7 +70,12 @@ class BookFeedVC: UITableViewController {
         return l
     }()
     
-    @IBAction func deletePressed(_ sender: Any) {
+    lazy var deleteButton: UIBarButtonItem = {
+        let bi = UIBarButtonItem(title: "삭제", style: .plain, target: self, action: #selector(deletePressed))
+        return bi
+    }()
+    
+    @objc func deletePressed() {
        
         let alertView = UIAlertController(title: "삭제", message: "정말로 북마크를 삭제하시겠습니까?", preferredStyle: .alert)
         let delete = UIAlertAction(title: "삭제", style: .destructive) { (action) in
@@ -98,6 +103,7 @@ class BookFeedVC: UITableViewController {
     }
     
     func configureConstraints() {
+        navigationItem.rightBarButtonItem = deleteButton
         
         let bookInfoView = UIView()
         bookInfoView.frame = CGRect(x: 0, y: 0, width: 0, height: 156)
