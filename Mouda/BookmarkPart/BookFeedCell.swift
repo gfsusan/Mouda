@@ -8,35 +8,11 @@
 
 import UIKit
 
-class BookFeedCell: UITableViewCell {
-
-    let dateLabel: UILabel = {
-        let l = UILabel()
-        return l
-    }()
-    
-    let lineLabel: UILabel = {
-        let l = UILabel()
-        return l
-    }()
-    
-    let pageLabel: UILabel = {
-        let l = UILabel()
-        return l
-    }()
-    
-    let thoughtLabel: UILabel = {
-        let l = UILabel()
-        return l
-    }()
-    
+class BookFeedCell: MyFeedCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        stack(dateLabel,
-              lineLabel,
-              pageLabel,
-              thoughtLabel)
+        feedView.isSummaryMode = false
+        feedView.isTitleVisible = false
     }
     
     required init?(coder aDecoder: NSCoder) {

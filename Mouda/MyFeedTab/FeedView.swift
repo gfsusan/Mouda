@@ -12,11 +12,7 @@ class FeedView: UIView {
     
     var feedViewModel: FeedViewModel? {
         didSet {
-            titleLabel.text = feedViewModel?.title
-            dateLabel.text = feedViewModel?.date
-            lineLabel.text = feedViewModel?.line
-            pageLabel.text = feedViewModel?.page
-            thoughtLabel.text = feedViewModel?.thought
+            updateView()
         }
     }
     
@@ -25,6 +21,18 @@ class FeedView: UIView {
             updateView()
         }
     }
+    
+    var isTitleVisible: Bool = true {
+        didSet {
+            updateView()
+        }
+    }
+    
+    private let penIconView: UIImageView = {
+        let iv = UIImageView()
+        iv.contentMode = .scaleAspectFit
+        return iv
+    }()
     
     private let titleLabel: UILabel = {
         let l = UILabel()
@@ -81,9 +89,6 @@ class FeedView: UIView {
     }
     
     func configureConstraints() {
-        let penIconView = UIImageView(image: #imageLiteral(resourceName: "icons8-pen-100"))
-        penIconView.contentMode = .scaleAspectFit
-        
         let titleView = UIView()
         titleView.hstack(penIconView.withSize(.init(width: 24, height: 24)),
                          titleLabel,
@@ -122,6 +127,13 @@ class FeedView: UIView {
             v.removeFromSuperview()
         }
         
+        penIconView.image = #imageLiteral(resourceName: "icons8-pen-100")
+        titleLabel.text = feedViewModel?.title
+        dateLabel.text = feedViewModel?.date
+        lineLabel.text = feedViewModel?.line
+        pageLabel.text = feedViewModel?.page
+        thoughtLabel.text = feedViewModel?.thought
+        
         configureConstraints()
         
         if isSummaryMode {
@@ -130,6 +142,12 @@ class FeedView: UIView {
         } else {
             lineLabel.numberOfLines = 0
             thoughtLabel.numberOfLines = 0
+        }
+        
+        if !isTitleVisible {
+            penIconView.image = nil
+            titleLabel.text = ""
+            titleLabel.font = .mySystemFont(ofSize: 16)
         }
     }
 }

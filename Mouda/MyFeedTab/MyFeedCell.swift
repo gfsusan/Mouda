@@ -16,7 +16,7 @@ class MyFeedCell: UITableViewCell {
         }
     }
     
-    private let feedView: FeedView = {
+    let feedView: FeedView = {
         let v = FeedView()
         return v
     }()

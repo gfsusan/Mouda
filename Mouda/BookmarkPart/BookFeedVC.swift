@@ -16,7 +16,9 @@ class BookFeedVC: UITableViewController {
 
             guard let bookmark = bookmark else { return }
             let book = bookmark.book
-            coverImageView.image = book.coverImage
+            if let imageUrl = book.coverImageURL {
+                coverImageView.loadImageUsingUrlString(imageUrl: imageUrl)
+            }
             titleLabel.text = book.title
             publisherLabel.text = book.publisher
             authorLabel.text = book.writer
@@ -126,17 +128,12 @@ class BookFeedVC: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: bookFeedCellId, for: indexPath) as? BookFeedCell else { return UITableViewCell()}
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: bookFeedCellId, for: indexPath) as? BookFeedCell else { return UITableViewCell() }
 
-        // Configure the cell...
         let feed = feeds[indexPath.row]
         
-//        cell?.textLabel?.text = feed.book.title
-        cell.dateLabel.text = dateFormatter.string(from: feed.date)
-        cell.lineLabel.text = feed.line
-        cell.pageLabel.text = "Page \(feed.page)"
-        cell.thoughtLabel.text = feed.thought
-    
+        cell.feedViewModel = FeedViewModel(feed: feed)
+        
         return cell
         
     }

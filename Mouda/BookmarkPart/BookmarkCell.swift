@@ -43,8 +43,6 @@ class BookmarkCell: UICollectionViewCell {
             )
         
         stackView.alignment = .center
-//
-//        coverImage.heightAnchor.constraint(equalTo: coverImage.widthAnchor, multiplier: 4/3.0).isActive = true
     }
     
     required init?(coder aDecoder: NSCoder) {
