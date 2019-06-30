@@ -10,6 +10,7 @@
 		083066BA22C3665B00EBDAFE /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083066B922C3665B00EBDAFE /* UIFont+Extension.swift */; };
 		0860A77422C1BE5C007839E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0860A77322C1BE5C007839E4 /* ViewController.swift */; };
 		0860A77722C1CD8D007839E4 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0860A77622C1CD8D007839E4 /* UIColor+Extension.swift */; };
+		08E1809522C928B500CFE6AF /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E1809422C928B500CFE6AF /* FeedView.swift */; };
 		6626BE86204003D4003F0C23 /* Feeds.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6626BE84204003D4003F0C23 /* Feeds.storyboard */; };
 		6626BE88204009C1003F0C23 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6626BE87204009C1003F0C23 /* TabBarVC.swift */; };
 		66728F11202A99480061C168 /* AddBookmarkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66728F10202A99470061C168 /* AddBookmarkVC.swift */; };
@@ -51,6 +52,7 @@
 		083066B922C3665B00EBDAFE /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		0860A77322C1BE5C007839E4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0860A77622C1CD8D007839E4 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		08E1809422C928B500CFE6AF /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		10161C9620B613CB23A2620D /* Pods_Mouda.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mouda.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6626BE85204003D4003F0C23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Mouda/Storyboard/Base.lproj/Feeds.storyboard; sourceTree = "<group>"; };
 		6626BE87204009C1003F0C23 /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				669990FB202437D200410F21 /* MyFeedCell.swift */,
 				66728F12202A9C480061C168 /* FeedDetailVC.swift */,
 				6685C132202EFF1900EE066F /* ModifyFeedVC.swift */,
+				08E1809422C928B500CFE6AF /* FeedView.swift */,
 			);
 			path = MyFeedTab;
 			sourceTree = "<group>";
@@ -400,6 +403,7 @@
 				66728F22202AE7520061C168 /* DataCenter.swift in Sources */,
 				66999102202437F200410F21 /* Book.swift in Sources */,
 				66B52A6C202DFD58007C54BF /* BookFeedVC.swift in Sources */,
+				08E1809522C928B500CFE6AF /* FeedView.swift in Sources */,
 				66DBACA1202BF8FD0043CB4B /* SearchBookCell.swift in Sources */,
 				669991042024386900410F21 /* FeedTableVC.swift in Sources */,
 				66B52A5F202D5D90007C54BF /* BookmarkCell.swift in Sources */,
