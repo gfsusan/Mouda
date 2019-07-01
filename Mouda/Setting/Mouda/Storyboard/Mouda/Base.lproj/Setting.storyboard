@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cfr-Mk-UJ0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cfr-Mk-UJ0">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,7 +13,7 @@
         <!--설정-->
         <scene sceneID="XpC-7B-Zkq">
             <objects>
-                <tableViewController id="cfr-Mk-UJ0" customClass="SettingTableVC" customModule="Mouda" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="settings" id="cfr-Mk-UJ0" customClass="SettingTableVC" customModule="Mouda" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="WGx-a9-5G2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -268,10 +267,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Bxe-qr-8u3">
-                                <rect key="frame" x="113" y="195" width="149" height="36"/>
+                                <rect key="frame" x="114" y="195" width="147" height="36"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="__" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2U-JY-4ck" userLabel="PW1">
-                                        <rect key="frame" x="0.0" y="0.0" width="26" height="36"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="25.5" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="25.5" id="CMO-21-tFQ"/>
                                         </constraints>
@@ -280,19 +279,19 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="__" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d13-QB-hqt" userLabel="PW2">
-                                        <rect key="frame" x="41" y="0.0" width="26" height="36"/>
+                                        <rect key="frame" x="40.5" y="0.0" width="25.5" height="36"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
                                         <color key="textColor" red="0.30962479114532471" green="0.24753916263580322" blue="0.21175628900527954" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="__" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pWc-UR-F7h" userLabel="PW3">
-                                        <rect key="frame" x="82" y="0.0" width="26" height="36"/>
+                                        <rect key="frame" x="81" y="0.0" width="25.5" height="36"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
                                         <color key="textColor" red="0.30962479114532471" green="0.24753916263580322" blue="0.21175628900527954" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="__" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gap-7y-kih" userLabel="PW4">
-                                        <rect key="frame" x="123" y="0.0" width="26" height="36"/>
+                                        <rect key="frame" x="121.5" y="0.0" width="25.5" height="36"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
                                         <color key="textColor" red="0.30962479114532471" green="0.24753916263580322" blue="0.21175628900527954" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>

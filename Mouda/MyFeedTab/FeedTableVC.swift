@@ -29,10 +29,23 @@ class FeedTableVC: UITableViewController {
         imageView.contentMode = .scaleAspectFit
         navigationItem.titleView = imageView
         navigationItem.title = "모으다"
-
+        
+        // Settings button
+        let settingsButton = UIBarButtonItem(image: #imageLiteral(resourceName: "setting"), style: .plain, target: self, action: #selector(showSetting))
+        navigationItem.rightBarButtonItem = settingsButton
+        
+        let invisibleButton = UIBarButtonItem(image: #imageLiteral(resourceName: "Empty"), style: .plain, target: self, action: nil)
+        navigationItem.leftBarButtonItem = invisibleButton
+        
         tableView.register(MyFeedCell.self, forCellReuseIdentifier: cellId)
         tableView.separatorColor = UIColor.clear
         tableView.scrollsToTop = true
+    }
+    
+    @objc func showSetting() {
+        let storyboard = UIStoryboard(name: "Setting", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "settings")
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {

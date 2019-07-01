@@ -29,6 +29,13 @@ class BookmarkCollectionVC: UICollectionViewController, UICollectionViewDelegate
         imageView.contentMode = .scaleAspectFit
         navigationItem.titleView = imageView
         
+        // Settings button
+        let settingsButton = UIBarButtonItem(image: #imageLiteral(resourceName: "setting"), style: .plain, target: self, action: #selector(showSetting))
+        navigationItem.rightBarButtonItem = settingsButton
+        
+        let invisibleButton = UIBarButtonItem(image: #imageLiteral(resourceName: "Empty"), style: .plain, target: self, action: nil)
+        navigationItem.leftBarButtonItem = invisibleButton
+        
         collectionView.register(BookmarkCell.self, forCellWithReuseIdentifier: cellId)
         collectionView.register(BookmarkCell.self, forCellWithReuseIdentifier: addCellId)
     }
@@ -36,6 +43,12 @@ class BookmarkCollectionVC: UICollectionViewController, UICollectionViewDelegate
     override func viewWillAppear(_ animated: Bool) {
         bookmarks = dataCenter.bookmarks
         self.collectionView?.reloadData()
+    }
+    
+    @objc func showSetting() {
+        let storyboard = UIStoryboard(name: "Setting", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "settings")
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     // MARK: - UICollectionViewDataSource
