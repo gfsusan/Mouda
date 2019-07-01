@@ -12,7 +12,7 @@ import LBTATools
 private let cellId = "bookInfoCellId"
 
 class SearchTableVC: UITableViewController, UISearchResultsUpdating, XMLParserDelegate {
-    
+
     var searchResult: [Book] = []
     var addPopUpDelegate: AddFeedVC?
     var addBookmarkDelegate: AddBookmarkVC?
