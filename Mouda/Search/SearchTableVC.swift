@@ -146,6 +146,7 @@ class SearchTableVC: UITableViewController, UISearchResultsUpdating, XMLParserDe
         guard searchText != "" else { return }
         
         searchResult = []
+        tableView.reloadData()
         
         let urlString = "https://openapi.naver.com/v1/search/book.xml?query=" + searchText
         guard let urlWithPercentEscapes = urlString.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed) else { return }
