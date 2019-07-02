@@ -51,6 +51,7 @@ class FeedView: UIView {
         let l = UILabel()
         l.font = .mySystemFont(ofSize: 15)
         l.textAlignment = .center
+        l.lineBreakMode = .byClipping
         //        let style = NSMutableParagraphStyle()
         //        style.lineSpacing = 5
         //        style.alignment = .center
@@ -70,6 +71,7 @@ class FeedView: UIView {
         let l = UILabel()
         l.font = .mySystemFont(ofSize: 14)
         l.textAlignment = .center
+        l.lineBreakMode = .byClipping
         //        let thoughtStyle = NSMutableParagraphStyle()
         //        thoughtStyle.lineSpacing = 5
         //        thoughtStyle.alignment = .center
