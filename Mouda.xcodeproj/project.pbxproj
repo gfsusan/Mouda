@@ -18,8 +18,6 @@
 		6626BE88204009C1003F0C23 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6626BE87204009C1003F0C23 /* TabBarController.swift */; };
 		66728F11202A99480061C168 /* AddBookmarkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66728F10202A99470061C168 /* AddBookmarkVC.swift */; };
 		66728F13202A9C480061C168 /* FeedDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66728F12202A9C480061C168 /* FeedDetailVC.swift */; };
-		66728F19202AAE800061C168 /* MyFeed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66728F17202AAE800061C168 /* MyFeed.storyboard */; };
-		66728F20202AAF420061C168 /* Bookmark.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66728F1E202AAF420061C168 /* Bookmark.storyboard */; };
 		66728F22202AE7520061C168 /* DataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66728F21202AE7520061C168 /* DataCenter.swift */; };
 		6685C133202EFF1900EE066F /* ModifyFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6685C132202EFF1900EE066F /* ModifyFeedVC.swift */; };
 		669990EA20242F2B00410F21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669990E920242F2B00410F21 /* AppDelegate.swift */; };
@@ -64,8 +62,6 @@
 		6626BE87204009C1003F0C23 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		66728F10202A99470061C168 /* AddBookmarkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookmarkVC.swift; sourceTree = "<group>"; };
 		66728F12202A9C480061C168 /* FeedDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailVC.swift; sourceTree = "<group>"; };
-		66728F18202AAE800061C168 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Mouda/Base.lproj/MyFeed.storyboard; sourceTree = "<group>"; };
-		66728F1F202AAF420061C168 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Mouda/Storyboard/Mouda/Base.lproj/Bookmark.storyboard; sourceTree = "<group>"; };
 		66728F21202AE7520061C168 /* DataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCenter.swift; sourceTree = "<group>"; };
 		6685C132202EFF1900EE066F /* ModifyFeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyFeedVC.swift; sourceTree = "<group>"; };
 		669990E620242F2B00410F21 /* Mouda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mouda.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,7 +143,6 @@
 		66728F15202A9E130061C168 /* MyFeedTab */ = {
 			isa = PBXGroup;
 			children = (
-				66728F17202AAE800061C168 /* MyFeed.storyboard */,
 				669991032024386900410F21 /* FeedTableVC.swift */,
 				669990FB202437D200410F21 /* MyFeedCell.swift */,
 				66728F12202A9C480061C168 /* FeedDetailVC.swift */,
@@ -179,7 +174,6 @@
 		66728F1D202AAEF60061C168 /* BookmarkPart */ = {
 			isa = PBXGroup;
 			children = (
-				66728F1E202AAF420061C168 /* Bookmark.storyboard */,
 				66728F10202A99470061C168 /* AddBookmarkVC.swift */,
 				66B52A5C202D5D7A007C54BF /* BookmarkCollectionVC.swift */,
 				66B52A5E202D5D90007C54BF /* BookmarkCell.swift */,
@@ -339,11 +333,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66728F19202AAE800061C168 /* MyFeed.storyboard in Resources */,
 				7AD0AF762029C913002E7F60 /* NanumSquareOTFRegular.otf in Resources */,
 				669990F420242F2B00410F21 /* LaunchScreen.storyboard in Resources */,
 				7AE837832047ADF80012C1CE /* Empty.png in Resources */,
-				66728F20202AAF420061C168 /* Bookmark.storyboard in Resources */,
 				669990F120242F2B00410F21 /* Assets.xcassets in Resources */,
 				7AD0AF6B2029B3F3002E7F60 /* Media.xcassets in Resources */,
 				7AD0AF742029C906002E7F60 /* NanumGothic.otf in Resources */,
@@ -444,22 +436,6 @@
 				6626BE85204003D4003F0C23 /* Base */,
 			);
 			name = Feeds.storyboard;
-			sourceTree = "<group>";
-		};
-		66728F17202AAE800061C168 /* MyFeed.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				66728F18202AAE800061C168 /* Base */,
-			);
-			name = MyFeed.storyboard;
-			sourceTree = "<group>";
-		};
-		66728F1E202AAF420061C168 /* Bookmark.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				66728F1F202AAF420061C168 /* Base */,
-			);
-			name = Bookmark.storyboard;
 			sourceTree = "<group>";
 		};
 		669990ED20242F2B00410F21 /* Main.storyboard */ = {
