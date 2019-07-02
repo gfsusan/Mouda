@@ -10,7 +10,7 @@ import UIKit
 
 class TabBarController: UITabBarController {
 
-    private var addFeedTapBarItem: UIButton = {
+    private var addFeedTabBarItem: UIButton = {
         let button = UIButton()
         button.setBackgroundImage(UIImage(named: "Empty.png"), for: .normal)
         button.addTarget(self, action: #selector(TabBarController.handleAdd(sender:)), for: .touchUpInside)
@@ -25,15 +25,15 @@ class TabBarController: UITabBarController {
     }
 
     func setupAddPostButton() {
-        self.view.addSubview(addFeedTapBarItem)
+        self.view.addSubview(addFeedTabBarItem)
         
         let tabBarItemsCount: CGFloat = 3
         let itemWidth = self.view.frame.size.width / tabBarItemsCount
 
-        addFeedTapBarItem.widthAnchor.constraint(equalToConstant: itemWidth).isActive = true
-        addFeedTapBarItem.topAnchor.constraint(equalTo: self.tabBar.topAnchor).isActive = true
-        addFeedTapBarItem.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
-        addFeedTapBarItem.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        addFeedTabBarItem.widthAnchor.constraint(equalToConstant: itemWidth).isActive = true
+        addFeedTabBarItem.topAnchor.constraint(equalTo: self.tabBar.topAnchor).isActive = true
+        addFeedTabBarItem.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        addFeedTabBarItem.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
     }
     
     // clicked upload button (go to upload)
