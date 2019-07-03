@@ -87,13 +87,13 @@ class AddFeedVC: ViewController, UITabBarControllerDelegate {
         removeKeyboardObservers()
     }
     
-    @IBAction func selectBookPressed(_ sender: Any) {
+    @objc func selectBookPressed(_ sender: Any) {
         let searchVC = SearchTableVC()
         searchVC.addPopUpDelegate = self
         navigationController?.pushViewController(searchVC, animated: true)
     }
     
-    @IBAction func doneButtonPressed(_ sender: Any) {
+    @objc func doneButtonPressed(_ sender: Any) {
         if let chosenBook = book {
             // line과 page 입력되었는지 확인. thought은 없어도 됨
             if lineTextView.textColor != UIColor.lightGray {
@@ -130,7 +130,7 @@ class AddFeedVC: ViewController, UITabBarControllerDelegate {
         }
     }
     
-    @IBAction func cancelButtonPressed(_ sender: Any) {
+    @objc func cancelButtonPressed(_ sender: Any) {
         self.dismiss(animated: true)
     }
     
@@ -148,7 +148,7 @@ class AddFeedVC: ViewController, UITabBarControllerDelegate {
                        spacing: 8).withMargins(.init(top: 8, left: 8, bottom: 8, right: 8))
         lineView.backgroundColor = .groupTableViewBackground
         pageTextField.widthAnchor.constraint(greaterThanOrEqualToConstant: 80).isActive = true
-        
+
         let thoughtView = UIView()
         thoughtView.stack(thoughtTextView).withMargins(.init(top: 8, left: 8, bottom: 8, right: 8))
         thoughtView.backgroundColor = .groupTableViewBackground
@@ -161,8 +161,7 @@ class AddFeedVC: ViewController, UITabBarControllerDelegate {
             .withMargins(.init(top: 8, left: 0, bottom: 0, right: 0))
         
         lineView.heightAnchor.constraint(greaterThanOrEqualToConstant: 200).isActive = true
-        lineTextView.widthAnchor.constraint(equalTo: contentView.widthAnchor).isActive = true
-        
+
         thoughtView.heightAnchor.constraint(greaterThanOrEqualToConstant: 130).isActive = true
 
         scrollView.addSubview(contentView)
