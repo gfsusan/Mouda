@@ -72,11 +72,6 @@ class FeedView: UIView {
         l.font = .mySystemFont(ofSize: 14)
         l.textAlignment = .center
         l.lineBreakMode = .byClipping
-        //        let thoughtStyle = NSMutableParagraphStyle()
-        //        thoughtStyle.lineSpacing = 5
-        //        thoughtStyle.alignment = .center
-        //        let thoughtAttributes = [NSAttributedString.Key.paragraphStyle: thoughtStyle]
-        //        l.attributedText = NSAttributedString(string: feed.thought, attributes: thoughtAttributes)
         return l
     }()
     
@@ -129,27 +124,38 @@ class FeedView: UIView {
             v.removeFromSuperview()
         }
         
-        penIconView.image = #imageLiteral(resourceName: "icons8-pen-100")
-        titleLabel.text = feedViewModel?.title
-        dateLabel.text = feedViewModel?.date
-        lineLabel.text = feedViewModel?.line
-        pageLabel.text = feedViewModel?.page
-        thoughtLabel.text = feedViewModel?.thought
-        
         configureConstraints()
+        
+        let lineStyle = NSMutableParagraphStyle()
+        lineStyle.lineSpacing = 5
+        let lineAttributes = [NSAttributedString.Key.paragraphStyle: lineStyle]
+        
+        let thoughtStyle = NSMutableParagraphStyle()
+        thoughtStyle.lineSpacing = 5
+        let thoughtAttributes = [NSAttributedString.Key.paragraphStyle: thoughtStyle]
         
         if isSummaryMode {
             lineLabel.numberOfLines = 4
             thoughtLabel.numberOfLines = 3
+            lineStyle.alignment = .center
+            thoughtStyle.alignment = .center
         } else {
             lineLabel.numberOfLines = 0
             thoughtLabel.numberOfLines = 0
+            lineStyle.alignment = .left
+            thoughtStyle.alignment = .center
         }
+        
+        penIconView.image = #imageLiteral(resourceName: "icons8-pen-100")
+        titleLabel.text = feedViewModel?.title
+        dateLabel.text = feedViewModel?.date
+        lineLabel.attributedText = NSAttributedString(string: feedViewModel?.line ?? "", attributes: lineAttributes)
+        pageLabel.text = feedViewModel?.page
+        thoughtLabel.attributedText = NSAttributedString(string: feedViewModel?.thought ?? "", attributes: thoughtAttributes)
         
         if !isTitleVisible {
             penIconView.image = nil
             titleLabel.text = ""
-            titleLabel.font = .mySystemFont(ofSize: 16)
         }
     }
 }
