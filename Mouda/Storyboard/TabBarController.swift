@@ -39,7 +39,8 @@ class TabBarController: UITabBarController {
     // clicked upload button (go to upload)
     @objc func handleAdd(sender : UIButton) {
         let addVC = AddFeedVC()
-        let navContr = UINavigationController(rootViewController: addVC)
+        let navContr = UINavigationController(navigationBarClass: MoudaNavigationBar.self, toolbarClass: nil)
+        navContr.addChild(addVC)
         self.present(navContr, animated: true, completion: nil)
     }
 

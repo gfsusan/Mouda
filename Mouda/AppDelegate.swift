@@ -16,21 +16,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        // 네비게이션 바 색상
-        UINavigationBar.appearance().barTintColor = UIColor(displayP3Red: 82/255, green: 62/255, blue: 53/255, alpha: 1)
-        UINavigationBar.appearance().tintColor = UIColor.white
-        
         let myFeedsVC = FeedTableVC()
-        let myFeedNavContr = UINavigationController(rootViewController: myFeedsVC)
+        let myFeedNavContr = UINavigationController(navigationBarClass: MoudaNavigationBar.self, toolbarClass: nil)
+        myFeedNavContr.addChild(myFeedsVC)
         myFeedNavContr.tabBarItem = UITabBarItem(title: "보이다", image: #imageLiteral(resourceName: "Home"), tag: 0)
         
         let addVC = AddFeedVC()
-        let addNavContr = UINavigationController(rootViewController: addVC)
+        let addNavContr = UINavigationController(navigationBarClass: MoudaNavigationBar.self, toolbarClass: nil)
+        addNavContr.addChild(addVC)
         addNavContr.tabBarItem = UITabBarItem(title: "쓰다", image: #imageLiteral(resourceName: "Add"), tag: 1)
         
         let layout = UICollectionViewFlowLayout()
         let bookmarkVC = BookmarkCollectionVC(collectionViewLayout: layout)
-        let bookmarkNavContr = UINavigationController(rootViewController: bookmarkVC)
+        let bookmarkNavContr = UINavigationController(navigationBarClass: MoudaNavigationBar.self, toolbarClass: nil)
+        bookmarkNavContr.addChild(bookmarkVC)
         bookmarkNavContr.tabBarItem = UITabBarItem(title: "남기다", image: #imageLiteral(resourceName: "Bookmark"), tag: 2)
         
         let tabBarController = TabBarController()
