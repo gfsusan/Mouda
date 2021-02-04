@@ -13,7 +13,7 @@ class TabBarController: UITabBarController {
     private var addFeedTabBarItem: UIButton = {
         let button = UIButton()
         button.setBackgroundImage(UIImage(named: "Empty.png"), for: .normal)
-        button.addTarget(self, action: #selector(TabBarController.handleAdd(sender:)), for: .touchUpInside)
+        button.addTarget(self, action: #selector(handleAdd(sender:)), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -39,8 +39,7 @@ class TabBarController: UITabBarController {
     // clicked upload button (go to upload)
     @objc func handleAdd(sender : UIButton) {
         let addVC = AddFeedVC()
-        let navContr = UINavigationController(navigationBarClass: MoudaNavigationBar.self, toolbarClass: nil)
-        navContr.addChild(addVC)
+        let navContr = MoudaNavigationController(rootViewController: addVC)
         self.present(navContr, animated: true, completion: nil)
     }
 

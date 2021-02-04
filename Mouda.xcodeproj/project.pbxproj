@@ -14,7 +14,7 @@
 		08E1809722C92A4000CFE6AF /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E1809622C92A4000CFE6AF /* FeedViewModel.swift */; };
 		08E1809922C9415100CFE6AF /* BookmarkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E1809822C9415100CFE6AF /* BookmarkViewModel.swift */; };
 		08E1809B22C9427500CFE6AF /* UIImageView+LoadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E1809A22C9427500CFE6AF /* UIImageView+LoadImage.swift */; };
-		08E180A322CD10FF00CFE6AF /* MoudaNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E180A222CD10FF00CFE6AF /* MoudaNavigationBar.swift */; };
+		08E48A5525CC166700AC4961 /* MoudaNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E48A5425CC166700AC4961 /* MoudaNavigationController.swift */; };
 		6626BE86204003D4003F0C23 /* Feeds.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6626BE84204003D4003F0C23 /* Feeds.storyboard */; };
 		6626BE88204009C1003F0C23 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6626BE87204009C1003F0C23 /* TabBarController.swift */; };
 		66728F11202A99480061C168 /* AddBookmarkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66728F10202A99470061C168 /* AddBookmarkVC.swift */; };
@@ -58,7 +58,7 @@
 		08E1809622C92A4000CFE6AF /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 		08E1809822C9415100CFE6AF /* BookmarkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewModel.swift; sourceTree = "<group>"; };
 		08E1809A22C9427500CFE6AF /* UIImageView+LoadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+LoadImage.swift"; sourceTree = "<group>"; };
-		08E180A222CD10FF00CFE6AF /* MoudaNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoudaNavigationBar.swift; sourceTree = "<group>"; };
+		08E48A5425CC166700AC4961 /* MoudaNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoudaNavigationController.swift; sourceTree = "<group>"; };
 		10161C9620B613CB23A2620D /* Pods_Mouda.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mouda.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6626BE85204003D4003F0C23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Mouda/Storyboard/Base.lproj/Feeds.storyboard; sourceTree = "<group>"; };
 		6626BE87204009C1003F0C23 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -124,7 +124,8 @@
 		08E1809F22CD108A00CFE6AF /* Custom */ = {
 			isa = PBXGroup;
 			children = (
-				08E180A222CD10FF00CFE6AF /* MoudaNavigationBar.swift */,
+				08E48A5425CC166700AC4961 /* MoudaNavigationController.swift */,
+				6626BE87204009C1003F0C23 /* TabBarController.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -176,7 +177,6 @@
 			children = (
 				669990ED20242F2B00410F21 /* Main.storyboard */,
 				669990F220242F2B00410F21 /* LaunchScreen.storyboard */,
-				6626BE87204009C1003F0C23 /* TabBarController.swift */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -413,6 +413,7 @@
 				08E1809922C9415100CFE6AF /* BookmarkViewModel.swift in Sources */,
 				66B52A5D202D5D7A007C54BF /* BookmarkCollectionVC.swift in Sources */,
 				66F902DE202961F40047C959 /* AddFeedVC.swift in Sources */,
+				08E48A5525CC166700AC4961 /* MoudaNavigationController.swift in Sources */,
 				08E1809B22C9427500CFE6AF /* UIImageView+LoadImage.swift in Sources */,
 				66728F22202AE7520061C168 /* DataCenter.swift in Sources */,
 				66999102202437F200410F21 /* Book.swift in Sources */,
@@ -431,7 +432,6 @@
 				66999100202437F200410F21 /* Feed.swift in Sources */,
 				66DBAC9F202BF5660043CB4B /* Bookmark.swift in Sources */,
 				669990FC202437D200410F21 /* MyFeedCell.swift in Sources */,
-				08E180A322CD10FF00CFE6AF /* MoudaNavigationBar.swift in Sources */,
 				66728F11202A99480061C168 /* AddBookmarkVC.swift in Sources */,
 				0860A77422C1BE5C007839E4 /* ViewController.swift in Sources */,
 				6626BE88204009C1003F0C23 /* TabBarController.swift in Sources */,
