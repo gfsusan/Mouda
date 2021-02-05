@@ -43,6 +43,7 @@ class AddFeedVC: ViewController, UITabBarControllerDelegate {
         tv.font = .mySystemFont(ofSize: 14)
         tv.backgroundColor = .clear
         tv.isScrollEnabled = false
+        tv.placeholder = "간직하고 싶은 책 속의 한 문장을 작성해주세요."
         return tv
     }()
     
@@ -65,6 +66,7 @@ class AddFeedVC: ViewController, UITabBarControllerDelegate {
         tv.font = .mySystemFont(ofSize: 14)
         tv.backgroundColor = .clear
         tv.isScrollEnabled = false
+        tv.placeholder = "기록한 문장에 대한 본인만의 생각이나 감정을 표현해주세요."
         return tv
     }()
     
@@ -176,21 +178,16 @@ class AddFeedVC: ViewController, UITabBarControllerDelegate {
     }
 }
 
-extension AddFeedVC: UITextViewDelegate {
+extension AddFeedVC {
     func configureTextFieldDelegates() {
         setupDelegates()
         addKeyboardObservers()
         configureTapGesture()
-        
-        lineTextView.text = "간직하고 싶은 책 속의 한 문장을 작성해주세요."
-        thoughtTextView.text = "기록한 문장에 대한 본인만의 생각이나 감정을 표현해주세요."
-        lineTextView.textColor = UIColor.lightGray
-        thoughtTextView.textColor = UIColor.lightGray
     }
     
     func setupDelegates() {
-        lineTextView.delegate = self
-        thoughtTextView.delegate = self
+//        lineTextView.delegate = self
+//        thoughtTextView.delegate = self
     }
     
     func addKeyboardObservers() {
@@ -225,31 +222,4 @@ extension AddFeedVC: UITextViewDelegate {
         scrollView.scrollIndicatorInsets = UIEdgeInsets.zero
     }
     
-    // Placeholder text
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        if(textView.textColor == UIColor.lightGray) {
-            textView.text = nil
-            textView.textColor = UIColor.black
-            if textView.accessibilityIdentifier == "lineText" {
-                // scroll to top
-            } else if textView.accessibilityIdentifier == "thoughtText" {
-                // scroll to bottom of thought textview
-            } 
-        }
-        textView.becomeFirstResponder()
-    }
-
-    func textViewDidEndEditing(_ textView: UITextView) {
-
-        if textView.text.isEmpty {
-            textView.textColor = UIColor.lightGray
-            if textView.accessibilityIdentifier == "lineText" {
-                textView.text = "간직하고 싶은 책 속의 한 문장을 작성해주세요."
-            } else if textView.accessibilityIdentifier == "thoughtText" {
-                textView.text = "기록한 문장에 대한 본인만의 생각이나 감정을 표현해주세요."
-            }
-        }
-        
-        textView.resignFirstResponder()
-    }
 }
