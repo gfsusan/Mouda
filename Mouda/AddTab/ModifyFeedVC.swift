@@ -70,12 +70,9 @@ class ModifyFeedVC: AddFeedVC {
         }
         
         book = feed.book
-        lineTextView.textColor = UIColor.black
         if thoughtTextView.text == "" {
             thoughtTextView.text = "기록한 문장에 대한 본인만의 생각이나 감정을 표현해주세요."
-            thoughtTextView.textColor = UIColor.lightGray
         } else {
-            thoughtTextView.textColor = UIColor.black
             thoughtTextView.text = feed.thought
         }
         lineTextView.text = feed.line

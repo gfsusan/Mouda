@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddFeedVC: ViewController, UITabBarControllerDelegate {
+class AddFeedVC: ScrollViewController, UITabBarControllerDelegate {
     
     var feedDelegate:FeedTableVC?
     
@@ -69,11 +69,6 @@ class AddFeedVC: ViewController, UITabBarControllerDelegate {
         tv.isScrollEnabled = false
         tv.placeholder = "기록한 문장에 대한 본인만의 생각이나 감정을 표현해주세요."
         return tv
-    }()
-    
-    let scrollView: UIScrollView = {
-        let sv = UIScrollView()
-        return sv
     }()
     
     var bottomConstraint: NSLayoutConstraint?
@@ -141,8 +136,7 @@ class AddFeedVC: ViewController, UITabBarControllerDelegate {
     }
     
     override func configureConstraints() {
-        view.addSubview(scrollView)
-        scrollView.fillSuperview()
+        super.configureConstraints()
         
         let lineView = UIView()
         lineView.stack(lineTextView,
@@ -156,22 +150,16 @@ class AddFeedVC: ViewController, UITabBarControllerDelegate {
         thoughtView.stack(thoughtTextView).withMargins(.init(top: 8, left: 8, bottom: 8, right: 8))
         thoughtView.backgroundColor = .groupTableViewBackground
         
-        let contentView = UIView()
-        contentView.stack(bookChooseButton.withHeight(60),
-                          lineView,
-                          thoughtView,
-                          spacing: 8)
-            .withMargins(.init(top: 8, left: 0, bottom: 0, right: 0))
         
         lineView.heightAnchor.constraint(greaterThanOrEqualToConstant: 200).isActive = true
 
         thoughtView.heightAnchor.constraint(greaterThanOrEqualToConstant: 130).isActive = true
 
-        scrollView.addSubview(contentView)
-        contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
-        contentView.anchor(top: scrollView.topAnchor, leading: scrollView.leadingAnchor, bottom: nil, trailing: scrollView.trailingAnchor)
-        
-        scrollView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+        contentView.stack(bookChooseButton.withHeight(60),
+                          lineView,
+                          thoughtView,
+                          spacing: 8)
+            .withMargins(.init(top: 8, left: 0, bottom: 0, right: 0))
     }
     
     override func addTargets() {
