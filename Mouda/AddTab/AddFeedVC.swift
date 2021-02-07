@@ -52,8 +52,9 @@ class AddFeedVC: ViewController, UITabBarControllerDelegate {
         tv.font = .mySystemFont(ofSize: 17)
         tv.placeholder = "123"
         tv.contentHorizontalAlignment = .center
+        tv.keyboardType = .numberPad
         
-        let l = UILabel(text: "Page", font: .mySystemFont(ofSize: 17), textAlignment: .left, numberOfLines: 1)
+        let l = UILabel(text: "Page ", font: .mySystemFont(ofSize: 17), textAlignment: .left, numberOfLines: 1)
         l.sizeToFit()
         l.frame = CGRect(x: 0, y: 0, width: l.frame.width + 8, height: l.frame.height)
         tv.leftViewMode = .always

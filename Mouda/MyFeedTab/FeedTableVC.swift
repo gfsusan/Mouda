@@ -12,7 +12,6 @@ private let cellId = "myFeedCellId"
 class FeedTableVC: UITableViewController {
     
     var feeds: [Feed] = []
-    var receivedFeed: Feed?
     
     let formatdate: DateFormatter = {
         let df = DateFormatter()

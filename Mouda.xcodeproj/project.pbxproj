@@ -133,6 +133,9 @@
 			children = (
 				08E48A5425CC166700AC4961 /* MoudaNavigationController.swift */,
 				6626BE87204009C1003F0C23 /* TabBarController.swift */,
+				08E48A6525CD976100AC4961 /* BookView.swift */,
+				08E48A6825CD990300AC4961 /* PageView.swift */,
+				08E1809422C928B500CFE6AF /* FeedView.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -164,8 +167,6 @@
 				669991032024386900410F21 /* FeedTableVC.swift */,
 				669990FB202437D200410F21 /* MyFeedCell.swift */,
 				66728F12202A9C480061C168 /* FeedDetailVC.swift */,
-				6685C132202EFF1900EE066F /* ModifyFeedVC.swift */,
-				08E1809422C928B500CFE6AF /* FeedView.swift */,
 			);
 			path = MyFeedTab;
 			sourceTree = "<group>";
@@ -174,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				66F902DD202961F40047C959 /* AddFeedVC.swift */,
+				6685C132202EFF1900EE066F /* ModifyFeedVC.swift */,
 				7AE837822047ADF80012C1CE /* Empty.png */,
 			);
 			path = AddTab;
@@ -196,8 +198,6 @@
 				66B52A5E202D5D90007C54BF /* BookmarkCell.swift */,
 				66B52A6B202DFD58007C54BF /* BookFeedVC.swift */,
 				66B52A71202E12AC007C54BF /* BookFeedCell.swift */,
-				08E48A6525CD976100AC4961 /* BookView.swift */,
-				08E48A6825CD990300AC4961 /* PageView.swift */,
 			);
 			path = BookmarkPart;
 			sourceTree = "<group>";
