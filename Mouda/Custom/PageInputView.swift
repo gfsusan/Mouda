@@ -22,6 +22,7 @@ class PageInputView: UIView {
         tv.font = .mySystemFont(ofSize: 17)
         tv.placeholder = "123"
         tv.contentHorizontalAlignment = .center
+        tv.keyboardType = .numberPad
         
         let l = UILabel(text: "Page ", font: .mySystemFont(ofSize: 17), textAlignment: .left, numberOfLines: 1)
         tv.leftViewMode = .always
