@@ -12,21 +12,7 @@ class AddBookmarkVC: AddFeedVC {
     
     var delegate: BookmarkCollectionVC?
     
-    var page: Int?
-    override var book: Book? {
-        didSet {
-           bookChooseButton.setTitle("다시 선택", for: .normal)
-        }
-    }
-    
     let pageView = PageView()
-    
-    override func viewWillAppear(_ animated: Bool) {
-        bookView.bookImageView.image = book?.coverImage
-        bookView.titleLabel.text = book?.title
-        bookView.publisherLabel.text = book?.publisher
-        bookView.authorLabel.text = book?.writer
-    }
     
     override func doneButtonPressed(_ sender: Any) {
         if let selectedBook = book {
