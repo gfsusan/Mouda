@@ -11,12 +11,12 @@ class BookViewModel {
     var title: String
     var author: String
     var publisher: String
-    var coverImage: UIImage?
+    var coverImageUrl: String
     
     init(book: Book) {
         title = book.title ?? ""
         author = book.writer ?? ""
         publisher = book.publisher ?? ""
-        coverImage = book.coverImage
+        coverImageUrl = book.coverImageURL ?? ""
     }
 }

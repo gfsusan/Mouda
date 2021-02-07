@@ -62,7 +62,7 @@ class BookView: UIView {
     }
     
     func updateView() {
-        bookImageView.image = bookViewModel?.coverImage
+        bookImageView.loadImageUsingUrlString(imageUrl: bookViewModel?.coverImageUrl ?? "")
         titleLabel.text = bookViewModel?.title
         publisherLabel.text = bookViewModel?.publisher
         authorLabel.text = bookViewModel?.author
