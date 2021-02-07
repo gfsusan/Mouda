@@ -13,24 +13,17 @@ class FeedTableVC: UITableViewController {
     
     var feeds: [Feed] = []
     
-    let formatdate: DateFormatter = {
-        let df = DateFormatter()
-        df.dateFormat = "yyyy년 MM월 dd일"
-        return df
-    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Navigation Bar Item
         let imageView = UIImageView(image: #imageLiteral(resourceName: "Logo"))
-        imageView.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
         imageView.contentMode = .scaleAspectFit
         navigationItem.titleView = imageView
         navigationItem.title = "모으다"
         
         // Settings button
-        let settingsButton = UIBarButtonItem(image: #imageLiteral(resourceName: "setting"), style: .plain, target: self, action: #selector(showSetting))
+        let settingsButton = UIBarButtonItem(image: #imageLiteral(resourceName: "setting"), style: .plain, target: self, action: #selector(handleShowSetting))
         navigationItem.rightBarButtonItem = settingsButton
         
         let invisibleButton = UIBarButtonItem(image: #imageLiteral(resourceName: "Empty"), style: .plain, target: self, action: nil)
@@ -41,7 +34,7 @@ class FeedTableVC: UITableViewController {
         tableView.scrollsToTop = true
     }
     
-    @objc func showSetting() {
+    @objc func handleShowSetting() {
         let storyboard = UIStoryboard(name: "Setting", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "settings")
         navigationController?.pushViewController(vc, animated: true)
