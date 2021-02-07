@@ -12,7 +12,7 @@ class AddBookmarkVC: AddFeedVC {
     
     var delegate: BookmarkCollectionVC?
     
-    let pageView = PageView()
+    let pageView = PageInputView()
     
     override func doneButtonPressed(_ sender: Any) {
         if let selectedBook = book {

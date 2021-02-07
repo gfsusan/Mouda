@@ -52,11 +52,6 @@ class FeedView: UIView {
         l.font = .mySystemFont(ofSize: 15)
         l.textAlignment = .center
         l.lineBreakMode = .byClipping
-        //        let style = NSMutableParagraphStyle()
-        //        style.lineSpacing = 5
-        //        style.alignment = .center
-        //        let attributes = [NSAttributedString.Key.paragraphStyle: style]
-        //        l.lineLabel.attributedText = NSAttributedString(string: feed.line, attributes: attributes)
         return l
     }()
     

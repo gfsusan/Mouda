@@ -17,7 +17,7 @@
 		08E48A5525CC166700AC4961 /* MoudaNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E48A5425CC166700AC4961 /* MoudaNavigationController.swift */; };
 		08E48A6225CC410C00AC4961 /* UITextView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E48A6125CC410C00AC4961 /* UITextView+Extension.swift */; };
 		08E48A6625CD976100AC4961 /* BookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E48A6525CD976100AC4961 /* BookView.swift */; };
-		08E48A6925CD990300AC4961 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E48A6825CD990300AC4961 /* PageView.swift */; };
+		08E48A6925CD990300AC4961 /* PageInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E48A6825CD990300AC4961 /* PageInputView.swift */; };
 		08E48A7125CFD64D00AC4961 /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E48A7025CFD64D00AC4961 /* ScrollViewController.swift */; };
 		08E48A7425CFDD7000AC4961 /* BookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E48A7325CFDD7000AC4961 /* BookViewModel.swift */; };
 		6626BE86204003D4003F0C23 /* Feeds.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6626BE84204003D4003F0C23 /* Feeds.storyboard */; };
@@ -66,7 +66,7 @@
 		08E48A5425CC166700AC4961 /* MoudaNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoudaNavigationController.swift; sourceTree = "<group>"; };
 		08E48A6125CC410C00AC4961 /* UITextView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Extension.swift"; sourceTree = "<group>"; };
 		08E48A6525CD976100AC4961 /* BookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookView.swift; sourceTree = "<group>"; };
-		08E48A6825CD990300AC4961 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
+		08E48A6825CD990300AC4961 /* PageInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageInputView.swift; sourceTree = "<group>"; };
 		08E48A7025CFD64D00AC4961 /* ScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
 		08E48A7325CFDD7000AC4961 /* BookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewModel.swift; sourceTree = "<group>"; };
 		10161C9620B613CB23A2620D /* Pods_Mouda.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mouda.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,7 +138,7 @@
 				08E48A5425CC166700AC4961 /* MoudaNavigationController.swift */,
 				6626BE87204009C1003F0C23 /* TabBarController.swift */,
 				08E48A6525CD976100AC4961 /* BookView.swift */,
-				08E48A6825CD990300AC4961 /* PageView.swift */,
+				08E48A6825CD990300AC4961 /* PageInputView.swift */,
 				08E1809422C928B500CFE6AF /* FeedView.swift */,
 			);
 			path = Custom;
@@ -458,7 +458,7 @@
 				08E48A6225CC410C00AC4961 /* UITextView+Extension.swift in Sources */,
 				66DBAC9F202BF5660043CB4B /* Bookmark.swift in Sources */,
 				669990FC202437D200410F21 /* MyFeedCell.swift in Sources */,
-				08E48A6925CD990300AC4961 /* PageView.swift in Sources */,
+				08E48A6925CD990300AC4961 /* PageInputView.swift in Sources */,
 				66728F11202A99480061C168 /* AddBookmarkVC.swift in Sources */,
 				08E48A7125CFD64D00AC4961 /* ScrollViewController.swift in Sources */,
 				0860A77422C1BE5C007839E4 /* ViewController.swift in Sources */,

@@ -51,20 +51,7 @@ class AddFeedVC: ScrollViewController, UITabBarControllerDelegate {
         return tv
     }()
     
-    let pageTextField: UITextField = {
-        let tv = UITextField()
-        tv.font = .mySystemFont(ofSize: 17)
-        tv.placeholder = "123"
-        tv.contentHorizontalAlignment = .center
-        tv.keyboardType = .numberPad
-        
-        let l = UILabel(text: "Page ", font: .mySystemFont(ofSize: 17), textAlignment: .left, numberOfLines: 1)
-        l.sizeToFit()
-        l.frame = CGRect(x: 0, y: 0, width: l.frame.width + 8, height: l.frame.height)
-        tv.leftViewMode = .always
-        tv.leftView = l
-        return tv
-    }()
+    let pageInputView = PageInputView()
     
     let thoughtTextView: UITextView = {
         let tv = UITextView()
@@ -145,19 +132,15 @@ class AddFeedVC: ScrollViewController, UITabBarControllerDelegate {
         
         let lineView = UIView()
         lineView.stack(lineTextView,
-                       view.hstack(UIView(), pageTextField, UIView(),
-                                   distribution: .equalCentering),
+                       pageInputView,
                        spacing: 8).withMargins(.init(top: 8, left: 8, bottom: 8, right: 8))
         lineView.backgroundColor = .groupTableViewBackground
-        pageTextField.widthAnchor.constraint(greaterThanOrEqualToConstant: 80).isActive = true
 
         let thoughtView = UIView()
         thoughtView.stack(thoughtTextView).withMargins(.init(top: 8, left: 8, bottom: 8, right: 8))
         thoughtView.backgroundColor = .groupTableViewBackground
         
-        
         lineView.heightAnchor.constraint(greaterThanOrEqualToConstant: 200).isActive = true
-
         thoughtView.heightAnchor.constraint(greaterThanOrEqualToConstant: 130).isActive = true
 
         contentView.stack(bookChooseButton.withHeight(60),
