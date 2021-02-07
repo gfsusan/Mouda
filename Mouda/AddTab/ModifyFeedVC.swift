@@ -44,10 +44,10 @@ class ModifyFeedVC: AddFeedVC {
         }
         
         book = feed.book
+        pageInputView.pageTextField.text = "\(feed.page)"
         
         let feedViewModel = FeedViewModel(feed: feed)
         thoughtTextView.text = feedViewModel.thought
         lineTextView.text = feedViewModel.line
-        pageInputView.pageTextField.text = feedViewModel.page
     }
 }
