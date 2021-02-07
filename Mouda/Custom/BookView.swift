@@ -10,6 +10,12 @@ import UIKit
 
 class BookView: UIView {
 
+    var bookViewModel: BookViewModel? {
+        didSet {
+            updateView()
+        }
+    }
+    
     let bookImageView: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
@@ -53,6 +59,13 @@ class BookView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func updateView() {
+        bookImageView.image = bookViewModel?.coverImage
+        titleLabel.text = bookViewModel?.title
+        publisherLabel.text = bookViewModel?.publisher
+        authorLabel.text = bookViewModel?.author
     }
     
 }

@@ -15,7 +15,9 @@ class AddFeedVC: ScrollViewController, UITabBarControllerDelegate {
     // 책 선택 화면에서 고른 책
     var book:Book? {
         didSet {
-            bookChooseButton.setTitle(book?.title, for: .normal)
+            guard let book = book else { return }
+            bookChooseButton.setTitle("다시 고르기", for: .normal)
+            bookView.bookViewModel = BookViewModel(book: book)
         }
     }
     
@@ -37,6 +39,8 @@ class AddFeedVC: ScrollViewController, UITabBarControllerDelegate {
         b.backgroundColor = .themeColor
         return b
     }()
+    
+    let bookView = BookView()
     
     let lineTextView: UITextView = {
         let tv = UITextView()
@@ -84,6 +88,7 @@ class AddFeedVC: ScrollViewController, UITabBarControllerDelegate {
         configureTextFieldDelegates()
     }
     
+    /** Respond to keyboard pushing upwards. */
     deinit {
         removeKeyboardObservers()
     }
@@ -156,6 +161,7 @@ class AddFeedVC: ScrollViewController, UITabBarControllerDelegate {
         thoughtView.heightAnchor.constraint(greaterThanOrEqualToConstant: 130).isActive = true
 
         contentView.stack(bookChooseButton.withHeight(60),
+                          bookView,
                           lineView,
                           thoughtView,
                           spacing: 8)

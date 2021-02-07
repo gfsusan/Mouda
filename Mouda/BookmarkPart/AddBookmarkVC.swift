@@ -19,7 +19,6 @@ class AddBookmarkVC: AddFeedVC {
         }
     }
     
-    let bookView = BookView()
     let pageView = PageView()
     
     override func viewWillAppear(_ animated: Bool) {
