@@ -22,7 +22,7 @@ class AddFeedVC: ScrollViewController, UITabBarControllerDelegate {
     }
     
     lazy var cancelButton: UIBarButtonItem = {
-        let b = UIBarButtonItem(title: "취소", style: .plain, target: self, action: #selector(cancelButtonPressed(_:)))
+        let b = UIBarButtonItem(title: "취소", style: .plain, target: self, action: #selector(handleClose))
         return b
     }()
     
@@ -89,25 +89,12 @@ class AddFeedVC: ScrollViewController, UITabBarControllerDelegate {
     @objc func doneButtonPressed(_ sender: Any) {
         if let chosenBook = book {
             // line과 page 입력되었는지 확인. thought은 없어도 됨
-            if lineTextView.textColor != UIColor.lightGray {
-                if pageTextField.textColor != UIColor.lightGray {
-                    var text:String
-                    if thoughtTextView.textColor == UIColor.lightGray {
-                        text = ""
-                    } else {
-                        text = thoughtTextView.text
-                    }
-                    let feed = Feed(book: chosenBook, page: Int(pageTextField.text!)!, line: lineTextView.text, thought: text)
-                    dataCenter.add(feed: feed)
+            if let lineText = lineTextView.text, lineText != "" {
+                if let page = pageInputView.page {
+                    let thoughtText = thoughtTextView.text ?? ""
+                    let feed = Feed(book: chosenBook, page: page, line: lineText, thought: thoughtText)
                     
-                    if let tabBarController = self.presentingViewController as? UITabBarController {
-                        print("done Button Presend")
-                        tabBarController.selectedIndex = 1
-                        tabBarController.selectedIndex = 0
-                    }
-                    
-                    // 저장 작업 외에는 Cancel과 똑같이 modal dismiss만 해주면 됨
-                    cancelButtonPressed(sender)
+                    handleSave(feed: feed)
                     
                 } else { // page 입력 안됨
                     showAlert(title: "알림", message: "페이지를 입력해주세요.")
@@ -123,7 +110,20 @@ class AddFeedVC: ScrollViewController, UITabBarControllerDelegate {
         }
     }
     
-    @objc func cancelButtonPressed(_ sender: Any) {
+    func handleSave(feed: Feed) {
+        dataCenter.add(feed: feed)
+        
+        if let tabBarController = self.presentingViewController as? UITabBarController {
+            print("done Button Presend")
+            tabBarController.selectedIndex = 1
+            tabBarController.selectedIndex = 0
+        }
+        
+        // 저장 작업 외에는 Cancel과 똑같이 modal dismiss만 해주면 됨
+        handleClose()
+    }
+    
+    @objc func handleClose() {
         self.dismiss(animated: true)
     }
     

@@ -10,6 +10,13 @@ import UIKit
 
 class PageInputView: UIView {
     
+    var page: Int? {
+        get {
+            guard let pageText = pageTextField.text else { return nil }
+            return Int(pageText)
+        }
+    }
+    
     let pageTextField: UITextField = {
         let tv = UITextField()
         tv.font = .mySystemFont(ofSize: 17)
