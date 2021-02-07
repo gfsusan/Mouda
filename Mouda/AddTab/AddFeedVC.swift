@@ -83,6 +83,9 @@ class AddFeedVC: ViewController, UITabBarControllerDelegate {
         
         view.backgroundColor = .white
         
+        navigationItem.leftBarButtonItem = cancelButton
+        navigationItem.rightBarButtonItem = doneButton
+        
         configureTextFieldDelegates()
     }
     
@@ -138,9 +141,6 @@ class AddFeedVC: ViewController, UITabBarControllerDelegate {
     }
     
     override func configureConstraints() {
-        navigationItem.leftBarButtonItem = cancelButton
-        navigationItem.rightBarButtonItem = doneButton
-        
         view.addSubview(scrollView)
         scrollView.fillSuperview()
         
@@ -179,16 +179,11 @@ class AddFeedVC: ViewController, UITabBarControllerDelegate {
     }
 }
 
+/** Respond to keyboard pushing upwards */
 extension AddFeedVC {
     func configureTextFieldDelegates() {
-        setupDelegates()
         addKeyboardObservers()
         configureTapGesture()
-    }
-    
-    func setupDelegates() {
-//        lineTextView.delegate = self
-//        thoughtTextView.delegate = self
     }
     
     func addKeyboardObservers() {
@@ -212,10 +207,11 @@ extension AddFeedVC {
     }
     
     @objc func keyboardDidShow(notification: NSNotification) {
-        var info = notification.userInfo
-        let keyBoardSize = info![UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
-        scrollView.contentInset = UIEdgeInsets.init(top: 0.0, left: 0.0, bottom: keyBoardSize.height, right: 0.0)
-        scrollView.scrollIndicatorInsets = UIEdgeInsets.init(top: 0.0, left: 0.0, bottom: keyBoardSize.height, right: 0.0)
+        let info = notification.userInfo
+        if let keyBoardSize = info?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect {
+            scrollView.contentInset = UIEdgeInsets.init(top: 0.0, left: 0.0, bottom: keyBoardSize.height, right: 0.0)
+            scrollView.scrollIndicatorInsets = UIEdgeInsets.init(top: 0.0, left: 0.0, bottom: keyBoardSize.height, right: 0.0)
+        }
     }
     
     @objc func keyboardDidHide(notification: NSNotification) {
