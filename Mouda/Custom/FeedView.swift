@@ -121,6 +121,10 @@ class FeedView: UIView {
         
         configureConstraints()
         
+        if feedViewModel?.thought == "" {
+            thoughtLabel.removeFromSuperview()
+        }
+        
         let lineStyle = NSMutableParagraphStyle()
         lineStyle.lineSpacing = 5
         let lineAttributes = [NSAttributedString.Key.paragraphStyle: lineStyle]
