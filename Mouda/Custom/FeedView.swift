@@ -101,8 +101,8 @@ class FeedView: UIView {
             addSubview(titleView)
             
             titleView.anchor(top: topAnchor, leading: leadingAnchor, bottom: nil, trailing: trailingAnchor,
-                             padding: .init(top: 16, left: 8, bottom: 0, right: 8))
-            lineView.anchor(top: titleView.centerYAnchor, leading: leadingAnchor, bottom: nil, trailing: trailingAnchor)
+                             padding: .init(top: 8, left: 8, bottom: 0, right: 8))
+            lineView.anchor(top: titleView.bottomAnchor, leading: leadingAnchor, bottom: nil, trailing: trailingAnchor)
             thoughtView.anchor(top: lineView.bottomAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor)
         } else {
             stack(stack(titleView).withMargins(.init(top: 16, left: 8, bottom: 0, right: 8)),
