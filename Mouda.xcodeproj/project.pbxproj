@@ -10,6 +10,11 @@
 		083066BA22C3665B00EBDAFE /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083066B922C3665B00EBDAFE /* UIFont+Extension.swift */; };
 		0860A77422C1BE5C007839E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0860A77322C1BE5C007839E4 /* ViewController.swift */; };
 		0860A77722C1CD8D007839E4 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0860A77622C1CD8D007839E4 /* UIColor+Extension.swift */; };
+		0869B73526020F02008280B3 /* MyPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0869B73426020F02008280B3 /* MyPageVC.swift */; };
+		0869B73826021440008280B3 /* CountLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0869B73726021440008280B3 /* CountLabel.swift */; };
+		0869B73B26022147008280B3 /* FeedCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0869B73A26022147008280B3 /* FeedCollectionView.swift */; };
+		0869B73E260222DF008280B3 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0869B73D260222DF008280B3 /* FeedCell.swift */; };
+		0869B74126022712008280B3 /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0869B74026022712008280B3 /* MenuBar.swift */; };
 		08E1809522C928B500CFE6AF /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E1809422C928B500CFE6AF /* FeedView.swift */; };
 		08E1809722C92A4000CFE6AF /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E1809622C92A4000CFE6AF /* FeedViewModel.swift */; };
 		08E1809922C9415100CFE6AF /* BookmarkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E1809822C9415100CFE6AF /* BookmarkViewModel.swift */; };
@@ -59,6 +64,11 @@
 		083066B922C3665B00EBDAFE /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		0860A77322C1BE5C007839E4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0860A77622C1CD8D007839E4 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		0869B73426020F02008280B3 /* MyPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageVC.swift; sourceTree = "<group>"; };
+		0869B73726021440008280B3 /* CountLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountLabel.swift; sourceTree = "<group>"; };
+		0869B73A26022147008280B3 /* FeedCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCollectionView.swift; sourceTree = "<group>"; };
+		0869B73D260222DF008280B3 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		0869B74026022712008280B3 /* MenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
 		08E1809422C928B500CFE6AF /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		08E1809622C92A4000CFE6AF /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 		08E1809822C9415100CFE6AF /* BookmarkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewModel.swift; sourceTree = "<group>"; };
@@ -157,6 +167,9 @@
 		6626BE83204003B3003F0C23 /* FeedsTab */ = {
 			isa = PBXGroup;
 			children = (
+				669991032024386900410F21 /* FeedTableVC.swift */,
+				669990FB202437D200410F21 /* MyFeedCell.swift */,
+				66728F12202A9C480061C168 /* FeedDetailVC.swift */,
 				6626BE84204003D4003F0C23 /* Feeds.storyboard */,
 			);
 			path = FeedsTab;
@@ -176,9 +189,11 @@
 		66728F15202A9E130061C168 /* MyFeedTab */ = {
 			isa = PBXGroup;
 			children = (
-				669991032024386900410F21 /* FeedTableVC.swift */,
-				669990FB202437D200410F21 /* MyFeedCell.swift */,
-				66728F12202A9C480061C168 /* FeedDetailVC.swift */,
+				0869B73426020F02008280B3 /* MyPageVC.swift */,
+				0869B73726021440008280B3 /* CountLabel.swift */,
+				0869B73A26022147008280B3 /* FeedCollectionView.swift */,
+				0869B73D260222DF008280B3 /* FeedCell.swift */,
+				0869B74026022712008280B3 /* MenuBar.swift */,
 			);
 			path = MyFeedTab;
 			sourceTree = "<group>";
@@ -433,10 +448,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0860A77722C1CD8D007839E4 /* UIColor+Extension.swift in Sources */,
+				0869B73B26022147008280B3 /* FeedCollectionView.swift in Sources */,
 				08E1809922C9415100CFE6AF /* BookmarkViewModel.swift in Sources */,
 				66B52A5D202D5D7A007C54BF /* BookmarkCollectionVC.swift in Sources */,
 				66F902DE202961F40047C959 /* AddFeedVC.swift in Sources */,
+				0869B73526020F02008280B3 /* MyPageVC.swift in Sources */,
 				08E48A5525CC166700AC4961 /* MoudaNavigationController.swift in Sources */,
+				0869B74126022712008280B3 /* MenuBar.swift in Sources */,
 				08E48A7425CFDD7000AC4961 /* BookViewModel.swift in Sources */,
 				08E1809B22C9427500CFE6AF /* UIImageView+LoadImage.swift in Sources */,
 				66728F22202AE7520061C168 /* DataCenter.swift in Sources */,
@@ -447,6 +465,8 @@
 				669991042024386900410F21 /* FeedTableVC.swift in Sources */,
 				66B52A5F202D5D90007C54BF /* BookmarkCell.swift in Sources */,
 				66B52A64202DD9AC007C54BF /* SettingTableVC.swift in Sources */,
+				0869B73E260222DF008280B3 /* FeedCell.swift in Sources */,
+				0869B73826021440008280B3 /* CountLabel.swift in Sources */,
 				083066BA22C3665B00EBDAFE /* UIFont+Extension.swift in Sources */,
 				6685C133202EFF1900EE066F /* ModifyFeedVC.swift in Sources */,
 				66B52A72202E12AC007C54BF /* BookFeedCell.swift in Sources */,
@@ -622,10 +642,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3ZLXC439TG;
+				CURRENT_PROJECT_VERSION = 21022701;
+				DEVELOPMENT_TEAM = 4QG3GC35LA;
 				INFOPLIST_FILE = Mouda/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mouda.Mouda;
+				MARKETING_VERSION = 1.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.codershigh.Moeuda;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -638,10 +660,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3ZLXC439TG;
+				CURRENT_PROJECT_VERSION = 21022701;
+				DEVELOPMENT_TEAM = 4QG3GC35LA;
 				INFOPLIST_FILE = Mouda/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mouda.Mouda;
+				MARKETING_VERSION = 1.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.codershigh.Moeuda;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

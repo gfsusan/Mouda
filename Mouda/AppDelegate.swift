@@ -29,9 +29,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let bookmarkNavContr = MoudaNavigationController(rootViewController: bookmarkVC)
         bookmarkNavContr.tabBarItem = UITabBarItem(title: "남기다", image: #imageLiteral(resourceName: "Bookmark"), tag: 2)
         
+        let myPageVC = MyPageVC()
+        let myPageNavContr = MoudaNavigationController(rootViewController: myPageVC)
+        myPageNavContr.tabBarItem = UITabBarItem(title: "ㅛㅕ", image: #imageLiteral(resourceName: "PWBtn"), tag: 3)
+        
+        
         let tabBarController = TabBarController()
-        tabBarController.viewControllers = [myFeedNavContr, addNavContr, bookmarkNavContr]
+        tabBarController.viewControllers = [myFeedNavContr, addNavContr, bookmarkNavContr, myPageVC]
         tabBarController.tabBar.tintColor = .tabBarTintColor
+        
+        
+        ////////////////////
+        tabBarController.selectedIndex = 3
+        
         
         window = UIWindow()
         window?.rootViewController = tabBarController
